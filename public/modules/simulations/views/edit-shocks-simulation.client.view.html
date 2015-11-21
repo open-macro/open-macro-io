@@ -1,0 +1,127 @@
+<section data-ng-controller="ShocksSimulationController" data-ng-init="findOne()">
+
+    <omt-header></omt-header>
+    <om-tabbar></om-tabbar>
+
+    <section layout="row">
+        <md-content om-sidebar>
+            <md-input-container>
+                <label>Filter Shocks</label>
+                <input ng-model="filterQuery.name">
+            </md-input-container>
+            <section>
+                <md-list>
+                    <md-item ng-repeat="shock in simulation.shocks | filter:filterQuery" ng-click="editShock(shock)">
+                        <a id="{{shock.name}}">
+                            <md-item-content md-ink-ripple class="md-2-line" layout="row" layout-align="start center">
+                                <div class="md-list-item-text parameter-item" ng-class="{'md-offset': $index != 0 }">
+                                    <h4 class="md-subhead"> {{ shock.name }} </h4>
+
+                                    <p class="description"> {{ shock.description + ' (' + shock.units + ')'}}</p>
+                                </div>
+                            </md-item-content>
+                        </a>
+                        <md-divider></md-divider>
+                    </md-item>
+                </md-list>
+            </section>
+        </md-content>
+        <md-divider class="vertical"></md-divider>
+        <md-content class="md-padding" om-fill-height flex>
+            <section data-ng-hide="selectedShock">
+                <h2>Select a Shock to Begin Editing</h2>
+                <section class="edit-dsf description">
+                    Shocks can reflect economic policy choices (like the level of government borrowing) or exogenous
+                    economic
+                    conditions (like the price of oil or other natural resources). For each shock, input your own
+                    forecasts as
+                    time series or as a constant value over a given range of time.
+                </section>
+            </section>
+
+            <section data-ng-show="selectedShock">
+
+                <h2> {{selectedShock.name}} &nbsp;<p class="description" style="display:inline-block;"> ({{
+                    selectedShock.description }}) </p></h2>
+                <p class="description"> Input your own forecasts as time series or as a constant value over a given
+                    range of time. </p>
+
+                <h3>Time Series</h3>
+
+                <div style="overflow-x:scroll;">
+                    <table border="0" cellpadding="3" cellspacing="3">
+                        <tr>
+                            <th>Period</th>
+                            <td ng-repeat="p in selectedShock.periods track by $index" style="text-align:left;">
+                                <md-input-container style="width:50px">
+                                    <span data-ng-bind="$index + 1"></span>
+                                </md-input-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Value</th>
+                            <td ng-repeat="p in selectedShock.periods track by $index" style="text-align:left;">
+                                <md-input-container style="width:50px">
+                                    <input ng-paste="handlePaste($index, $event)"
+                                           type="text"
+                                           ng-model="selectedShock.periods[$index]">
+                                </md-input-container>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <md-button class="om-button-small" aria-label="add-periods" ng-click="addPeriods(selectedShock, 1)">
+                    <md-icon md-svg-icon="lib/project-material-icons/ic_add_48px.svg"></md-icon>
+                    Add 1
+                </md-button>
+                <md-button class="om-button-small" aria-label="add-periods" ng-click="addPeriods(selectedShock, 10)">
+                    <md-icon md-svg-icon="lib/project-material-icons/ic_add_48px.svg"></md-icon>
+                    Add 10
+                </md-button>
+                <md-divider></md-divider>
+
+                <h3 style="margin-top: 50px;">Ranges</h3>
+
+                <div style="overflow-x:scroll">
+                    <table border="0" cellpadding="3" cellspacing="3">
+                        <tr>
+                            <th>Start</th>
+                            <td ng-repeat="p in selectedShock.ranges track by $index" style="text-align:left;">
+                                <md-input-container style="width:50px">
+                                    <input type="text" ng-model="selectedShock.ranges[$index].start">
+                                </md-input-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>End</th>
+                            <td ng-repeat="p in selectedShock.ranges track by $index" style="text-align:left;">
+                                <md-input-container style="width:50px">
+                                    <input type="text" ng-model="selectedShock.ranges[$index].end">
+                                </md-input-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Value</th>
+                            <td ng-repeat="p in selectedShock.ranges track by $index" style="text-align:left;">
+                                <md-input-container style="width:50px">
+                                    <input type="text" ng-model="selectedShock.ranges[$index].value">
+                                </md-input-container>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <md-button class="om-button-small" aria-label="add-range" ng-click="addRange(selectedShock)">
+                    <md-icon md-svg-icon="lib/project-material-icons/ic_add_48px.svg"></md-icon>
+                    Add 1
+                </md-button>
+            </section>
+        </md-content>
+
+        <!--<mfb-menu position="br"-->
+        <!--resting-icon="ic_play_arrow_48px.svg"-->
+        <!--ng-click="goToRun()">-->
+        <!--</mfb-menu>-->
+    </section>
+</section>

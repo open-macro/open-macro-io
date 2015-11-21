@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="utf-8">
+    <title>CA Norm Model</title>  
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX:{equationNumbers:{autoNumber:"all"}}});</script>
+
+  </head>
+  
+  <body>
+
+    <h1>Current Account Norm Model</h1>
+    
+    <h2>The Model</h2>
+
+    <p>We use a flexible-price model of a small open economy, but enrich it
+with investment inefficiencies, absorptive capacity constraints and a
+country risk premium that captures foreign credit constraints. Preferences
+are identical across countries. There is exogenous productivity growth at
+the rate \(\mathfrak{g}_{a}\) and population growth at the rate \(\mathfrak{g}
+_{n}\), so in the long-run all the variables grow at the rate \(\mathfrak{g}\),
+where \((1+\mathfrak{g})=(1+\mathfrak{g}_{a})(1+\mathfrak{g}_{n})\). To
+facilitate the description of the model, we present its structure in
+stationary terms. This involves, when required, rescaling variables by the
+effective units of labor \(A_{t}L_{t}\), where \(A_{t}\) is the productivity
+level and and \(L_{t}\) denotes labor. That is, \(x_{t}\equiv \frac{X_{t}}{
+A_{t}L_{t}}\) for all the variables \(X_{t}\). In this way all the transformed
+variables are constant in the long run (steady state).</p>
+
+<p>The economy is populated by a large number of identical and infinitely lived
+households, who are endowed with perfect foresight. The representative agent
+derives utility from private consumption \((c_{t})\) and public consumption \(
+(g_{t})\), but not leisure, according to:</p>
+
+\begin{equation}
+\sum_{t=0}^{\infty }\beta ^{t}\left[ \frac{\left( c_{t}-\varkappa
+c_{t-1}\right) ^{1-\gamma }}{1-\gamma }+\kappa \frac{\left( g_{t}-\varkappa
+g_{t-1}\right) ^{1-\gamma }}{1-\gamma }\right] .  \label{1}
+\end{equation}
+
+<p>The parameter \(\beta \) equals \(\mathcal{B}(1+\mathfrak{g}_{a})^{1-\gamma }(1+
+\mathfrak{g}_{n})^{^{1-\gamma }}A_{0}^{1-\gamma }L_{0}^{^{1-\gamma }}\) where 
+\(\mathcal{B}\) is the discount factor and satisfies \(\mathcal{B}\in (0,1)\).
+The coefficient of relative risk aversion is given by \(\gamma \). The
+parameter \(\kappa \) controls the preference share for private and public
+consumption and \(\varkappa \in (0,1)\) denotes the intensity of internal
+habit formation. We introduce habit formation to allow for a smooth path of
+private consumption, as discussed by Christiano et al. (2005), and to avoid
+unrealistically drastic adjustments in public consumption in the simulations.</p>
+
+<p>The economy has two sectors: the non-oil sector (\(n\)) and the oil sector (\(o\)), whose outputs are denoted by \(y_{t}^{n}\) and \(y_{t}^{o},\) respectively.<sup><a href="#fn1" id="ref1">1</a></sup> The production function in the non-oil sector is given by:</p>
+
+\begin{equation}
+y_{t}^{n}=ak_{t-1}^{\theta _{k}}s_{t-1}^{\theta _{s}} \label{2}
+\end{equation}
+
+<p>with \(\theta _{k}+\theta _{s}&lt;1\),where \(k_{t}\) and \(s_{t}\) are private and public capital, respectively;while, for simplicity oil production is exogenous.<sup><a href="#fn2" id="ref2">2</a></sup></p>
+
+<p>We incorporate two types of investment frictions that capture inefficiencies
+in investing and absorptive capacity constraints. As in Agenor (2010) and
+Berg et al. (2013), among others, we assume that all public investment \(
+i_{t}^{s}\) does not necessarily translate into productive public capital \(
+s_{t}\). The public capital accumulation equation is:</p> 
+
+\begin{equation}
+(1+\mathfrak{g})s_{t+1}=e_{s}i_{t}^{s}+(1-\delta _{s})s_{t},  \label{3}
+\end{equation}
+
+<p>with \(e_{s}\in \lbrack 0,1]\) where \(\delta _{s}\) is the depreciation of public capital and the efficiency parameter \(e_{s}\) captures the idea that one dollar spent on public
+investment may translate into less than one dollar of productive public
+capital. The traditional \textquotedblleft perpetual inventory
+method\textquotedblright\ usually imposes \(e_{s}=1\) and then uses this
+equation to infer the stock of public capital from information on public
+investment and assumptions about depreciation rates. However, assuming full
+efficiency is problematic, particularly in developing economies. Whether
+because of waste and corruption, an absence of market pressures to ensure
+that all projects have the highest possible rate of return, or simply
+misclassification of current spending (e.g. salary payments to civil
+servants) as investment, a dollar of public investment spending may not
+always yields a full dollar of public capital, as argued by Pritchett
+(2000). Similar inefficiencies exist in the creation of private capital,
+when investing the amount \(i_{t}^{k}\). Therefore</p> 
+
+\begin{equation}
+(1+\mathfrak{g})k_{t+1}=e_{k}i_{t}^{k}+(1-\delta _{k})k_{t}.  \label{4}
+\end{equation}
+
+<p>We model absorptive capacity constraints as investment adjustment costs that
+only play a role off steady state. These costs take the form of</p>
+
+\begin{equation}
+AC_{t}^{s}=\frac{\phi _{s}}{2}\left( \frac{s_{t}}{s_{t-1}}-1\right)
+^{2}s_{t-1}\text{    and    }AC_{t}^{k}=\frac{\phi _{k}}{2}\left( \frac{
+k_{t}}{k_{t-1}}-1\right) ^{2}k_{t-1}.  \label{AC}
+\end{equation}
+
+<p>As in Buffie et al. (2012), these reflect the fact that skilled
+administrators are in scarce supply in RRDCs and, therefore, ambitious
+public and private investment programs are often plagued by poor planning,
+weak oversight, and a myriad of coordination problems, all of which
+contribute to costs which can increase with the pace of scaling up.<sup><a href="#fn3" id="ref3">3</a></sup> The parameters \(\phi _{k}\) and \(\phi _{s}\) determine the
+severity of these absorptive capacity constraints.</p>
+
+<p>Developing economies are also characterized by their inability to fully
+access international capital market, because of borrowing constraints. One
+might think that at each period \(t\), foreign lenders impose an aggregate
+borrowing limit on the domestic economy. This can stipulate that the level
+of external liabilities \(d_{t}\) must satisfy \(d_{t}\leq \bar{d}+\psi V_{t},\)
+where \(\bar{d}\) is an exogenous limit on debt, \(V_{t}=\sum_{i=t}^{T}\left( 
+\frac{1}{1+r^{\ast }}\right) ^{i-t}y_{i}^{o}\) is the net present value (NPV)
+of the oil output flows from time \(t\) until the depletion time \(T,\) \(r^{\ast
+}\) is the risk-free world interest rate, and \(\psi \in \lbrack 0,1]\). Note
+that this means that resource revenues (\(\psi V_{t}\)) can help relax
+borrowing constraints enabling the country to contract debt beyond the limit 
+\(\bar{d}\) at a lower cost, as argued by Mansoorian (1991) and empirically
+evinced by Arezki and Bruckner (2012) in democratic emerging economies.</p>
+
+<p>To capture these borrowing constraints, important for a better benchmarking
+of the current account in RRDCs, we assume the country faces an interest
+rate with a country risk premium that depends on the stock of its external
+liabilities. In particular, we assume that the premium (\(r_{t}-r^{\ast }\))
+can be represented by</p>
+
+\begin{equation}
+\Pi (d_{t})=r_{t}-r^{\ast }=\frac{\pi }{\rho _{1}^{2}}\left[ e^{\rho
+_{1}(d_{t}-\bar{d}-\psi V_{t})}-\rho _{2}(d_{t}-\overline{d}-\psi
+V_{t})-\rho _{3}\right] ,  \label{5}
+
+\end{equation}
+
+<p>where \(\pi ,\rho _{1},\rho _{2}>0,\) \(\rho _{3}=e^{-\rho _{1}\overline{d}%
+}+\rho _{2}\overline{d}\) and \(\overline{d}\) is the steady-state level of
+debt.<sup><a href="#fn4" id="ref4">4</a></sup> This
+representation combines an exponential with a linear function. For low
+values of \(\rho _{2}\), as in the calibration below, the exponential form
+drives the premium for highly indebted countries; while the linear form
+becomes the main driver of the premium for creditor countries---i.e.,
+creditors will actually face almost no premium as the supply curve of funds
+becomes flatter.</p>
+
+<p>The country risk premium specification, which depends on debt, serves
+several purposes. First, although our motivation is to capture occasionally
+binding credit constraints, this specification helps us get around the
+highly complex and technical issues related to having inequality constraints
+in dynamic optimization.<sup><a href="#fn5" id="ref5">5</a></sup> Second, it ensures
+stationarity of foreign debt holdings, as explained by Schmitt-Grohe and
+Uribe (2003). Third, it allows us to model different degrees of
+international capital mobility. The degree of the capital account openness
+depends to a great extent on the composite parameter \(\frac{\pi }{\rho
+_{1}^{2}}.\) For very small values of this ratio, the capital account is in
+effect fully open reflecting perfect international capital markets. For very
+high values, on the other hand, the capital account is almost fully closed.
+Last, including the value of oil wealth \(V_{t}\) in the specification helps
+reduce the risk premium and the interest rate paid on debt. This in turn
+creates incentives to borrow more, which is in line with some of the
+empirical facts discussed by Manzano and Rigobon (2007).</p>
+
+<p>The current account can be expressed as</p>
+
+\begin{equation}
+ca_{t}=d_{t-1}-(1+\mathfrak{g})d_{t},  \label{CA}
+\end{equation}
+
+<p>while the resource constraint of the economy corresponds to</p>
+
+\begin{equation}
+(1+\mathfrak{g}
+)d_{t}=(1+r_{t-1})d_{t-1}+c_{t}+i_{t}^{k}+AC_{t}^{k}+g_{t}+i_{t}^{s}+AC_{t}^{s}-y_{t}^{n}-y_{t}^{o}-T_{t},
+\label{6}
+\end{equation}
+
+<p>where \(T_{t}\) denotes exogenous transfers to the economy not related to
+natural resources.</p>
+
+<p>We assume that there is a social planner who chooses the sequences for
+consumption, private and public capital stock, private and public
+investment, and borrowing \(\{c_{t},g_{t},i_{t}^{s},i_{t}^{k},s_{t},k_{t},d_{t}\}_{t=0}^{\infty }\) to
+maximize (\ref{1}) subject to (\ref{2})-(\ref{6}), given \(k_{0},s_{0},d_{0}\)
+and the exogenous path for \(\{y_{t}^{o}\}_{t=0}^{\infty }\) and \(%
+\{T_{t}\}_{t=0}^{\infty }\).<sup><a href="#fn6" id="ref6">6</a></sup> The first order conditions of this problem presented in the Appendix can be reduced to<sup><a href="#fn7" id="ref7">7</a></sup></p>
+
+\begin{equation}
+\hat{c}_{t}^{-\gamma }-\varkappa (1+\mathfrak{g})\beta \hat{c}%
+_{t+1}^{-\gamma }=\beta \left[ 1+r^{\ast }+\Pi (d_{t})+\Pi ^{\prime
+}(d_{t})d_{t}\right] \left[ \hat{c}_{t+1}^{-\gamma }-\varkappa (1+\mathfrak{g%
+})\beta \hat{c}_{t+2}^{-\gamma }\right]  \label{EE1}
+\end{equation}
+
+\begin{equation}
+\hat{c}_{t}^{-\gamma }-\varkappa (1+\mathfrak{g})\beta \hat{c}%
+_{t+1}^{-\gamma }=\kappa \lbrack \hat{g}_{t}^{-\gamma }-\varkappa (1+%
+\mathfrak{g})\beta \hat{g}_{t+1}^{-\gamma }]  \label{EE2}
+\end{equation}
+
+\begin{equation}
+\frac{\hat{c}_{t}^{-\gamma }-\varkappa (1+\mathfrak{g})\beta \hat{c}%
+_{t+1}^{-\gamma }}{\hat{c}_{t+1}^{-\gamma }-\varkappa (1+\mathfrak{g})\beta 
+\hat{c}_{t+2}^{-\gamma }}=\beta (1+\mathfrak{g})\frac{\left[ e_{k}\theta _{k}%
+\frac{y_{t+1}^{n}}{k_{t}}+(1-\delta _{k})-e_{k}\frac{\phi _{k}}{2}\left( 
+\frac{k_{t+1}}{k_{t}}-1\right) ^{2}+e_{k}\phi _{k}\left( \frac{k_{t+1}}{k_{t}%
+}-1\right) \frac{k_{t+1}}{k_{t}}\right] }{\left[ (1+\mathfrak{g})+e_{k}\phi
+_{k}\left( \frac{k_{t}}{k_{t-1}}-1\right) \right] },  \label{EE3}
+\end{equation}
+
+\begin{equation}
+\frac{\hat{c}_{t}^{-\gamma }-\varkappa (1+\mathfrak{g})\beta \hat{c}%
+_{t+1}^{-\gamma }}{\hat{c}_{t+1}^{-\gamma }-\varkappa (1+\mathfrak{g})\beta 
+\hat{c}_{t+2}^{-\gamma }}=\beta (1+\mathfrak{g})\frac{\left[ e_{s}\theta _{s}%
+\frac{y_{t+1}^{n}}{s_{t}}+(1-\delta _{s})-e_{s}\frac{\phi _{s}}{2}\left( 
+\frac{s_{t+1}}{s_{t}}-1\right) ^{2}+e_{s}\phi _{s}\left( \frac{s_{t+1}}{s_{t}%
+}-1\right) \frac{s_{t+1}}{s_{t}}\right] }{\left[ (1+\mathfrak{g})+e_{s}\phi
+_{s}\left( \frac{s_{t}}{s_{t-1}}-1\right) \right] }.  \label{EE4}
+\end{equation}
+
+<p>The interpretation of these conditions is straightforward. Condition (\ref%
+{EE1}) is the Euler equation for private consumption \(c_{t}\) including the
+effects of internal habits, since \(\hat{c}_{t}=c_{t}-\varkappa c_{t-1}\).
+Equation (\ref{EE2}) equates the marginal utility of private and public
+consumption, where \(\hat{g}_{t}=g_{t}-\varkappa g_{t-1}\). Conditions (\ref%
+{EE3}) and (\ref{EE4}) set optimal private and public investment by equating
+the marginal cost and benefit of postponing consumption one period ahead.
+Note that we have assumed that the social planner internalizes the effect of
+more borrowing on the country risk premium and, therefore, on the cost of
+debt \(1+r_{t}\)---this explains the term \(\Pi ^{\prime }(d_{t})d_{t}\). This
+is consistent with the view that the social planner will use \textit{marginal%
+} borrowing decisions to affect the marginal increase of the cost of debt.
+Moreover, as is common in the literature of capital adjustment costs, the
+planner internalizes the effect of more investment on the absorptive
+capacity constraints.</p>
+
+<p>We provide now a definition of equilibrium in this open economy model.</p>
+
+<p>Given \(k_{0}\), \(s_{0}\), and \(d_{0}\), the sequences \(\{y_{t}^{o}\}_{t=0}^{\infty }\) and \(\{T_{t}\}_{t=0}^{\infty },\) an equilibrium is a set of sequences \(\{c_{t},g_{t},i_{t}^{s},i_{t}^{k},s_{t},k_{t},d_{t},y_{t}^{n},AC_{t}^{s},AC_{t}^{k},r_{t},ca_{t}\}_{t=0}^{\infty}\) satisfying equations (\ref{2})-(\ref{6}) and the first order conditions (\ref{EE1})-(\ref{EE4}).</p>
+
+<h2>Appendix</h2>
+
+<p>Letting \(\eta _{t}^{s}\), \(\eta _{t}^{k}\) and \(\lambda _{t}\) be the
+Lagrangian multipliers on equations (\ref{3}), (\ref{4}) and (\ref{6})
+respectively, the first order conditions are given by:</p>
+
+\begin{equation}
+c_{t}:[c_{t}-\varkappa c_{t-1}^{{}}]^{-\gamma }-\varkappa \beta (1+\mathfrak{%
+g})[c_{t+1}-\varkappa c_{t}]^{-\gamma }=\lambda _{t},  \label{A1}
+\end{equation}
+
+\begin{equation}
+g_{t}:[g_{t}-\varkappa g_{t-1}^{{}}]^{-\gamma }-\varkappa \beta (1+\mathfrak{%
+g})[g_{t+1}-\varkappa g_{t}]^{-\gamma }=\lambda _{t},
+\end{equation}
+
+\begin{equation}
+i_{t}^{k}:e_{k}\eta _{t}^{k}=\lambda _{t},  \label{A3}
+\end{equation}
+
+\begin{equation}
+i_{t}^{s}:e_{s}\eta _{t}^{s}=\lambda _{t},  \label{A4}
+\end{equation}
+
+\begin{equation}
+d_{t}:\lambda _{t}=\beta \lambda _{t+1}\left[ 1+r^{\ast }+\frac{\pi }{\rho
+_{1}^{2}}\left[ e_{{}}^{\rho _{1}(d_{t}-\bar{d}-\psi V_{t})}-\rho _{2}(d_{t}-%
+\overline{d}-\psi V_{t})-\rho _{3}\right] +\frac{\pi }{\rho _{1}^{2}}\left[
+\rho _{1}e_{{}}^{\rho _{1}(d_{t}-\bar{d}-\psi V_{t})}-\rho _{2}\right] d_{t}%
+\right] ,  \label{A5}
+\end{equation}
+
+\begin{equation}
+k_{t}:\lambda _{t}=\beta (1+\mathfrak{g})\lambda _{t+1}\frac{\left[
+e_{k}\theta _{k}\frac{y_{t+1}^{n}}{k_{t}}+(1-\delta _{k})-e_{k}\frac{\phi
+_{k}}{2}\left( \frac{k_{t+1}}{k_{t}}-1\right) ^{2}+e_{k}\phi _{k}\left( 
+\frac{k_{t+1}}{k_{t}}-1\right) \frac{k_{t+1}}{k_{t}}\right] }{\left[ (1+%
+\mathfrak{g})+e_{k}\phi _{k}\left( \frac{k_{t}}{k_{t-1}}-1\right) \right] },
+\label{A6}
+\end{equation}
+
+\begin{equation}
+s_{t}:\lambda _{t}=\beta (1+\mathfrak{g})\lambda _{t+1}\frac{\left[
+e_{s}\theta _{s}\frac{y_{t+1}^{n}}{s_{t}}+(1-\delta _{s})-e_{s}\frac{\phi
+_{s}}{2}\left( \frac{s_{t+1}}{s_{t}}-1\right) ^{2}+e_{s}\phi _{s}\left( 
+\frac{s_{t+1}}{s_{t}}-1\right) \frac{s_{t+1}}{s_{t}}\right] }{\left[ (1+%
+\mathfrak{g})+e_{s}\phi _{s}\left( \frac{s_{t}}{s_{t-1}}-1\right) \right] },
+\label{A7}
+\end{equation}
+
+\begin{equation}
+\eta _{t}^{s}:(1+\mathfrak{g})s_{t+1}=e_{s}i_{t}^{s}+(1-\delta _{s})s_{t},
+\label{A8}
+\end{equation}
+
+\begin{equation}
+\eta _{t}^{k}:(1+\mathfrak{g})k_{t+1}=e_{k}i_{t}^{k}+(1-\delta _{k})k_{t},
+\label{A9}
+\end{equation}
+
+\begin{equation}
+\lambda _{t}:(1+\mathfrak{g}%
+)d_{t}=(1+r_{t-1})d_{t-1}+c_{t}+i_{t}^{k}+AC_{t}^{k}+g_{t}+i_{t}^{s}+AC_{t}^{s}-y_{t}^{n}-y_{t}^{o}-T_{t}.
+\label{A10}
+\end{equation}
+
+<p>At steady-state, we find that:</p>
+
+\begin{equation}
+\lbrack c(1-\varkappa )]^{-\gamma }[1-\varkappa \beta (1+\mathfrak{g}%
+)]=\lambda ,  \label{SS1}
+\end{equation}
+
+\begin{equation}
+\kappa \lbrack g(1-\varkappa )]^{-\gamma }[1-\varkappa \beta (1+\mathfrak{g}%
+)]=\lambda ,  \label{SS2}
+\end{equation}
+
+\begin{equation}
+e_{k}\eta ^{k}=\lambda ,  \label{SS3}
+\end{equation}
+
+\begin{equation}
+e_{s}\eta ^{s}=\lambda ,  \label{SS4}
+\end{equation}
+
+\begin{equation}
+1=\beta \left[ 1+r^{\ast }+\frac{\pi }{\rho _{1}^{2}}[1-\rho _{3}+(\rho
+_{1}-\rho _{2})d]\right] ,  \label{SS5}
+\end{equation}
+
+\begin{equation}
+1=\beta \left[ e_{k}\theta _{k}\frac{y^{n}}{k}+(1-\delta _{k})\right] ,
+\label{SS6}
+\end{equation}
+
+\begin{equation}
+1=\beta \left[ e_{s}\theta _{s}\frac{y^{n}}{s}+(1-\delta _{s})\right] ,
+\label{SS7}
+\end{equation}
+
+\begin{equation}
+s(\mathfrak{g}+\delta _{s})=e_{s}i^{s},  \label{SS8}
+\end{equation}
+
+\begin{equation}
+k(\mathfrak{g}+\delta _{k})=e_{k}i^{k},  \label{SS9}
+\end{equation}
+
+\begin{equation}
+(\mathfrak{g}-r)d+y^{n}+y^{o}+T=c+i^{k}+g+i^{s}.  \label{SS10}
+\end{equation}
+
+<p>Combining (\ref{SS1}) and (\ref{SS2}):</p>
+
+\begin{equation}
+\kappa =\left( \frac{g}{c}\right) ^{\gamma }  \label{SS11}
+\end{equation}
+
+<hr></hr>
+
+<p><sup id="fn1">1. The oil sector here represents a pure windfall in any exhautible resource sector. <a href="#ref1" title="Jump back to footnote 1 in the text.">Back</a></sup></p>
+
+<p><sup id="fn2">2. Although important to explain real exchange rate movements, currently we
+abstract from sectoral reallocations. This could be a relevant extension to
+our model. <a href="#ref2" title="Jump back to footnote 2 in the text.">Back</a></sup></p>
+
+<p><sup id="fn3">3. Development agencies report that cost overruns of 35 percent and more are common
+for new projects in Africa. The most important factor by far is inadequate
+competitive bidding for tendered contracts. See Foster and Briceno-Garmendia
+(2010), Lledo and Poplawski-Ribeiro (2013), and Guerguil et al. (2014),
+among others. <a href="#ref3" title="Jump back to footnote 3 in the text.">Back</a></sup></p>
+
+<p><sup id="fn4">4. This specification is borrowed from Kim and Ruge-Murcia (2009), who use this
+functional form to model asymmetric nominal wage adjusment costs. <a href="#ref4" title="Jump back to footnote 4 in the text.">Back</a></sup></p>
+
+<p><sup id="fn5">5. This is in the same spirit of the recent literature on incomplete markets
+and heterogenous agents models. In this literature, the problem of
+maximizing an objective function subject to an inequality constraint is
+replaced with an unconstrained maximization problem, whose objective
+function or budget constraint include a penalty function that tries to
+capture the effects of the inequality constraint. This approach allows the
+use of perturbation methods to simulate these models. See Preston and Roca
+(2007) and Algan et al. (2010), among others. <a href="#ref5" title="Jump back to footnote 5 in the text.">Back</a></sup></p>
+
+<p><sup id="fn6">6. Since we want to derive current account benchmarks with optimality content, we focus on the social planner problem, where the government takes optimally
+both private and public decisions. By doing this, the government
+internalizes and, therefore, mitigates the negative effect that fiscal
+policies may have on the private sector. To some extent, this explains why
+domestic borrowing is ruled out: although domestic borrowing can be a
+financing source for public investment, it can substantially crowd out the
+private sector and, as a result, is dominated by external borrowing (see
+Buffie et al. 2012). <a href="#ref6" title="Jump back to footnote 6 in the text.">Back</a></sup></p>
+
+<p><sup id="fn7">7. Transversality conditions on \(s_{t},\) \(k_{t},\) and \(d_{t}\) are also imposed. <a href="#ref7" title="Jump back to footnote 7 in the text.">Back</a></sup></p>
+
+  </body>
+  
+</html>

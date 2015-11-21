@@ -1,0 +1,27 @@
+<md-content data-ng-controller="ModelsController" data-ng-init="find()" class="md-padding center-model">
+	<mfb-menu position="br" active-icon = "content/svg/production/ic_add_48px.svg"
+			  resting-icon = "content/svg/production/ic_add_48px.svg" effect = "slidein-spring"
+			  toggling-method = "hover" label="Add a Model" ng-click = "goToCreate()">
+	</mfb-menu>
+	<md-content class = "md-whiteframe-z1">
+		<md-toolbar class="md-accent md-default-theme no-shadow">
+			<h2 class = "md-toolbar-tools">Models</h2>
+		</md-toolbar>
+		<md-content>
+			<md-list>
+				<md-item ng-repeat = "model in models">
+					<md-item-content>
+						<div  class="md-tile-content">
+							<md-content> {{model.name}} : {{model.short_name}} </md-content>
+							<p>{{model.description}}</p>
+							<md-button class="md-warn md-default-theme" ng-click="remove(model)">
+								Delete
+							</md-button>
+						</div>
+					</md-item-content>
+					<md-divider ng-if="!$last"></md-divider>
+				</md-item>
+			</md-list>
+		</md-content>
+	</md-content>
+</md-content>

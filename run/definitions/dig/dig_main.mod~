@@ -1,0 +1,5 @@
+@#include "set_macro_vars.mod" // very persnickety, must end in a new line
+@#include "baseline_model.mod"
+@#include "baseline_shocks.mod"
+
+simul(periods = 1000, stack_solve_algo=6);

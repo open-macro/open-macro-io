@@ -1,0 +1,3068 @@
+
+\documentclass[11pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{lineno}
+\usepackage{fancybox}
+\usepackage{rotating}
+\usepackage{fancyhdr}
+\usepackage{sectsty}
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2953}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Wed Mar 08 17:14:21 2000}
+%TCIDATA{LastRevised=Sunday, November 18, 2012 11:18:57}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="General\Blank Document">}
+%TCIDATA{Language=American English}
+%TCIDATA{CSTFile=LaTeX article (bright).cst}
+%TCIDATA{PageSetup=72,72,72,72,0}
+%TCIDATA{Counters=arabic,2}
+%TCIDATA{AllPages=
+%H=72,\PARA{038<p type="texpara" tag="Body Text" >Draft: Plesase do not distribute}
+%F=36,\PARA{038<p type="texpara" tag="Body Text" > \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \thepage }
+%}
+
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\input{tcilatex} %This is used by scientific word
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{6.7in}
+\setlength{\textheight}{9.in}
+\setlength{\footskip}{0.5in}
+\renewcommand{\topmargin}{-.54in}
+\renewcommand{\baselinestretch}{1.1}
+\addtolength{\parskip}{12pt}
+\renewcommand{\thesubsection}{\Alph{subsection}.}
+\renewcommand{\thesubsubsection}{\thesubsection\arabic{subsubsection}}
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\Alph{subsection}.}
+\renewcommand{\thesubsubsection}{\thesubsection\arabic{subsubsection}.}
+\pagestyle{fancy}
+\fancyhf{}
+\chead{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\renewcommand{\thesection}{\Roman{section}.}
+\makeatletter
+\def\@biblabel#1{}
+\renewenvironment{thebibliography}[1]
+     {\section*{{\refname}
+        \@mkboth{\refname}{\refname}}\small
+      \list{\@biblabel{\@arabic\c@enumiv}}           {\settowidth\labelwidth{\@biblabel{#1}}           \leftmargin\bibindent
+           \setlength{\itemindent}{-\leftmargin}
+           \@openbib@code
+           \usecounter{enumiv}           \let\p@enumiv\@empty
+           \renewcommand\theenumiv{\@arabic\c@enumiv}}      \sloppy\clubpenalty4000\widowpenalty4000      \sfcode`\.\@m}
+     {\def\@noitemerr
+       {\@latex@warning{Empty `thebibliography' environment}}      \endlist}
+\renewcommand\newblock{\hskip .11em\@plus.33em\@minus.07em}
+\makeatother
+\sectionfont{\centering}
+\subsectionfont{\centering}
+\subsubsectionfont{\centering}
+
+\begin{document}
+
+\author{Edward F. Buffie\thanks{\baselineskip=11ptDepartment of Economics,
+Indiana University, Wylie Hall Rm 105, 100 S. Woodlawn, Bloomington, IN
+47405 Email: ebuffie@indiana.edu.}, Andrew Berg, Catherine Pattillo, Rafael
+Portillo, Luis-Felipe Zanna\thanks{\baselineskip=11ptInternational Monetary
+Fund, 700 19th Street, N.W., Washington, D.C., 20431. Email: aberg@imf.org,
+cpattillo@imf.org, rportilloocando@imf.org, fzanna@imf.org.}}
+\title{{\Large \textbf{Public Investment, Growth, and Debt Sustainability:
+Putting Together the Pieces }}\thanks{\baselineskip=11pt We thank Valerio
+Crispolti, Raphael Espinoza, Giovanni Ganelli, Andrew Jewell, Alvar Kangur,
+Chris Papageorgiou, Jens Reinke, Carlo Sdralevich, Susan Yang, and
+participants of the MMDG seminar of the African department at the IMF, the
+2011 AERC/UNU-WIDER Macroeconomics of Foreign Aid Meeting, and the 2012 CSAE
+conference in Oxford for useful comments. All errors remain ours. This
+working paper is part of a research project on macroeconomic policy in
+low-income countries supported by the U.K.'s Department for International
+Development. }}
+\date{This Draft: May10, 2012 }
+\maketitle
+
+\begin{abstract}
+\baselineskip=15pt We develop a model to study the macroeconomic effects of
+public investment surges in low-income countries, making explicit: (i) the
+investment-growth linkages; (ii) public external and domestic debt
+accumulation; (iii) the fiscal policy reactions necessary to ensure
+debt-sustainability; and (iv) the macroeconomic adjustment required to
+ensure internal and external balance.
+
+Well-executed high-yielding public investment programs can substantially
+raise output and consumption and be self-financing in the long run. However,
+even if the long run looks good, transition problems can be formidable when
+concessional financing does not cover the full cost of the investment
+program. Covering the resulting gap with tax increases or spending cuts
+requires sharp macroeconomic adjustments, crowding out private investment
+and consumption and delaying the growth benefits of public investment.
+Covering the gap with domestic borrowing market is not helpful either:
+higher domestic rates increase the financing challenge and private
+investment and consumption are still crowded out. Supplementing with
+external commercial borrowing, on the other hand, can smooth these difficult
+adjustments, reconciling the scaling up with feasibility constraints on
+increases in tax rates. But the strategy may be also risky. With poor
+execution, sluggish fiscal policy reactions, or persistent negative
+exogenous shocks, this strategy can easily lead to unsustainable public debt
+dynamics. Front-loaded investment programs and weak structural conditions
+(such as low returns to public capital and poor execution of investments)
+make the fiscal adjustment more challenging and the risks greater.\bigskip
+
+%TCIMACRO{\TeXButton{noindent}{\noindent}}%
+%BeginExpansion
+\noindent%
+%EndExpansion
+\textbf{Keywords: }Public Investment, Growth, Debt Sustainability, Fiscal
+Policy, Infrastructure, Aid.
+
+%TCIMACRO{\TeXButton{noindent}{\noindent}}%
+%BeginExpansion
+\noindent%
+%EndExpansion
+\textbf{JEL Classifications:} E62, F34, H63, O43, H54.\medskip
+\end{abstract}
+
+%TCIMACRO{%
+%\TeXButton{restart page numbers}{\pagenumbering{arabic}
+%\setcounter{page}{3}}}%
+%BeginExpansion
+\pagenumbering{arabic}
+\setcounter{page}{3}%
+%EndExpansion
+
+\section{Introduction}
+
+\quad\ \thinspace Many low-income countries (LICs) are facing dire
+infrastructure gaps.\footnote{%
+See Foster and Brice\~{n}o-Garmendia (2010).} For the first time in decades,
+many also have substantial growth momentum, low debt levels, and access to
+nonconcessional foreign credit. Meanwhile, aid resources are not increasing
+as promised.\footnote{%
+For example, Redifer (2010) points out that the four East African countries
+with new Fund's Policy Support Instrument Programs (Mozambique, Rwanda,
+Tanzania, and Uganda), official aid has on average not increased in line
+with public investment spending and is not projected to do so in the next
+three years; therefore new financing sources, such as external commercial
+borrowing, must be tapped if public investment is to be scaled up.} The
+opportunity to borrow nonconcessionally to meet infrastructure needs has
+thus become very tempting.\footnote{%
+A recent survey by Citigroup describes the new borrowing environment:
+\textquotedblleft Knowing they want to borrow money to spend on projects to
+close the infrastructure deficit, governments in SSA have faced a wave of
+lenders looking to get money out of the door and into their pockets: whether
+investment bankers extolling the virtues of issuing Eurobonds; apparently
+cheap BRIC country loans, but with long-term catches on payment
+implications\ .\ .\ .\textquotedblright\ (Cowan, 2010, p.9). A call to
+borrow for development neeeds is endorsed by UNCTAD (2004) and EURODAD
+(2001, 2009), in the context of the \textit{human development approach} to
+debt sustainability.}
+
+The risks associated with excessive borrowing to finance these public
+investment plans need to be considered as well. The Highly Indebted Poor
+Country (HIPC) and Multilateral Debt Relief initiatives (MDRI) reduced the
+external debt of the poorest countries by ninety percent over the past
+decade. This followed decades of struggle by these countries to work their
+way out from onerous debt levels, which were mostly accumulated in the
+1970s, the last time many of them were growing rapidly and had access to new
+foreign lending on a large scale. Debt indicators in LICs are still far
+below the levels seen in the mid-90s. However, rapid accumulation of new
+debt in these countries---especially the increasing reliance on more
+expensive domestic and external commercial debt---could bring back the
+spectre of debt crisis, macroeconomic instability, and severely impaired
+development prospects.\footnote{%
+See IMF and World Bank (2006) and Barkbu et al. (2008), among others.}
+
+The IMF and World Bank (IMF-WB) use a debt sustainability framework (DSF) to
+identify overborrowing situations that may endanger macroeconomic stability.
+In the DSF, a baseline set of 20-year projections for borrowing, GDP growth,
+exports, and other key macroeconomic variables underpin an analysis of key
+debt ratios. In this debt sustainability analysis (DSA), a country is at
+\textquotedblleft high risk\textquotedblright\ of debt distress if any of
+the debt ratios---such as debt/GDP and debt/exports---exceed a specified
+threshold in the baseline scenario over the 20-year horizon. The thresholds
+in turn have been determined based on empirical evidence linking these
+ratios to subsequent episodes of debt distress.\footnote{%
+The thresholds depend on the quality of policies and institutes as measured
+by the Country Policy and Institutional Assessment (CPIA) index of the World
+Bank.} A country is at \textquotedblleft moderate risk\textquotedblright\ if
+the ratios exceed the thresholds in one of several specified alternative
+scenarios or \textquotedblleft stress tests\textquotedblright\ that simulate
+negative growth shocks and nominal exchange rate shocks, among others.%
+\footnote{%
+See IMF(2010) for the most recent guidelines on the application of the DSF
+to LICs.} But, of course, judgement is used by staff when assigning risk
+ratings.
+
+The DSF has helped countries monitor their risk of debt distress and
+sharpened the IMF-WB's assessments and policy advice, but it has been also
+subject to several criticisms.
+
+One of the criticisms is that the DSF does not contain a consistent analytic
+framework for creating the 20-year projections. Sachs (2002), for instance,
+argues that \textquotedblleft the so-called debt sustainability analysis is
+built on the flimsiest of foundations,\textquotedblright \thinspace\ arguing
+that it is little more than a set of accounting identities and exogenous
+projections. In the same vein, Eaton (2002) and Hjertholm's (2003) have
+raised concerns that IMF-WB's debt projections are not derived from an
+integrated, internally consistent macroeconomic framework. A specific aspect
+of this criticism is that the IMF-WB projections do not take sufficiently
+into account the relationship between public investment and growth. That is,
+the projections generally do not make an explicit linkage between the public
+investment that the proposed nonconcessional borrowing is meant to finance
+and the resulting growth that should make the operation self-financing. This
+inflates debt indicators, such as debt-to-GDP ratios, creates a bias toward
+conservative borrowing limits, and can amount \textquotedblleft to
+sacrificing growth to imprecisely known debt sustainability
+risks\textquotedblright\ (Wyplosz, 2007).
+
+Another concern relates to the treatment of fiscal policy in the
+forward-looking framework. The DSF concept of solvency requires that debt
+stay below the thresholds absent a \textquotedblleft major
+correction\textquotedblright\ in policies. It cannot, in the view of Wyplosz
+(2007), be invoked to argue that a particular level of debt, or even a
+prolonged rising path, signifies debt distress. After all, even a very good
+project may take some time to pay off, and in the interim the debt ratios
+may exceed a given threshold. Moreover, the stress tests assume that the
+government does not react to shocks, contradicting evidence that primary
+balances in fact respond to rising public debt and potentially making the
+tests too conservative.\footnote{%
+For this evidence see Celasun et al. (2007), among others. In the current
+review of the DSF, Fund and World Bank staff are proposing the inclusion, on
+an optional basis, of a new stress test reflecting dynamic linkages between
+macroeconomic variables.}
+
+This paper addresses these criticisms by proposing an internally consistent
+quantitative macroeconomic framework that may be useful in constructing the
+scenarios necessary for debt sustainability analysis. The model has many
+LIC-specific components, but it is centered on the public investment-growth
+nexus.\footnote{%
+The Fund acknowledges the need for strengthening analysis of the
+investment/growth nexus in DSAs, including through development and
+operationalizing models to provide a consistent way to assess the complex
+interlinkages (IMF and World Bank, 2009).} In the end, judgement will be
+critical in making projections and scenarios for the DSF, whether through
+purely ad hoc forecasts or the careful calibration of the model. But the
+model should serve to: make explicit the assumptions underlying the
+projections, furthering discussions internally and with stakeholders based
+on different simulated scenarios; help apply empirical information, for
+example on project rates of return; and allow more systematic risk
+assessments.
+
+In putting the model through its paces to analyze debt-led public investment
+scaling ups in a typical Sub-Saharan African (SSA) LIC, the paper
+demonstrates the importance of a coherent forward-looking analysis, with
+explicit policy reaction functions that may respond to debt levels. An
+overarching conclusion regarding the debt sustainability impact of ambitious
+public investment plans is that it is \textit{not} enough to compare the
+rate of return of these plans to their cost of funding.\footnote{%
+Thus we disagree with Wyplosz (2007): \textquotedblleft If external
+borrowing is growth enhancing, the risk of over borrowing is small, possibly
+inexistent. If, instead, external borrowing does not exert any favorable
+growth effect, and possibly stunts growth, DSA is moot . . .
+(p.14)\textquotedblright .} Rather, the absorptive capacity of the country,
+the efficiency of public investment spending, the response of the private
+sector, the authorities' ability to adjust taxes and spending, and other
+factors shape the benefits---and the debt sustainability risks---of these
+investment plans.
+
+A further criticism is that the DSF-based debt limits policy is not flexible
+enough in allowing countries with IMF-supported programs to borrow
+nonconcessionally. In response, the IMF has recently made its policies more
+flexible.\footnote{%
+The IMF has recently modified its policies on nonconcessional borrowing by
+LICs in the context of IMF-supported programs to reflect better the
+diversity of LICs and their financing patterns, and offer more flexibility
+depending on countries' debt vulnerabilities and public financial management
+capacity. See IMF(2009b) for the guidelines on debt limits in Fund-supported
+programs.} The question of how to move from an analysis of debt
+sustainability to the application of borrowing limits in IMF-supported
+programs is outside the scope of this paper. Rather, the sole focus here is
+on the macroeconomic framework---the projections and scenarios---underlying
+the DSF. However, we hope that the availability of more coherent medium-term
+framework, incorporating public investment/growth linkages, will allow
+better analysis and application of borrowing limits in difficult cases.%
+\footnote{%
+The IMF and World Bank Boards have stated that until the investment-growth
+nexus is incorporated concerns will persist that \textquotedblleft the DSF
+has unduly constrained the ability of LICs to finance their development
+goals.\textquotedblright See IMF and World Bank (2009).}
+
+With these goals in mind, we construct an optimizing intertemporal model
+that embeds features that seem crucial to capturing the main mechanisms and
+policy issues of interest for DSAs in LICs.
+
+The model incorporates a neoclassical production function with private and
+public capital. Because public capital is productive, government spending
+can raise output directly and crowd in as well as crowd out private
+investment. The parameters of the production function determine the rate of
+return to installed public capital.
+
+Several distinct features capture aspects of the challenges LIC governments
+have faced historically in making productive public investments. First,
+spending on public investment does not always imply an equivalent increase
+in the stock of public capital. Depending on the \textquotedblleft
+efficiency\textquotedblright\ of public investment, some of the spending may
+be wasted or spent on poor (inframarginal) projects. In addition, we assume
+an \textquotedblleft absorptive capacity\textquotedblright\ problem: due to
+coordination problems or supply bottlenecks during the implementation phase
+of public investment projects, unusually high investment rates may result in
+large costs overruns that affect the budget. Both efficiency and absorptive
+capacity play key roles in determining the final impact of public investment
+on growth, along with the rate of return to public capital.\footnote{%
+As in Berg et al. (2010b), we also introduce learning-by-doing externalities
+in the production of both sectors, defined in terms of sectoral outputs.
+These externalities capture the Dutch-disease (Dutch-vigor) notion that real
+exchange appreciation (depreciation) may harm (help) productivity growth in
+the traded sector, which is a major concern in LICs that face aid surges,
+including substantial increases in concessional borrowing. Nevertheless, in
+this paper we do not elaborate on the implications of these externalities
+for debt sustainability.}
+
+We allow for different government financing options and state explicitly the
+fiscal policy reactions that may ensure debt sustainability. In our
+analysis, we take available aid and concessional borrowing flows as
+exogenously given. Absent additional financing sources, the government
+adjusts taxes and transfers to finance the public investment scaling up. The
+model then considers external commercial borrowing and domestic borrowing to
+help finance the public investment surge, with taxes and transfers
+responding to stabilize debt levels over time. The model allows the
+imposition of feasibility constraints on the pace or level of these fiscal
+adjustments for taxes and transfers, potentially yielding explosive debt
+trajectories.
+
+Finally, the model contains a number of other features and shocks that are
+common in LICs and shape the macroeconomic effects of public investment
+surges. The model has traded and non-traded sectors and separate prices for
+exports and imports. These features allow an analysis of the real exchange
+rate and the need to achieve external and internal balance; they also permit
+the analysis of shocks to the terms of trade (TOT). On the private sector
+side, it incorporates hand-to-mouth consumers and limited access to
+international capital markets to capture financial market imperfections. The
+presence of these consumers helps break Ricardian equivalence. The limited
+access to international capital markets is key to making nonconcessional
+borrowing by the government important. With fully open capital accounts, it
+would not matter whether the government borrowed domestically or abroad, for
+example, as private agents could borrow abroad to lend to the government. In
+addition to TOT shocks, the model incorporates shocks to the government
+external debt risk premium (or world interest rates) and negative total
+factor productivity (TFP) shocks, as a way to model natural disaster shocks.
+
+Because the future is uncertain, asserting that a path of public debt is
+unsustainable is still challenging. As Wyplosz (2007) argues
+\textquotedblleft \textit{it is future balances that matter, not the past
+and not just the current debt level. Huge debts can be paid back, and small
+debts may not be sustainable, it all depends on what the primary balance
+will look like in the future, including the very distant future.}%
+\textquotedblright\ Our model provides a logically consistent framework that
+helps unveil the trade-offs and potential risks associated with different
+types of financing and fiscal policy reactions. Given a calibration and some
+assumptions about structural conditions, financing options and fiscal policy
+reactions of a particular LIC, the model can help IMF country teams or
+country authorities build different scenarios to inform the DSA. This should
+help articulate and dissect ambitious borrowing plans that aim to push
+growth above historical averages along with analysis of \textquotedblleft an
+alternative high-investment, low-growth payoff scenario\textquotedblright\
+to counterbalance potential tendencies toward excessive optimism.\footnote{%
+On calls to pursue alternative scenarios in DSAs, see IMF and World Bank
+(2006) and Barkbu et al. (2008).}
+
+We calibrate the model to the \textquotedblleft average\textquotedblright\
+LIC and pursue different policy experiments, whose results speak directly to
+many of the issues that have preoccupied the literature:
+
+\begin{itemize}
+\item Despite the low tax-take in LICs, increases in infrastructure
+investment may be self-financing in the long run. The favorable long-run
+effect on the budget reflects extra increases in output and revenue
+associated with strong crowding in of private capital. For this to happen
+the economy must feature strong \textit{structural conditions}, such as high
+returns on public capital, high public investment efficiency and high
+collection rates of user fees, among others.
+
+\item Even very good (high rate-of-return) projects may not be fully
+self-financing, however, because most of the direct benefits of the higher
+public capital accrue to the private sector and average tax collection rates
+are quite low.
+
+\item Even if the investment program is self-financing in the long run,
+transition problems can be formidable. Absent additional borrowing or aid,
+the revenue gains from growth will not materialize soon enough to obviate
+the need for difficult fiscal adjustments on the transition path, especially
+when the scaling up is front-loaded. Tax rates may have to increase sharply,
+crowding out private investment and consumption and further aggravating the
+near-term fiscal challenge.
+
+\item Nonconcessional external borrowing \textit{can }smooth away difficult
+fiscal adjustments, reconciling scaling up of public investment with
+constraints on feasible increases in tax rates (or cuts in spending). But
+this strategy may be risky. Low rates of return, inefficient public
+investment, sluggish fiscal adjustment, or low absorptive capacity can
+easily lead to unsustainable public debt.
+
+\item Borrowing in the domestic debt market is ineffective in smoothing the
+path of fiscal adjustment and avoiding private sector crowding out. It does
+not provide additional resources from abroad, so the public investment
+scaling up still requires a decline in private consumption and investment in
+the first few years. In addition, interest rates are likely to be higher
+than with external borrowing, which further deteriorates the prospects for
+private investment.
+
+\item Commercial borrowing can make the economy more vulnerable to
+macroeconomic instability in the presence of persistent unexpected shocks,
+such as to the TOT, TFP, or public debt risk premium. These shocks are less
+prone to ignite explosive paths of public debt when aid or concessional
+lending responds positively to negative shocks.
+
+\item Because there is uncertainty about the underlying parameters and
+because of exogenous shocks, size matters. If the increase in public
+investment is small relative to the size of the economy, then the risk of
+debt distress does not depend much on these parameters or on the shocks. But
+as the investment grows larger, they become more critical to the risks of
+debt distress.
+\end{itemize}
+
+Our work distinguishes itself from the literature that studies the
+macroeconomic effects of public investment by analyzing the trade-offs of
+different types of public debt, while underscoring the role for debt
+sustainability of i) structural and policy conditions and ii) exogenous
+shocks. The seminal works by Barro (1990), Sala-i-Martin (1992), Futagami et
+al. (1993) and Glomm and Ravikumar (1994) analyze the growth impact of
+public investment in the context of endogenous growth models. More recently,
+Chatterjee and Turnovsky (2007) and Agenor (2010), among others, have relied
+on these endogenous growth setups to explore the importance of some
+LIC-specific features for the public capital accumulation and growth nexus.
+The former explore the importance of tied vs untied aid, while the latter
+emphasizes the role of infrastructure network effects and the efficiency of
+public investment. All these models, however, assume government \textit{%
+balanced} budget rules, thereby abstracting from public debt accumulation.
+On the other hand, Turnovsky (1999), Greiner et al. (2005) and Greiner
+(2007), among others, incorporate government debt in their endogenous growth
+framework. In contrast to our work, they do not allow for different
+financing schemes and ignore the role played by the structural and policy
+conditions for debt sustainability. Finally, the works by Adam and Bevan
+(2006), Cerra et al. (2008), and Berg et al. (2010b), among others, look
+into the macroeconomic effects of aid-financed public investment expansions.
+But here again, external public debt accumulation is not allowed and,
+therefore, the interaction of structural and policy conditions with debt
+dynamics is missing.
+
+Finally, our paper is also related to the literature about debt
+sustainability, but our emphasis is on LICs. Celasun et al. (2007), Garcia
+and Rigobon (2005), and Mendoza and Oviedo (2004), among others, focus on
+emerging economies; while Bohn (1998) and Ghosh et al. (2011), among others,
+concentrate on advanced economies.
+
+The main body of the paper is organized into seven sections. In Sections II
+and III we explicate the model and calibrate it to the \textquotedblleft
+average\textquotedblright\ LIC. Following these, Section IV analyzes the
+long-run impact of a permanent, large increase in public investment. Then
+Sections V and VI investigate the medium-term trade-offs and potential risks
+associated with the different financing schemes. Finally, Section VII
+concludes.
+
+\section{The Model}
+
+\quad\ \thinspace Our framework is the standard two-sector model of a small
+open economy embellished with multiple types of public sector debt and
+multiple tax and spending variables. The country produces a traded good $%
+q_{x}$ and a non-traded good $q_{n}$ from private capital $k$, labor $L$,
+and government-supplied infrastructure $z$. Besides these domestically
+produced goods, agents can import a traded good for consumption $c_{m}$ and
+machines $\mathfrak{m}_{mm}$ to produce factories (private capital) and
+infrastructure (public capital). All quantity variables except labor are
+detrended by $(1+g)^{t}$, where $g$ is the exogenous long-run growth rate of
+real GDP.\footnote{%
+In the long run all variables, including real GDP, grow at the same
+exogenous growth rate $g.$\ However, in the short to medium term,
+significant public and private capital accumulation, resulting from scaling
+up investment, implies that the growth rate of the economy can go above $g.$}
+A composite good produced abroad is the numeraire, with the associated
+consumer price index (CPI) denoted by $P_{t}^{\ast },$ which is assumed to
+be equal to one for simplicity. Since the time horizon for the DSA is about
+20 years, the model abstracts from money and all nominal rigidities.%
+\footnote{%
+We are currently working on a version that includes money and nominal price
+rigidities along the lines of the model in Berg et al. (2010b).}
+
+We lay out the model in stages, starting with the specification of
+technology.
+
+\subsection{Firms}
+
+\subsubsection{Technology}
+
+\quad\ \thinspace In each sector $j$, the representative firm use
+Cobb-Douglas technologies to convert labor $L_{j,t}$, private capital $%
+k_{j,t-1}$, and effectively productive infrastructure $z_{t-1}^{e}$, which
+is a public good, into output:\footnote{%
+We assume Cobb-Douglas technologies but, to some extent, we do not expect
+significant changes in our results by considering CES technologies.} 
+\begin{equation}
+q_{x,t}=A_{x,t}\left( z_{t-1}^{e}\right) ^{\psi _{x}}\left( k_{x,t-1}\right)
+^{\alpha _{x}}\left( L_{x,t}\right) ^{1-\alpha _{x}},  \label{qx}
+\end{equation}%
+and%
+\begin{equation}
+q_{n,t}=A_{n,t}\left( z_{t-1}^{e}\right) ^{\psi _{n}}\left( k_{n,t-1}\right)
+^{\alpha _{n}}\left( L_{n,t}\right) ^{1-\alpha _{n}}.  \label{qn}
+\end{equation}%
+The firm productivities are expressed as 
+\begin{equation*}
+A_{x,t}=a_{x}\left( \frac{q_{x,t-1}^{I}}{\bar{q}_{x}^{I}}\right) ^{\sigma
+_{x}}\left( k_{x,t-1}^{I}\right) ^{\xi _{x}}\text{ \ \ \ \ \ \ \ and \ \ \ \
+\ \ \ \ }A_{n,t}=a_{n}\left( \frac{q_{n,t-1}^{I}}{\bar{q}_{n}^{I}}\right)
+^{\sigma _{n}}\left( k_{n,t-1}^{I}\right) ^{\xi _{n}}
+\end{equation*}%
+and feature sector-specific externalities of two types, with variables with
+the superindex $I$ denoting sectoral quantities: a \textquotedblleft
+static\textquotedblright\ externality associated with private capital
+accumulation---$\left( k_{j,t-1}^{I}\right) ^{\xi _{j}}$ for $j=x,n$ ---as
+in Arrow (1962); and a \textquotedblleft
+learning-by-doing\textquotedblright\ externality that depends on the
+deviations of the lagged sector output from the (initial) steady state---$%
+\left( \frac{q_{j,t-1}^{I}}{\bar{q}_{j}^{I}}\right) ^{\sigma j}$ for $j=x,n$%
+. When the latter externality is greater in the traded sector than that in
+the non-traded sector, then it can capture the notion of Dutch-disease as in
+Berg et al. (2010b), where a decline in the traded sector imposes an
+economic cost through a sectoral loss in total-factor productivity (TFP).
+
+Factories and infrastructure are built by combining one imported machine
+with $a_{j}$ ($j=k,z$) units of a non-traded input (e.g., construction). The
+supply prices of private capital and infrastructure are thus 
+\begin{equation}
+P_{k,t}=P_{mm,t}+a_{k}P_{n,t},  \label{Pk}
+\end{equation}%
+and%
+\begin{equation}
+P_{z,t}=P_{mm,t}+a_{z}P_{n,t},  \label{Pz}
+\end{equation}%
+where $P_{n}$ is the (relative) price of the non-traded good and $P_{mm}$ is
+the (relative) price of imported machinery.
+
+\subsubsection{Factor Demands}
+
+\quad\ \thinspace Competitive profit-maximizing firms equate the marginal
+value product of each input to its factor price. This yields the input
+demand equations 
+\begin{equation}
+P_{n,t}(1-\alpha _{n})\frac{q_{n,t}}{L_{n,t}}=w_{t},  \label{Ln_DD}
+\end{equation}%
+\begin{equation}
+P_{x,t}(1-\alpha _{x})\frac{q_{x,t}}{L_{x,t}}=w_{t},  \label{Lx_DD}
+\end{equation}%
+\begin{equation}
+P_{n,t}\alpha _{n}\frac{q_{n,t}}{k_{n,t-1}}=r_{n,t},  \label{Kn_DD}
+\end{equation}%
+and%
+\begin{equation}
+P_{x,t}\alpha _{x}\frac{q_{x,t}}{k_{x,t-1}}=r_{x,t},  \label{Kx_DD}
+\end{equation}%
+where $w$ is the wage and $r_{j}$ is the rental earned by capital in sector $%
+j$. Labor is intersectorally mobile, so the same wage appears in (\ref{Ln_DD}%
+) and (\ref{Lx_DD}). Capital is sector-specific, but $r_{x}$ differs from $%
+r_{n}$ only on the transition path. After adjustment is complete and $k_{x}$
+and $k_{n}$ have settled at their equilibrium levels, the rentals are equal.
+
+\subsection{Consumers}
+
+\quad\ \thinspace There are two types of private agents, savers and
+non-savers, with the former and the latter distinguished by the superscripts 
+$\mathfrak{s}$ and $\mathfrak{h,}$ respectively. Labor supply of savers is
+fixed at $L^{\mathfrak{s}}$ while that of non-savers is $L^{\mathfrak{h}%
+}=aL^{\mathfrak{s}}$ with $a>0$. The two types of agents consume the
+domestic traded good $c_{x,t}^{i}$, the foreign traded good $c_{m,t}^{i}$,
+and the domestic non-traded good $c_{n,t}^{i}$ for $i=\mathfrak{s},\mathfrak{%
+h}.$ These goods are combined into a CES basket%
+\begin{equation}
+c_{t}^{i}=\left[ \rho _{x}^{\frac{1}{\epsilon }}\left( c_{x,t}^{i}\right) ^{%
+\frac{\epsilon -1}{\epsilon }}+\rho _{m}^{\frac{1}{\epsilon }}\left(
+c_{m,t}^{i}\right) ^{\frac{\epsilon -1}{\epsilon }}+(\rho _{n})^{\frac{1}{%
+\epsilon }}\left( c_{n,t}^{i}\right) ^{\frac{\epsilon -1}{\epsilon }}\right]
+^{^{\frac{\epsilon }{\epsilon -1}}}\text{ \ \ \ for }i=\mathfrak{s},%
+\mathfrak{h}  \label{c_basket}
+\end{equation}%
+where $\rho _{x}$, $\rho _{m}$, and $\rho _{n}$ are CES distribution
+parameters and $\epsilon $ is the intratemporal elasticity of substitution.
+In addition $\rho _{n}=1-\rho _{x}-\rho _{m}$.
+
+The (relative) CPI associated with the basket (\ref{c_basket}) is $P_{t}=%
+\left[ \rho _{x}P_{x,t}^{1-\epsilon }+\rho _{m}P_{m,t}^{1-\epsilon }+\rho
+_{n}P_{n,t}^{1-\epsilon }\right] ^{^{\frac{1}{1-\epsilon }}},$ while the
+demand functions for each good can be expressed as 
+\begin{equation*}
+c_{j,t}^{i}=\rho _{j}\left( \frac{P_{j,t}}{P_{t}}\right) ^{-\epsilon
+}c_{t}^{i}\text{ \ \ \ \ \ \ for \ \ \ }j=x,m,n\ \ \ \text{and \ \ }\ \text{ 
+}i=\mathfrak{s},\mathfrak{h}.
+\end{equation*}
+
+Savers can invest $i_{x}$ and $i_{n}$ amounts in private capital that
+depreciates at the rate $\delta $, pay user fees charged for infrastructure
+services according to $\mu z^{e}$, can buy domestic bonds $b$---which cannot
+be bought in any market by foreigners---and pay a real interest rate $r,$
+and can contract foreign debt $b^{\ast }$ that charges an exogenous real
+interest rate $r^{\ast }$. They solve the intertemporal problem
+
+\begin{equation*}
+Max\sum_{t=0}^{\infty }\beta ^{t}\frac{\left( c_{t}^{\mathfrak{s}}\right)
+^{1-1/\tau }}{1-1/\tau },
+\end{equation*}%
+subject to
+
+\begin{eqnarray}
+P_{t}b_{t}^{\mathfrak{s}}-b_{t}^{\mathfrak{s}\ast } &=&r_{x,t}k_{x,t-1}^{%
+\mathfrak{s}}+r_{n,t-1}k_{n,t-1}^{\mathfrak{s}}+w_{t}L_{t}^{\mathfrak{s}}+%
+\frac{\mathcal{R}_{t}}{1+a}+\frac{\mathcal{T}_{t}}{1+a}-\frac{%
+1+r_{t-1}^{\ast }}{1+g}b_{t-1}^{\mathfrak{s}\ast }+\frac{1+r_{t-1}}{1+g}%
+P_{t}b_{t-1}^{\mathfrak{s}}  \notag \\[0.08in]
+&&-P_{k,t}\left( i_{x,t}^{\mathfrak{s}}+i_{n,t}^{\mathfrak{s}}+AC_{x,t}^{%
+\mathfrak{s}}+AC_{n,t}^{\mathfrak{s}}\right) -P_{t}c_{t}^{\mathfrak{s}%
+}(1+h_{t})-\mu z_{t-1}^{e}-\mathcal{P}_{t}^{\mathfrak{s}}-\Phi _{t}^{%
+\mathfrak{s}},  \label{BCs}
+\end{eqnarray}
+
+\begin{equation}
+(1+g)k_{x,t}^{\mathfrak{s}}=i_{x,t}^{\mathfrak{s}}+(1-\delta )k_{x,t-1}^{%
+\mathfrak{s}},  \label{kx_accum}
+\end{equation}%
+and
+
+\begin{equation}
+(1+g)k_{n,t}^{\mathfrak{s}}=i_{n,t}^{\mathfrak{s}}+(1-\delta )k_{n,t-1}^{%
+\mathfrak{s}},  \label{kn_accum}
+\end{equation}%
+where $\beta =1/[(1+\varrho )(1+g)^{(1-\tau )/\tau }]$ is the discount
+factor; $\varrho $ is the pure time preference rate; $\tau $ is the
+intertemporal elasticity of substitution; $\delta $ is the depreciation
+rate; $\mathcal{R}$ are remittances; $\mathcal{T}$ are (net) transfers; $h$
+denotes the consumption value added tax (VAT); and $\Phi ^{\mathfrak{s}}$
+are profits from domestic firms. Remittances and transfers are proportional
+to the agent's share in aggregate employment. Observe that in the budget
+constraint (\ref{BCs}), the trend growth rate appears in several places in (%
+\ref{BCs})-(\ref{kn_accum}), reflecting the fact that some variables are
+dated at $t$ and others at $t$-$1$ and that $P_{t}$ multiplies $b_{t}^{%
+\mathfrak{s}}$ and $b_{t-1}^{\mathfrak{s}}$because domestic bonds are
+indexed to the price level.\footnote{%
+The convention for detrending the capital stocks differs from that for other
+variables. Because $K_{j,t-1}^{\mathfrak{s}}$---the capital stock before
+detrending---is the capital stock in use at time $t$, we define $k_{j,t-1}^{%
+\mathfrak{s}}\equiv K_{j,t-1}^{\mathfrak{s}}/(1+g)^{t}$. Under this
+convention, $\bar{\imath}_{j}^{\mathfrak{s}}=(\delta +g)\bar{k}_{j}^{%
+\mathfrak{s}}$ in the long run---as required for the capital stock to grow
+at the trend growth rate $g$.} Also note that there are adjustment costs
+incurred in changing the capital stock---$AC_{j,t}^{\mathfrak{s}}\equiv 
+\frac{v}{2}\left( \frac{i_{j,t}^{\mathfrak{s}}}{k_{j,t-1}^{\mathfrak{s}}}%
+-\delta -g\right) ^{2}k_{j,t-1}^{\mathfrak{s}},$ for $j=x,n$ and with $v>0$%
+---and portfolio adjustment costs associated with foreign liabilities---$%
+\mathcal{P}_{t}^{\mathfrak{s}}\equiv \frac{\eta }{2}(b_{t}^{\mathfrak{s}\ast
+}-\bar{b}^{\mathfrak{s}\ast })^{2},$ where $\bar{b}^{\ast }$ is the
+(initial) steady-state value of the private foreign liabilities.\footnote{%
+For simplicity, we assume that adjustment costs are zero when the capital
+stock grows at the trend growth rate $g$. This ensures that adjustment costs
+are zero across steady states as in models that ignore trend growth.}
+
+The choice variables in the optimization problem are $c_{t}^{\mathfrak{s}}$, 
+$b_{t}^{\mathfrak{s}}$, $b_{t}^{\mathfrak{s}\ast }$, $i_{j,t}^{\mathfrak{s}}$%
+, and $k_{j,t}^{\mathfrak{s}}$ for $j=x,n$. Routine manipulations of the
+first-order conditions deliver: 
+\begin{equation}
+c_{t}^{\mathfrak{s}}=c_{t+1}^{\mathfrak{s}}\left( \beta \frac{1+r_{t}}{1+g}%
+\frac{1+h_{t}}{1+h_{t+1}}\right) ^{-\tau },  \label{Euler Equation}
+\end{equation}
+
+\begin{equation}
+(1+r_{t})\frac{P_{t+1}}{P_{t}}=\frac{1+r_{t}^{\ast }}{\left[ 1-\eta (b_{t}^{%
+\mathfrak{s}\ast }-\bar{b}^{\mathfrak{s}\ast })\right] },  \label{UIP}
+\end{equation}%
+\begin{equation}
+\frac{r_{x,t+1}}{P_{k,t+1}}+1-\delta +v\Upsilon _{x,t+1}^{\mathfrak{s}%
+}\left( \frac{i_{x,t+1}^{\mathfrak{s}}}{k_{x,t}^{\mathfrak{s}}}+1-\delta
+\right) -\frac{v}{2}\left( \Upsilon _{x,t+1}^{\mathfrak{s}}\right)
+^{2}=(1+r_{t})\frac{P_{t+1}}{P_{t}}\frac{P_{k,t}}{P_{k,t+1}}\left(
+1+v\Upsilon _{x,t}^{\mathfrak{s}}\right) ,  \label{ix_FOC}
+\end{equation}%
+and%
+\begin{equation}
+\frac{r_{n,t+1}}{P_{k,t+1}}+1-\delta +v\Upsilon _{n,t+1}^{\mathfrak{s}%
+}\left( \frac{i_{n,t+1}^{\mathfrak{s}}}{k_{n,t}^{\mathfrak{s}}}+1-\delta
+\right) -\frac{v}{2}\left( \Upsilon _{n,t+1}^{\mathfrak{s}}\right)
+^{2}=(1+r_{t})\frac{P_{t+1}}{P_{t}}\frac{P_{k,t}}{P_{k,t+1}}\left(
+1+v\Upsilon _{n,t}^{\mathfrak{s}}\right) ,  \label{in_FOC}
+\end{equation}%
+where $\Upsilon _{j,t}^{\mathfrak{s}}=\left( \frac{i_{j,t}^{\mathfrak{s}}}{%
+k_{j,t-1}^{\mathfrak{s}}}-\delta -g\right) $ for $j=x,n.$ Each of these
+equations admits a straightforward intuitive interpretation. Equation (\ref%
+{Euler Equation}) is a slightly irregular Euler equation in which the slope
+of the consumption path depends on the real interest rate adjusted for trend
+growth and on changes in the VAT. The other three equations are arbitrage
+conditions. Equation (\ref{UIP}) equalizes the real interest rate on
+domestic bonds to the real interest rate on foreign private debt, adjusted
+by portfolio costs. Similarly, equations (\ref{ix_FOC}) and (\ref{in_FOC})
+require the return on capital in each sector, net of marginal adjustment
+costs, to equal the real interest rate.
+
+In our modelling decisions, we balance realism and flexibility in
+introducing portfolio adjustment costs to capture different degrees of
+integration of the private sector into world capital markets. Equation (\ref%
+{UIP}) implicitly defines a private demand for foreign debt, which can be
+explicitly expressed as:%
+\begin{equation*}
+\eta (b_{t}^{\mathfrak{s}\ast }-\bar{b}^{\mathfrak{s}\ast })=1-\frac{%
+1+r_{t}^{\ast }}{(1+r_{t})\frac{P_{t+1}}{P_{t}}}.
+\end{equation*}%
+In this equation, the value of $\eta $ controls the degree of capital
+mobility. For some emerging market economies, a low $\eta $ may be
+appropriate reflecting an open capital account. Elastic capital flows then
+keep the domestic rate close to the foreign rate. In LICs, where $\eta $ is
+comparatively big, the capital account is fairly closed, and the private
+sector has limited capacity to borrow from abroad.\footnote{\baselineskip%
+=12pt From a technical point of view, the portfolio costs also help to
+ensure stationarity of $b_{t}^{\mathfrak{s}\ast }.$ See Schmitt-Groh\'{e}
+and Uribe (2003) for alternative methods to ensure stationarity of net
+foreign assets.}
+
+In addition, we assume that on its foreign debt the private sector pays a
+constant premium $\mathfrak{u}$ over the interest rate that the government
+pays on external commercial debt $r_{dc}$, so 
+\begin{equation*}
+r_{t}^{\ast }=r_{dc,t}+\mathfrak{u.}
+\end{equation*}%
+This specification together with (\ref{UIP}) allows us to match the low
+capital and investment ratios observed in LICs. The reason is that at the
+steady state the domestic interest rate $r$ and the foreign rate $r^{\ast }$
+are equal, meaning that $\bar{r}=\bar{r}_{dc}+\mathfrak{u.}$ Thus even if $%
+\bar{r}_{dc}$ is low, by picking an appropriate $\mathfrak{u,}$ we can
+obtain a somewhat high domestic real interest rate $\bar{r}$ and,
+consequently, a high return on private capital. But because of decreasing
+returns, this high return implies realistically that the ratios of the
+capital stock and investment to GDP must be low at the initial steady-state
+equilibrium.
+
+Non-savers have the same utility function as that of savers and consume all
+of their income from wages, remittances, and transfers each period. The
+non-saver's budget constraint then reads 
+\begin{equation}
+(1+h_{t})P_{t}c_{t}^{\mathfrak{h}}=w_{t}L^{\mathfrak{h}}+\frac{a}{1+a}(%
+\mathcal{R}_{t}+\mathcal{T}_{t})\text{.}  \label{hm_BC}
+\end{equation}
+
+In specifying this part of the model we have aimed for realism combined with
+flexibility and generality. The realism of hand-to-mouth consumers
+(non-savers) is indisputable given that in LICs a substantial portion of
+households fall into this category.\footnote{%
+For instance the 2009 Steadman Survey finds that 62 percent of Ugandans do
+not have access to financial services.} From the modeling perspective their
+inclusion allows us to break Ricardian equivalence.
+
+We aggregate across both types of households, so $x_{t}=x_{t}^{\mathfrak{s}%
+}+x_{t}^{\mathfrak{h}}$\ for $x_{t}=c_{t},$ $c_{l,t},$ $L_{t},$ $b_{t}^{\ast
+},$ $b_{t},$ $i_{j,t},$ $k_{j,t},$ $AC_{j,t},$ $\mathcal{P}_{t},$ $\Phi
+_{t}, $ and the subindices $l=x,n,m$ and $j=x,n.$ Bear in mind that $b_{t}^{%
+\mathfrak{h}\ast }=b_{t}^{\mathfrak{h}}=i_{j,t}^{\mathfrak{h}}=k_{j,t}^{%
+\mathfrak{h}}=AC_{j,t}^{\mathfrak{h}}=\mathcal{P}_{t}^{\mathfrak{h}}=\Phi
+_{t}^{\mathfrak{h}}=0$ for $j=x,n$.
+
+\subsection{The Government}
+
+\subsubsection{Infrastructure, Public Investment and Efficiency}
+
+\quad\ \thinspace Casual observation and indirect empirical evidence support
+the conjecture in Hulten (1996) and Pritchett (2000): often the productivity
+of infrastructure is high but the return on public investment very low for
+the simple reason that a good deal of public investment \textit{spending}
+does not increase the stock of productive capital. Measurement error
+introduced by equating growth of productive capital with net investment can
+explain why estimated TFP growth is zero or negative in many LDCs, as
+suggested by Pritchett (2000); and why empirical studies generally find a
+much stronger positive relationship between growth and physical indicators
+of infrastructure than between growth and capital stock series calculated
+via the perpetual inventory method, as reviewed by Straub (2008).\footnote{%
+\baselineskip=12pt To understand the role of efficiency, it may be useful to
+imagine that all the available public investment projects at a given point
+in time are ranked from highest to lowest rate of return. In an efficient
+investment process, an additional dollar is spent on the best available
+project. It is possible, though, because of incompetence, corruption, or
+imperfect information, that a government may choose worse projects. A lower
+efficiency is a measure of the degree of deviation from the optimal process.
+A complementary way to think about efficiency is simply that a fraction of
+spending is simply wasted, e.g. misclassified as investment when it in fact
+just covers transfers to civil servants.}
+
+We thus allow for inefficiencies in public capital creation. Public
+investment $i_{z}$ produces additional infrastructure $z$ according to:%
+\begin{equation}
+(1+g)z_{t}=(1-\delta )z_{t-1}+i_{z,t},  \label{z_accum}
+\end{equation}%
+but some of the newly built infrastructure may not be economically valuable
+productive infrastructure, since \textit{effectively productive} capital $%
+z_{t}^{e},$ which is actually used in technologies (\ref{qx}) and (\ref{qn}%
+), evolves according to: 
+\begin{equation}
+z_{t}^{e}=\bar{s}\bar{z}+s(z_{t}-\bar{z}),\quad \text{with}\quad \bar{s}\in
+\lbrack 0,1]\quad \text{and}\quad s\in \lbrack 0,1],  \label{z efficiency}
+\end{equation}%
+where $\bar{s}$ and $s$ are parameters of efficiency at and off steady
+state, and $\bar{z}$ is public capital at the (initial) steady state.
+
+Note that by combining equations (\ref{z_accum}) and (\ref{z efficiency}),
+we obtain%
+\begin{equation}
+(1+g)z_{t}^{e}=(1-\delta )z_{t-1}^{e}+s(i_{z,t}-\bar{\imath}_{z})+\bar{s}%
+\bar{\imath}_{z},  \label{I_efficiency}
+\end{equation}%
+where $\bar{\imath}_{z}=(\delta +g)\bar{z}$ is the public investment at the
+(initial) steady state$.$ This is the same specification for public
+investment inefficiencies as that of Berg et al.\thinspace (2010b), and it
+is similar to the one in Agenor (2010). Since $s\in \lbrack 0,1],$ this
+specification makes clear that \textit{one} dollar of additional public
+investment $(i_{z,t}-\bar{\imath}_{z})$ does not translate into \textit{one}
+dollar of effectively productive capital ($z_{t}^{e}$). For the simulations
+below, we assume $\bar{s}=0.6$ and $s=0.6.$ These values are slightly higher
+that the estimates of Arestoff and Hurlin (2006) for some emerging
+economies. In principle, the public investment management quality index of
+Dabla-Norris et al. (2011) could help calibrate this parameter.
+
+\subsubsection{Fiscal Adjustment and the Public Sector Budget Constraint}
+
+\quad\ \thinspace The government spends on transfers, debt service, and
+infrastructure investment. It collects revenue from the consumption VAT and
+from user fees for infrastructure services, which are expressed as a fixed
+multiple/fraction $f$ of recurrent costs, that is $\mu =f\delta P_{zo}$.
+When revenues fall short of expenditures, the resulting deficit is financed
+through domestic borrowing $\Delta b_{t}=b_{t}-b_{t-1},$ external
+concessional borrowing $\Delta d_{t}=d_{t}-d_{t-1},$ or external commercial
+borrowing $\Delta d_{c,t}=d_{c,t}-d_{c,t-1}$ viz.: 
+\begin{eqnarray}
+P_{t}\Delta b_{t}+\Delta d_{c,t}+\Delta d_{t} &=&\frac{r_{t-1}-g}{1+g}%
+P_{t}b_{t-1}+\frac{r_{d,t-1}-g}{1+g}d_{t-1}+\frac{r_{dc,t-1}-g}{1+g}d_{c,t-1}
+\label{Gov_BC} \\[0.08in]
+&&+P_{z,t}\mathbb{I}_{z,t}+\mathcal{T}_{t}-h_{t}P_{t}c_{t}-\mathcal{G}_{t}-%
+\mathcal{N}_{t}-\mu z_{t-1}^{e},  \notag
+\end{eqnarray}%
+where $d$, $dc$, $\mathcal{G}$, and $\mathcal{N}$ denote concessional debt,
+external commercial debt, grants, and natural resource revenues (if any);%
+\footnote{%
+We model natural resources revenues as a net foreign transfer, following
+Dagher et al. (2012). As such \ the measure of GDP used below corresponds to
+non-oil GDP. For a more comprehensive analysis of oil production, foreign
+investment, and managing natural resources in LICs see Berg et al. (2012).}
+and $r_{d}$ and $r_{dc}$ are the real interest rates (in dollars) on
+concessional and commercial loans. The interest rate on concessional loans
+is assumed to be constant $r_{d,t}=r_{d},$ while the interest rate on
+external commercial debt incorporates a risk premium that depends on the
+deviations of the external public debt to GDP ratio $\left( \frac{%
+d_{t}+d_{c,t}}{y_{t}}\right) $ from its (initial) steady-state value $\left( 
+\frac{\bar{d}+\bar{d}_{c}}{\bar{y}}\right) $. That is, 
+\begin{equation}
+r_{dc,t}=r^{f}+\upsilon _{g}e^{\eta _{g}\left( \frac{d_{t}+d_{c,t}}{y_{t}}-%
+\frac{\bar{d}+\bar{d}_{c}}{\bar{y}}\right) },  \label{rdc}
+\end{equation}%
+where $r^{f}$ is a risk-free world interest rate and $%
+y_{t}=P_{x,t}q_{x,t}+P_{n,t}q_{n,t}$ is GDP. Van der Ploeg and Venables
+(2011) provide positive estimates for $\eta _{g}$. But note by setting $%
+\upsilon _{g}>0$ and $\eta _{g}=0,$ our specification embeds the case of an
+exogenous risk premium that does depend on public debt.
+
+The term $P_{z,t}\mathbb{I}_{z,t}$ in the budget constraint (\ref{Gov_BC})
+corresponds to public investment outlays including costs overruns associated
+with absorptive capacity constraints. It is defined as%
+\begin{equation*}
+\mathbb{I}_{z,t}=\mathcal{H}_{t}(i_{z,t}-\bar{\imath}_{z})+\bar{\imath}_{z}.
+\end{equation*}%
+Because skilled administrators are in scarce supply in LICs, ambitious
+public investment programs are often plagued by poor planning, weak
+oversight, and myriad coordination problems, all of which contribute to
+large cost overruns during the implementation phase.\footnote{%
+Development agencies report that cost overruns of 35\% and more are common
+for new projects in Africa. The most important factor by far is inadequate
+competitive bidding for tendered contracts. See Foster and Briceno-Garmendia
+(2010).} To capture this, we multiply new investment $(i_{z,t}-\bar{\imath}%
+_{z})$ by $\mathcal{H}_{t}=\left( 1+\frac{i_{z,t}}{z_{t-1}}-\delta -g\right)
+^{\phi }$, where $\phi \geq 0$ determines the severity of the the absorptive
+capacity---or \textquotedblleft bottleneck\textquotedblright ---constraint
+in the public sector. The constraint affects only implementation costs for
+new projects: in a steady state, $\left( 1+\frac{\bar{\imath}_{z}}{\bar{z}}%
+-\delta -g\right) ^{\phi }=1$ as $\bar{\imath}_{z}=(\delta +g)\bar{z}$.
+
+Policy makers accept all concessional loans proffered by official creditors.
+The borrowing and amortization schedule for these loans is fixed
+exogenously. Given the paths for public investment and concessional
+borrowing, the fiscal gap \textit{before }policy adjustment ($\mathfrak{Gap}%
+_{t}$) can be defined as:%
+\begin{equation}
+\mathfrak{Gap}_{t}=\frac{1+r_{d}}{1+g}d_{t-1}-d_{t}+\frac{r_{dc,t-1}-g}{1+g}%
+dc_{t-1}+\frac{r_{t-1}-g}{1+g}P_{t}b_{t-1}+P_{z,t}\mathbb{I}_{t}+\mathcal{T}%
+_{o}-h_{o}P_{t}c_{t}-\mathcal{G}_{t}-\mathcal{N}_{t}-\mu z_{t-1}^{e}.
+\label{gapdef}
+\end{equation}%
+That is, $\mathfrak{Gap}_{t}$ corresponds to expenditures (including
+interest rate payments on debt) less revenues and concessional borrowing,
+when transfers and taxes are kept at their \textit{initial} levels $\mathcal{%
+T}_{o}$and $h_{o}$, respectively. Using this definition, we can rewrite the
+budget constraint (\ref{Gov_BC}), in any given year, as: 
+\begin{equation}
+\mathfrak{Gap}_{t}=P_{t}\Delta b_{t}+\Delta d_{c,t}+(h_{t}-h_{o})P_{t}c_{t}-(%
+\mathcal{T}_{t}-\mathcal{T}_{o}).  \label{exgap}
+\end{equation}
+
+In the short/medium run, this gap $\mathfrak{Gap}_{t}$ in (\ref{exgap}) can
+be covered by domestic and/or external commercial borrowing $P_{t}\Delta
+b_{t}+\Delta d_{c,t}$, tax adjustments $(h_{t}-h_{o})P_{t}c_{t},$ and/or
+transfers adjustments $-(\mathcal{T}_{t}-\mathcal{T}_{o}).$ For the sake of
+comparing different borrowing schemes, in the experiments below, we will
+focus on cases where part of this gap can be filled with either external
+commercial loans \textit{or} domestic loans, but not with both at the same
+time.
+
+Debt sustainability requires, however, that the VAT and transfers eventually
+adjust to cover the entire gap (i.e., $P_{t}\Delta b_{t}+\Delta d_{c,t}=0$).
+We let policy makers divide the burden of adjustment (net windfall when $%
+\mathfrak{Gap}_{t}<0$) between transfers cuts and tax increases. The
+adjustments, defined below according to some reaction functions, have as
+part of their targets the following debt-stabilizing values for transfers
+and the VAT 
+\begin{equation}
+{\small h}_{t}^{\text{target}}{\small =h}_{o}+(1-\lambda )\frac{\mathfrak{Gap%
+}_{t}}{P_{t}c_{t}}  \label{h_target}
+\end{equation}%
+and%
+\begin{equation}
+\mathcal{T}_{t}^{\text{target}}=\mathcal{T}_{o}-\lambda \mathfrak{Gap}_{t},
+\label{T_target}
+\end{equation}%
+where $\lambda $ is a policy parameter that splits the fiscal adjustment
+between taxes and transfers and therefore satisfies $0\leq \lambda \leq 1.$
+For the extreme case of $\lambda =0$ (respectively $\lambda =1$) all the
+adjustment falls on taxes (respectively transfers).
+
+Taxes and transfers are defined according to the following reaction
+functions:%
+\begin{equation}
+h_{t}=Min\left\{ h_{t}^{r},h^{u}\right\}  \label{hmin}
+\end{equation}%
+and%
+\begin{equation}
+\mathcal{T}_{t}=Max\left\{ \mathcal{T}_{t}^{r},\mathcal{T}^{l}\right\} ,
+\label{Tmax}
+\end{equation}%
+where $h^{u}$ is a ceiling on taxes, $\mathcal{T}^{l}$ is a floor for
+transfers, and $h_{t}^{r}$ and $\mathcal{T}_{t}^{r}$ are determined by the
+fiscal rules%
+\begin{equation}
+h_{t}^{r}=h_{t-1}+\lambda _{1}({\small h}_{t}^{\text{target}%
+}-h_{t-1})+\lambda _{2}\frac{(x_{t-1}-x^{\text{target}})}{y_{t}},\quad \text{%
+with}\quad \text{ }\lambda _{1},\lambda _{2}>0,  \label{h_reaction}
+\end{equation}%
+and%
+\begin{equation}
+\mathcal{T}_{t}^{r}=\mathcal{T}_{t-1}+\lambda _{3}(\mathcal{T}_{t}^{\text{%
+target}}-\mathcal{T}_{t-1})-\lambda _{4}(x_{t-1}-x^{\text{target}}),\quad 
+\text{with}\quad \text{ }\lambda _{3},\lambda _{4}>0,  \label{T_reaction}
+\end{equation}%
+with $y=P_{n}q_{n}+P_{x}q_{x}$ and $x=b$ or $d_{c},$ depending on whether
+the rules respond to domestic debt or commercial debt. The target for debt $%
+x^{\text{target}}$ is given exogenously. The ceiling $h^{u}$ on taxes and
+the floor $\mathcal{T}^{l}$ on transfers can also have discrete jumps over
+time, as we show below.\footnote{%
+For instance, to introduce discrete jumps in the cap on taxes we can
+respecify the rule as $h_{t}=Min\left\{ h_{t}^{r},h_{t}^{u}\right\} $, where 
+$h_{t}^{u}=h_{o}^{u}+\Delta h_{t}^{u},$ $h_{o}^{u}$ is the initial cap and $%
+\Delta h_{t}^{u}$ is a discrete jump (shock) at time $t,$ which can be
+temporary or permanent.} This allows us to model staggered tax and transfers
+structures.
+
+Given the targets, the reaction functions defined in (\ref{hmin})-(\ref%
+{T_reaction}) together with the budget constraint (\ref{exgap}) embody the
+core policy dilemma. Fiscal adjustment is painful, especially when
+administered suddenly in large doses. The government would prefer therefore
+to phase-in tax increases and expenditure cuts slowly ($\lambda _{1}>0$ and $%
+\lambda _{3}>0$). Since fiscal adjustment is gradual, the debt instrument
+that varies endogenously to satisfy the government budget constraint may
+rise above its target level in the time it takes $h_{t}$ and $\mathcal{T}%
+_{t} $ to reach ${\small h}_{t}^{\text{target}}$ and $\mathcal{T}_{t}^{\text{%
+target}}$. When this happens, the transition path includes a phase in which $%
+\mathcal{T}_{t}<\mathcal{T}_{t}^{\text{target}}$ and/or $h_{t}>{\small h}%
+_{t}^{\text{target}}$ to generate the fiscal surpluses needed to pay down
+the debt. In addition, and despite the fact that the rules respond to debt
+(i.e., $\lambda _{2}>0$ and $\lambda _{4}>0$), if the government moves too
+slowly (i.e., $\lambda _{1}$ and $\lambda _{3}$ are too low), or if the
+bounds $h^{u}$ and $\mathcal{T}^{r}$ constrain adjustment too much, interest
+payments will rise faster than revenue net of transfers, causing the debt to
+grow explosively. Large debt-financed increases in public investment are
+undeniably risky---the economy converges to a stationary equilibrium only if
+policy makers win the race against time.
+
+\subsection{Market-Clearing Conditions and External Debt Accumulation}
+
+\quad\ \thinspace Flexible wages and prices ensure that demand continuously
+equals supply in the labor market 
+\begin{equation}
+L_{x}+L_{n}=L,  \label{L_mkt}
+\end{equation}%
+where the labor supply $L=L^{\mathfrak{s}}+L^{\mathfrak{h}}$ is fixed.
+
+In the non-tradables market, after aggregating across types of consumers, we
+obtain 
+\begin{equation}
+q_{n,t}=\rho _{n}\left( \frac{P_{n,t}}{P_{t}}\right) ^{-\epsilon
+}c_{t}+a_{k}\left( i_{x,t}+i_{n,t}+AC_{x,t}+AC_{n,t}\right) +a_{z}\mathbb{I}%
+_{z,t}.  \label{NT_mkt}
+\end{equation}%
+The first term of the right-hand side of (\ref{NT_mkt}) is the demand for
+non-traded consumer goods, while the second and third terms link public and
+private investment to orders for new capital goods.
+
+Finally, aggregating across consumers and adding the public and private
+sector budget constraints produce the accounting identity that growth in the
+country's net foreign debt equals the difference between national spending
+and national income: 
+\begin{eqnarray}
+d_{t}-d_{t-1}+d_{c,t}-d_{c,t-1}+b_{t}^{\ast }-b_{t-1}^{\ast } &=&\frac{%
+r_{d}-g}{1+g}d_{t-1}+\frac{r_{dc,t-1}-g}{1+g}d_{c,t-1}+\frac{r_{t-1}^{\ast
+}-g}{1+g}b_{t-1}^{\ast }  \label{CA_Eq} \\
+&&+\mathcal{P}_{t}+P_{z,t}\mathbb{I}_{z,t}+P_{k,t}\left(
+i_{x,t}+i_{n,t}+AC_{x,t}+AC_{n,t}\right)  \notag \\
+&&+P_{t}c_{t}-P_{n,t}q_{n,t}-P_{x,t}q_{x,t}-\mathcal{R}_{t}-\mathcal{G}_{t}-%
+\mathcal{N}_{t}.  \notag
+\end{eqnarray}%
+Equation (\ref{CA_Eq}) includes extra terms that reflect the impact of trend
+growth on real interest costs and the contributions of remittances, grants,
+and natural resource related foreign transfers to gross income. The textbook
+identity emerges when $g=\mathcal{R}_{t}=\mathcal{G}_{t}=\mathcal{N}_{t}=0$.
+
+\section{Calibration of the Model}
+
+\quad\ \thinspace Calibration of the model requires data on cost shares,
+elasticities of substitution, consumption shares, depreciation rates, sector
+shares in GDP, tax rates, debt stocks, and the return on infrastructure at
+the benchmark equilibrium. Once values are set for these parameters, all
+other variables that enter the model can be tied down by budget constraints,
+the first-order conditions associated with the solution to the private
+agents' optimization problems, and various adding-up constraints.
+
+The values in Table 1 are based on a mixture of data and guesstimates. We
+assume that $P_{n,o}=P_{x,o}=P_{m,o}=P_{mm,o}=w_{o}=P_{o}=1$ and discuss
+below the rationale for the value assigned to each parameter and the
+problems that arose in calibrating certain parts of the model:
+
+\begin{itemize}
+\item \textit{The distribution parameters }$(\rho _{n},\rho _{x},\rho _{m})$%
+. In the base case, we pick $\rho _{n}$ and $\rho _{m}$ so that, the share
+of non-tradables in GDP is about $50\%$ and the share of imports in GDP is
+around $45\%$, which correspond to average shares of non-tradables and
+imports for LICs during 1998-2008 using WEO data. This gives us $\rho
+_{n}=0.43$ and $\rho _{m}=0.37.$ Then $\rho _{x}$ is calculated as $\rho
+_{x}=1-\rho _{n}-\rho _{m}.$
+
+\item \textit{Intertemporal elasticity of substitution }$(\tau )$. According
+to Agenor and Montiel (1999), most estimates of $\tau $ for LDCs lie between 
+$0.10$ and $0.50$. The value in the base case, $0.34$, equals the average
+estimate for LICs in Ogaki et al.\thinspace (1996).
+
+\item \textit{Elasticity of substitution in consumption }$(\epsilon )$. We
+fix $\epsilon $ at $0.50$ as estimates of compensated elasticities of demand
+tend to be small at high levels of aggregation, especially when food claims
+a large share of total consumption.\footnote{%
+See Lluch et al.\thinspace (1977, chapter 3), Deaton and Muellbauer (1980,
+p.71), Blundell (1988, p.35), and Blundell et al. (1993, Table 3b).}
+
+\item \textit{Capital's share in value added }$(\alpha _{n},\alpha _{x})$.
+Data on factor shares may be found in social accounting matrices assembled
+by the Global Trade Analysis Project (GTAP) and the International Food
+Policy Research Institute (IFPRI). The GTAP5 database for SSA suggests a
+capital share of $55-60\%$ in the non-tradables sector and $35-40\%$ in the
+tradables sector.\footnote{%
+The nontradables sector comprises trade and transport, private services,
+dwellings, and construction. The tradables sector consists of agriculture
+and manufacturing.} The data in Thurlow et al.\thinspace (2004) and Perrault
+et al.\thinspace (2010) suggest similar numbers.\footnote{%
+The average factor shares cited here conceal tremendous variation. For
+example, the value added share of capital in the services sector is 59\% in
+Zambia but only 27\% in Malawi. See Thurlow et al. (2004) and Thurlow et al.
+(2008).} Accordingly, we set $\alpha _{n}=0.55$ and $\alpha _{x}=0.40$.
+
+\item \textit{Learning externalities }$(\xi _{x},\xi _{n},\sigma _{x},\sigma
+_{n})$. The base case does not incorporate learning externalities. In
+alternative runs that allow for learning effects, $\xi _{x}$ and $\xi _{n}$
+are set to $0.08$ so that the social return to capital in the traded sector
+is about $30\%$ higher than the private return.\footnote{%
+The net social return to capital, evaluated at a steady state is $(r+\delta
+)(1+\xi _{j}/\alpha _{j})-\delta $. To set $\xi _{j}$ so that the social
+return is 30\% above the private return, solve $(r+\delta )(1+\xi
+_{j}/\alpha _{j})-\delta =(1.30)r$ for $\xi _{j}$.}
+
+\item \textit{Cost share of non-traded inputs in the production of capital
+goods} ($\alpha _{k},\alpha _{z}$). Data on the ratio of imported machinery
+and equipment to aggregate investment indicate that $\alpha _{k}$ and $%
+\alpha _{z}$ are around $0.5$ in SSA. One-half is also the guesstimate used
+by the IMF (2007a) in its analysis of scaling up public investment in
+Nigeria.
+
+\item \textit{Elasticities of sectoral output with respect to the stock of
+infrastructure} ($\psi _{x},\psi _{n}$). The ratio $\psi _{x}/\psi _{n}$ is
+set independently. This ratio and other values assigned elsewhere in
+calibrating the model---most notably, the return on infrastructure---pin
+down $\psi _{n}$ and $\psi _{x}$.\footnote{$\psi _{n}$ and $\psi _{x}$ are
+linked to other parameters and variables through $R_{z}=(\psi
+_{n}VA_{n}+\psi _{x}VA_{x})(\delta +g)/iz_{y}$, where $R_{z}=R+\delta $ is
+the gross return on infrastructure, $VA_{j}$ is the share of sector j
+production in GDP, and $iz_{y}$ is the ratio of infrastructure investment to
+GDP.} We assume $\psi _{x}/\psi _{n}=1$ in all runs and obtain that $\psi
+_{n}=0.17.$
+
+\item \textit{Depreciation rate }$(\delta )$. There is little hard data on
+depreciation rates in LICs. Our choice of $5\%$ is in line with estimates
+for developed countries.
+\end{itemize}
+
+\begin{center}
+\begin{tabular}{ccc}
+\multicolumn{3}{c}{\textbf{Table 1}} \\ 
+\multicolumn{3}{c}{\textbf{Base Case Calibration}} \\ 
+&  &  \\ \hline\hline
+\textbf{Parameter} & \textbf{Value} & \textbf{Definition} \\ \hline\hline
+${\small \rho }_{n}$ & {\small 0.43} & \multicolumn{1}{l}{\small %
+Distribution parameter for non-traded goods} \\ 
+${\small \rho }_{m}$ & {\small 0.37} & \multicolumn{1}{l}{\small %
+Distribution parameter for traded goods} \\ 
+${\small \tau }$ & {\small 0.34} & \multicolumn{1}{l}{\small Intertemporal
+elasticity of substitution} \\ 
+${\small \epsilon }$ & {\small 0.50} & \multicolumn{1}{l}{\small %
+Intratemporal elasticity of substitution across goods} \\ 
+${\small \alpha }_{x}$ & {\small 0.40} & \multicolumn{1}{l}{\small Capital's
+share in value added in the traded sector} \\ 
+${\small \alpha }_{n}$ & {\small 0.55} & \multicolumn{1}{l}{\small Capital's
+share in value added in the non-traded sector} \\ 
+${\small \xi }_{x}{\small ,\xi }_{n}$ & {\small 0.00} & \multicolumn{1}{l}%
+{\small Capital learning externalities} \\ 
+${\small \sigma }_{x}{\small ,\sigma }_{n}$ & {\small 0.00} & 
+\multicolumn{1}{l}{\small Sectoral output learning externalities} \\ 
+${\small \alpha }_{k}{\small ,\alpha }_{z}$ & {\small 0.50} & 
+\multicolumn{1}{l}{\small Cost share of non-traded inputs in the production
+of capital} \\ 
+${\small \psi }_{x}{\small ,\psi }_{n}$ & {\small 0.17} & \multicolumn{1}{l}%
+{\small Elasticities of sectoral output with respect to infrastructure} \\ 
+${\small \delta }$ & {\small 0.05} & \multicolumn{1}{l}{\small Depreciation
+rate} \\ 
+${\small v}$ & {\small 6.41} & \multicolumn{1}{l}{\small Capital adjustment
+cost parameter} \\ 
+$\mu $ & {\small 0.05} & \multicolumn{1}{l}{\small User fees parameter for
+infrastructure services} \\ 
+${\small g}$ & {\small 0.015} & \multicolumn{1}{l}{\small Trend growth rate}
+\\ 
+${\small r}_{o}$ & {\small 0.10} & \multicolumn{1}{l}{\small Initial real
+interest rate on domestic debt} \\ 
+${\small r}_{o}^{\ast }$ & {\small 0.10} & \multicolumn{1}{l}{\small Initial
+real interest rate on private external debt} \\ 
+${\small r}^{f}$ & {\small 0.04} & \multicolumn{1}{l}{\small Real risk-free
+foreign interest rate} \\ 
+${\small r}_{d}$ & {\small 0.00} & \multicolumn{1}{l}{\small Real interest
+rate on concessional loans} \\ 
+${\small r}_{dc,o}$ & {\small 0.06} & \multicolumn{1}{l}{\small Initial real
+interest rate on public commercial loans} \\ 
+${\small \eta }$ & {\small 1.00} & \multicolumn{1}{l}{\small The portfolio
+adjustment costs parameter} \\ 
+${\small \eta }_{g}$ & {\small 0.00} & \multicolumn{1}{l}{\small Public debt
+risk premium parameter} \\ 
+$\mathfrak{u}$ & {\small 0.04} & \multicolumn{1}{l}{\small Private debt risk
+premium} \\ 
+${\small \upsilon }_{g}$ & {\small 0.02} & \multicolumn{1}{l}{\small Public
+debt risk premium} \\ 
+${\small R}_{{\small o}}$ & {\small 0.25} & \multicolumn{1}{l}{{\small %
+Initial} {\small return on infrastructure}} \\ 
+${\small b}_{o}$ & {\small 0.20} & \multicolumn{1}{l}{\small Initial public
+domestic debt to GDP ratio} \\ 
+${\small d}_{o}$ & {\small 0.50} & \multicolumn{1}{l}{\small Initial public
+concessional debt to GDP ratio} \\ 
+${\small d}_{c,o}$ & {\small 0.00} & \multicolumn{1}{l}{\small Initial
+public external commercial debt to GDP ratio} \\ 
+${\small b}_{o}^{\ast }$ & {\small 0.00} & \multicolumn{1}{l}{\small Initial
+private external debt to GDP ratio} \\ 
+$\mathcal{G}_{o}$ & {\small 0.05} & \multicolumn{1}{l}{\small Grants to GDP
+ratio} \\ 
+$\mathcal{R}_{o}$ & {\small 0.04} & \multicolumn{1}{l}{\small Remittances to
+GDP ratio} \\ 
+$\mathcal{N}_{o}$ & {\small 0.00} & \multicolumn{1}{l}{\small Natural
+Resource Revenues to GDP ratio} \\ 
+${\small i}_{z,o}$ & {\small 0.06} & \multicolumn{1}{l}{\small Initial ratio
+of infrastructure investment to GDP} \\ 
+$\bar{s},s$ & {\small 0.60} & \multicolumn{1}{l}{\small Efficiency of public
+investment} \\ 
+$\phi $ & {\small 0.00} & \multicolumn{1}{l}{\small Absorptive capacity
+parameter} \\ 
+$h_{o}$ & {\small 0.15} & \multicolumn{1}{l}{\small Initial consumption VAT}
+\\ 
+$\mathcal{T}_{o}$ & {\small 11.93} & \multicolumn{1}{l}{\small Initial
+transfers to GDP ratio} \\ 
+${\small \lambda }$ & {\small 0.00} & \multicolumn{1}{l}{\small Division of
+fiscal adjustment parameter} \\ 
+${\small \lambda }_{1}{\small ,\lambda }_{3}$ & {\small 0.25} & 
+\multicolumn{1}{l}{\small Fiscal reaction parameters (policy instrument
+terms)} \\ 
+${\small \lambda }_{2}{\small ,\lambda }_{4}$ & {\small 0.02} & 
+\multicolumn{1}{l}{\small Fiscal reaction parameters (debt terms)} \\ 
+${\small a}$ & {\small 1.50} & \multicolumn{1}{l}{\small Labor ratio of
+non-savers to savers} \\ \hline
+\multicolumn{3}{l}{\small Note: See the calibration discussion in the main
+text.}%
+\end{tabular}
+\end{center}
+
+\begin{itemize}
+\item \textit{The capital adjustment costs parameter (}$v$\textit{)}.
+Evaluated at the initial equilibrium, this parameter is related to $\Omega $%
+, the elasticity of investment with respect to Tobin's q, according to $%
+\Omega =1/(\delta +g)v$.\footnote{%
+In each sector $j$, the first-order condition for investment reads $%
+[1+v(i_{j,t}/k_{j,t-1}-\delta -g)]\varpi _{t}P_{k,t}=\varsigma _{t}$, where $%
+\varpi _{t}$ and $\varsigma _{t}$ are the multipliers associated with the
+budget constraint and the law of motion for the capital stock. Since $\frac{%
+\varsigma _{t}}{\varpi _{t}}$ is the shadow price of capital measured in
+dollars, $\frac{\varsigma _{t}}{\varpi _{t}}P_{k}$ is effectively Tobin's $q$%
+, the ratio of the demand price to the supply price of capital. Adopting
+this notation, we have that at a stationary equilibrium $v(\delta +g)\frac{%
+\bar{\imath}}{\bar{q}}=1$. Define $\Omega \equiv \frac{\bar{\imath}}{\bar{q}}
+$ to be the q-elasticity of investment spending. Then $v=1/(\delta +g)\Omega 
+$.} There are no reliable estimates of this elasticity for LICs. The
+assigned value, $2$, is at the high end of estimates for developed
+countries. This implies $v=6.41.$ The results do not change substantively
+when $\Omega $ equals $1$ or $10$.
+
+\item \textit{The user fees for infrastructure services (}$\mu $\textit{)}.
+The user fee for infrastructure services is a fixed multiple/fraction $f$ of
+recurrent costs $\mu =f\delta P_{zo}$. Fuel taxes, which are earmarked for
+road maintenance and construction, electricity tariffs, and user charges for
+water and sanitation are low but not trivial in LICs. According to Brice\~{n}%
+o-Garmendia et al. (2008), on average, user fees recoup $50\%$ of recurrent
+costs in SSA. Again, however, there is considerable variation---Zambia's
+average electricity tariff was three cents per kWH in 2008. We decided
+therefore to let $f$ vary from $0.20$ to unity, with $f=0.50$ in the base
+case. Since in the baseline calibration $P_{zo}=\frac{1}{1-\alpha _{z}}=2$
+and $\delta =0.05$, then $\mu =0.05$.
+
+\item \textit{Trend growth rate }$(g)$. The trend growth rate of $1.5\%$
+equals the 1990-2008 per capita growth rate for SSA reported in African
+Development Indicators.
+
+\item \textit{The real interest rate on domestic bonds }($r$), \textit{the
+real return on private capital, and the real interest rate on external
+private debt (}$r^{\ast }$\textit{)}. Across steady states, the real
+interest rate on domestic debt and the real return on private capital equal $%
+(1+\varrho )(1+g)^{\tau }-1,$ where $\varrho $ is the subjective discount
+rate. We choose $\varrho $ jointly with $\tau $ and $g$ so that the domestic
+real interest rate is $10\%$ at the initial equilibrium. This is consistent
+with the data for SSA in Fedelino and Kudina (2003), with the estimated
+return on private capital in Dalgaard and Hansen (2005), and with the
+stylized fact that domestic debt in low- and middle-income countries is
+usually more expensive than external commercial debt. There is tremendous
+variation in real interest rates across countries and time periods, however.
+Note that at the steady state equation (\ref{UIP}) implies that the interest
+rate that the private sector pays on foreign debt must satisfy $r^{\ast }=r.$
+So\ for the base case we also have $r^{\ast }=0.10.$
+
+\item \textit{The risk-free foreign real interest rate }$(r^{f})$. We fix $%
+r^{f}$ at $4\%$, the approximate average of the historical real returns on
+stocks and 3-10 year T bills in the United States.
+
+\item \textit{Real interest rates on concessional and non-concessional loans 
+}$(r_{d},r_{dc,o})$. Ghana paid $8.7\%$ on the $\$750$ mn.\thinspace
+Eurobond it floated in 2007. This is slightly above Gueye and Sy's (2010)
+estimate of the average interest rate SSA pays ($8.55\%$) on debt raised in
+external capital markets, excluding Seychelles and South Africa. The
+IMF-WB's DSAs show an average interest rate of $2.3\%$ on concessional loans
+taken out by LICs in 2009-2010. Assuming $2.5\%$ inflation in world prices
+of traded goods, the corresponding (initial) real rates in dollars are about 
+$6\%$ for commercial debt and $0\%$ for concessional debt. The latter is
+assumed to be constant through the analysis.
+
+\item \textit{The portfolio adjustment costs parameter (}$\eta $\textit{)
+and the private and public debt risk premia parameters} ($\mathfrak{u,}%
+\upsilon _{g},\eta _{g}$). The parameter $\eta $ controls the degree of
+openness of the capital account. We set $\eta =1,$ in the base case, to
+capture the fact that the private sector has limited access to international
+capital markets. We assume that the public risk premium is constant---i.e.,
+we set $\eta _{g}=0$ in equation (\ref{rdc})---and calibrate it as the
+difference between the interest rate on public commercial debt and the
+risk-free foreign interest rate. So, at the initial steady state
+equilibrium, $\upsilon _{g}=r_{dc}-r^{f}=0.02.$ The constant private risk
+premium is set as the difference between the domestic interest rate and the
+interest rate on public commercial debt. Therefore $\mathfrak{u}=r^{\ast
+}-r_{dc}=0.04.$
+
+\item \textit{Return on infrastructure }($R_{o}$).\footnote{%
+The production function parameters $\psi _{x}$ and $\psi _{n}$ that govern $%
+R_{o}$ are deduced from the calibration of $R_{o}$, given the rest of the
+calibration.} Estimates of the return on infrastructure are all over the
+map, but the weight of the evidence in both micro and macro studies points
+to a high average return. The median rate of return on World Bank projects
+circa 2001 was $20\%$ in SSA and $15$-$29\%$ for various sub-categories of
+infrastructure investment. Foster and Brice\~{n}o-Garmendia (2010) estimate
+returns for electricity, water and sanitation, irrigation, and roads range
+from $17\%$ to $24\%.$ Similarly, the macro-based estimates in Dalgaard and
+Hansen (2005) cluster between $15\%$ and $30\%$ for a wide array of
+different estimators. Hulten et al.\thinspace (2006), Escribano et
+al.\thinspace (2008), Calder\'{o}n et al.\thinspace (2009), and Calder\'{o}n
+and Serv\'{e}n (2010) supply additional evidence of high returns.\footnote{%
+Some growth regressions suggest low or insignificant returns, but these are
+dominated by studies that use cumulative public investment instead of
+physical indicators to measure the stock of instructure.} All of this adds
+up to a presumption that high returns are the norm. We consider a
+high-return scenario as the base case by setting $R_{o}=0.25,$ at the
+initial steady state.\footnote{%
+Thirty percent may raise some eyebrows, but it is not as big as some of the
+numbers thrown around in the literature and in policy work. See for instance
+the scaling-up exercise in Box 4.1 in Barkbu et al.\thinspace (2008) and
+Gupta, Powell, and Yang (2006).}
+
+\item \textit{Domestic debt }($b_{o}$). Different datasets give different
+numbers for the ratio of domestic debt to GDP in LICs. We settled on $20\%$
+by averaging the figures reported in IMF(2009a), Panizza (2008), and Arnone
+and Presbitero (2010).
+
+\item \textit{Private foreign debt and public external debt (}$b_{o}^{\ast
+},d_{o},d_{c,o}$). We set concessional external debt equal to $50\%$ of GDP
+at the initial equilibrium, given that the ratio of total public debt to GDP
+and the share of concessional loans in total debt were about $70\%$ and $%
+69\%,$ respectively, for LICs during 2007-2008.\footnote{%
+See IMF (2009a) and IMF staff calculations.} As little is known about the
+likely value of private foreign debt (or assets) in LICs, we set $%
+b_{o}^{\ast }=0$ for the base case. We also assume that initially the
+economy has no access to external commercial loans implying that $d_{c,o}=0.$
+
+\item \textit{Remittances, Grants, and Natural Resource Revenues} ($\mathcal{%
+R}_{o}$, $\mathcal{G}_{o},$ $\mathcal{N}_{o}$). For the base case,
+remittances and grants are assumed to be $5\%$ and $4\%$ of GDP at their
+initial equilibrium, respectively. These are in line with averages for LICs
+in the last decade. For the baseline calibration we assume that the economy
+is not endowed with natural resources.
+
+\item \textit{Initial ratio of infrastructure investment to GDP }$(\frac{%
+i_{z,o}}{y_{o}})$. We set the initial infrastructure investment to be equal
+to $6\%$ of GDP$.$ This initial figure includes the net investment
+associated with trend growth and the outlays on operations and maintenance
+(O+M)---which average about $3.4\%$ of GDP for LICs in SSA.\footnote{%
+But true O+M costs are probably higher, as argued by Brice\~{n}o-Garmendia
+et al. (2008). Because of underspending on O+M, 30\% of Africa's
+infrastructure assets are in need of rehabilitation.} This figure is close
+to the average for LICs in SSA, which in 2008 corresponded to $6.09\%$, as
+suggested by Brice\~{n}o-Garmendia et al. (2008).
+
+\item \textit{Efficiency of public investment (}$s,\bar{s}$)\textit{\ and
+the absorptive capacity parameter }($\phi $).\footnote{%
+Appendix A describes how calibration of $s$ and $\bar{s}$ interact with that
+of $R_{o}$ and the production function parameters $\psi _{x}$ and $\psi _{n}$%
+. The bottom line is that the operator needs to be thoughtful when
+calibrating efficiency, particularly in considering what it might imply for
+the marginal product of effective capital. A change in the calibration of
+the efficiency $s$ has two different interpretations: (i) as a level change
+that applies to the past and the future, as when comparing two countries at
+a point in time. In this case, $\bar{s}$\ should in principle change as
+well, but a change in $\bar{s}$ is unnecessary, because any effect of
+changing $\bar{s}$ is undone by the change in $\psi _{x}$ and $\psi _{n}$
+required to preserve the value of $R_{o}$; or (ii) as a change that applies
+to future investment but not the past, as for example because of an
+improvement in public financial management. It is up to the operator to
+decide which applies and whether other adjustments to the calibration are
+necessary in light of that interpretation.} The base case assumes that
+investment is somewhat efficient ($\bar{s}=0.60$ and $s=0.60)$ and that
+scaling up does not strain absorptive capacity ($\phi =0$ and $\bar{s}=s$).
+Motivated by the findings in Hulten (1996), Pritchett (2000), and Foster and
+Brice\~{n}o-Garmendia (2010), we also investigate scenarios in which the
+scaling up is associated with extreme inefficiency ($s=0.2$) and a tight
+absorptive capacity constraint ($\phi =5$).\footnote{%
+Pritchett's estimates of $s$ range from $0.08$ to $0.49$ for SSA and from $%
+0.09$ to $0.54$ for South Asia. In Africa, large cost overruns stemming from
+planning/coordination/management problems and low capital budget execution
+ratios (average = $66\%$) suggest that absorptive capacity may be a binding
+constraint in many countries. See Foster and Brice\~{n}o-Garmendia (2010).}
+
+\item \textit{Consumption VAT }$(h_{o})$. The consumption VAT in the model
+proxies for the average indirect tax rate. Our rate of $15\%,$ at the
+initial steady state.\footnote{%
+For 2003-2006, consumption, indirect taxes, and trade taxes averaged 81\%,
+9.6\%, and 4.6\% of GDP, respectively. If duties on consumer imports
+accounted for half of trade taxes, then the average consumption tax was
+14.7\%. (Data from IMF, 2007b). Ideally this rate will also reflect VAT
+productivity adjustments.} This is comparable to the average VAT of LICs,
+which using 2005-06 data by the International Bureau of Fiscal Documentation
+is estimated to be close to $15.8\%.$
+
+\item \textit{Net Transfers }$(\mathcal{T}_{o})$. At the initial steady
+state, transfers ensure that the budget constraint of the government holds.
+Given the other parameters we obtain $\mathcal{T}_{o}=11.93$ percent of GDP.
+Given the definition of the other fiscal variables, this concept of
+transfers includes other taxes different from VAT as well as non-capital
+expenditures such as public wages.
+
+\item \textit{Division of fiscal adjustment between expenditure cuts and tax
+increases (}$\lambda $). Across steady states, we assume that only taxes
+share the burden of fiscal adjustment ($\lambda =0$).
+
+\item \textit{Policy reaction parameters (}$\lambda _{1},\lambda
+_{2},\lambda _{3},\lambda _{4}$). There are no estimates of these parameters
+for LICs. For the scenarios that allow commercial debt accumulation or
+domestic debt accumulation we set $\lambda _{1}=\lambda _{3}=0.25$ and $%
+\lambda _{2}=\lambda _{4}=0.02.$ We also study the implications of lowering $%
+\lambda _{1}$.
+
+\item \textit{Ratio of labor supply of non-savers to labor supply of savers }%
+($a$). We set $a=1.5,$ so $60\%$ percent of the consumers are non-savers.
+This is broadly in line with survey findings in LICs.
+\end{itemize}
+
+The public investment scaling-up scenario we study is exogenous and front
+loaded. Concessional borrowing and an increase in grants, which are also
+exogenous, help finance this scaling up.
+
+The time lines for the infrastructure investment surge\textit{\ (valued at
+the initial price level }$P_{z,o}=2$), concessional borrowing, and the
+increase in grants, as percentage of \textit{initial} GDP ($y_{o}=100$), are
+shown in Table 2. The time lines\ are hump-shaped. In year 1 public
+investment is at $6\%$ of GDP and there is no increase. Then the \textit{%
+scaling up} of this investment jumps to $5\%$ of \ initial GDP in year 2,
+rises to $7\%$ in years 3 and 4, and tapers off gradually to its permanent
+level of $3\%$ of initial GDP. Net concessional loans, on the other hand,
+increase by $4\%$ of GDP in year 2, go slightly up to $5\%$ of initial GDP
+in year 3 and then decline gradually until year 9.\footnote{%
+The repayment period is leisurely stretched out over 27 years, after 8 years
+of grace period. These correspond roughly to the average maturity and
+grace-period years for new concessional loans to LICs in 2009-2010,\ based
+on available IMF-WB's DSAs. We assume that the country contracts a
+concessional loan of $20.25\%$ of initial GDP in year 2, with the previously
+described disbursements. Then we apply an equal principal payment formula,
+together with these grace and maturity periods and an interest rate of 0\%,
+to obtain the repayment profile. The grant element of this loan is about $%
+62\%$.} From year 10 to year 28, the country repays these loans ($-1.01\%$
+of initial GDP).\ The increase in grants $\mathcal{G}$ corresponds to $0.4\%$
+of initial GDP from year 2 to year 9, and declines to $0.2\%$ before dying
+off by year 32. Concessional borrowing and the increase in grants will only
+cover about $50\%$ of the investment surge during the first 8 years of the
+scaling up. The rest will require some fiscal adjustment and, potentially,
+other sources of financing such as external commercial or domestic borrowing.
+
+\begin{center}
+\begin{tabular}{ccccccccccccc}
+&  &  &  &  &  &  &  &  &  &  &  &  \\ 
+\multicolumn{13}{c}{\textbf{Table 2}} \\ 
+\multicolumn{13}{c}{\textbf{Public Investment Scaling Up, Concessional
+Borrowing, and Grants}} \\ 
+&  &  &  &  &  &  &  &  &  &  &  &  \\ \hline\hline
+$Year$ & ${\small 1}$ & ${\small 2}$ & ${\small 3}$ & ${\small 4}$ & $%
+{\small 5}$ & ${\small 6}$ & ${\small 7}$ & ${\small 8}$ & ${\small 9}$ & $%
+{\small 10...}$ & ${\small 29...}$ & ${\small 32...}$ \\ \hline\hline
+&  &  &  &  &  &  &  &  &  &  &  &  \\ 
+$\frac{P_{z,o}(i_{z,t}-i_{z,o})}{y_{o}}$ & ${\small 0.0}$ & ${\small 5.0}$ & 
+${\small 7.0}$ & ${\small 7.0}$ & ${\small 6.6}$ & ${\small 5.8}$ & ${\small %
+5.0}$ & ${\small 4.4}$ & ${\small 4.0}$ & ${\small 3.0...}$ & ${\small 3.0...%
+}$ & ${\small 3.0}$ \\ 
+&  &  &  &  &  &  &  &  &  &  &  &  \\ 
+$\frac{Net\text{ }Loans\text{ }shock}{y_{o}}$ & ${\small 0.0}$ & ${\small 4.0%
+}$ & ${\small 5.0}$ & ${\small 4.0}$ & ${\small 3.0}$ & ${\small 2.0}$ & $%
+{\small 1.0}$ & ${\small 0.8}$ & ${\small 0.5}$ & {\small -}${\small 1.01...}
+$ & ${\small 0.0...}$ & ${\small 0.0}$ \\ 
+&  &  &  &  &  &  &  &  &  &  &  &  \\ 
+$\frac{\mathcal{G}_{t}-\mathcal{G}_{o}}{y_{o}}$ & ${\small 0.0}$ & ${\small %
+0.4}$ & ${\small 0.4}$ & ${\small 0.4}$ & ${\small 0.4}$ & ${\small 0.4}$ & $%
+{\small 0.4}$ & ${\small 0.4}$ & ${\small 0.4}$ & ${\small 0.2...}$ & $%
+{\small 0.2...}$ & ${\small 0.0}$ \\ 
+&  &  &  &  &  &  &  &  &  &  &  &  \\ \hline
+\multicolumn{13}{l}{{\small Note: figures are in percent of \ initial GDP (}$%
+{\small y}_{o}{\small =100}$){\small .}} \\ 
+&  &  &  &  &  &  &  &  &  &  &  & 
+\end{tabular}
+\end{center}
+
+\section{ The Long-Run Outcome}
+
+\quad\ \thinspace In this section, we use a mix of analytical and numerical
+methods to demonstrate that in the long run (i) infrastructure and private
+capital are strong complements and (ii) increases in infrastructure
+investment can be self-financing, depending on structural conditions of the
+economy.
+
+\subsection{Insights From a Simplified Model}
+
+\quad\ \thinspace Although the model of Section II has many moving parts, it
+is not a black box. To highlight the key interactions that drive the
+long-run (steady-state) outcome, consider a stripped-down model that ignores
+trend growth, non-traded goods, foreign traded goods, private capital flows,
+remittances, grants, natural resource revenues, public sector debt and
+efficiency and absorptive capacity issues (so $s=\bar{s}=1$ and $\phi =0$).
+For notational simplicity we ignore the upper bars on the variables, which
+we used before to denote steady-state values. With these elements gone, the
+steady-state equilibrium simplifies to 
+\begin{equation}
+q=az^{\psi }k^{\xi +\alpha }L^{1-\alpha },  \label{q_sss}
+\end{equation}%
+\begin{equation}
+r+\delta =\alpha az^{\psi }k^{\xi +\alpha -1}L^{1-\alpha },  \label{asset_p}
+\end{equation}%
+\begin{equation}
+i_{z}=\delta z,  \label{iz_ss}
+\end{equation}%
+\begin{equation}
+hc+\mu z=\delta z+\mathcal{T},  \label{g_BC_ss}
+\end{equation}%
+and%
+\begin{equation}
+c=q-\delta (k+z);  \label{eq_mkt_ss}
+\end{equation}%
+five equations that can be solved for $q$, $k$, $z$, $c$ and either $%
+\mathcal{T}$ or $h$ as a function of $i_{z}$. Equation (\ref{q_sss}) is the
+production function and equations (\ref{asset_p})-(\ref{eq_mkt_ss}) are the
+steady-state versions of equations (\ref{Kx_DD}), (\ref{z_accum}),(\ref%
+{Gov_BC}), and (\ref{CA_Eq}) in Section II.
+
+\frame{ftbpFU}{4.5766in}{3.9574in}{0pt}{\Qcb{\textbf{The Long-run Outcome in
+the Simplified Model.}}}{}{Figure}{\special{language "Scientific Word";type
+"GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "T";width
+4.5766in;height 3.9574in;depth 0pt;original-width 12.6358in;original-height
+10.9165in;cropleft "0";croptop "1";cropright "1";cropbottom "0";tempfilename
+'M3TX1I0F.wmf';tempfile-properties "XPR";}}
+
+Figure 1 depicts the steady-state equilibrium when transfer payments adjust
+to satisfy the government budget constraint, but similar results obtain if
+all the fiscal adjustment falls on taxes. The ray OZ in the first quadrant
+relates $z$ to $i_{z}$. For the results that follow, it is important to note
+the obvious: the slope of OZ is quite flat because comparatively small
+increases in $i_{z}$ map into very large increases in $z$ over the long run $%
+(dz=di_{z}/\delta )$.
+
+Proceeding south, the KK schedule in the fourth quadrant shows how the
+equilibrium private capital stock depends on the stock of infrastructure.
+From (\ref{asset_p}), 
+\begin{equation}
+dk=\left( \frac{k}{z}\right) \left( \frac{\psi }{1-\xi -\alpha }\right) dz>0.
+\label{dk_dz}
+\end{equation}%
+Substitute $k=\frac{\alpha q}{r+\delta }$ and $z=\frac{\psi q}{q_{z}}=\frac{%
+\psi q}{R+\delta }$ into (\ref{dk_dz}), where $R=q_{z}-\delta $ is the net
+return to infrastructure and $q_{z}=\frac{\psi q}{z}$ is the marginal
+product of infrastructure. After canceling terms, we have 
+\begin{equation}
+\left. \frac{dk}{dz}\right\vert _{KK}=\left( \frac{R+\delta }{r+\delta }%
+\right) \left( \frac{\alpha }{1-\xi -\alpha }\right) .  \label{dk_dz_v}
+\end{equation}
+
+Since we have assumed a Cobb-Douglas technology, growth in the stock of
+infrastructure stimulates private investment by increasing the marginal
+product of capital. Equation (\ref{dk_dz_v}) tells us, in addition, that the
+long-run crowding-in effect may be quantitatively large. The ratio of the
+gross return on infrastructure to the gross return on private capital, $%
+\frac{R+\delta }{r+\delta }$, multiplies a term that lies somewhere between $%
+0.49$ and $1.83$, if $\alpha \in \lbrack 0.33,0.55]$ and $\xi \in \lbrack
+0,0.15]$. Thus, if empirical estimates are right and the mean return on
+infrastructure is much higher than the mean return on private capital, then
+the long-run crowding-in coefficient can approach or exceed two. Suppose,
+for example, that $r=0.10$, $R=0.25$, $\delta =0.05$, and $\alpha =0.40$ as
+there is only one domestic traded good. The crowding-in coefficient $\frac{dk%
+}{dz}$ then ranges from about $1.33$ to $1.78$ when $\xi \in \lbrack 0,0.15]$%
+. \textit{Productive} infrastructure and private capital are very strong
+complements in the long run. This, however, depends on structural conditions
+of the economy. As we will see below, public investment inefficiencies and
+absorptive capacity constraints, among others, can lower the crowding in.
+
+The schedules in the second and third quadrants connect the increases in the
+stocks of infrastructure and private capital to consumption, tax revenue,
+and the change in transfers needed to balance the fiscal budget. CC relates $%
+c$ to $k$ for given $z$, while FB depicts the locus in the $c$-$i_{z}$ plane
+for which revenue equals government expenditure. The slope of CC equals $%
+(r+\delta )(1+\xi /\alpha )-\delta $, the net social marginal product of
+capital. The FB schedule 
+\begin{equation*}
+\left. i_{z}\right\vert _{FB}=\frac{hc-\mathcal{T}}{1-\frac{\mu }{\delta }}
+\end{equation*}%
+has a horizontal intercept at $c=\frac{\mathcal{T}}{h}$ and a positive slope
+that rises from $h$ at $\mu =0$ to infinity at $\mu =\delta $.
+
+When $z$ increases, the CC schedule shifts horizontally to the left by $%
+R(z_{1}-z_{o})$. Crowding-in of private capital increases consumption
+another $[(\rho +\delta )(1+\xi /\alpha )-\delta ](k_{1}-k_{o})$. Expressed
+relative to the policy instrument $i_{z}$, the combined effect is 
+\begin{equation*}
+dc=\left[ \left( \xi +\frac{r\alpha }{r+\alpha }\right) \frac{R+\delta }{%
+1-\xi -\alpha }+R\right] \frac{di_{z}}{\delta }.
+\end{equation*}
+
+Comparing the increase in consumption taxes and user fees $(hdc+\mu dz=hdc+%
+\frac{\mu }{\delta }di_{z})$ to the increase in investment determines
+whether the FB schedule shifts left or right. In Figure 1 the revenue gain
+pays for the increase in investment and leaves something left over to
+finance higher transfer payments. This case occurs when 
+\begin{equation}
+R>\frac{\delta (1+h-\frac{\mu }{\delta })(1-\xi -\alpha )}{h\left( 1-\frac{%
+\alpha \delta }{r+\delta }\right) }-\delta .  \label{R_ineq}
+\end{equation}%
+The crucial implication of (\ref{R_ineq}) is that $R$ does not have to be
+unusually high for the increase in infrastructure investment to be
+self-financing. Consider the base case values of Table 1 but bear in mind
+that in this simplified model $\alpha =0.40$ (since there is only one
+domestic traded good) and $\mu =0.025$ (since $\mu =\delta f$ and $f=0.50).$
+In this case, the borderline value of $R$ is a modest $10\%$. Even with $\mu
+=0$, however, (\ref{R_ineq}) holds for $R>21.5\%$. This is high but well
+within the range of empirical estimates. Moreover, note that this borderline
+value decreases with the externalities $\xi $.
+
+\subsection{Numerical Solutions}
+
+\quad\ \thinspace Table 3 summarizes the long-run effects of a permanent
+increase in public investment equal to $3\%$ of initial GDP using the full
+model. Consider first the base case. Transfers are kept constant, by
+assumption, while taxes require a small adjustment from $15\%$ to $16.3\%$.
+As predicted by the simplified model, the crowding-in coefficient,
+calculated as $\frac{\Delta k}{\Delta z},$ exceeds unity. Consequently there
+are some gains in the economy. Real output, real wages, and private capital
+increase by more than $13\%$ while consumption rises by $9.3\%$. Sectoral
+outputs also move up, and there is a permanent real depreciation of $1.9\%$.
+Our base case calibration then delivers a positive scenario, to some extent.
+But even with a rate of return on public capital of $25\%$ the public
+investment does not pay for itself. The average tax rate is quite low, and
+most of the benefits accrue to the private sector are not sufficient to
+cover the recurrent costs.
+
+The long-run impact of the public investment scaling up depends on the
+structural conditions of the economy. To see this, consider scenario 1 of
+Table 3. This scenario is very optimistic. The return on capital is $35\%,$
+user fees recoup all recurrent costs---i.e., $f=1$ implying that $\mu
+=f\delta P_{zo}=0.1$---the public investment surge is fully efficient $s=1$,
+and there are some positive externalities $\xi =0.08$, which imply a social
+return to capital in the traded sector that is $30\%$ higher than the
+private return. With these conditions, the scaling up turns out to be more
+than self-financing and produces striking benefits in the real economy.
+Taxes decline to $12.3\%$ in the long run, while real GDP, wages, and
+private capital expand by about $33-35\%$, as the crowding-in coefficient is
+above $2.$ Furthermore, consumption jumps by $29.3\%$.
+
+We issue two caveats.
+
+First, it is also possible to recreate very troublesome scenarios under weak
+structural conditions that may characterize some LICs. Scenario 2 in Table 3
+is an example. This scenario features a low return on public capital $R=0.10$%
+, a deficient collection rate of user fees of $20\%$ of recurrent
+costs---i.e., $f=0.2$ implying that $\mu =f\delta P_{zo}=0.02$---and an
+insignificant efficiency of additional public investment $s=0.2$. As a
+result, taxes have to adjust permanently to $18.7\%$ and consumption falls
+by $1.2\%$.\footnote{%
+Note that the adjustment in taxes would be smaller if government transfers
+were cut. But this is not an easy task when public sector employees are
+pressing for wage increases that match the increase in the private sector
+wages.} In addition, real GDP and private capital have disappointing
+increases of about $2.5\%,$ despite the large increase in public investment.
+All of this is consistent with a crowding-in coefficient that is below 1.
+
+\begin{center}
+\begin{tabular}{cccc}
+&  &  &  \\ 
+\multicolumn{4}{c}{\textbf{Table 3}} \\ 
+\multicolumn{4}{c}{\textbf{Long-run Effects of Scaling Up Public Investment
+by 3 Percent of Initial GDP}} \\ 
+&  &  &  \\ \hline\hline
+& \multicolumn{1}{|c}{\small Base Case} & \multicolumn{1}{|c}{\small %
+Scenario 1} & \multicolumn{1}{|c}{\small Scenario 2} \\ \cline{2-4}
+& \multicolumn{1}{|c}{${\small R=0.25,}$ $\mu {\small =0.06,}$} & 
+\multicolumn{1}{|c}{${\small R=0.35,}$ $\mu {\small =0.1,}$} & 
+\multicolumn{1}{|c}{${\small R=0.10,}$ $\mu {\small =0.02,}$} \\ 
+& \multicolumn{1}{|c}{$s{\small =0.60,}$ and ${\small \xi =0}$} & 
+\multicolumn{1}{|c}{$s{\small =1,}$ and ${\small \xi =0.08}$} & 
+\multicolumn{1}{|c}{$s{\small =0.2,}$ and ${\small \xi =0}$} \\ \hline\hline
+& \multicolumn{1}{|c}{} & \multicolumn{1}{|c}{} & \multicolumn{1}{|c}{} \\ 
+\multicolumn{1}{l}{{\small Taxes }$h$} & \multicolumn{1}{|c}{\small 16.29} & 
+\multicolumn{1}{|c}{\small 12.26} & \multicolumn{1}{|c}{\small 18.73} \\ 
+\multicolumn{1}{l}{{\small CIC} ${\small \Delta (k}_{x}{\small +k}_{n}%
+{\small )/\Delta z}^{e}$} & \multicolumn{1}{|c}{\small 1.51} & 
+\multicolumn{1}{|c}{\small 2.31} & \multicolumn{1}{|c}{\small 0.85} \\ 
+\multicolumn{1}{l}{{\small Public Effective Capital} ${\small z}^{e}$ \ \ \
+\ \ \ \ \ } & \multicolumn{1}{|c}{\small 50.00} & \multicolumn{1}{|c}{\small %
+83.33} & \multicolumn{1}{|c}{\small 16.67} \\ 
+\multicolumn{1}{l}{{\small Private Capital} ${\small k}_{x}{\small +k}_{n}$}
+& \multicolumn{1}{|c}{\small 13.23} & \multicolumn{1}{|c}{\small 33.70} & 
+\multicolumn{1}{|c}{\small 2.49} \\ 
+\multicolumn{1}{l}{{\small Real GDP }${\small y}^{r}$} & \multicolumn{1}{|c}%
+{\small 13.45} & \multicolumn{1}{|c}{\small 34.31} & \multicolumn{1}{|c}%
+{\small 2.48} \\ 
+\multicolumn{1}{l}{{\small Real Wages }$w{\small /P}$} & \multicolumn{1}{|c}%
+{\small 13.53} & \multicolumn{1}{|c}{\small 34.66} & \multicolumn{1}{|c}%
+{\small 2.44} \\ 
+\multicolumn{1}{l}{{\small Consumption} ${\small c}$} & \multicolumn{1}{|c}%
+{\small 9.29} & \multicolumn{1}{|c}{\small 29.30} & \multicolumn{1}{|c}%
+{\small -1.24} \\ 
+\multicolumn{1}{l}{{\small Traded Output }${\small q}_{x}$} & 
+\multicolumn{1}{|c}{\small 13.83} & \multicolumn{1}{|c}{\small 35.99} & 
+\multicolumn{1}{|c}{\small 2.21} \\ 
+\multicolumn{1}{l}{{\small Non-Traded Output }${\small q}_{n}$} & 
+\multicolumn{1}{|c}{\small 13.04} & \multicolumn{1}{|c}{\small 32.57} & 
+\multicolumn{1}{|c}{\small 2.75} \\ 
+\multicolumn{1}{l}{{\small Real Exchange Rate }${\small p}_{n}$} & 
+\multicolumn{1}{|c}{-{\small 1.90}} & \multicolumn{1}{|c}{\small -3.90} & 
+\multicolumn{1}{|c}{-{\small 0.36}} \\ 
+& \multicolumn{1}{|c}{} & \multicolumn{1}{|c}{} & \multicolumn{1}{|c}{} \\ 
+\hline
+\multicolumn{4}{l}{\small Note:\ The effects are measured as the percentage
+change between the steady states, except \ } \\ 
+\multicolumn{4}{l}{\small for taxes and the crowding-in coefficient (CIC).
+Fiscal adjustment is assumed to fall exclusively} \\ 
+\multicolumn{4}{l}{\small on taxes, so transfers are kept constant.} \\ 
+&  &  & 
+\end{tabular}
+\end{center}
+
+The second caveat pertains to difficulties that may arise on the transition
+path. As we will show in the next section, even when the long run looks
+good, medium-run tax increases appear to be unavoidable. Non-concessional
+borrowing can smooth away difficult fiscal adjustments that threaten to
+undermine support for the investment program. But if the capacity for fiscal
+adjustment is too limited and the government borrows too much in the
+short/medium run, there is a risk that future revenue gains will not arrive
+fast enough to prevent explosive growth of the debt. Therefore, the
+viability of the borrowing-for-development strategy depends not only on the
+structural conditions of the economy and the long-run outcome, but also on
+whether policy makers can solve the problem of how to get from here to there.
+
+\section{The Medium-Term Fiscal and Macroeconomic Adjustments Under
+Different Financing Schemes}
+
+\subsection{Unconstrained Tax Adjustment}
+
+\quad\ \thinspace There are a variety of ways to finance a large increase in
+public investment. We start by analyzing the case in which, given the public
+investment surge and the path for concessional borrowing and grants, taxes
+and/or transfers adjust continuously and freely to satisfy the budget
+constraint of the government. This provides the counterfactual for the
+analysis of riskier schemes that supplement concessional borrowing with
+domestic or external commercial loans.
+
+For now, we assume the government is unable or unwilling to take out
+non-concessional debt. Commercial and domestic debt thus stay at their
+initial steady-state levels; so $d_{c,t}=\bar{d}_{c}=d_{c,o}$ and $b_{t}=%
+\bar{b}=b_{o}$. Taxes and transfers adjust continuously and without bounds.
+To capture this we set ${\small h}^{u}\rightarrow \infty ,$ $\mathcal{T}%
+^{l}\rightarrow \infty $, $\lambda _{1}=\lambda _{3}=1$ and $\lambda
+_{2}=\lambda _{4}=0$ in equations (\ref{hmin})-(\ref{T_reaction}) and
+combine them with (\ref{h_target}) and (\ref{T_target}) to obtain 
+\begin{equation*}
+h_{t}={\small h}_{t}^{\text{target}}\text{ \ \ \ \ and \ \ \ \ }\mathcal{T}%
+_{t}=\mathcal{T}_{t}^{\text{target}}.
+\end{equation*}
+
+To fix ideas and simplify the analysis, in the experiments below we assume
+the burden of fiscal adjustment falls exclusively on taxes. In other words,
+we set $\lambda =0.$ This implies that transfers are kept constant at their
+initial level $\mathcal{T}_{t}=\mathcal{T}_{t}^{\text{target}}=\mathcal{T}%
+_{o}$, while taxes follow the path $h_{t}={\small h}_{t}^{\text{target}},$
+which, given $\lambda _{1}=1$ and $\lambda _{2}=0,$ ensures that taxes
+always adjust to satisfy the government budget constraint.
+
+\subsubsection{The Base Case}
+
+\quad\ \thinspace The medium-run dynamics presented in Figure 2 are
+discouraging.\footnote{%
+The numerical simulations are free of approximation error. In all scenarios,
+the simulations track the global nonlinear saddle path. The solutions were
+generated by set of programs written in Matlab 7.7.0.471 (R2008b) and Dynare
+4.1.1. See http://www.cepremap.cnrs.fr/dynare.} Since cumulative borrowing
+and grants in years 2-9 equals about $50\%$ of cumulative net investment,
+the fiscal adjustment has to be demanding. The VAT rises to $18.9\%$ at $t=5$
+and to $18.8\%$ at $t=10$. The former increase is associated with the
+demands from the scaling up, while the latter is related to the needs for
+concessional debt repayment. Although conditions improve slightly
+thereafter, by year 20, the VAT still remains above $18\%$.
+
+\FRAME{ftbpFU}{7.2826in}{4.4114in}{0pt}{\Qcb{\textbf{Base Case:
+Unconstrained Tax Adjustment.} The transition path in the base case when the
+government takes out only concessional loans and the tax adjustment is
+unconstrained. Variables are expressed as percentage deviations from the
+initial steady state, unless otherwise noted.}}{}{Figure}{\special{language
+"Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display
+"USEDEF";valid_file "T";width 7.2826in;height 4.4114in;depth
+0pt;original-width 17.7952in;original-height 9.7421in;cropleft
+"0.0940";croptop "1";cropright "1";cropbottom "0";tempfilename
+'M3V4P302.wmf';tempfile-properties "XPR";}}
+
+The government's protracted fiscal problems in the first years also stem
+from disappointing effects on private consumption and investment.
+Unfortunately, this disappointment is a robust feature of the transition
+path. Because savers cannot smooth consumption by borrowing from abroad
+(imperfect capital mobility) and non-savers live hand to mouth, the sharp
+increase in taxes translates into a reduction in consumption. The positive
+impact of increases in the stock of infrastructure on future productivity
+could spur, in theory, an immediate increase in private investment. But this
+is not possible. In our base case, the increase in the real interest
+rate---a by-product of the significant VAT adjustment---is enough to force
+savers to cut investment in the short run.\footnote{%
+To see why the interest rate rises when taxes go up significantly, recall
+the Euler equation for savers consumption, which can be written as:%
+\begin{equation*}
+r_{t}=\frac{1+g}{\beta }\left( \frac{1+h_{t+1}}{1+h_{t}}\right) \left( \frac{%
+c_{t+1}^{\mathfrak{s}}}{c_{t}^{\mathfrak{s}}}\right) ^{1/\tau }-1.
+\end{equation*}%
+} In summary, private consumption and investment contract relative to their
+initial steady state in the short run: by the year 2 consumption and
+investment decrease by about $1\%$ and then stay depressed for another
+couple of years before they start rising slowly.
+
+Due to the period of stagnant investment, growth of the private capital
+stock and real income lag far behind growth in the stock of infrastructure.
+At the typical 20-year horizon of the Excel-based DSAs and relative to the
+steady state, public capital has increased almost $45\%,$ which corresponds
+to the $90\%$ of the $50\%$ increase across steady states; but private
+capital is only about $3.3\%$ higher (vs.\thinspace almost $13\%$ higher
+across steady states).\footnote{%
+It is common practice to discount econometric estimates of the q-elasticity
+of investment and assign $\Omega $ a value of 5-10 to speed up adjustment of
+the capital stock. That does not work in our case. When $\Omega =10$, the
+increases in private capital and real GDP are still small.} Growth (in per
+capita terms) increases above $2\%$ in the first decade, but by year 20 is
+close to $1.8\%,$ which is only $0.3$ percentage points higher than the
+exogenously assumed long-run growth rate of $1.5\%.$ Because income and the
+tax base grow slowly during the borrowing phase, the government is
+ill-prepared for the subsequent repayment phase. The revenue demands of debt
+service keep the VAT above $18\%$, which, in turn, slows the pace of capital
+accumulation and perpetuates the fiscal bind. Eventually policy makers are
+rewarded for their perseverance with a tiny revenue windfall and a moderate
+increase in the private capital stock, but this occurs in a distant future.
+
+As expected, total public debt follows the sustainable path of concessional
+debt. Public debt peaks at year $8$ reaching $84\%$ of GDP and then declines
+as the country repays the concessional loans and GDP increases. Because, by
+construction, taxes always adjust to satisfy the government budget
+constraint, unstable dynamics for debt are ruled out from the analysis.
+Therefore the key question from the fiscal perspective is whether the tax
+adjustment is feasible in practice. For the base case, an increase from $%
+15\% $ to $18.9\%$ of the VAT in four years seems implausible.
+
+\subsubsection{More Optimistic and Troublesome Scenarios}
+
+\quad\ \thinspace We study now the dynamic implications of changing some of
+the structural conditions of the economy. We consider conditions that
+represent optimistic and troublesome scenarios.
+
+\FRAME{ftbpFU}{7.146in}{3.7853in}{0pt}{\Qcb{\textbf{Unconstrained Tax
+Adjustment: Optimistic and Troublesome Scenarios. }The transition paths for
+taxes, private consumption, and private investment in optimistic and
+troublesome scenarios, when the government takes out only concessional
+loans. Variables are expressed as percentage deviations from the initial
+steady state, unless otherwise noted.}}{}{Figure}{\special{language
+"Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display
+"USEDEF";valid_file "T";width 7.146in;height 3.7853in;depth
+0pt;original-width 17.7952in;original-height 9.3962in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";tempfilename
+'M3V4QC03.wmf';tempfile-properties "XPR";}}
+
+Panel A of Figure 3 shows the paths of the tax rate, consumption, and
+private investment of an optimistic scenario. The initial return on
+infrastructure is $35\%$, user fees pay for all recurrent costs $f=1$ ($\mu
+=0.1$), and the public investment surge is fully efficient $s=1$. The paths
+of this scenario are notably better than those from the base case,
+especially in the medium term. The peak of the VAT, which occurs in the
+short run, is still high and close to $18\%$. But the medium-term tax is
+much more tolerable. By year 20, the tax is below $16\%$. Moreover,
+consumption does not necessarily contract in the first years and by year 4,
+it is already on a fast growth trend. Interestingly, this optimistic
+scenario delivers a more pronounced short-term crowding out of private
+investment. The reason is simple. Since the capital account is closed,
+avoiding a consumption contraction in the short term is at the expense of
+reducing further private investment. Nevertheless, and relative to the base
+case, the robust medium term outlook of investment seems to compensate these
+initial negative effects.
+
+It is also possible to simulate many troublesome scenarios. In the runs
+presented in panel B of Figure 3, the return on infrastructure is relatively
+low $R=0.1$, user fees finance only $20\%$ of recurrent costs $f=0.2$ ($\mu
+=0.02$), and the public investment surge is very inefficient $s=0.2$. In
+this scenario, taxes climb to almost $20\%$ in the year 7 and stay around
+this level during the debt repayment period. This depresses consumption by
+almost $4\%$ in the short and medium term. Investment rises very timidly
+over time.
+
+When, in addition, scaling up strains absorptive capacity, causing cost
+overruns of about $25\%$ on new projects in the first year, the tax rate
+skyrockets to $22\%$ by the fourth year (see Panel C of Figure 3). The
+consequences for consumption and private investment are dramatic. Relative
+to the initial steady state, consumption and investment fall by almost $4\%$%
+. As public investment reaches its new permanent level, the absorptive
+capacity costs diminish and consumption and private investment converge to
+similar paths to those of the base case.
+
+Certainly, the size of the public investment surge determines the severity
+of the fiscal adjustment and the role that structural conditions of the
+economy play for this adjustment. Small public investment shocks lead to
+small and feasible tax adjustments. This is straightforward. As Figure 4
+shows, when there is a small-scale expansion of public investment the tax
+adjustment of the economy even with bad structural conditions (e.g., very
+low return on public capital, user fees collection, efficiency, or
+absorptive capacity) is very similar to that of the base case. This,
+however, should not be taken as evidence to support the view that LICs
+should \textit{not }improve their structural conditions. On the contrary,
+because of their dire infrastructure, for instance, LICs are in need of
+scaling up public investment; and, as Figures 3 and 4 reveal, it is
+precisely under a scaling up that bad structural conditions matter for the
+severity and the persistence of the tax adjustment.
+
+\FRAME{ftbpFU}{7.146in}{3.9245in}{0pt}{\Qcb{\textbf{Unconstrained Tax
+Adjustment: The Size of the Scaling Up.} Comparison of the tax adjustment
+with and without a scaling up of public investment, under different
+structural conditions. The increase of public investment in the no scaling
+up scenario corresponds to 5\% of the increase in the scaling up scenario.}}{%
+}{Figure}{\special{language "Scientific Word";type
+"GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file "T";width
+7.146in;height 3.9245in;depth 0pt;original-width 17.7952in;original-height
+9.7421in;cropleft "0";croptop "1";cropright "1";cropbottom "0";tempfilename
+'M3V4S104.wmf';tempfile-properties "XPR";}}
+
+\subsubsection{Gradually Increasing Transfers, Efficiency, and the
+Collection Rate of User Fees}
+
+\quad\ \thinspace So far we have assumed that government transfers are
+constant in the analysis. Perhaps this is an extreme and, to some extent,
+shaky assumption of the base case. After all, even if public investment is
+not scaled up, LICs are expected to increase transfers associated with their
+anti-poverty programs in order to achieve the Millennium Development Goals
+(MDGs). Similarly, if public sector unions demand wage raises in line with
+those granted in the private sector, it will be difficult to prevent
+expenditure (transfers) from increasing. For these reasons, we examine a
+scenario where the government increases transfers over time.
+
+Our framework is flexible enough to incorporate different rules for
+transfers.\footnote{%
+When $\lambda >0,$ the fiscal adjustment falls on both taxes and transfers.
+In this case the model can still allow for scenarios with downwardly
+inflexible expenditure. For instance, transfers can be kept constant until
+growth generates a fiscal windfall according to $\mathcal{T}_{t}=Max\{%
+\mathcal{T}_{t}^{\text{target}},\mathcal{T}_{o}\},$ where $\mathcal{T}_{t}^{%
+\text{target}}$ is defined (\ref{T_target}); or the government can be
+assumed to be unable to cut other expenditures to offset increases in public
+sector wages, implying that transfers evolve as 
+\begin{equation*}
+\mathcal{T}_{t}=Max\left\{ \mathcal{T}_{t}^{\text{target}},\mathcal{T}%
+_{o}+0.05\,y_{o}\,\frac{(w_{t}-w_{o})}{w_{o}}\right\} ,
+\end{equation*}%
+where the initial public wage bill is 5\% of GDP and raises of this bill are
+as large as raises in private sector wages.} For expositional reasons, here
+we assume that transfers are raised as a fixed proportion $\mathfrak{m}$ of
+increases in real GDP as described by%
+\begin{equation*}
+\mathcal{T}_{t}=\mathcal{T}_{o}+\mathfrak{m}\frac{\mathcal{T}_{o}}{y_{o}}%
+(y_{t}-y_{o}),
+\end{equation*}%
+where $y_{t}^{r}=$ $P_{x,o}q_{x,t}+P_{n,o}q_{n,t}$ is real GDP at period $t$%
+. To fix ideas, assume $\mathfrak{m}=1$.
+
+\FRAME{ftbpFU}{7.146in}{3.9245in}{0pt}{\Qcb{\textbf{Unconstrained Tax
+Adjustment: Increasing Transfers.} Comparison of the tax and private
+consumption adjustments in the base case and in the case when government
+transfers, the efficiency of public investment and user fees collection
+increase over time. Variables are expressed as percentage deviations from
+the initial steady state, unless otherwise noted.}}{}{Figure}{\special%
+{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio
+TRUE;display "USEDEF";valid_file "T";width 7.146in;height 3.9245in;depth
+0pt;original-width 17.7952in;original-height 9.7421in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";tempfilename
+'M3V4TX05.wmf';tempfile-properties "XPR";}}
+
+When transfers increase over time, the damage report for the fiscal
+adjustment is grim, while the consumption benefits are nil. As shown in
+panel A of Figure 5, taxes not only soar and reach a peak of $19.7\%$ at $%
+t=7 $, but also stay above $19\%$ over most of the debt repayment period. Of
+course transfers grow, and by year 20 their increase is above $0.6\%$ of
+GDP. However, their effect on consumption is fully offset by the more
+demanding tax adjustment. As a result, the path for consumption when
+transfers increase is practically the same as that when transfers are kept
+constant.
+
+Does this mean that, in the context of public investment scaling ups, LICs
+cannot raise transfers without both suffering drastic tax adjustments and
+producing consumption benefits? The answer may lie, once more, on the key
+role that structural conditions, such as efficiency of public investment and
+the ability to collect user fees, play in the analysis. Unfortunately, there
+is evidence that these structural conditions are weak in LICs. The public
+investment management quality index of Dabla-Norris et al. (2011) suggests
+that there is a considerable variation across LICs. But their efficiency is
+in general lower than that of emerging and advanced economies.\footnote{%
+\baselineskip=12pt In fact, public management capacity constraints in
+themselves may call for further investments in capacity, i.e.
+\textquotedblleft to invest in investing\textquotedblright\ in the words of
+Collier (2007).} On the other hand, average user fees equal or slightly
+exceed average costs for operation and maintenances of physical
+infrastructure in SSA. But because of low collection rates, revenues cover
+only half of recurrent costs, as discussed by Brice\~{n}o-Garmendia et al.
+(2008) and Eberhard et al. (2008).
+
+Improving the efficiency of public investment and the collection rate of
+infrastructure user fees may allow LICs to increase transfers, while easing
+fiscal adjustment. Raising both structural conditions to $100\%$ would
+capture more revenue not only from the expansion of infrastructure services,
+but also from services supplied by the existing network. Of course the
+prevalence of low efficiency and collection rates suggest that the problem
+is not easy to solve. But the transition from partial to full efficiency and
+collection does not have to occur overnight to \textit{greatly} reduce the
+demands made on taxes. As shown in panel B of Figure 5, even when it takes a
+decade to complete the task, by year 20 the VAT is reduced to$\ 16.2\%$,
+whereas the increase in transfers is about $1.25\%$ of GDP. As more
+infrastructure-related fiscal revenue is available, then the government can
+support a bigger increase in transfers than that of an economy where
+efficiency and the collection rate do not improve. More importantly with
+less tax adjustment and much higher transfers, consumption is boosted over
+the medium term.
+
+Undoubtedly some governments will succeed in raising efficiency and the
+collection rate in upcoming decades, but this poses new questions.
+
+First, even when efficiency improves, it is not clear whether the collection
+rate would be expected to rise or fall over time. The complicating factor is
+that scaling up public investment adds to the collection task by increasing
+the share of the population with access to infrastructure services. If
+collection capacity does not increase as fast as the supply of services,
+which is proportional to the stock of \textit{effective} infrastructure, the
+collection rate might fall.
+
+Second, if steady, systematic increases in efficiency and the collection
+rate are sure to happen in some country, then, given the magnitude of
+infrastructure deficits in LICs, policy makers should aim to scale up
+investment even more. A country that can achieve the paths shown in panel B
+of Figure 5 might choose not settle for an increase in public investment of $%
+3\%$ of initial GDP in the medium to long run; it could try to scale up much
+more. But this brings us back to the main scenario where the challenge is to
+ascertain how the scope for scaling up depends on feasible fiscal
+adjustments in the VAT.
+
+\subsection{Constrained Tax Adjustment Combined with External Commercial
+Borrowing}
+
+\quad\ \thinspace The analysis of the previous section suggests that the
+transition can be challenging even when the investment is self-financing in
+the long run. The most obvious remedy, investigated next, is to borrow
+against future revenue gains in the external debt market with view to
+smoothing the path of fiscal adjustment.
+
+Increasingly LICs have access to external debt markets. In recent years,
+Uganda, Tanzania, Senegal, Ghana, Angola, Congo DRC, Mali, Mauritania, and
+Rwanda have all entered into non-concessional loan agreements or issued
+sovereign bonds in international capital markets. Recognizing that the trend
+is likely to continue, the World Bank and the IMF have adopted a more
+flexible approach to non-concessional borrowing. The World Bank has
+introduced the IDA Non-concessional Borrowing Policy and the IMF has
+approved supplemental commercial loans for critical, large-scale
+infrastructure projects in countries with IMF-supported programs.
+
+In this sub-section, we thus study the fiscal and macroeconomic implications
+of external commercial borrowing. In particular, the path of commercial debt
+is backed out from the government budget constraint 
+\begin{equation}
+d_{c,t}=P_{z,t}\mathbb{I}_{t}+\frac{1+r_{d}}{1+g}d_{t-1}-d_{t}+\frac{%
+1+r_{dc,t-1}}{1+g}d_{c,t-1}+\frac{r_{t-1}-g}{1+g}P_{t}b_{o}+\mathcal{T}%
+_{t}-h_{t}P_{t}c_{t}-\mathcal{G}_{t}-\mathcal{N}_{t}-\mu z_{t-1}^{e},
+\label{commercial_d}
+\end{equation}%
+while we assume the reactions functions described in (\ref{hmin})-(\ref%
+{T_reaction}) with $x=d_{c}$ determine the path for transfers and taxes.%
+\footnote{%
+Note that this is equivalent to say that taxes and transfers are determined
+by the reactions functions (\ref{hmin})-(\ref{T_reaction}), where $x=d_{c}$
+and the gap $\mathfrak{Gap}_{t}$ is defined in (\ref{gapdef}); while the
+path of external commercial debt is determined by equation (\ref{exgap}),
+which is a different way to express the government budget constraint.}
+Concessional borrowing follows the same path as before and commercial loans
+are fully repaid ($d_{c}^{\text{target}}=0$). These reaction functions
+subscribe to the view that the proposed borrowing \ and investment program
+is sustainable only if debt converges to a stationary level without
+violating sociopolitical constraints on how much and how fast fiscal policy
+can change. Inside the caps $h^{u}$ and $\mathcal{T}^{l}$, the parameters $%
+\lambda _{1}$-\thinspace $\lambda _{4}$ determine whether policy adjustment
+is slow or fast; setting these parameters requires a realistic assessment of
+the country's capacity for fiscal adjustment over different time horizons.
+
+For expositional purposes, as in the case of concessional borrowing, in the
+experiments to follow we keep transfers constant. To do so we set the lower
+bound $\mathcal{T}^{l}$ equal to the initial value $\mathcal{T}_{o}.$ By the
+reaction function (\ref{Tmax}), this ensures that $\mathcal{T}_{t}=\mathcal{T%
+}_{o}$ at all times. Regarding the cap on taxes we set $h^{u}=0.17$
+initially, but allow for a discrete jump at $t=8$ of $2$ percentage points,
+so $h^{u}=0.19$.
+
+\subsubsection{Tax Smoothing and Private Demand Crowding Out}
+
+\quad\ \thinspace Access to the commercial debt market can make the dynamic
+transition associated with the scaling up smoother. Early on,
+non-concessional borrowing allows tax increases to be phased in more slowly.
+Later, when the staggered limit of fiscal adjustment (upper bound on VAT)
+has been reached during the repayment phase for concessional debt, new
+borrowing can avert default or a collapse in public investment. And even if
+scaling up is feasible without recourse to non-concessional debt, smoothing
+the path of $h$ with non-concessional borrowing improves welfare by reducing
+intertemporal distortions in consumption.
+
+\FRAME{ftbpFU}{7.146in}{3.9245in}{0pt}{\Qcb{\textbf{Unconstrained Tax
+Adjustment versus Constrained Tax A\textbf{djustment with} External
+Commercial Borrowing.} Variables are expressed as percentage deviations from
+the initial steady state, unless otherwise noted.}}{}{Figure}{\special%
+{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio
+TRUE;display "USEDEF";valid_file "T";width 7.146in;height 3.9245in;depth
+0pt;original-width 17.7952in;original-height 9.7421in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";tempfilename
+'M3V4VF06.wmf';tempfile-properties "XPR";}}
+
+Commercial borrowing can indeed help with adjustment, as shown by the
+simulations in Figure 6. In these runs, the initial return on infrastructure
+is $25\%$, but, due to a staggered cap on taxes--- first at $17\%$ and then
+at $19\%$---and an assumed pace at which taxes can rise$,$ scaling up is
+feasible only when external commercial borrowing supplements concessional
+loans. The commercial loans also help smooth the initial tax adjustment: it
+takes $11$ years, instead of the $6$ years of the base case, to raise taxes
+from $15\%$ to $19\%.$ The country rides these fiscal constraints until
+growth finally generates enough revenue to reconcile repayment of commercial
+debt with decreases in the VAT. Relative to the base case of concessional
+borrowing only, it is particularly impressive that private consumption and,
+to some extent, private investment do not decline in the first years. Thus
+the private demand crowding out problem seems to be practically gone. And
+although there is a more pronounced real appreciation, the short-term
+negative impact on traded output is not much worse than that of the base
+case. In the medium term, both the traded and non-traded sectors take off,
+generating more than sufficient economic growth to make public debt
+sustainable.
+
+\subsubsection{Debt Blowups: Structural and Policy Conditions}
+
+\quad\ \thinspace There are also risks, of course, to taking out additional,
+more expensive debt. If non-concessional borrowing serves merely to delay
+the day of reckoning for an unsound investment program, then the ensuing
+debt crisis will be more costly and more traumatic than otherwise. If extra
+credit does more than facilitate fiscal adjustment, if instead it diminishes
+fiscal effort too much for too long---one interpretation of delaying the
+initial tax adjustment and lowering the values for $\lambda _{1}$ and
+\thinspace $\lambda _{2}$ in the reaction function (\ref{h_reaction})---the
+country may end up in a debt crisis. Borrowing-on-all-fronts is a high-risk,
+high-return strategy. It may greatly enhance the prospects for debt
+sustainability or lead to spectacular failure; much depends on the fine
+details governing debt contracts, the structural conditions of the economy,
+the dynamics of growth, and the speed of fiscal adjustment.
+
+\FRAME{ftbpFU}{7.146in}{3.9245in}{0pt}{\Qcb{\textbf{Constrained Tax
+Adjustment with External Commercial Borrowing: Varying the Structural and
+Policy Conditions.}The transition paths for taxes and debt when the fiscal
+adjustment is slower or public investment is very inefficient.}}{}{Figure}{%
+\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio
+TRUE;display "USEDEF";valid_file "T";width 7.146in;height 3.9245in;depth
+0pt;original-width 17.7952in;original-height 9.7421in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";tempfilename
+'M3V4X007.wmf';tempfile-properties "XPR";}}
+
+Policy makers might overestimate their capacity for fiscal adjustment,
+finance low-return projects, misplace the blueprints for reforms to improve
+governance and the efficiency of public investment, or repeatedly succumb to
+the temptation to put off necessary but unpopular tax increases and
+expenditure cuts. In this event we get some dreadful results, as exemplified
+in Figure 7. The run in Panel A simulates the case when the government
+delays raising the VAT. Because of this delay, the government loses the race
+against time and the debt blows up. In Panel B the government borrows
+heavily in the commercial market as it pays off its concessional debt,
+counting on growth in future tax revenues to ensure debt sustainability. But
+since public investment is very inefficient ($s=0.2$) little effective
+public capital is accumulated, so future revenue gains are too small to
+stabilize the debt or even to prevent it from increasing at an accelerating
+rate. Similar results of explosive debt growth obtain if the return on
+public capital, the capacity to collect user fees or the absorptive capacity
+are low enough.
+
+\subsection{Constrained Tax Adjustment Combined with Domestic Borrowing}
+
+\quad\ \thinspace Although the DSAs have traditionally focused on the public
+external public debt, there is broad agreement that domestic debt plays an
+important role in overall debt sustainability. The IMF emphasizes that
+better integration of domestic debt into the DSF is critical to early
+detection of external debt vulnerability. In a similar vein, UNCTAD (2004)
+has warned that controlling growth of domestic debt may prove the main
+obstacle to debt sustainability in many LICs.
+
+Accordingly, our last financing scenario involves a government that can sell
+debt in the domestic market but not in world capital markets. Domestic debt
+is then determined by the government budget constraint according to 
+\begin{equation}
+P_{t}b_{t}=P_{z,t}\mathbb{I}_{z,t}+\frac{1+r_{d}}{1+g}d_{t-1}-d_{t}+\frac{%
+1+r_{t-1}}{1+g}P_{t}b_{t-1}+\mathcal{T}_{t}-h_{t}P_{t}c_{t}-\mathcal{G}_{t}-%
+\mathcal{N}_{t}-\mu z_{t-1}^{e},  \label{domestic}
+\end{equation}%
+whereas the reactions functions described in (\ref{hmin})-(\ref{T_reaction})
+with $x=b$ still determine the path for transfers and taxes.\footnote{%
+Note that this is equivalent to say that taxes and transfers are determined
+by the reactions functions (\ref{hmin})-(\ref{T_reaction}), where $x=b$ and
+the gap $\mathfrak{Gap}_{t}$ is defined in (\ref{gapdef}); while the path of
+domestic debt is determined by equation (\ref{exgap}), which is a different
+way to express the government budget constraint.} Concessional borrowing
+follows the same path described in the calibration section and new domestic
+loans are fully repaid ($b^{\text{target}}=0.2$). As before, for
+expositional purposes, we assume that all the burden of the fiscal
+adjustment fall on taxes; so we set $\mathcal{T}^{l}=\mathcal{T}_{o}$ in (%
+\ref{Tmax}), implying $\mathcal{T}_{t}=\mathcal{T}_{o}$ at all times. We
+also assume that there is a staggered structure for taxes: $h^{u}=0.17$
+initially and then jumps to $h^{u}=0.19.$
+
+Domestic borrowing is more prone to trigger unsustainable public debt
+dynamics than external commercial borrowing. This is for two reasons.
+Perhaps the most obvious is that domestic loans are more expensive than
+other sources of financing. In our calibration, the real interest rate on
+domestic loans at the initial steady-state equilibrium is $4$ percentage
+points higher than the rate paid on external commercial debt.\footnote{%
+Interest payments on the internal debt are usually several times larger than
+interest payments on the external debt, exceeding $5\%$ in some countries.
+Barkbu et al.\thinspace (2008) also note that empirical studies find that
+rising domestic debt significantly increases the likelihood of external debt
+distress.} Moreover, it rises with more domestic borrowing. The second
+reason domestic borrowing is less effective is that it does not provide
+additional resources from abroad. Instead of taxing residents to extract the
+resources necessary to finance the higher public investment, the government
+borrows from them. But either way, the resources have to shift to the public
+sector, and the scaling up requires a crowding out of private consumption
+and investment. Thus if rates on domestic borrowing were the same as on
+foreign borrowing, the adjustment path would be much more difficult with
+domestic borrowing.\footnote{%
+This is analogus to a spend-and-don't-aborb response to aid surges and
+creates similar macroeconomic challenges, as analyzed in detail in Berg et
+al. (2010a)}
+
+Given the calibration for domestic interest rates and other parameters,
+domestically-financed investment scenarios are thus more likely to be
+explosive. Recall that external commercial borrowing yields a sustainable
+trajectory with fiscal reaction functions implying that a $19\%$ cap on the
+tax rate is delayed for more than $10$ years. In the same scenario financed
+by domestic borrowing, public domestic debt explodes. To avoid this, the
+same changes to assumptions that eased adjustment with commercial borrowing
+would work here: a higher rate of return, higher efficiency, higher rate of
+user fee collection, a smaller investment scaling up, etc. To compare the
+macroeconomic dynamics associated with domestic borrowing to those with
+external commercial borrowing for nonexplosive scenarios, we now speed up
+fiscal adjustment in the domestic borrowing case to ensure debt
+sustainability. This can be achieved by raising the parameter $\lambda _{1}$
+of the reaction function (\ref{h_reaction}) from 0.25 to 0.45 and by
+increasing the original caps $h^{u}$ by $0.5$ percentage points. As a
+result, in Figure 8 taxes go up to $17.5\%$ by $t=5$ and to $19.5\%$ by $%
+t=11 $. We can see the higher interest rates and much higher degree of
+crowding out of private consumption and investment. Both combine to increase
+fiscal pressure and require that taxes stay at $19.5\%$ percent for almost
+two decades.
+
+\FRAME{ftbpFU}{7.146in}{3.9245in}{0pt}{\Qcb{\textbf{Constrained Tax
+Adjustment: Domestic Borrowing versus External Commercial Borrowing}.
+Variables are expressed as percentage deviations from the initial steady
+state, unless otherwise noted.}}{}{Figure}{\special{language "Scientific
+Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display "USEDEF";valid_file
+"T";width 7.146in;height 3.9245in;depth 0pt;original-width
+17.7952in;original-height 9.7421in;cropleft "0";croptop "1";cropright
+"1";cropbottom "0";tempfilename 'M3V4YC08.wmf';tempfile-properties "XPR";}}
+
+\section{External Shocks and Risks}
+
+\quad\ \thinspace Our previous analyses have abstracted from the possibility
+of unexpected exogenous shocks. It is said, however, that LICs are
+particularly vulnerable to terms-of-trade shocks, natural disasters shocks,
+and other adverse exogenous shocks.\footnote{%
+For a discussion on importance of these external shocks in explaining the
+instability of output and the macroeconomic fluctuations in LICs, see Kose
+and Riezman (2001) and Raddatz (2007) and references therein.} This is to
+some extent due to the structural characteristics of these countries: LICs
+tend to be more dependent on primary commodities and have a higher exposure
+to natural disasters. Furthermore, as LICs become more financially
+integrated to the rest of the world by borrowing in capital markets, they
+will start resembling emerging economies. As such, they will be subject more
+frequently to risk premium shocks that affect the volatility of the real
+interest rate at which they can borrow.\footnote{%
+Neumeyer and Perri (2005), Uribe and Yue (2006) and Fern\'{a}ndez-Villaverde
+et al. (2011) discuss how country risk premia, country spread and the
+volatility of the real exchange rate, respectively, affect business cycles
+in emerging economies.}
+
+\FRAME{ftbpFU}{7.146in}{3.9245in}{0pt}{\Qcb{\textbf{External TOT Shocks and
+Risks: Shocks Persistence and Financing Schemes}. The paths of tax and
+public debt in the context of unexpected TOT shocks, with different degrees
+of persistence (temporary versus permanent) and financing sources to
+supplement concessional loans (external commercial borrowing versus more
+concessional borrowing), when tax adjustment is constrained }}{}{Figure}{%
+\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio
+TRUE;display "USEDEF";valid_file "T";width 7.146in;height 3.9245in;depth
+0pt;original-width 17.7952in;original-height 9.7421in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";tempfilename
+'M3V5030A.wmf';tempfile-properties "XPR";}}
+
+We proceed then to investigate the implications for debt sustainability of 
+\textit{big} unexpected negative terms-of-trade (TOT) shocks, negative
+total-factor productivity (TFP) shocks\footnote{%
+Kraay and Nerhu (2006) find that shocks to real GDP growth are highly
+significant predictors of debt distress.}---as a way to model natural
+disaster shocks---and shocks to the risk premium of public commercial debt.%
+\footnote{%
+Because in our analysis there is perfect foresight, to model \textit{%
+unexpected} shocks we have to paste two dynamic systems. Consider, for
+instance, how to model \textit{unexpected} TOT shocks. In this case, the
+first system ignores TOT shocks and gives us the dynamic paths for all the
+endogenous variables under the public investment scaling up. This allows us
+to retrieve the values of these variables for any particular time when we
+want to hit the economy with the TOT shock. Assume that, without loss of
+generality, this time corresponds to $t=9.$ Then we run a second system that
+(i) has as initial conditions for endogenous and exogenous variables the
+values retrieved from the first system at $t=9$, (ii) includes the TOT
+shocks and (iii) appropriately incorporates the continuation values for the
+rest of exogenous variables such as public investment, grants, and
+concessional borrowing. The final path for each variables is then
+constructed by pasting the series of the first system up to $t=9$ and the
+series of the second system beyond this point. Note that by our perfect
+foresight assumption, this methodology implies that the initial decrease in
+TOT shocks is the unexpected part. The rest of the shock, beyond $t=9,$ is
+still expected. We leave for further work the generalization of this
+procedure to look at sequences of unexpected shocks, though because of the
+perfect foresight assumption, we cannot allow agents to react to uncertainty
+per se.} To model TOT shocks we assume a decline of $10\%$ in the relative
+price of exports $P_{x,t}$ and an increase of $20\%$ in the relative price
+of intermediate inputs $P_{mm,t},$ which together imply a negative shock of $%
+25\%$ to the TOT measured as $\frac{P_{x,t}}{P_{mm,t}}.$ Negative TFP shocks
+are just introduced as a simultaneous and equal decrease of $5\%$ in the
+productivity scale factors $a_{x}$ and $a_{n}$ in the technologies (\ref{qx}%
+) and (\ref{qn}); while the risk premium shock is modelled as a jump in the
+premium ${\small \upsilon }_{g}$ that on impact raises the real interest
+rate on external commercial debt from $6\%$ to almost $10\%.$ For this last
+shock we also turn on the mechanism in our model that allows for a variable
+government debt risk premium. This is achieved by setting $\eta _{g}$ at a
+positive value in our specification in equation (\ref{rdc}). Following van
+der Ploeg and Venables (2011) we assume $\eta _{g}=1.89.$
+
+\FRAME{ftbpFU}{7.146in}{3.9245in}{0pt}{\Qcb{\textbf{TFP and Risk Premium
+Shocks and Risks. }The paths of tax and public debt in the context of
+unexpected TFP and risk premium shocks, under constrained tax adjustment
+combined with external commercial borrowing.}}{}{Figure}{\special{language
+"Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display
+"USEDEF";valid_file "T";width 7.146in;height 3.9245in;depth
+0pt;original-width 17.7952in;original-height 9.7421in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";tempfilename
+'M3V5150B.wmf';tempfile-properties "XPR";}}
+
+In the analysis to follow we focus on the case where external commercial
+loans close the financing gap.
+
+In addition, we concentrate on unexpected shocks that hit at the time when
+the economy is very vulnerable. We consider that this time is when the total
+public debt to GDP ratio would have reached a maximum, if shocks were
+absent. The relevance of this timing stems from the following reasons. It is
+precisely at this point in time when (i) public debt is more likely to
+breach one of the IMF-WB's DSF indicative thresholds or (ii) an unexpected
+adverse shock is most likely to place, in principle, public debt on an
+unsustainable path.\footnote{%
+There is nothing, however, that prevents the possibility of explosive debt
+dynamics if the unexpected shock hits the economy at any point in the rising
+path of debt.}
+
+Three results stand out from our analysis, summarized by the simulations
+presented in Figures 9 and 10.
+
+First, the persistence of the shock matters for debt sustainability. Panel A
+of Figure 9 shows the implications of varying the persistence of an
+unexpected TOT shock. It is clear that when the shock is temporary, the
+country manages a tax adjustment that is sufficient to avoid explosive
+dynamics for public commercial debt. Hence public debt is sustainable. But
+as the persistence of the shock increases, the debt outcome may become
+gloomy. If the shock were permanent, the adjustment would become
+insufficient, given the caps on taxes. Therefore, if shocks are persistent
+enough, debt sustainability problems may easily arise. Of course, this also
+depends on the magnitude of the shocks and the scale of additional public
+investment.
+
+Second, in the context of unexpected shocks, additional concessional
+financing instead of external commercial loans could greatly reduce the
+risks of debt unsustainability. Panel B of Figure 9 shows that when an
+unexpected TOT shock hits the economy, additional concessional borrowing to
+finance the public investment surge, while setting caps in the tax
+adjustment, can ensure debt sustainability. In contrast, using commercial
+loans may be risky, as unsustainable debt paths become feasible. The crux of
+the matter is whether LICs can obtain additional aid in the event of adverse
+shocks.
+
+Third, unexpected TFP shocks or government debt risk premium shocks can also
+induce explosive paths for public debt when the government contracts
+commercial loans. This is shown in Figure 10 that presents the effects on
+debt accumulation of permanent negative TFP shocks and government debt
+premium shocks. As the reader can easily infer from this figure, similar
+considerations to those we raised in the context of TOT shocks---shock
+persistence and type of additional financing---apply to these shocks. The
+risk premium shock case is interesting because it captures the idea that if
+market fears of debt repudiation rise and the risk premium rises with the
+stock of debt, borrowing and investment programs that were previously
+sustainable may become unsustainable.\footnote{%
+A more interesting but much more challenging approach will be to endogenize
+default in the model and make the risk premium depend on the
+model-consistent risk of default.}
+
+Summarizing, our analysis of unexpected shocks reveals that the strategy of
+external commercial borrowing, although a valuable resource for development,
+may be risky because it may give rise to public debt sustainability
+problems. Size matters here as well: the smaller the scaling up, the larger
+the unexpected shock required to cause explosive behavior.
+
+\section{Concluding Remarks}
+
+\quad\ \thinspace In this paper we have developed a fully-articulated,
+dynamic macroeconomic model to support debt sustainability analysis in
+low-income countries. Our model allows for financing schemes that mix
+concessional, external commercial, and domestic debt, while taking into
+account the impact of public investment on growth and constraints on the
+speed and magnitude of fiscal adjustment. In this regard, our model can help
+country authorities, IMF country teams, and others build a wide variety of
+logically consistent scenarios of public investment surges and other shocks,
+to inform and complement the currently used Excel-based DSA. Follow-on work
+will develop the apparatus to bring the model to data and conduct DSAs in a
+build-and -distribute approach.
+
+We calibrate the model to the \textquotedblleft average\textquotedblright\
+LIC and provide simulations for a public investment surge, showing the
+macroeconomic consequences and potential risks associated with different
+financing schemes. We find that when the economy can only borrow
+concessionally to cover part of the surge, difficult fiscal and private
+sector adjustments seem unavoidable in the short to medium term, especially
+when the surge is front-loaded and the structural conditions of the economy
+are weak. The strategy of allowing for external commercial borrowing in LICs
+may ease these adjustments; but the presence of weak structural and policy
+conditions and/or unexpected exogenous shocks calls for caution, as this
+strategy is also prone to induce unsustainable public debt dynamics.
+Domestic borrowing, on the other hand, is not as effective as external
+commercial borrowing, because it does not provide additional external
+resources, requires more drastic fiscal adjustments, and worsens the
+crowding out of the private sector.
+
+The model is already being used to support debt sustainability analysis in
+country cases.\footnote{%
+The model was used to evaluate the authorities' public investment scaling-up
+strategies in Togo in the context of the debt sustainability analysis.
+Moreover it was used to carry out counterfactual simulations using the
+projections of the macroeconomic framework underlying the standard
+Excel-based DSA. These simulations provided a useful check on the
+plausibility and internal consistency of the projections made in the DSA.
+See Andrle et al. (2012). The model has been also applied to Burkina Faso
+and is being applied to Afghanistan, Cape Verde, Cote d'Ivoire, Ethiopia,
+Ghana, and Senegal.} These applications have motivated extensions of the
+model, including considering external commercial borrowing and domestic
+borrowing at the same time, modeling regional market borrowing, studying the
+implications of financing public investment with natural resource revenues,
+modeling investment in security, and financial repression issues, among
+others.
+
+Still, a number of additional exercises and extensions would be useful. The
+prospects for debt sustainability would depend on the composition of public
+investment, including in human capital. Our model now assumes that all new
+public investment is allocated to physical infrastructure projects with a
+short gestation period. But even infrastructure can take many years to come
+on line. And from a debt sustainability perspective, the distinctive feature
+of human capital investments is their long gestation period. Also, user fees
+finance a much smaller fraction of recurrent costs for education and health
+than for power, roads, and water and sanitation. The time profiles for
+supporting fiscal adjustment and debt are certain therefore to look very
+different from the time profiles for investment in physical infrastructure.
+
+Another important extension will be to more systematically incorporate
+uncertainty and shocks. It may be feasible to generalize the method used to
+analyze specific shocks in Section VI. Stochastic processes could be assumed
+for exogenous shocks, to the terms of trade and TFP, for example. Some
+elements of parameter uncertainty, e.g., about the rate of return to public
+investment, might be explicitly addressed.\footnote{%
+See Clinton et al. (2010) as an example, in a different context.}
+
+Finally, we have not investigated the trade off between costs and benefits
+of higher long-run debt levels. All the scenarios examined here assume
+debt/GDP returns to initial levels. It is plausible, however, that by
+raising the long-run level of debt, a country can forgo some of the long-run
+benefits of the investment surge in return for an easier transition. In
+considering such scenarios, it would be important to consider the risks
+associated with carrying a permanently higher debt level.
+
+%TCIMACRO{\TeXButton{appendix}{\begin{appendix}}}%
+%BeginExpansion
+\begin{appendix}%
+%EndExpansion
+
+\section*{Appendix}
+
+\subsection{On Public Investment Efficiency, Rates of Return, and Growth}
+
+\quad\ \thinspace This Appendix elaborates on the concept of
+\textquotedblleft efficiency\textquotedblright\ and the closely related
+concept of the rate of return to public capital. It serves as background
+information for the calibration of efficiency and the rate of return. The
+bottom line is that the operator needs to be thoughtful when calibrating
+efficiency, particularly in considering what it might imply for the marginal
+product of effective capital. A change in the calibration of efficiency has
+two different interpretations: as a level change that applies to the past
+and the future, as when comparing two countries at a point in time; or as a
+change that applies to future investment but not the past, as for example
+because of an improvement in public financial management. It is up to the
+operator to decide which applies and whether other adjustments to the
+calibration are necessary in light of that interpretation.
+
+In the analysis to follow, for simplicity, we assume that there is only one
+productive sector in the economy and set the long-run growth rate equal to
+zero.
+
+\textquotedblleft Efficiency\textquotedblright\ refers to the rate at which
+spending on public investment translates into public capital. The model
+distinguishes between the efficiency of steady-state public investment ($%
+\bar{s}$) and the efficiency of the additional public investment associated
+with the surge ($s$). Thus, reproducing equation (\ref{I_efficiency}) from
+the text with $g=0$:%
+\begin{equation}
+z_{t}^{e}=(1-\delta )z_{t-1}^{e}+s(i_{z,t}-\bar{\imath}_{z})+\bar{s}\bar{%
+\imath}_{z},  \label{i-eff}
+\end{equation}%
+where $i_{z,t}$ is public investment (measured in real dollars), $\delta $
+is the rate of depreciation of public capital, $\bar{\imath}_{z}=(\delta +g)%
+\bar{z}$ is the public investment at the (initial) steady state, and $%
+z_{t}^{e}$ is the stock of \textquotedblleft effective\textquotedblright\
+public capital. It is \textquotedblleft effective\textquotedblright\ because
+it is what appears in the economy's production function: 
+\begin{equation}
+q_{t}=A_{t}\left( z_{t-1}^{e}\right) ^{\psi }\left( k_{t-1}\right) ^{\alpha
+}\left( L_{t}\right) ^{1-\alpha }.  \label{prod}
+\end{equation}%
+The only nonstandard feature here is that $s$ and $\bar{s}$ are not
+necessarily equal to 1. If they were, then the usual capital accumulation
+equation $z_{t}^{e}=(1-\delta )z_{t-1}^{e}+i_{z,t}$ would obtain. When they
+are less than 1, a given rate of public investment results in a smaller
+accumulation of effective public capital. What is the effect of additional
+public investment on growth, and how does it depend on efficiency? The
+starting point is that the effect of additional public investment on
+output---the marginal product of investment $\left( \frac{\partial q_{t}}{%
+\partial i_{z,t-1}}\right) $ or $MP_{i_{z}}$---depends on \textit{both} the
+marginal product of effective public capital---$\left( \frac{\partial q_{t}}{%
+\partial z_{t-1}^{e}}\right) $ or $MP_{z^{e}}$---and on the efficiency with
+which public investment spending translates into effective public capital: 
+\begin{equation}
+MP_{i_{z}}\equiv \frac{\partial q_{t}}{\partial i_{z,t-1}}=\left( \frac{%
+\partial q_{t}}{\partial z_{t-1}^{e}}\right) \left( \frac{\partial
+z_{t-1}^{e}}{\partial i_{z,t-1}}\right) .  \label{MPI}
+\end{equation}
+
+Consider first the marginal product of effective public capital ($MP_{z^{e}}$%
+), which is equal to the rate of return on effective public capital ($R_{o}$%
+) plus the depreciation rate $\delta $. Taking derivatives of the production
+function and rearranging terms (and suppressing time subscripts):%
+\begin{equation}
+MP_{z^{e}}\equiv \left( \frac{\partial q}{\partial z^{e}}\right) =\psi
+A\left( z^{e}\right) ^{\psi -1}\left( k\right) ^{\alpha }\left( L\right)
+^{1-\alpha }=\psi \frac{q}{z^{e}},  \label{MPz}
+\end{equation}%
+That is, the marginal product of effective public capital is proportional to
+the production function parameter $\psi $ and the output/public capital
+ratio. The production function embodies decreasing returns to public
+capital, holding other factors constant, and given the value of the
+parameter $\psi $.
+
+Efficiency has a simple direct effect: $\frac{\partial z^{e}}{\partial i_{z}}%
+=s$ from equation (\ref{i-eff}). To understand efficiency, it may be useful
+to imagine that all the available public investment projects at a given
+point in time are ranked from highest to lowest rate of return. This ranking
+reflects the decreasing marginal product of public capital shown in equation
+(\ref{MPz}). The marginal product is thus the return of the best project
+available. In a fully efficient investment process, when an additional
+dollar is spent, this next best project is chosen. Suppose, though, because
+of incompetence, corruption, or just imperfect information, a government
+chooses worse projects. A lower efficiency---a lower $s$---is a measure of
+the degree of deviation from the optimal process. Another---and
+complementary---way to think about a value of $s$ below 1 is simply that a
+fraction of spending is literally wasted, e.g. misclassified as investment
+when it in fact just covers transfers to civil servants.
+
+It would seem straightforward to obtain the growth impact of public
+investment. In calibrating the model, the operator chooses directly a value
+for the rate of return to effective public capital $R_{o}$, and thus of the
+marginal product of public capital. The computer can solve for the implied
+value of $\psi $, given the other parameters of the model. Meanwhile,
+assumptions about the efficiency parameters $s$ and $\bar{s}$ determine the
+value of $\frac{\partial z^{e}}{\partial i_{z}}$. These together determine
+the output effect of additional public investment from equation (\ref{MPI}),
+holding other factors constant. The other parameters and assumptions in the
+model about fiscal policy, private sector behavior, \textquotedblleft Dutch
+disease\textquotedblright , and so on yield the overall macroeconomic impact
+of the investment surge.
+
+There is an important potential complication, however: efficiency and the
+marginal product of public capital may be related. Whenever---as with the
+Cobb-Douglas specification of equation (\ref{prod})---the marginal product
+of public capital is declining with larger stocks of public capital, this
+marginal product will tend to be higher when efficiency has been low in the
+past. A country with a low value of $\bar{s},$ for a given rate of
+historical or steady-state public investment, will have a low stock of
+effective public capital $z^{e}$.\footnote{%
+To see this, it may help to note that, for a case in which $s=\bar{s}$,
+equation (\ref{i-eff}) can be solved iteratively to obtain: $%
+z_{t}^{e}=s\sum_{t=1}^{\infty }(1-\delta )^{k}i_{z,t-k}$, so that $z_{t}^{e}$
+is proportional to $s$.} Because the stock of public capital is scarcer, the
+marginal product of public capital will tend to be higher. This makes some
+sense: if a country has difficulty converting spending into public capital,
+it will tend to have very little capital, and even a small increment could
+be highly productive; think of the first road from the capital city to the
+port.
+
+In the specific but widely-used case of the Cobb-Douglas production
+function, which is that used in the model in the text, the $MP_{z^{e}}$ will
+vary inversely with $z^{e}$, and thus with $\bar{s},$ for a given value of
+.the production function parameter $\psi $. In this case, countries with
+different levels of efficiency $\bar{s}$\ will have the same $MP_{i_{z}}$,
+holding output, rates of public investment, and other model parameters
+constant. Thus, a given increase in public investment spending will have the
+same effect on output whatever the value of $\bar{s},$ again given output,
+rates of public investment, and other model parameters.\footnote{%
+There is empirical support for declining marginal product of public capital
+and for the specific Cobb-Douglas version. Isham and Kaufman (1999) show
+that the ex post rate of return on World Bank-financed projects (which may
+correspond more closely to $MP_{z^{e}}$ than $MP_{i_{z}}$) rises with
+\textquotedblleft good policy\textquotedblright\ (measured very generally as
+low inflation, free trade, and so on) and falls with the capital/labor
+ratio. This implies decreasing $MP_{z^{e}}$. Arslanalp et al. (2010)
+estimate a Cobb-Douglas production function. They include a further term
+related to the level of public capital and find a negative coefficient,
+consistent with a deviation from Cobb-Douglas in which the $MP_{z^{e}}$
+falls even faster than implied by Cobb-Douglas. Serv\'{e}n (2010) provides a
+direct test in the context of estimated production functions. He finds that
+the output elasticity of infrastructure (the percent change in output
+associated with a given percent change in infrastructure) does not vary with
+the stock of infrastructure per worker, supporting a Cobb-Douglas
+specification.}
+
+This inverse relationship between $\bar{s}$ and $MP_{z^{e}}$ has been
+overridden for the user of the model because, as was described above, the
+operator chooses $MP_{z^{e}}$ directly. This means that when the calibration
+of $\bar{s}$ is changed, the computer finds a different value of $\psi $ as
+required to preserve the value of the $MP_{z^{e}}$.\footnote{%
+This approach to calibration can be rationalized with the observation that
+different measures of policy are positively correlated: a country that
+cannot efficiently build an electrical grid probably is not good at keeping
+it running well. Thus, countries with low investment efficiency likely also
+have low marginal product of installed capital, for a given capital stock
+(i.e., a relatively low value of $\psi )$. This offsets the negative effect
+of higher efficiency on the $MP_{z^{e}}$ that operates through the stock of
+public capital.}
+
+The upshot is that the operator needs to be thoughtful when calibrating
+efficiency, particularly in considering what it might imply for the marginal
+product of effective capital. In particular, a different calibration of $s$
+can be understood in two different ways. It is thus up to the operator to
+decide which interpretation applies and whether it calls for other
+recalibrations:
+
+\begin{itemize}
+\item According to one interpretation, different calibrations of the value
+of $s$ represent a time-invariant level difference in efficiency, e.g.
+between two countries. Higher steady-state efficiency will imply a higher
+marginal product of public \textit{investment} in the model, because the
+marginal product of public \textit{capital} is given by assumption.\footnote{%
+Whether $\bar{s}$ is actually recalibrated does not matter, because the
+effect of any such change on the marginal product of investment spending is
+undone by changes in $\psi $.} However, the operator should consider whether
+this makes sense in a particular case. How is it that the country wastes
+less public investment, and thus presumably has a higher public capital
+stock, and yet still has the same marginal product of public capital?
+
+\item The second interpretation is that this represents a change in
+efficiency relative to the past. Such a change in efficiency through time
+will have an unambiguous effect on the marginal product of public
+investment. This is because it raises the effect of investment spending on
+the growth rate of public capital, with no potentially offsetting effect on
+the size of the stock. Thus, if the idea is that the country is improving
+its efficiency relative to its own history, then there is no need to reflect
+on possible implications for the marginal product of public capital.
+\end{itemize}
+
+Similar thoughtfulness would seem to apply in the application of the Fund's
+policy on non-concessional borrowing (IMF, 2009b). The policy emphasizes the
+role of efficiency framed as the capacity to manage public resources
+well---along with debt levels---in determining whether non-concessional
+borrowing for public investment is warranted. But from equation (\ref{MPI}),
+the $MP_{z^{e}}$ also matters for the growth---and hence the debt
+sustainability---impact of public investment. This may depend on the broad
+policy environment and on the scarcity of public capital, and thus could be
+negatively correlated with steady-state efficiency. Presumably, these
+considerations need to be brought in through case-by-case analysis as
+discussed in the policy.
+
+%TCIMACRO{\TeXButton{appendix}{\end{appendix}}}%
+%BeginExpansion
+\end{appendix}%
+%EndExpansion
+\pagebreak
+
+\begin{thebibliography}{99}
+\bibitem{} Adam, C. and D. Bevan, 2006, \textquotedblleft Aid and the Supply
+Side: Public Investment, Export Performance, and Dutch Disease in Low-Income
+Countries,\textquotedblright\ \ The World Bank Economic Review, Vol. 20(2),
+pp. 261-290.
+
+\bibitem{} Agenor, R. and P. Montiel, 1999, \textit{Development
+Macroeconomics, }2$^{\text{nd}}$ edition (Princeton, N.J.; Princeton
+University Press).
+
+\bibitem{} Agenor, R., 2010, \textquotedblleft A Thoery of
+Infrastructure-Led Development,\textquotedblright\ Journal of Economics
+Dynamics and Control, Vol. 34(5), pp. 932-950.
+
+\bibitem{} Andrle, M., A. David, R. Espinoza, M. Mills, and L.F. Zanna,
+2012, \textquotedblleft As You Sow So Shall You Reap: Public Investment
+Surges, Growth, and Debt Sustainability in Togo,\textquotedblright\ IMF
+Working Paper, forthcoming.
+
+\bibitem{} Arestoff, F. and C. Hurlin (2006), \textquotedblleft Estimates of
+Government Net Capital Stocks for 26 Developing Countries,
+1970-2002,\textquotedblright\ World Bank Policy Research Working Paper 3858.
+
+\bibitem{} Arslanalp, Serkan Fabian Bornhorst, Sanjeev Gupta, and Elsa Sze,
+2010, \textquotedblleft Public Capital and Growth\textquotedblright , IMF
+Working Paper 10/175 (Washington: International Monetary Fund).
+
+\bibitem{} Arnone, M. and A. Presbitero, 2010, \textit{Debt Relief
+Initiatives: Policy Design and Outcomes}, forthcoming (Ashgate).
+
+\bibitem{} Arrow, K., 1962, \textquotedblleft The Economic Implications of
+Learning by Doing.\textquotedblright\ Review of Economic Studies 29, 153-173.
+
+\bibitem{} Asea, P. and C. Reinhart, 1996, \textquotedblleft Le Prix de
+l'Argent: How (Not) to Deal with Capital Flows.\textquotedblright\ Journal
+of African Economies 5 (AERC Supplement), 231-272.
+
+\bibitem{} Barkbu, B., C. Beddies, and M. Le Manchec, 2008,
+\textquotedblleft The Debt Sustainability Framework for Low-Income
+Countries.\textquotedblright\ IMF Occasional Paper, No.\thinspace 266.
+
+\bibitem{} Barro, R., 1990, \textquotedblleft Government Spending in a
+Simple Model of Endogenous Growth,\textquotedblright\ Journal of Political
+Economy, Vol. 98(5), pp. S103-26.
+
+\bibitem{} Barro, R. and X. Sala-i-Martin, 1992, \textquotedblleft Public
+Finance in Models of Economic Growth,\textquotedblright\ Review of Economic
+Studies, Vol. 59(4), pp. 645-61.
+
+\bibitem{} Berg, A., T. Mirzoev, R. Portillo, and L.F. Zanna, 2010a,
+\textquotedblleft The Short-Run Macroeconomics of Aid Inflows: Understanding
+the Interaction of Fiscal and Reserve Policy,\textquotedblright\ IMF Working
+Paper 10/65.
+
+\bibitem{} Berg, A., J. Gottschalk, R. Portillo, and L.F. Zanna, 2010b,
+\textquotedblleft The Macroeconomics of Medium-Term Aid Scaling-Up
+Scenarios.\textquotedblright\ IMF Working Paper 10/160.
+
+\bibitem{} Berg, A., R. Portillo, S. Yang, and L.F. Zanna, 2012,
+\textquotedblleft Public Investment in Resource Abundant Low-Income
+Countries,\textquotedblright\ IMF Working Paper, forthcoming .
+
+\bibitem{} Blundell, R., 1988, \textquotedblleft Consumer Behavior: Theory
+and Evidence --- A Survey.\textquotedblright\ Economic Journal 98, 16-65.
+
+\bibitem{} Blundell, R., P. Pashardes, and G. Weber, 1993, \textquotedblleft
+What do we Learn about Consumer Demand Patterns from Micro
+Data?\textquotedblright\ American Economic Review 83, 570-597.
+
+\bibitem{} Brice\~{n}o-Garmendia, C., K. Smits, and V. Foster, 2008,
+\textquotedblleft Financing Public Infrastructure in Sub-Saharan Africa:
+Patterns and Emerging Issues.\textquotedblright\ AICD Background Paper 15
+(World Bank).
+
+\bibitem{} Bohn, H., 1998, \textquotedblleft The Behavior of US Public Debt
+and Deficits,\textquotedblright\ Quarterly Journal of Economics, Vol 113(3),
+pp. 949-963.
+
+\bibitem{} Calder\'{o}n, C., E. Moral-Benito, and L. Serv\'{e}n, 2009,
+\textquotedblleft Is Infrastructure Capital Productive? A Dynamic
+Heterogeneous Approach.\textquotedblright\ Mimeo (World Bank).
+
+\bibitem{} Calder\'{o}n, C. and L. Serv\'{e}n, 2010, \textquotedblleft
+Infrastructure in Latin America.\textquotedblright\ Policy Research Working
+Paper, No.\thinspace 5317 (World Bank).
+
+\bibitem{} Chatterjee, S. and S. Turnovsky, 2007, \textquotedblleft Foreign
+Aid and Economic Growth: The Role of Flexible Labor
+Supply,\textquotedblright\ Journal of Development Economics, Vol. 84(1), pp.
+507--533.
+
+\bibitem{} Celasun, O., X. Debrun, and J. D. Ostry, 2007, \textquotedblleft
+Primary Surplus Behavior and Risks to Fiscal Sustainability in Emerging
+Market Countries: A `Fan-Chart' Approach,\textquotedblright\ IMF Staff
+Papers, Vol. 53(3), pp. 401-425.
+
+\bibitem{} Cerra, V., S. Tekin, and S. Turnovsky, 2008, \textquotedblleft
+Foreign Aid and Real Exchange Rate Adjustments in a Financially Constrained
+Dependent Economy,\textquotedblright\ IMF Working Paper 08/204.
+
+\bibitem{} Clinton, K., R. Garcia-Saltos, M. Johnson, O. Kamenik, and D.
+Laxton, 2010, \textquotedblleft International Deflation Risks under
+Alternative Macroeconomic Policies,\textquotedblright\ Journal of the
+Japanese and International Economies, Vol. 24(2), pp. 140-177.
+
+\bibitem{} Collier, P., 2007, \textquotedblleft The Bottom Billion: Why the
+Poorest Countries are Failing and What Can Be Done About
+It,\textquotedblright\ Oxford University Press, New York.
+
+\bibitem{} Cowan, D., 2010, \textquotedblleft Sub-Saharan Africa Macro
+View.\textquotedblright\ Citigroup Global Markets.
+
+\bibitem{} Dabla-Norris, E., J. Brumby, C. Papageorgiou, A. Kyobe, and Z.
+Mills, 2011, \textquotedblleft Investing in Public Investment: An Index of
+Public Investment Management Quality,\textquotedblright\ IMF Working Paper,
+11/37.
+
+\bibitem{} Dagher, J., J. Gottschalk, and R. Portillo, 2012,
+\textquotedblleft The Short-run Impact of Oil Windfalls in Low-income
+Countries: A DSGE Approach.\textquotedblright\ Journal of African Economies,
+forthcoming.
+
+\bibitem{} Dalgaard, C. and H. Hansen, 2005, \textquotedblleft The Return to
+Foreign Aid.\textquotedblright\ Discussion Paper No.\thinspace 05-04,
+Institute of Economics, University of Copenhagen.
+
+\bibitem{} Deaton, A., and D. Muellbauer, 1980, \textit{Economics and
+Consumer Behavior} (New York, Cambridge University Press).
+
+\bibitem{} Eaton, J., 2002, \textquotedblleft The HIPC Initiative: The
+Goals, Additionality, Eligibility, and Debt
+Sustainability.\textquotedblright\ Mimeo (Operations Evaluation Department,
+World Bank).
+
+\bibitem{} Eberhard, A., V. Foster, C. Bricendo-Garmendia, F. Ouedraogo, D.
+Camos, and M. Shkaratan, 2008, \textquotedblleft Underpowered: The State of
+the Power Sector in Sub-Saharan Africa.\textquotedblright\ AICD Background
+Paper 6 (World Bank).
+
+\bibitem{} Escribano, A., J. Guasch, and J. Pena, 2008, \textquotedblleft
+Impact of Infrastructure Constraints on Firm Productivity in
+Africa.\textquotedblright\ AICD Working Paper No.\thinspace 9 (World Bank).
+
+\bibitem{} EURODAD, 2001, \textquotedblleft Putting Poverty Reduction
+First.\textquotedblright\ (European Network on Debt and Development)
+
+\bibitem{} EURODAD, 2009, \textquotedblleft Review of the DSF: Bank \& Fund
+Declare Countries Can Borrow More.\textquotedblright\ (European Network on
+Debt and Development)
+
+\bibitem{} Fedelino, A. and A. Kudina, 2003, \textquotedblleft Fiscal
+Sustainability in African HIPC Countries: A Policy
+Dilemma?\textquotedblright\ IMF Working Paper, No.\thinspace 03/187.
+
+\bibitem{} Fern\'{a}ndez-Villaverde, J., P. Guerr\'{o}n-Quintana, J.
+Rubio-Ram\'{\i}rez, and M. Uribe, 2011. \textquotedblleft Risk Matters: The
+Real Effects of Volatility Shocks,\textquotedblright\ American Economic
+Review, Vol. 101(6), pp. 2530-2561.
+
+\bibitem{} Foster, V. and C. Brice\~{n}o-Garmendia, 2010, \textit{Africa's
+Infrastructure: A Time for Transformation}, forthcoming (Agence Francaise de
+Developpement and the World Bank).
+
+\bibitem{} Futagami, K., Y. Morita, and A. Shibata, 1993, \textquotedblleft
+Dynamic Analysis of an Endogenous Growth Model with Public
+Capital,\textquotedblright\ Scandinavian Journal of Economics, Vol. 95(4),
+pp. 607-25.
+
+\bibitem{} Garcia, M. and R. Rigobon, 2005, \textquotedblleft A Risk
+Management Approach to Emerging Market's Sovereign Debt Sustainability with
+an Application to Brazilian Data,\textquotedblright\ in \textit{Inflation
+Targeting, Debt, and the Brazilian Experience: 1999 to 2003}, editors,
+Francesco Giavazzi, Ilan Goldfajn, and Santiago Herrera, MIT Press.
+
+\bibitem{} Ghosh, A., J. Kim, E. Mendoza, J. D. Ostry, and M. Qureshi, 2011.
+\textquotedblleft Fiscal Fatigue, Fiscal Space and Debt Sustainability in
+Advanced Economies,\textquotedblright\ NBER Working Papers 16782, National
+Bureau of Economic Research.
+
+\bibitem{} Glomm, Gerhard and B. Ravikumar, 1994, \textquotedblleft Public
+investment in infrastructure in a simple growth model,\textquotedblright\
+Journal of Economic Dynamics and Control, Vol. 18(6), pp. 1173-1187.
+
+\bibitem{} Greiner, A., 2007, \textquotedblleft An Endogenous Growth Model
+with Public Capital and Sustainable Government Debt,\textquotedblright\ The
+Japanese Economic Review, Vol. 58(3), pp. 345-361.
+
+\bibitem{} Greiner, A., W. Semmler, and G. Gong, 2005, \textit{The Forces of
+Economic Growth: A Time Series Perspective, }1$^{\text{st}}$ edition
+(Princeton, N.J.; Princeton University Press).
+
+\bibitem{} Gueye, C. and A. Sy, 2010, \textquotedblleft Beyond Aid: How Much
+Should African Countries Pay to Borrow?\textquotedblright\ IMF Working
+Paper, No.\thinspace 10/140.
+
+\bibitem{} Gupta, S., R. Powell, and Y. Yang, 2006, \textit{Macroeconomic
+Challenges of Scaling Up Aid to Africa: A Checklist for Practitioners}
+(International Monetary Fund).
+
+\bibitem{} Hjertholm, P., 2003, \textquotedblleft Theoretical and Empirical
+Foundations of HIPC Debt Sustainability Targets.\textquotedblright\ Journal
+of Development Studies 39, 67-100.
+
+\bibitem{} Hulten, C., 1996, \textquotedblleft Infrastructure Capital and
+Economic Growth: How Well You Use It May Be More Important Than How Much You
+Have.\textquotedblright\ NBER Working Paper, No.\thinspace 5847.
+
+\bibitem{} Hulten, C., E. Bennathan, and S. Srinivasan, 2006,
+\textquotedblleft Infrastructure, Externalities, and Economic Development: A
+Study of Indian Manufacturing.\textquotedblright\ World Bank Economic Review
+20, xx-xx.
+
+\bibitem{} International Monetary Fund, 2007a, \textquotedblleft Regional
+Economic Outlook: Sub-Saharan Africa,\textquotedblright\ SM/07/319,
+available at
+http://www.imf.org/external/pubs/ft/reo/2007/afr/eng/sreo1007.pdf
+
+\bibitem{} International Monetary Fund, 2007b, \textquotedblleft Ghana:
+Staff Report for the 2007 Article IV Consultation,\textquotedblright\
+SM/07/156, available at
+http://www.imf.org/external/pubs/ft/scr/2007/cr07210.pdf
+
+\bibitem{} International Monetary Fund, 2009a, \textquotedblleft Changing
+Patterns in Low-Income Country Financing and Implications for Fund Policies
+on External Financing and Debt,\textquotedblright\ SM/09/56, available at
+http://www.imf.org/external/np/pp/eng/2009/022509a.pdf
+
+\bibitem{} International Monetary Fund, 2009b, \textquotedblleft Debt Limits
+in Fund-Supported Programs: Proposed New Guidelines\textquotedblright ,
+SM/09/215, available at http://www.imf.org/external/np/pp/eng/2009/080509.pdf
+
+\bibitem{} International Monetary Fund, 2010, \textquotedblleft Staff
+Guidance Note on the Application of the Joint Fund-Bank Debt Sustainability
+Framework for Low-Income Countries,\textquotedblright\ SM/10/16, available
+at http://www.imf.org/external/np/pp/eng/2010/012210.pdf
+
+\bibitem{} International Monetary Fund and World Bank, 2006,
+\textquotedblleft Applying the Debt Sustainablity Framework for Low-Income
+Countries: Post-Debt Relief,\textquotedblright\ SM/06/364, available at
+http://www.imf.org/external/np/pp/eng/2006/110606.pdf
+
+\bibitem{} International Monetary Fund and World Bank, 2009,
+\textquotedblleft A Review of Some Aspects of the Low-Income Country Debt
+Sustainability Framework,\textquotedblright\ SM/09/216, available at
+http://www.imf.org/external/np/pp/eng/2009/080509a.pdf
+
+\bibitem{} International Monetary Fund and World Bank, 2010,
+\textquotedblleft Preserving Debt Sustainability in Low-Income Countries in
+the Wake of the Global Crisis,\textquotedblright\ SM/10/76 , available at
+http://www.imf.org/external/np/pp/eng/2009/080509a.pdf
+
+\bibitem{} Isham, Jonathan and Daniel Kaufmann, 1999, \textquotedblleft The
+Forgotten Rationale For Policy Reform: The Productivity of Investment
+Projects\textquotedblright\ Quarterly Journal of Economics, February, Vol.
+114, No. 1, pp. 149--184.
+
+\bibitem{} Kose, M. A., and R. Riezman, 2001, \textquotedblleft Trade Shocks
+and Macroeconomic Fluctuations in Africa,\textquotedblright\ Journal of
+Development Economics, Vol. 65(1), pp. 55-80.
+
+\bibitem{} Kraay, A. and V. Nehru, 2006, \textquotedblleft When Is External
+Debt Sustainable?,\textquotedblright\ World Bank Economic Review, Vol.
+20(3), pp. 341-365.
+
+\bibitem{} Lluch, C., A. Powell, and R. Williams, 1977, \textit{Patterns in
+Household Demand and Saving} (London, Oxford University Press).
+
+\bibitem{} Mendoza, E. and M. Oviedo, 2004, \textquotedblleft Public Debt,
+Fiscal Solvency and Macroeconomic Uncertainty in Latin America: The Cases of
+Brazil, Colombia, Costa Rica, and Mexico,\textquotedblright\ NBER Working
+Papers 10637, National Bureau of Economic Research.
+
+\bibitem{} Neumeyer, P., and F. Perri, 2005, \textquotedblleft Business
+Cycles in Emerging Economies: the Role of Interest Rates,\textquotedblright\
+Journal of Monetary Economics, Vol. 52(2), pp. 345-380.
+
+\bibitem{} Ogaki, M., J. Ostry, and C. Reinhart, 1996, \textquotedblright
+Saving Behavior in Low- and Middle-Income Developing
+Countries.\textquotedblright\ IMF Staff Papers 43, 38-71.
+
+\bibitem{} Panizza, U., 2008, \textquotedblleft Domestic and External Public
+Debt in Developing Countries.\textquotedblright\ UNCTAD Discussion Paper,
+No.\thinspace 188.
+
+\bibitem{} Perrault, J., L. Savard, and A. Estache, 2010, \textquotedblleft
+The Impact of Infrastructure Spending in Sub-Saharan Africa: A CGE Modeling
+Approach.\textquotedblright\ Policy Research Working Paper, No.\thinspace
+5386 (World Bank).
+
+\bibitem{} Pritchett, L., 2000, \textquotedblleft The Tyranny of Concepts:
+CUDIE (Cumulated, Depreciated, Investment Effort) is Not
+Capital.\textquotedblright\ Journal of Economic Growth 5, 361-384.
+
+\bibitem{} Raddatz, C., 2007, \textquotedblleft Are External Shocks
+Responsible for the Instability of Output in Low-Income
+Countries?,\textquotedblright\ Journal of Development Economics, Vol. 84(1),
+pp. 155-187.
+
+\bibitem{} Redifer, L., 2010, \textquotedblleft New Financing Sources for
+Africa's Infrastructure Deficit.\textquotedblright\ IMF Survey Magazine:
+Countries and Regions.
+
+\bibitem{} Sachs, J., 2002, \textquotedblleft Resolving the Debt Crisis of
+Low-Income Countries.\textquotedblright\ Brookings Papers on Economic
+Activity 1, 257-286.
+
+\bibitem{} Schmitt-Groh\'{e}, S. and M. Uribe, 2003, \textquotedblleft
+Closing Small Open Economy Models,\textquotedblright\ Journal of
+International Economics, Vol. 61(1), pp. 163--185.
+
+\bibitem{} Serv\'{e}n, Luis, 2010, \textquotedblleft Infrastructure
+investment and growth\textquotedblright , World Bank, in progress;
+presentation available at
+http://www.imf.org/external/np/seminars/eng/2010/spr/lic/index.htm
+
+\bibitem{} Steadman Group (2009), \textquotedblleft Financial Access Survey
+for Financial Sector Deepening,\textquotedblright\ Presentation.\ 
+
+\bibitem{} Straub, S., 2008, \textquotedblleft Infrastructure and Growth in
+Developing Countries: Recent Advances and Research
+Challenges.\textquotedblright\ Policy Research Working Paper, No.\thinspace
+4460 (World Bank).
+
+\bibitem{} Thurlow, J., D. Evans, and S. Robinson, 2004, \textquotedblleft A
+2001 Social Accounting Matrix for Zambia.\textquotedblright\ International
+Food Policy Research Institute (Washington, D.C.)
+
+\bibitem{} Thurlow, J., X. Diao, and C. McCool, 2008, \textquotedblleft 2004
+Social Accounting Matrix: Malawi.\textquotedblright\ International Food
+Policy Research Institute.
+
+\bibitem{} Turnovsky, S., 1999, \textit{Methods of Macroeconomic Dynamics, }2%
+$^{\text{nd}}$ edition (Cambridge, Mass.; MIT Press).
+
+\bibitem{} Uribe, M. and V. Yue, 2006, \textquotedblleft Country Spreads and
+Emerging Countries: Who Drives Whom?,\textquotedblright\ Journal of
+International Economics, Vol. 69(1), pp. 6-36.
+
+\bibitem{} UNCTAD, 2004, \textquotedblleft Analysis of Eligibility and Debt
+Sustainability Criteria of the HIPC Initiative.\textquotedblright\ Chapter 2
+in \textit{Debt Sustainablility: Oasis or Mirage? }(United Nations
+Conference on Trade and Development).
+
+\bibitem{} van der Ploeg, F. and A. Venables, 2011, \textquotedblleft
+Harnessing Windfall Revenues: Optimal Policies for Resource-Rich Developing
+Economies,\textquotedblright\ Economic Journal, Vol. 121(551), pp. 1-30.
+
+\bibitem{} Wyplosz, C., 2007, \textquotedblleft Debt Sustainability
+Assessment: The IMF Approach and Alternatives.\textquotedblright\ HEI
+Working Paper, No.\thinspace 03/2007 (Graduate Institute of International
+Studies, Geneva).
+\end{thebibliography}
+
+\end{document}

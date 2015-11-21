@@ -1,0 +1,476 @@
+# Created by Octave 3.8.1, Thu May 07 14:17:26 2015 CDT <will@wclark3-ubuntu>
+# name: VA_n
+# type: scalar
+0.49
+
+
+# name: imp2gdp
+# type: scalar
+44
+
+
+# name: ro
+# type: scalar
+0.1
+
+
+# name: ho
+# type: scalar
+0.15
+
+
+# name: share_bstar
+# type: scalar
+0
+
+
+# name: share_b
+# type: scalar
+0.2
+
+
+# name: share_d
+# type: scalar
+0.5
+
+
+# name: share_dc
+# type: scalar
+0
+
+
+# name: share_remit
+# type: scalar
+0.04
+
+
+# name: share_grants
+# type: scalar
+0.05
+
+
+# name: r_dco
+# type: scalar
+0.06
+
+
+# name: izy
+# type: scalar
+0.06
+
+
+# name: a_ratio
+# type: scalar
+1.5
+
+
+# name: alpha_x
+# type: scalar
+0.4
+
+
+# name: alpha_n
+# type: scalar
+0.55
+
+
+# name: eta
+# type: scalar
+1
+
+
+# name: fo
+# type: scalar
+0.5
+
+
+# name: R_zo
+# type: scalar
+0.3
+
+
+# name: s
+# type: scalar
+0.6
+
+
+# name: s_s
+# type: scalar
+0.6
+
+
+# name: g
+# type: scalar
+0.015
+
+
+# name: tau
+# type: scalar
+0.34
+
+
+# name: alpha_k
+# type: scalar
+0.5
+
+
+# name: alpha_z
+# type: scalar
+0.5
+
+
+# name: delta_x
+# type: scalar
+0.05
+
+
+# name: delta_n
+# type: scalar
+0.05
+
+
+# name: delta_z
+# type: scalar
+0.05
+
+
+# name: xi_x
+# type: scalar
+0
+
+
+# name: xi_n
+# type: scalar
+0
+
+
+# name: sigma_x
+# type: scalar
+0
+
+
+# name: sigma_n
+# type: scalar
+0
+
+
+# name: omega
+# type: scalar
+2
+
+
+# name: epsilon
+# type: scalar
+0.5
+
+
+# name: etag
+# type: scalar
+0
+
+
+# name: phi
+# type: scalar
+0
+
+
+# name: rstar
+# type: scalar
+0.04
+
+
+# name: oilro
+# type: scalar
+0
+
+
+# name: lambda
+# type: scalar
+0
+
+
+# name: lambda1
+# type: scalar
+0.25
+
+
+# name: lambda2
+# type: scalar
+0.02
+
+
+# name: lambda3
+# type: scalar
+0.25
+
+
+# name: lambda4
+# type: scalar
+0.02
+
+
+# name: nxpsi
+# type: scalar
+1
+
+
+# name: itermax
+# type: scalar
+20
+
+
+# name: beta
+# type: scalar
+0.9497845182048766
+
+
+# name: beta_t
+# type: scalar
+0.9227272727272725
+
+
+# name: yo
+# type: scalar
+100
+
+
+# name: bo
+# type: scalar
+20
+
+
+# name: bstaro
+# type: scalar
+0
+
+
+# name: d_o
+# type: scalar
+50
+
+
+# name: dco
+# type: scalar
+0
+
+
+# name: P_no
+# type: scalar
+1
+
+
+# name: P_xo
+# type: scalar
+1
+
+
+# name: P_mo
+# type: scalar
+1
+
+
+# name: P_mmo
+# type: scalar
+1
+
+
+# name: Po
+# type: scalar
+1
+
+
+# name: wo
+# type: scalar
+1
+
+
+# name: P_ko
+# type: scalar
+2
+
+
+# name: P_zo
+# type: scalar
+2
+
+
+# name: a_k
+# type: scalar
+1
+
+
+# name: a_z
+# type: scalar
+1
+
+
+# name: ro
+# type: scalar
+0.1000000000000001
+
+
+# name: r_xo
+# type: scalar
+0.3000000000000002
+
+
+# name: r_no
+# type: scalar
+0.3000000000000002
+
+
+# name: miu
+# type: scalar
+0.05
+
+
+# name: nu_x
+# type: scalar
+7.692307692307692
+
+
+# name: nu_n
+# type: scalar
+7.692307692307692
+
+
+# name: zo
+# type: scalar
+46.15384615384615
+
+
+# name: zeo
+# type: scalar
+27.69230769230769
+
+
+# name: remito
+# type: scalar
+4
+
+
+# name: grantso
+# type: scalar
+5
+
+
+# name: dploto
+# type: scalar
+50
+
+
+# name: nug
+# type: scalar
+0.02
+
+
+# name: nu
+# type: scalar
+0.04000000000000009
+
+
+# name: gama_n
+# type: scalar
+0.4294710764818512
+
+
+# name: eo
+# type: scalar
+47.43880436704725
+
+
+# name: eho
+# type: scalar
+35.78177855577704
+
+
+# name: To
+# type: scalar
+11.93174223190601
+
+
+# name: psi_x
+# type: scalar
+0.1661538461538461
+
+
+# name: gama_m
+# type: scalar
+0.3693897861999201
+
+
+# name: gama_x
+# type: scalar
+0.2011391373182287
+
+
+# name: rho_x
+# type: scalar
+0.2011391373182287
+
+
+# name: rho_m
+# type: scalar
+0.3693897861999201
+
+
+# name: psi_n
+# type: scalar
+0.1661538461538461
+
+
+# name: q_no
+# type: scalar
+49
+
+
+# name: q_xo
+# type: scalar
+51
+
+
+# name: k_no
+# type: scalar
+89.8333333333333
+
+
+# name: k_xo
+# type: scalar
+67.99999999999997
+
+
+# name: L_no
+# type: scalar
+22.05
+
+
+# name: L_xo
+# type: scalar
+30.6
+
+
+# name: Lo
+# type: scalar
+21.06
+
+
+# name: Lho
+# type: scalar
+31.58999999999999
+
+
+# name: a_n
+# type: scalar
+0.5910416138668027
+
+
+# name: a_x
+# type: scalar
+0.6973972573156113
+
+
+# name: i_zo
+# type: scalar
+3
+
+

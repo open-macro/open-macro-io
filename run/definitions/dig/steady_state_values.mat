@@ -1,0 +1,146 @@
+# Created by Octave 3.8.1, Thu May 07 14:17:26 2015 CDT <will@wclark3-ubuntu>
+# name: b_ini
+# type: scalar
+20
+
+
+# name: d_ini
+# type: scalar
+50
+
+
+# name: dc_ini
+# type: scalar
+0
+
+
+# name: bstar_ini
+# type: scalar
+0
+
+
+# name: c_ini
+# type: scalar
+83.22058292282429
+
+
+# name: e_ini
+# type: scalar
+47.43880436704725
+
+
+# name: eh_ini
+# type: scalar
+35.78177855577704
+
+
+# name: h_ini
+# type: scalar
+0.15
+
+
+# name: i_n_ini
+# type: scalar
+5.839166666666665
+
+
+# name: i_x_ini
+# type: scalar
+4.419999999999998
+
+
+# name: i_z_ini
+# type: scalar
+3
+
+
+# name: k_n_ini
+# type: scalar
+89.8333333333333
+
+
+# name: k_x_ini
+# type: scalar
+67.99999999999997
+
+
+# name: L_n_ini
+# type: scalar
+22.05
+
+
+# name: L_x_ini
+# type: scalar
+30.6
+
+
+# name: P_ini
+# type: scalar
+1
+
+
+# name: P_k_ini
+# type: scalar
+2
+
+
+# name: P_n_ini
+# type: scalar
+1
+
+
+# name: P_z_ini
+# type: scalar
+2
+
+
+# name: r_ini
+# type: scalar
+0.1000000000000001
+
+
+# name: r_n_ini
+# type: scalar
+0.3000000000000002
+
+
+# name: r_x_ini
+# type: scalar
+0.3000000000000002
+
+
+# name: R_z_ini
+# type: scalar
+0.3
+
+
+# name: q_n_ini
+# type: scalar
+49
+
+
+# name: q_x_ini
+# type: scalar
+51
+
+
+# name: w_ini
+# type: scalar
+1
+
+
+# name: z_ini
+# type: scalar
+46.15384615384615
+
+
+# name: T_ini
+# type: scalar
+11.93174223190601
+
+
+# name: ze_ini
+# type: scalar
+27.69230769230769
+
+

@@ -1,0 +1,72 @@
+# iOS / Apple
+# ===========
+.DS_Store
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# Node and related ecosystem
+# ==========================
+.nodemonignore
+.sass-cache/
+npm-debug.log
+node_modules/
+bower_components/
+public/lib
+!public/lib/angular-mathjax
+!public/lib/project-material-icons
+app/tests/coverage/
+.bower-*/
+.idea/
+.env
+
+# MEAN.js app and assets
+# ======================
+config/sslcerts/*.pem
+access.log
+
+# Sublime editor
+# ==============
+.sublime-project
+*.sublime-project
+*.sublime-workspace
+
+# Eclipse project files
+# =====================
+.project
+.settings/
+.*.md.html
+.metadata
+*~.nib
+local.properties
+
+# IntelliJ
+# ========
+*.iml
+
+# Cloud9 IDE
+# =========
+.c9/
+data/
+mongod
+
+# General
+# =======
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+*.tmp
+*.bak
+*.swp
+logs/
+build/
+
+
+# Local Mongodb
+# =============
+db/
+run/simulations/*
+*octave-workspace

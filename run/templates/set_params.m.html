@@ -1,0 +1,5 @@
+
+{% for param in parameters %}{{ param.name }} = {{param.value}};
+
+{% endfor %}
+save params.mat {% for param in parameters %}{{ param.name }} {% endfor %};

@@ -1,0 +1,141 @@
+%2multibyte Version: 5.50.0.2960 CodePage: 1252
+
+\documentclass[11pt]{article}
+
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{lineno}
+\usepackage{fancybox}
+\usepackage{fancyhdr}
+\usepackage{rotating}
+\usepackage{sectsty}
+
+\setcounter{MaxMatrixCols}{10}
+
+\begin{document}
+
+\section{Appendix}
+
+Letting $\eta _{t}^{s}$ , $\eta _{t}^{k}$ and $\lambda _{t}$ be the
+Lagrangian multipliers on equations (\ref{3}), (\ref{4}) and (\ref{6})
+respectively, the first order conditions are given by:
+
+\begin{equation}
+c_{t}:[c_{t}-\varkappa c_{t-1}]^{-\gamma }-\varkappa \beta (1+\mathfrak{g}%
+)[c_{t+1}-\varkappa c_{t}]^{-\gamma }=\lambda _{t},  \label{A1}
+\end{equation}
+
+\begin{equation}
+g_{t}:[g_{t}-\varkappa g_{t-1}]^{-\gamma }-\varkappa \beta (1+\mathfrak{g}%
+)[g_{t+1}-\varkappa g_{t}]^{-\gamma }=\lambda _{t},
+\end{equation}
+
+\begin{equation}
+i_{t}^{k}:e_{k}\eta _{t}^{k}=\lambda _{t},  \label{A3}
+\end{equation}
+
+\begin{equation}
+i_{t}^{s}:e_{s}\eta _{t}^{s}=\lambda _{t},  \label{A4}
+\end{equation}
+
+\begin{equation}
+d_{t}:\lambda _{t}=\beta \lambda _{t+1}\left\{ 
+\begin{array}{c}
+1+r^{\ast }+\frac{\pi }{\rho _{1}^{2}}\left[ \exp \left[ \rho _{1}(d_{t}-%
+\bar{d}-\psi V_{t})\right] -\rho _{2}(d_{t}-\overline{d}-\psi V_{t})-\rho
+_{3}\right] \\ 
++\frac{\pi }{\rho _{1}^{2}}\left[ \rho _{1}\exp \left[ \rho _{1}(d_{t}-\bar{d%
+}-\psi V_{t})\right] -\rho _{2}\right] d_{t}%
+\end{array}%
+\right\} ,  \label{A5}
+\end{equation}
+
+\begin{equation}
+k_{t}:\lambda _{t}=\beta (1+\mathfrak{g})\lambda _{t+1}\frac{\left[
+e_{k}\theta _{k}\frac{y_{t+1}^{n}}{k_{t}}+(1-\delta _{k})-e_{k}\frac{\phi
+_{k}}{2}\left( \frac{k_{t+1}}{k_{t}}-1\right) ^{2}+e_{k}\phi _{k}\left( 
+\frac{k_{t+1}}{k_{t}}-1\right) \frac{k_{t+1}}{k_{t}}\right] }{\left[ (1+%
+\mathfrak{g})+e_{k}\phi _{k}\left( \frac{k_{t}}{k_{t-1}}-1\right) \right] },
+\label{A6}
+\end{equation}
+
+\begin{equation}
+s_{t}:\lambda _{t}=\beta (1+\mathfrak{g})\lambda _{t+1}\frac{\left[
+e_{s}\theta _{s}\frac{y_{t+1}^{n}}{s_{t}}+(1-\delta _{s})-e_{s}\frac{\phi
+_{s}}{2}\left( \frac{s_{t+1}}{s_{t}}-1\right) ^{2}+e_{s}\phi _{s}\left( 
+\frac{s_{t+1}}{s_{t}}-1\right) \frac{s_{t+1}}{s_{t}}\right] }{\left[ (1+%
+\mathfrak{g})+e_{s}\phi _{s}\left( \frac{s_{t}}{s_{t-1}}-1\right) \right] },
+\label{A7}
+\end{equation}
+
+\begin{equation}
+\eta _{t}^{s}:(1+\mathfrak{g})s_{t+1}=e_{s}i_{t}^{s}+(1-\delta _{s})s_{t},
+\label{A8}
+\end{equation}
+
+\begin{equation}
+\eta _{t}^{k}:(1+\mathfrak{g})k_{t+1}=e_{k}i_{t}^{k}+(1-\delta _{k})k_{t},
+\label{A9}
+\end{equation}
+
+\begin{equation}
+\lambda _{t}:(1+\mathfrak{g}%
+)d_{t}=(1+r_{t-1})d_{t-1}+c_{t}+i_{t}^{k}+AC_{t}^{k}+g_{t}+i_{t}^{s}+AC_{t}^{s}-y_{t}^{n}-y_{t}^{o}-T_{t}.
+\label{A10}
+\end{equation}
+
+At steady-state, we find that:
+
+\begin{equation}
+\lbrack c(1-\varkappa )]^{-\gamma }[1-\varkappa \beta (1+\mathfrak{g}%
+)]=\lambda ,  \label{SS1}
+\end{equation}
+
+\begin{equation}
+\kappa \lbrack g(1-\varkappa )]^{-\gamma }[1-\varkappa \beta (1+\mathfrak{g}%
+)]=\lambda ,  \label{SS2}
+\end{equation}
+
+\begin{equation}
+e_{k}\eta ^{k}=\lambda ,  \label{SS3}
+\end{equation}
+
+\begin{equation}
+e_{s}\eta ^{s}=\lambda ,  \label{SS4}
+\end{equation}
+
+\begin{equation}
+1=\beta \left[ 1+r^{\ast }+\frac{\pi }{\rho _{1}^{2}}[1-\rho _{3}+(\rho
+_{1}-\rho _{2})d]\right] ,  \label{SS5}
+\end{equation}
+
+\begin{equation}
+1=\beta \left[ e_{k}\theta _{k}\frac{y^{n}}{k}+(1-\delta _{k})\right] ,
+\label{SS6}
+\end{equation}
+
+\begin{equation}
+1=\beta \left[ e_{s}\theta _{s}\frac{y^{n}}{s}+(1-\delta _{s})\right] ,
+\label{SS7}
+\end{equation}
+
+\begin{equation}
+s(\mathfrak{g}+\delta _{s})=e_{s}i^{s},  \label{SS8}
+\end{equation}
+
+\begin{equation}
+k(\mathfrak{g}+\delta _{k})=e_{k}i^{k},  \label{SS9}
+\end{equation}
+
+\begin{equation}
+(\mathfrak{g}-r)d+y^{n}+y^{o}+T=c+i^{k}+g+i^{s}.  \label{SS10}
+\end{equation}
+
+Combining (\ref{SS1}) and (\ref{SS2}):
+
+\begin{equation}
+\kappa =\left( \frac{g}{c}\right) ^{\gamma }  \label{SS11}
+\end{equation}
+
+\end{document}

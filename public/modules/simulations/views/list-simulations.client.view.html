@@ -1,0 +1,52 @@
+<section data-ng-controller="ListSimulationsController" data-ng-init="find()">
+
+	<omt-header></omt-header>
+
+	<md-content om-toolbarless-height flex>
+		<md-content class="md-padding center-model" ng-repeat="group in groupedSimulations">
+			<md-content class="md-whiteframe-z1">
+				<md-toolbar class="md-accent md-default-theme no-shadow">
+					<h2 class="md-toolbar-tools">
+						<span> {{group.model}} </span>
+					</h2>
+				</md-toolbar>
+				<md-content>
+					<md-list>
+						<md-item ng-repeat="sim in group.simulations">
+							<md-item-content layout="row">
+								<a href="/#!/simulations/{{sim._id}}" flex class="pretty">
+									<div class="md-tile-content">
+										<md-content> {{sim.name}}</md-content>
+										<p>{{sim.created | date: "MMMM d, yyyy"}}</p>
+									</div>
+								</a>
+                                <md-menu md-position-mode="target-right target" >
+                                    <md-button aria-label="Open Simulation Menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                                        <md-icon md-menu-origin md-svg-icon="lib/project-material-icons/ic_more_vert_48px.svg"></md-icon>
+                                    </md-button>
+                                    <md-menu-content width="4" >
+                                        <md-menu-item>
+                                            <md-button ng-click="remove(sim)">
+                                                <div layout="row">
+                                                    <p flex>Delete</p>
+                                                    <md-icon md-menu-align-target md-svg-icon="lib/project-material-icons/ic_delete_48px.svg"
+                                                             style="margin: auto 3px auto 0;"></md-icon>
+                                                </div>
+                                            </md-button>
+                                        </md-menu-item>
+                                    </md-menu-content>
+                                </md-menu>
+							</md-item-content>
+							<md-divider ng-if="!$last"></md-divider>
+						</md-item>
+					</md-list>
+				</md-content>
+			</md-content>
+		</md-content>
+	</md-content>
+	<mfb-menu position="br" active-icon="ic_add_48px.svg"
+			  resting-icon="ic_add_48px.svg" label="Add a Simulation" ng-click="newSimulation()">
+	</mfb-menu>
+</section>
+
+

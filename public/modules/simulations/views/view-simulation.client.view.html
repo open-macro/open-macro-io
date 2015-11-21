@@ -1,0 +1,16 @@
+<section data-ng-controller="SimulationController" data-ng-init="findOne()">
+
+	<omt-header></omt-header>
+	<om-tabbar></om-tabbar>
+
+	<md-content md-padding ng-show="simulation">
+
+		<div  ng-switch on="simulation.model.short_name">
+			<landing-page ng-switch-when="dig" model-name="dig" layout="row"></landing-page>
+			<landing-page ng-switch-when="ca" model-name="ca" layout="row"></landing-page>
+			<landing-page ng-switch-when="rbc" model-name="rbc" layout="row"></landing-page>
+
+		</div>
+
+	</md-content>
+</section>

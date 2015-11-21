@@ -1,0 +1,185 @@
+{
+    "endovars": {
+        "I": {
+            "description": "private investment",
+            "units": "percent change"
+        },
+        "Iz": {
+            "description": "public investment",
+            "units": "percent change"
+        },
+        "R": {
+            "description": "price of private capital",
+            "units": "percent change"
+        },
+        "a": {
+            "description": "total factor productivity",
+            "units": "percent change"
+        },
+        "c": {
+            "description": "household consumption",
+            "units": "percent change"
+        },
+        "g": {
+            "description": "government spending",
+            "units": "percent change"
+        },
+        "k": {
+            "description": "private capital",
+            "units": "percent change"
+        },
+        "n": {
+            "description": "labor",
+            "units": "percent change"
+        },
+        "tau": {
+            "description": "lump sum tax",
+            "units": "percent change"
+        },
+        "w": {
+            "description": "wage",
+            "units": "percent change"
+        },
+        "y": {
+            "description": "total output",
+            "units": "percent change"
+        },
+        "z": {
+            "description": "public capital",
+            "units": "percent change"
+        }
+    },
+    "equations": {
+        "0": {
+            "description": "firm production function",
+            "latex": "y_t = a_t z^{\\xi} k_t^{\\alpha} n_t^{1-\\alpha}"
+        },
+        "1": {
+            "description": "price of capital (marginal product of capital)",
+            "latex": "R_t = \\frac{\\alpha y_t}{k_{t-1}}"
+        },
+        "2": {
+            "description": "wage rate (marginal product of labor)",
+            "latex": "w_t = \\frac{(1-\\alpha) y_t}{n_t}"
+        },
+        "3": {
+            "description": "private capital accumulation function",
+            "latex": "k_{t+1} = I_t + (1-\\delta) k_t"
+        },
+        "4": {
+            "description": "Inter-temporal consumption rule",
+            "latex": "\\frac{1}{c_t} = \\beta E_t \\frac{1}{c_{t+1}}(R_{t+1} + (1-\\delta))"
+        },
+        "5": {
+            "description": "AR(1) process for public investment",
+            "latex": "I_{z,t} = (1-\\rho_z)\\overline{I_z} + \\rho_z I_{z,t-1} + \\epsilon_{z,t}"
+        },
+        "6": {
+            "description": "AR(1) process for government spending",
+            "latex": "g_{t} = (1-\\rho_g)\\overline{g} + \\rho_g g_{t-1} + \\epsilon_{g,t}"
+        },
+        "7": {
+            "description": "AR(1) process for total factor productivity",
+            "latex": "\\ln(a_t) = \\rho \\ln(a_{t-1}) + \\epsilon_t"
+        },
+        "8": {
+            "description": "economy resource constraint",
+            "latex": "y_t = c_t + I_t + g_z + z_t"
+        }
+    },
+    "exovars": {
+        "a": {
+            "description": "total factor productivity",
+            "initial_val": 1.0,
+            "units": "percent change"
+        },
+        "g": {
+            "description": "government spending",
+            "initial_val": 1.0,
+            "units": "percent change"
+        },
+        "z": {
+            "description": "public investment",
+            "initial_val": 1.0,
+            "units": "percent change"
+        }
+    },
+    "description": "Real Business Cycle Model with Government Spending",
+    "name": "Real Business Cycle Model 2",
+    "short_name": "rbc",
+    "pdf": "none",
+    "params_deep": {
+        "alpha": {
+            "default_val": 0.33,
+            "description": "capital's share of output",
+            "eqn_list": "[0,1,2]",
+            "latex": "\\alpha",
+            "notes": "The BLS collects data on average labor share of income (i.e. total wage payments divided by total income). Total labor\u2019s share is roughly around two-thirds of total income payments. Hence a value of \u03b1 = 0.33 is consistent with the data."
+        },
+        "beta": {
+            "default_val": 0.95,
+            "description": "household discount factor",
+            "eqn_list": "[4]",
+            "latex": "\\beta",
+            "notes": "In the steady state of the decentralized version of this economy, the gross real interest rate will\nequal the inverse of the subjective discount factor: 1 + r\u2217 = 1/\u03b2. We can get data on the real interest rate from the Fisher relationship using data on nominal interest rates and inflation: r\u2217 \u2248 i\u2217 \u2212 \u03c0\u2217. Using data on nominal rates and inflation, we would say that the average real interest rate is\nbetween 2-5 percent at an annual frequency. This means that \u03b2 should be between 0.95 and 0.98\nat an annual frequency, or between 0.99 and 0.995 if we are considering a quarterly calibration of\nthe model."
+        },
+        "delta": {
+            "default_val": 0.1,
+            "description": "depreciation rate of capital",
+            "eqn_list": "[3,4]",
+            "latex": "\\delta",
+            "notes": "Private fixed investment as a share of real GDP is about 15-25 percent on average in the postwar period, depending on exactly how one measures investment. If we take private fixed investment plus purchases of new durable goods, this implies that the average investment share is 24 percent. Given the calibrations of the other parameters, this implies a value of \u03b4 = 0.027 at a quarterly frequency, which I will round up to \u03b4 = 0.03. The \u201ccalibration\u201d of the time period matters here \u2013 if you are talking about annual data, for example, your \u03b2 = 0.96 and implied \u03b4 would be more like 0.12."
+        },
+        "rho": {
+            "default_val": 0.9,
+            "description": "persistence of TFP shocks",
+            "eqn_list": "[7]",
+            "latex": "\\rho",
+            "notes": "We could construct an empirical measure of TFP using growth accounting techniques to get an actual time series of eat , which would then allows us. to directly estimate \u03c1 and the standard deviation of the shock. That would require a somewhat more complicated model; for now let\u2019s just take that these numbers to be \u03c1 = 0.9"
+        },
+        "rho_g": {
+            "default_val": 0.8,
+            "description": "persistence of government spending shocks",
+            "eqn_list": "[6]",
+            "latex": "\\rho_{g}",
+            "notes": "We could construct an empirical measure of TFP using growth accounting techniques to get an actual time series of eat , which would then allows us. to directly estimate \u03c1 and the standard deviation of the shock. That would require a somewhat more complicated model; for now let\u2019s just take that these numbers to be \u03c1 = 0.8"
+        },
+        "rho_z": {
+            "default_val": 0.8,
+            "description": "persistence of public investment shocks",
+            "eqn_list": "[5]",
+            "latex": "\\rho_{z}",
+            "notes": "We could construct an empirical measure of TFP using growth accounting techniques to get an actual time series of eat , which would then allows us. to directly estimate \u03c1 and the standard deviation of the shock. That would require a somewhat more complicated model; for now let\u2019s just take that these numbers to be \u03c1 = 0.8"
+        },
+        "xi": {
+            "default_val": 0.4,
+            "description": "return on public investment",
+            "eqn_list": "[0]",
+            "latex": "\\xi",
+            "notes": "Estimates of the return on infrastructure are all over the map, but the weight of the evidence in both micro and macro studies points to a high average return. The median rate of return on World Bank projects circa 2001 was 20% in SSA and 15-29% for various sub-categories of infrastructure investment."
+        },
+        "itermax": {
+            "default_val": 10.0,
+            "description": "Determines the maximum number of iterations used in the non-linear solver.",
+            "eqn_list": "[]",
+            "latex": "\\text{itermax}",
+            "notes": "The maxit option is shared with the  steady command. So a change in maxit in a simul command will also be considered in the following steady commands. [NB: for advanced users only]"
+        }
+    },
+    "params_init": {
+        "Iz_bar": {
+            "default_val": 0.1,
+            "description": "initial value of public investment as a share of GDP",
+            "eqn_list": "[5]",
+            "latex": "\\overline{I_z}",
+            "notes": "Long-run value of public investment as a share of GDP; the model will return to this value unless shocks are fed in that drive spending up or down."
+        },
+        "g_bar": {
+            "default_val": 0.1,
+            "description": "initial value of government spending as a share of GDP",
+            "eqn_list": "[6]",
+            "latex": "\\overline{g}",
+            "notes": "Long-run value of government spending as a share of GDP; the model will return to this value unless shocks are fed in that drive spending up or down."
+        }
+    }
+}

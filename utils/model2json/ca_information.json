@@ -1,0 +1,329 @@
+{
+    "endovars": {
+        "ca": {
+            "description": "current account",
+            "units": "percent of GDP"
+        },
+        "ch": {
+            "description": "private consumption (w/ habit)",
+            "units": "percent of GDP"
+        },
+        "f": {
+            "description": "foreign assets",
+            "units": "percent of GDP"
+        },
+        "govh": {
+            "description": "government consumption (w/ habit)",
+            "units": "percent of GDP"
+        },
+        "invk": {
+            "description": "private investment",
+            "units": "percent of GDP"
+        },
+        "invs": {
+            "description": "public investment",
+            "units": "percent of GDP"
+        },
+        "k": {
+            "description": "private capital",
+            "units": "percent of GDP"
+        },
+        "r": {
+            "description": "interest rate",
+            "units": "percent"
+        },
+        "s": {
+            "description": "public capital",
+            "units": "percent of GDP"
+        },
+        "tb": {
+            "description": "trade balance",
+            "units": "percent of GDP"
+        },
+        "y": {
+            "description": "total GDP",
+            "units": "percent change"
+        },
+        "ynon": {
+            "description": "non-oil output",
+            "units": "percent of GDP"
+        }
+    },
+    "equations": {
+        "0": {
+            "description": "utility function",
+            "latex": "sum_{t=0}^{\\infty }\\beta ^{t}\\left[ \\frac{\\left( c_{t}-\\varkappa c_{t-1}\\right) ^{1-\\gamma }}{1-\\gamma }+\\kappa \\frac{\\left( g_{t}-\\varkappa g_{t-1}\\right) ^{1-\\gamma }}{1-\\gamma }\\right]"
+        },
+        "1": {
+            "description": "long run growth rate",
+            "latex": "$(1+%\\mathfrak{g})=(1+\\mathfrak{g}_{a})(1+\\mathfrak{g}_{n})$"
+        },
+        "2": {
+            "description": "production function of non-oil sector",
+            "latex": "y_{t}^{n}=ak_{t-1}^{\\theta _{k}}s_{t-1}^{\\theta _{s}}"
+        },
+        "3": {
+            "description": "public capital accumulation",
+            "latex": "(1+\\mathfrak{g})s_{t+1}=e_{s}i_{t}^{s}+(1-\\delta _{s})s_{t}"
+        },
+        "4": {
+            "description": "investment inefficiency",
+            "latex": "(1+\\mathfrak{g})k_{t+1}=e_{k}i_{t}^{k}+(1-\\delta _{k})k_{t}"
+        },
+        "5": {
+            "description": "public capital adjustment cost",
+            "latex": "AC_{t}^{s}=\\frac{\\phi _{s}}{2}\\left( \\frac{s_{t}}{s_{t-1}}-1\\right) ^{2}s_{t-1}"
+        },
+        "6": {
+            "description": "private capital adjustment cost",
+            "latex": "AC_{t}^{k}=\\frac{\\phi _{k}}{2}\\left( \\frac{k_{t}}{k_{t-1}}-1\\right) ^{2}k_{t-1}"
+        },
+        "7": {
+            "description": "premium",
+            "latex": "Pi (d_{t})=r_{t}-r^{\\ast }=\\frac{\\pi }{\\rho _{1}^{2}}\\left[ e^{\\rho _{1}(d_{t}-\\bar{d}-\\psi V_{t})}-\\rho _{2}(d_{t}-\\overline{d}-\\psi V_{t})-\\rho _{3}\\right]"
+        },
+        "8": {
+            "description": "current account",
+            "latex": "ca_{t}=d_{t-1}-(1+\\mathfrak{g})d_{t}"
+        },
+        "9": {
+            "description": "resource constraint of the economy",
+            "latex": "(1+\\mathfrak{g})d_{t}=(1+r_{t-1})d_{t-1}+c_{t}+i_{t}^{k}+AC_{t}^{k}+g_{t}+i_{t}^{s}+AC_{t}^{s}+i_{t}^{o}-y_{t}^{n}-y_{t}^{o}-T_{t}"
+        }
+    },
+    "exovars": {
+        "Abar": {
+            "description": "technology",
+            "initial_val": "Abar",
+            "units": "percent of GDP"
+        },
+        "T": {
+            "description": "government transfers",
+            "initial_val": "T_0*y",
+            "units": "percent of GDP"
+        },
+        "yoil": {
+            "description": "oil production",
+            "initial_val": "yoil_0",
+            "units": "percent of GDP"
+        }
+    },
+    "description": "Current Account Norm Model based on Araujo et al. (2013)",
+    "name": "Current Account Norm Model 2",
+    "short_name":"ca",
+    "pdf": "http://www.imf.org/external/pubs/ft/wp/2013/wp1380.pdf",
+    "params_deep": {
+        "cost_k0": {
+            "default_val": 0.4,
+            "description": "cost overrun ratio of private investments",
+            "eqn_list": "[5]",
+            "latex": "cosk_{k0}",
+            "notes": "as in the paper"
+        },
+        "cost_s0": {
+            "default_val": 0.4,
+            "description": "cost overrun ratio of public investments",
+            "eqn_list": "[5]",
+            "latex": "cost_{s0}",
+            "notes": "as in the paper"
+        },
+        "dbar": {
+            "default_val": 0.0,
+            "description": "steady state debt",
+            "eqn_list": "[6]",
+            "latex": "\\bar{d}",
+            "notes": "gross external debt (long-run average)"
+        },
+        "delta_k": {
+            "default_val": 0.055,
+            "description": "depreciation rate of private capital",
+            "eqn_list": "[4]",
+            "latex": "\\delta_{k}",
+            "notes": "van der Ploeg (2012), no need to change"
+        },
+        "delta_s": {
+            "default_val": 0.055,
+            "description": "depreciation rate of public capital",
+            "eqn_list": "[3]",
+            "latex": "\\delta_{s}",
+            "notes": "van der Ploeg (2012), no need to change"
+        },
+        "e_k": {
+            "default_val": 0.4,
+            "description": "efficiency of private capital",
+            "eqn_list": "[3]",
+            "latex": "e_{k}",
+            "notes": "Hulten (1996) and Pritchett (2000)"
+        },
+        "e_s": {
+            "default_val": 0.4,
+            "description": "efficiency of public capital",
+            "eqn_list": "[3]",
+            "latex": "e_{s}",
+            "notes": "Hulten (1996) and Pritchett (2000)"
+        },
+        "g_a": {
+            "default_val": 0.021,
+            "description": "technology growth rate",
+            "eqn_list": "[2]",
+            "latex": "g_{a}",
+            "notes": "long-term growth rate minus population growth"
+        },
+        "g_n": {
+            "default_val": 0.016,
+            "description": "population growth rate",
+            "eqn_list": "[2]",
+            "latex": "g_{n}",
+            "notes": "average population growth (e.g. for the latest five years)"
+        },
+        "gamma": {
+            "default_val": 1.33,
+            "description": "risk aversion rate",
+            "eqn_list": "[1]",
+            "latex": "\\gamma",
+            "notes": "van der Ploeg (2012), no need to change"
+        },
+        "omega": {
+            "default_val": 0.0,
+            "description": "leverage coefficient on oil reserves",
+            "eqn_list": "[6]",
+            "latex": "\\omega",
+            "notes": "leverage coefficient on oil reserves"
+        },
+        "psi": {
+            "default_val": 0.13,
+            "description": "between 0 and 1",
+            "eqn_list": "[6]",
+            "latex": "\\psi",
+            "notes": "regression coeffieicent from the paper (also van der Ploeg 2012)"
+        },
+        "rbar": {
+            "default_val": 0.055,
+            "description": "world interest rate",
+            "eqn_list": "[6]",
+            "latex": "\\bar{r}",
+            "notes": "world interest rate"
+        },
+        "rho1": {
+            "default_val": 1.89,
+            "description": "interest rate-debt elasticity",
+            "eqn_list": "[6]",
+            "latex": "\\rho_{1}",
+            "notes": "regression coeffieicent from the paper (also van der Ploeg 2012)"
+        },
+        "rho2": {
+            "default_val": 0.0,
+            "description": "additional parameter on risk-premium",
+            "eqn_list": "[6]",
+            "latex": "\\rho_{2}",
+            "notes": "regression coeffieicent from the paper (also van der Ploeg 2012)"
+        },
+        "theta_k": {
+            "default_val": 0.5,
+            "description": "ratio of private capital",
+            "eqn_list": "[2]",
+            "latex": "\\theta_{k}",
+            "notes": "share of private gross fixed CF (assume total private and public CF=0.65=theta_k+theta_s)"
+        },
+        "theta_s": {
+            "default_val": 0.14,
+            "description": "ratio of public capital",
+            "eqn_list": "[2]",
+            "latex": "\\theta_{s}",
+            "notes": "share of public gross fixed CF (assume total private and public CF=0.65=theta_k+theta_s)"
+        },
+        "xi": {
+            "default_val": 0.7,
+            "description": "habit persistence parameter",
+            "eqn_list": "[1]",
+            "latex": "\\varkappa",
+            "notes": "Christiano, Eichenbaum, Evans (2005)"
+        },
+        "yoilvalue": {
+            "default_val": 0.0,
+            "description": "steady state oil income",
+            "eqn_list": "[8]",
+            "latex": "yoil_{ss}",
+            "notes": "oil GDP as % of GDP (long-run average)"
+        },
+        "itermax": {
+            "default_val": 10.0,
+            "description": "Determines the maximum number of iterations used in the non-linear solver.",
+            "eqn_list": "[]",
+            "latex": "\\text{itermax}",
+            "notes": "The maxit option is shared with the  steady command. So a change in maxit in a simul command will also be considered in the following steady commands. [NB: for advanced users only]"
+        }
+    },
+    "params_init": {
+        "c_0": {
+            "default_val": 0.435,
+            "description": "NCP in percent of GDP in year 0",
+            "eqn_list": "[8]",
+            "latex": "c_{0}",
+            "notes": "initial value of NCP in percent of GDP in year 0"
+        },
+        "ca_0": {
+            "default_val": 0.138,
+            "description": "current account in percent of GDP in year 0",
+            "eqn_list": "[7]",
+            "latex": "ca_{0}",
+            "notes": "current account in percent of GDP in year 0"
+        },
+        "d_0": {
+            "default_val": 0.131,
+            "description": "initial value of foreign debt (negative of NFA)",
+            "eqn_list": "[6]",
+            "latex": "d_{0}",
+            "notes": "initial value of net foreign debt in year 0"
+        },
+        "gov_exp_0": {
+            "default_val": 0.383,
+            "description": "gov total expenditure in percent of GDP",
+            "eqn_list": "[8]",
+            "latex": "gov_exp_{0}",
+            "notes": "total public expediture as percent of GDP in year 0"
+        },
+        "gov_inv_0": {
+            "default_val": 0.109,
+            "description": "public investment in percent of GDP in year 0",
+            "eqn_list": "[8]",
+            "latex": "gov_{1}",
+            "notes": "gov gross fixed CF as percent of GDP in year 0"
+        },
+        "inv_0": {
+            "default_val": 0.305,
+            "description": "Investment in percent of GDP in year 0",
+            "eqn_list": "[8]",
+            "latex": "inv_{0}",
+            "notes": "private gross fixed CF as percent of GDP in year 0"
+        },
+        "k_0": {
+            "default_val": 1.395,
+            "description": "private capital to GDP ratio in year 0",
+            "eqn_list": "[4]",
+            "latex": "k_{0}",
+            "notes": "valued at 0.561 from Gupta et al. (2012), accumulated private fixed CF plus change in inventories"
+        },
+        "s_0": {
+            "default_val": 0.294,
+            "description": "public capital in to GDP ratio in year 0",
+            "eqn_list": "[3]",
+            "latex": "s_{0}",
+            "notes": "valued at 0.828 from Gupta et al. (2012), accumulated public investment"
+        },
+        "ynon_0": {
+            "default_val": 0.587,
+            "description": "non-oil GDP in percent of GDP in year 0",
+            "eqn_list": "[8]",
+            "latex": "ynon_{0}",
+            "notes": "non-oil GDP in percent of GDP in year 0"
+        },
+        "yoil_0": {
+            "default_val": 0.413,
+            "description": "oil production in percent of GDP in year 0",
+            "eqn_list": "[8]",
+            "latex": "yoil_{0}",
+            "notes": "oil production in percent of GDP in year 0"
+        }
+    }
+}

@@ -1,0 +1,258 @@
+%2multibyte Version: 5.50.0.2960 CodePage: 1252
+
+\documentclass[11pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{lineno}
+\usepackage{fancybox}
+\usepackage{fancyhdr}
+\usepackage{rotating}
+\usepackage{sectsty}
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{Codepage=1252}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Wed Mar 08 17:14:21 2000}
+%TCIDATA{LastRevised=Wednesday, April 15, 2015 16:19:41}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="General\Blank Document">}
+%TCIDATA{Language=American English}
+%TCIDATA{CSTFile=LaTeX article (bright).cst}
+%TCIDATA{PageSetup=72,72,72,72,0}
+%TCIDATA{Counters=arabic,2}
+%TCIDATA{AllPages=
+%H=36
+%F=36,\PARA{038<p type="texpara" tag="Body Text" > \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \thepage }
+%}
+
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{corollary}{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\setlength{\oddsidemargin}{.05in}
+\setlength{\evensidemargin}{.25in}
+\setlength{\textwidth}{6.68in}
+\setlength{\textheight}{8.85in}
+\renewcommand{\topmargin}{-.5in}
+\renewcommand{\baselinestretch}{1.5}
+
+\begin{document}
+
+\author{Juliana Araujo, Bin Li, Marcos Poplawski-Ribeiro, Luis-Felipe Zanna%
+\thanks{\baselineskip=12ptInternational Monetary Fund, 700 19th Street,
+N.W., Washington, D.C., 20431; email: jaraujo@imf.org; bli2@imf.org;
+mpoplawskiribeiro@imf.org; fzanna@imf.org. }}
+\title{{\Large \textbf{Current Account Norms in Natural Resource Rich and
+Capital Scarce Economies}}\thanks{\baselineskip=12ptWe thank Bernardin
+Akitoby, Michal Andrle, Andy Berg, Ed Buffie, Raphael Espinoza, Kerstin
+Gerling, Cathy Pattillo, Chris Papageorgiou, Rick van der Ploeg, Rafael
+Portillo, Alex Segura-Ubiergo, Abdel Senhadji, Priscilla Toffano, Susan
+Yang, Shang-Jin Wei (the editor) and two anonymous referees for their
+valuable comments. We are also grateful to Manzoor Gill, Pranav Gupta, Nancy
+Tinoza, and Yorbol Yakhshilikov for excellent research assistance and
+Bernardin Akitoby for allowing us to use the dataset of Akitoby and
+Stratmann (2008). This paper is part of a research project on macroeconomic
+policy in low-income countries supported by U.K.'s Department for
+International Development. The views expressed herein are those of the
+authors and should not be attributed to the IMF, its Executive Board, its
+management, or to DFID.}}
+\date{This Draft: December 1, 2014}
+\maketitle
+
+\begin{abstract}
+\baselineskip=16pt The permanent income hypothesis implies that frictionless
+open economies with exhaustible natural resources should save abroad most of
+their resource windfalls and, therefore, feature current account surpluses.
+Resource rich developing countries (RRDCs), on the other hand, face
+substantial development needs and tight external borrowing constraints. By
+relaxing these constraints and providing a key financing source for public
+investment in RRDCs, resource windfalls might then be associated with
+current account deficits or at least low surpluses. In this paper, we
+develop a neoclassical model with private and public investment and several
+pervasive features in RRDCs, including absorptive capacity constraints,
+inefficiencies in investment, borrowing constraints, and capital scarcity.
+We use the model to study the role of investment and these frictions in
+shaping the current account dynamics under windfalls. Since consumption and
+investment decisions are optimal, the model also serves to provide current
+account benchmarks (norms). We apply the model to the Economic and Monetary
+Community of Central Africa and discuss how our results can be used to
+inform external sustainability assessments in RRDCs.
+
+\bigskip
+
+%TCIMACRO{\TeXButton{noindent}{\noindent}}%
+%BeginExpansion
+\noindent%
+%EndExpansion
+\textbf{Keywords: }Current Account, External Sustainability, Developing
+Economies
+
+%TCIMACRO{\TeXButton{noindent}{\noindent}}%
+%BeginExpansion
+\noindent%
+%EndExpansion
+\textbf{JEL Classifications:} E21, F32, F41, O13.
+\end{abstract}
+
+%TCIMACRO{\TeXButton{thispagestyle}{\thispagestyle{empty}}}%
+%BeginExpansion
+\thispagestyle{empty}%
+%EndExpansion
+\pagebreak 
+%TCIMACRO{%
+%\TeXButton{restart page numbers}{\pagenumbering{arabic}
+%\setcounter{page}{1}}}%
+%BeginExpansion
+\pagenumbering{arabic}
+\setcounter{page}{1}%
+%EndExpansion
+\pagebreak
+
+\section{Appendix}
+
+Letting $\eta _{t}^{s}$ , $\eta _{t}^{k}$ and $\lambda _{t}$ be the
+Lagrangian multipliers on equations (\ref{3}), (\ref{4}) and (\ref{6})
+respectively, the first order conditions are given by:
+
+\begin{equation}
+c_{t}:[c_{t}-\varkappa c_{t-1}]^{-\gamma }-\varkappa \beta (1+\mathfrak{g}%
+)[c_{t+1}-\varkappa c_{t}]^{-\gamma }=\lambda _{t},  \label{A1}
+\end{equation}
+
+\begin{equation}
+g_{t}:[g_{t}-\varkappa g_{t-1}]^{-\gamma }-\varkappa \beta (1+\mathfrak{g}%
+)[g_{t+1}-\varkappa g_{t}]^{-\gamma }=\lambda _{t},
+\end{equation}
+
+\begin{equation}
+i_{t}^{k}:e_{k}\eta _{t}^{k}=\lambda _{t},  \label{A3}
+\end{equation}
+
+\begin{equation}
+i_{t}^{s}:e_{s}\eta _{t}^{s}=\lambda _{t},  \label{A4}
+\end{equation}
+
+\begin{equation}
+d_{t}:\lambda _{t}=\beta \lambda _{t+1}\left\{ 
+\begin{array}{c}
+1+r^{\ast }+\frac{\pi }{\rho _{1}^{2}}\left[ \exp \left[ \rho _{1}(d_{t}-%
+\bar{d}-\psi V_{t})\right] -\rho _{2}(d_{t}-\overline{d}-\psi V_{t})-\rho
+_{3}\right] \\ 
++\frac{\pi }{\rho _{1}^{2}}\left[ \rho _{1}\exp \left[ \rho _{1}(d_{t}-\bar{d%
+}-\psi V_{t})\right] -\rho _{2}\right] d_{t}%
+\end{array}%
+\right\} ,  \label{A5}
+\end{equation}
+
+\begin{equation}
+k_{t}:\lambda _{t}=\beta (1+\mathfrak{g})\lambda _{t+1}\frac{\left[
+e_{k}\theta _{k}\frac{y_{t+1}^{n}}{k_{t}}+(1-\delta _{k})-e_{k}\frac{\phi
+_{k}}{2}\left( \frac{k_{t+1}}{k_{t}}-1\right) ^{2}+e_{k}\phi _{k}\left( 
+\frac{k_{t+1}}{k_{t}}-1\right) \frac{k_{t+1}}{k_{t}}\right] }{\left[ (1+%
+\mathfrak{g})+e_{k}\phi _{k}\left( \frac{k_{t}}{k_{t-1}}-1\right) \right] },
+\label{A6}
+\end{equation}
+
+\begin{equation}
+s_{t}:\lambda _{t}=\beta (1+\mathfrak{g})\lambda _{t+1}\frac{\left[
+e_{s}\theta _{s}\frac{y_{t+1}^{n}}{s_{t}}+(1-\delta _{s})-e_{s}\frac{\phi
+_{s}}{2}\left( \frac{s_{t+1}}{s_{t}}-1\right) ^{2}+e_{s}\phi _{s}\left( 
+\frac{s_{t+1}}{s_{t}}-1\right) \frac{s_{t+1}}{s_{t}}\right] }{\left[ (1+%
+\mathfrak{g})+e_{s}\phi _{s}\left( \frac{s_{t}}{s_{t-1}}-1\right) \right] },
+\label{A7}
+\end{equation}
+
+\begin{equation}
+\eta _{t}^{s}:(1+\mathfrak{g})s_{t+1}=e_{s}i_{t}^{s}+(1-\delta _{s})s_{t},
+\label{A8}
+\end{equation}
+
+\begin{equation}
+\eta _{t}^{k}:(1+\mathfrak{g})k_{t+1}=e_{k}i_{t}^{k}+(1-\delta _{k})k_{t},
+\label{A9}
+\end{equation}
+
+\begin{equation}
+\lambda _{t}:(1+\mathfrak{g}%
+)d_{t}=(1+r_{t-1})d_{t-1}+c_{t}+i_{t}^{k}+AC_{t}^{k}+g_{t}+i_{t}^{s}+AC_{t}^{s}-y_{t}^{n}-y_{t}^{o}-T_{t}.
+\label{A10}
+\end{equation}
+
+At steady-state, we find that:
+
+\begin{equation}
+\lbrack c(1-\varkappa )]^{-\gamma }[1-\varkappa \beta (1+\mathfrak{g}%
+)]=\lambda ,  \label{SS1}
+\end{equation}
+
+\begin{equation}
+\kappa \lbrack g(1-\varkappa )]^{-\gamma }[1-\varkappa \beta (1+\mathfrak{g}%
+)]=\lambda ,  \label{SS2}
+\end{equation}
+
+\begin{equation}
+e_{k}\eta ^{k}=\lambda ,  \label{SS3}
+\end{equation}
+
+\begin{equation}
+e_{s}\eta ^{s}=\lambda ,  \label{SS4}
+\end{equation}
+
+\begin{equation}
+1=\beta \left[ 1+r^{\ast }+\frac{\pi }{\rho _{1}^{2}}[1-\rho _{3}+(\rho
+_{1}-\rho _{2})d]\right] ,  \label{SS5}
+\end{equation}
+
+\begin{equation}
+1=\beta \left[ e_{k}\theta _{k}\frac{y^{n}}{k}+(1-\delta _{k})\right] ,
+\label{SS6}
+\end{equation}
+
+\begin{equation}
+1=\beta \left[ e_{s}\theta _{s}\frac{y^{n}}{s}+(1-\delta _{s})\right] ,
+\label{SS7}
+\end{equation}
+
+\begin{equation}
+s(\mathfrak{g}+\delta _{s})=e_{s}i^{s},  \label{SS8}
+\end{equation}
+
+\begin{equation}
+k(\mathfrak{g}+\delta _{k})=e_{k}i^{k},  \label{SS9}
+\end{equation}
+
+\begin{equation}
+(\mathfrak{g}-r)d+y^{n}+y^{o}+T=c+i^{k}+g+i^{s}.  \label{SS10}
+\end{equation}
+
+Combining (\ref{SS1}) and (\ref{SS2}):
+
+\begin{equation}
+\kappa =\left( \frac{g}{c}\right) ^{\gamma }  \label{SS11}
+\end{equation}
+
+\end{document}

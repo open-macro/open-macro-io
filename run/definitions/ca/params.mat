@@ -1,0 +1,246 @@
+# Created by Octave 3.8.1, Thu May 07 12:00:26 2015 CDT <will@wclark3-ubuntu>
+# name: theta_k
+# type: scalar
+0.5
+
+
+# name: theta_s
+# type: scalar
+0.14
+
+
+# name: gamma
+# type: scalar
+1.33
+
+
+# name: delta_k
+# type: scalar
+0.055
+
+
+# name: delta_s
+# type: scalar
+0.055
+
+
+# name: beta
+# type: scalar
+0.9478672985781991
+
+
+# name: kappa
+# type: scalar
+0.5407761590338926
+
+
+# name: Abar
+# type: scalar
+0.8151387497267834
+
+
+# name: e_k
+# type: scalar
+0.4
+
+
+# name: e_s
+# type: scalar
+0.4
+
+
+# name: phi_k
+# type: scalar
+84.74032256466387
+
+
+# name: phi_s
+# type: scalar
+85.01811581555852
+
+
+# name: rbar
+# type: scalar
+0.055
+
+
+# name: psi
+# type: scalar
+0.13
+
+
+# name: rho1
+# type: scalar
+1.89
+
+
+# name: rho2
+# type: scalar
+0
+
+
+# name: rho3
+# type: scalar
+1
+
+
+# name: omega
+# type: scalar
+0
+
+
+# name: dbar
+# type: scalar
+0
+
+
+# name: g_n
+# type: scalar
+0.016
+
+
+# name: g_a
+# type: scalar
+0.021
+
+
+# name: g
+# type: scalar
+0.03733599999999981
+
+
+# name: xi
+# type: scalar
+0.7
+
+
+# name: fvalue
+# type: scalar
+-0
+
+
+# name: dvalue
+# type: scalar
+0
+
+
+# name: kvalue
+# type: scalar
+1.818199751108686
+
+
+# name: svalue
+# type: scalar
+0.5090959303104321
+
+
+# name: ikvalue
+# type: scalar
+0.4181859427549977
+
+
+# name: isvalue
+# type: scalar
+0.1170920639713994
+
+
+# name: cvalue
+# type: scalar
+0.0855395024795927
+
+
+# name: yoilvalue
+# type: scalar
+0
+
+
+# name: vvvalue
+# type: scalar
+0
+
+
+# name: govvalue
+# type: scalar
+0.05388005443542161
+
+
+# name: ynonvalue
+# type: scalar
+1.000009863109778
+
+
+# name: tbvalue
+# type: scalar
+2.775557561562891e-17
+
+
+# name: cavalue
+# type: scalar
+-0
+
+
+# name: yvalue
+# type: scalar
+1.000009863109778
+
+
+# name: yoil_0
+# type: scalar
+0.413
+
+
+# name: f_0
+# type: scalar
+-0.131
+
+
+# name: r_0
+# type: scalar
+0.06522409881324581
+
+
+# name: d_0
+# type: scalar
+0.131
+
+
+# name: invk_0
+# type: scalar
+0.196
+
+
+# name: invs_0
+# type: scalar
+0.109
+
+
+# name: k_0
+# type: scalar
+1.395
+
+
+# name: s_0
+# type: scalar
+0.294
+
+
+# name: c_0
+# type: scalar
+0.435
+
+
+# name: ca_0
+# type: scalar
+0.138
+
+
+# name: gov_0
+# type: scalar
+0.274
+
+
+# name: T_0
+# type: scalar
+0
+
+

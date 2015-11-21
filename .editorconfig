@@ -1,0 +1,29 @@
+# EditorConfig is awesome: http://EditorConfig.org
+# How-to with your editor: http://editorconfig.org/#download
+
+# top-most EditorConfig file
+root = true
+
+[*]
+end_of_line = lf
+indent_style = space
+indent_size = 4
+insert_final_newline = true
+
+[{Dockerfile,Procfile}]
+trim_trailing_whitespace = true
+
+[{package.json,bower.json}]
+indent_size = 2
+
+# Standard at: https://github.com/felixge/node-style-guide
+[{*.js}]
+indent_size = 4
+trim_trailing_whitespace = true
+quote_type = single
+curly_bracket_next_line = false
+spaces_around_operators = true
+space_after_control_statements = true
+space_after_anonymous_functions = false
+spaces_in_brackets = false
+space_after_functions = false

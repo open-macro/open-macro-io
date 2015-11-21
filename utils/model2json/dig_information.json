@@ -1,0 +1,736 @@
+{
+    "endovars": {
+        "L_n": {
+            "description": "non-tradable sector labor",
+            "units": "percent change"
+        },
+        "L_x": {
+            "description": "tradable sector labor",
+            "units": "percent change"
+        },
+        "Rz": {
+            "description": "return on public investment",
+            "units": "percent change"
+        },
+        "T": {
+            "description": "government transfers",
+            "units": "percent change"
+        },
+        "b": {
+            "description": "public domestic debt",
+            "units": "percent of GDP"
+        },
+        "bstar": {
+            "description": "private commercial debt",
+            "units": "percent of GDP"
+        },
+        "c": {
+            "description": "private consumption",
+            "units": "percent of GDP"
+        },
+        "cad": {
+            "description": "current account deficit",
+            "units": "percent of GDP"
+        },
+        "d": {
+            "description": "public concessional debt",
+            "units": "percent of GDP"
+        },
+        "dc": {
+            "description": "public commercial debt",
+            "units": "percent of GDP"
+        },
+        "grants": {
+            "description": "grant revenue",
+            "units": "percent of GDP"
+        },
+        "growth": {
+            "description": "real GDP growth",
+            "units": "percent"
+        },
+        "h": {
+            "description": "VAT rate",
+            "units": "percent"
+        },
+        "in": {
+            "description": "non-tradable sector investment",
+            "units": "percent change"
+        },
+        "ix": {
+            "description": "tradable sector investment",
+            "units": "percent change"
+        },
+        "ixn": {
+            "description": "private investment",
+            "units": "percent change"
+        },
+        "iz": {
+            "description": "public investment",
+            "units": "percent of GDP"
+        },
+        "kn": {
+            "description": "non-tradable sector capital",
+            "units": "percent change"
+        },
+        "kx": {
+            "description": "tradable sector capital",
+            "units": "percent change"
+        },
+        "oilr": {
+            "description": "oil revenue",
+            "units": "percent of GDP"
+        },
+        "p": {
+            "description": "aggregate price index",
+            "units": "index"
+        },
+        "pfd": {
+            "description": "primary fiscal deficit",
+            "units": "percent of GDP"
+        },
+        "pk": {
+            "description": "price of private capital",
+            "units": "index"
+        },
+        "pm": {
+            "description": "price of imported goods",
+            "units": "index"
+        },
+        "pmm": {
+            "description": "price of imported machines",
+            "units": "index"
+        },
+        "pn": {
+            "description": "price of non-tradable goods",
+            "units": "index"
+        },
+        "px": {
+            "description": "price of tradable goods",
+            "units": "index"
+        },
+        "pz": {
+            "description": "price of public capital",
+            "units": "index"
+        },
+        "qn": {
+            "description": "non-tradable sector output",
+            "units": "percent change"
+        },
+        "qx": {
+            "description": "tradable sector output",
+            "units": "percent change"
+        },
+        "r": {
+            "description": "real interest rate on domestic debt",
+            "units": "percent"
+        },
+        "rer": {
+            "description": "real exchange rate",
+            "units": "percent change"
+        },
+        "rextg": {
+            "description": "real interest rate on public commercial debt",
+            "units": "percent"
+        },
+        "rn": {
+            "description": "non-tradable sector return on capital",
+            "units": "percent change"
+        },
+        "rstar": {
+            "description": "real interest rate on private commercial debt",
+            "units": "percent"
+        },
+        "rx": {
+            "description": "tradable sector return on capital",
+            "units": "percent change"
+        },
+        "tot": {
+            "description": "terms of trade",
+            "units": "index"
+        },
+        "totaldebt": {
+            "description": "total public debt",
+            "units": "percent of GDP"
+        },
+        "totmm": {
+            "description": "terms of trade (imported machines)",
+            "units": "index"
+        },
+        "wr": {
+            "description": "real wage",
+            "units": "percent change"
+        },
+        "ynom": {
+            "description": "nominal GDP",
+            "units": "index"
+        },
+        "z": {
+            "description": "public capital",
+            "units": "percent change"
+        },
+        "ze": {
+            "description": "effective public capital",
+            "units": "percent change"
+        }
+    },
+    "equations": {
+        "0": {
+            "description": "firm production in tradable sector",
+            "latex": "q_{x,t}=A_{x,t}\\left({z^e}_{t-1}\\right)^{\\psi_{x}}\\left(k_{x,t-1}\\right)^{\\alpha_{x}}\\left(L_{x,t}\\right)^{1-\\alpha_{x}}"
+        },
+        "1": {
+            "description": "firm production in tradable sector",
+            "latex": "q_{x,t}=A_{x,t}\\left({z^e}_{t-1}\\right)^{\\psi_{x}}\\left(k_{x,t-1}\\right)^{\\alpha_{x}}\\left(L_{x,t}\\right)^{1-\\alpha_{x}}"
+        },
+        "10": {
+            "description": "marginal product of capital in tradable sector",
+            "latex": "P_{x,t}\\alpha_{x}\\frac{q_{x,t}}{k_{x,t-1}}=r_{x,t}"
+        },
+        "11": {
+            "description": "constant elasticity of substitution consumption basket",
+            "latex": "{c^{i}}_{t}=\\left[ \\rho_{x}^{\\frac{1}{\\epsilon }}\\left( {c^{i}}_{x,t}\\right) ^{\\frac{\\epsilon-1}{\\epsilon}}+\\rho_{m}^{\\frac{1}{\\epsilon }}\\left({c^{i}}_{m,t}\\right) ^{\\frac{\\epsilon-1}{\\epsilon}}+(\\rho_{n})^{\\frac{1}{\\epsilon }}\\left( {c^{i}}_{n,t}\\right) ^{\\frac{\\epsilon -1}{\\epsilon }}\\right]^{^{\\frac{\\epsilon }{\\epsilon -1}}}\\text{ \\ \\ \\ for }i=\\mathfrak{s},\\mathfrak{h}"
+        },
+        "12": {
+            "description": "relative consumer price index",
+            "latex": "P_{t}=\\left[ \\rho_{x}P_{x,t}^{1-\\epsilon }+\\rho_{m}P_{m,t}^{1-\\epsilon }+\\rho_{n}P_{n,t}^{1-\\epsilon }\\right] ^{^{\\frac{1}{1-\\epsilon }}}"
+        },
+        "13": {
+            "description": "demand function for goods",
+            "latex": "{c^{i}}_{j,t}=\\rho _{j}\\left( \\frac{P_{j,t}}{P_{t}}\\right) ^{-\\epsilon} {c^{i}}_{t}\\text{ \\ for $j=x,m,n$ and $i=\\mathfrak{s},\\mathfrak{h}$ }"
+        },
+        "14": {
+            "description": "household (savers) budget constraint",
+            "latex": "P_{t}{b^{\\mathfrak{s}}}_{t}-{b^{\\mathfrak{s}\\ast}}_{t} = r_{x,t} {k^{\\mathfrak{s}}}_{x,t-1} + r_{n,t-1} {k^{\\mathfrak{s}}}_{n,t-1} + w_{t}L_{t}^{\\mathfrak{s}}+ \\frac{\\mathcal{R}_{t}}{1+a} +\\frac{\\mathcal{T}_{t}}{1+a}-\\frac{1+{r^{\\ast}}_{t-1}}{1+g} {b^{\\mathfrak{s}\\ast}}_{t-1} \\\\ +\\frac{1+r_{t-1}}{1+g} P_{t} {b^{\\mathfrak{s}}}_{t-1} - P_{k,t}\\left( {i^{\\mathfrak{s}}}_{x,t} +{i^{\\mathfrak{s}}}_{n,t} + {AC^{\\mathfrak{s}}}_{x,t} + {AC^{\\mathfrak{s}}}_{n,t}\\right) - P_{t}{c^{\\mathfrak{s}}_{t}}(1+h_{t})-\\mu {z^{e}}_{t-1}-\\mathcal{P^{\\mathfrak{s}}}_{t} - {\\Phi^{\\mathfrak{s}}}_{t}"
+        },
+        "15": {
+            "description": "accumulation of tradable sector capital",
+            "latex": "(1+g) {k^{\\mathfrak{s}}}_{x,t} = {i^{\\mathfrak{s}}}_{x,t}+(1-\\delta_{x}) {k^{\\mathfrak{s}}}_{x,t-1}"
+        },
+        "16": {
+            "description": "accumulation of non-tradable sector capital",
+            "latex": "(1+g) {k^{\\mathfrak{s}}}_{n,t} = {i^{\\mathfrak{s}}}_{n,t}+(1-\\delta_{n}) {k^{\\mathfrak{s}}}_{n,t-1}"
+        },
+        "17": {
+            "description": "capital adjustment costs",
+            "latex": "{AC^{\\mathfrak{s}}}_{j,t} \\equiv \\frac{v}{2}\\left( \\frac{{i^{\\mathfrak{s}}}_{j,t}}{{k^{\\mathfrak{s}}}_{j,t-1}}-\\delta_{j} -g\\right) ^{2} {k^{\\mathfrak{s}}}_{j,t-1}, \\text{ \\ for \\ } j=x,n"
+        },
+        "18": {
+            "description": "portfolio adjustment costs",
+            "latex": "\\mathcal{P^{\\mathfrak{s}}}_{t} \\equiv \\frac{\\eta}{2}({b^{\\mathfrak{s}\\ast}}_{t} - \\bar{b^{\\mathfrak{s}\\ast}})^{2}"
+        },
+        "19": {
+            "description": "household (savers) first-order condition (modified consumption Euler equation)",
+            "latex": "{c^{\\mathfrak{s}}}_{t}={c^{\\mathfrak{s}}}_{t+1}\\left( \\beta \\frac{1+r_{t}}{1+g}\\frac{1+h_{t}}{1+h_{t+1}}\\right) ^{-\\tau }"
+        },
+        "2": {
+            "description": "firm production in non-tradable sector",
+            "latex": "q_{n,t}=A_{n,t}\\left({z^e}_{t-1}\\right) ^{\\psi_{n}}\\left( k_{n,t-1}\\right)^{\\alpha_{n}}\\left( L_{n,t}\\right)^{1-\\alpha_{n}}"
+        },
+        "20": {
+            "description": "household (savers) first-order condition (equalizes real interest rate on domestic bonds and foreign private bonds)",
+            "latex": "(1+r_{t})\\frac{P_{t+1}}{P_{t}}=\\frac{1+{r^{\\ast}}_{t}}{\\left[ 1-\\eta ({b^{\\mathfrak{s}\\ast}}_{t}-\\bar{b^{\\mathfrak{s}\\ast}})\\right] }"
+        },
+        "21": {
+            "description": "household (savers) first-order condition (equalizes return on capital in tradable sector with real interest rate)",
+            "latex": "\\frac{r_{x,t+1}}{P_{k,t+1}}+1-\\delta_{x} +v{\\Upsilon^{\\mathfrak{s}}}_{x,t+1} \\left( \\frac{{i^{\\mathfrak{s}}}_{x,t+1}}{{k^{\\mathfrak{s}}}_{x,t}}+1-\\delta_{x}\\right) -\\frac{v}{2}\\left( {\\Upsilon^{\\mathfrak{s}}}_{x,t+1}\\right)^{2}\\\\ =(1+r_{t})\\frac{P_{t+1}}{P_{t}}\\frac{P_{k,t}}{P_{k,t+1}}\\left(1+v{\\Upsilon^{\\mathfrak{s}}}_{x,t}\\right)"
+        },
+        "22": {
+            "description": "household (savers) first-order condition (equalizes return on capital in non-tradable sector with real interest rate)",
+            "latex": "\\frac{r_{n,t+1}}{P_{k,t+1}}+1-\\delta_{n} +v{\\Upsilon^{\\mathfrak{s}}}_{n,t+1} \\left( \\frac{{i^{\\mathfrak{s}}}_{n,t+1}}{{k^{\\mathfrak{s}}}_{n,t}}+1-\\delta_{n}\\right) -\\frac{v}{2}\\left( {\\Upsilon^{\\mathfrak{s}}}_{n,t+1}\\right)^{2}\\\\ =(1+r_{t})\\frac{P_{t+1}}{P_{t}}\\frac{P_{k,t}}{P_{k,t+1}}\\left(1+v{\\Upsilon^{\\mathfrak{s}}}_{n,t}\\right)"
+        },
+        "23": {
+            "description": "capital adjustment costs term",
+            "latex": "{\\Upsilon^{\\mathfrak{s}}}_{j,t}=\\left( \\frac{{i^{\\mathfrak{s}}}_{j,t}}{{k^{\\mathfrak{s}}}_{j,t-1}}-\\delta_{j} -g\\right) \\text{ \\ for $j=x,n$ \\ }"
+        },
+        "24": {
+            "description": "private demand for foreign debt",
+            "latex": "\\eta ({b^{\\mathfrak{s}\\ast}}_{t}-\\bar{b}^{\\mathfrak{s}\\ast})=1-\\frac{1+{r^{\\ast}}_{t}}{(1+r_{t})\\frac{P_{t+1}}{P_{t}}}"
+        },
+        "25": {
+            "description": "real interest rate on private external debt",
+            "latex": "{r^{\\ast}}_{t}=r_{dc,t}+\\mathfrak{u}"
+        },
+        "26": {
+            "description": "household (non-savers) budget constraint",
+            "latex": "(1+h_{t})P_{t} {c^{\\mathfrak{h}}}_{t}=w_{t}L^{\\mathfrak{h}}+\\frac{a}{1+a}(\\mathcal{R}_{t}+\\mathcal{T}_{t})"
+        },
+        "27": {
+            "description": "accumulation of public capital",
+            "latex": "(1+g)z_{t}=(1-\\delta_{z} )z_{t-1}+i_{z,t}"
+        },
+        "28": {
+            "description": "conversion of public capital into effective public capital",
+            "latex": "z_{t}^{e}=\\bar{s}\\bar{z}+s(z_{t}-\\bar{z}), \\text{ \\ with $\\bar{s}\\in\\lbrack 0,1]$ \\ and \\ $s\\in \\lbrack 0,1]$ }"
+        },
+        "29": {
+            "description": "accumulation of effective public capital",
+            "latex": "(1+g) {z^{e}}_{t}=(1-\\delta_{z} ){z^{e}}_{t-1}+s(i_{z,t}-\\bar{\\imath}_{z})+\\bar{s}\\bar{\\imath}_{z}"
+        },
+        "3": {
+            "description": "firm productivity in tradable sector",
+            "latex": "A_{x,t}=a_{x}\\left( \\frac{{q^{I}}_{x,t-1}}{\\bar{q^{I}}_{x}}\\right) ^{\\sigma_{x}}\\left( {k^{I}}_{x,t-1}\\right) ^{\\xi_{x}}"
+        },
+        "30": {
+            "description": "government budget constraint",
+            "latex": "P_{t}\\Delta b_{t}+\\Delta d_{c,t}+\\Delta d_{t} = \\frac{r_{t-1}-g}{1+g}P_{t}b_{t-1}+\\frac{r_{d,t-1}-g}{1+g}d_{t-1}+\\frac{r_{dc,t-1}-g}{1+g}d_{c,t-1}\\\\ + P_{z,t}\\mathbb{I}_{z,t}+\\mathcal{T}_{t}-h_{t}P_{t}c_{t}-\\mathcal{G}_{t}-\\mathcal{N}_{t}-\\mu {z^{e}}_{t-1}"
+        },
+        "31": {
+            "description": "real interest rate on public external debt",
+            "latex": "r_{dc,t}=r^{f}+\\upsilon _{g}e^{\\eta _{g}\\left( \\frac{d_{t}+d_{c,t}}{y_{t}}-\\frac{\\bar{d}+\\bar{d}_{c}}{\\bar{y}}\\right) }"
+        },
+        "32": {
+            "description": "cost overruns from absorptive capacity constraints",
+            "latex": "\\mathbb{I}_{z,t}=\\mathcal{H}_{t}(i_{z,t}-\\bar{\\imath}_{z})+\\bar{\\imath}_{z}"
+        },
+        "33": {
+            "description": "absorptive capacity constraints",
+            "latex": "\\mathcal{H}_{t}=\\left( 1+\\frac{i_{z,t}}{z_{t-1}}-\\delta -g\\right)^{\\phi }"
+        },
+        "34": {
+            "description": "fiscal gap",
+            "latex": "\\mathfrak{Gap}_{t}=\\frac{1+r_{d}}{1+g}d_{t-1}-d_{t}+\\frac{r_{dc,t-1}-g}{1+g}dc_{t-1}+\\frac{r_{t-1}-g}{1+g}P_{t}b_{t-1} \\\\ + P_{z,t}\\mathbb{I}_{t}+\\mathcal{T}_{o}-h_{o}P_{t}c_{t}-\\mathcal{G}_{t}-\\mathcal{N}_{t}-\\mu {z^{e}}_{t-1}"
+        },
+        "35": {
+            "description": "fiscal gap (alternate formulation)",
+            "latex": "\\mathfrak{Gap}_{t}=P_{t}\\Delta b_{t}+\\Delta d_{c,t}+(h_{t}-h_{o})P_{t}c_{t}-(\\mathcal{T}_{t}-\\mathcal{T}_{o})"
+        },
+        "36": {
+            "description": "target VAT rate",
+            "latex": "h_{t}^{\\text{target}} = h_{o}+(1-\\lambda )\\frac{\\mathfrak{Gap}_{t}}{P_{t}c_{t}}"
+        },
+        "37": {
+            "description": "target government transfers level",
+            "latex": "\\mathcal{T}_{t}^{\\text{target}}=\\mathcal{T}_{o}-\\lambda \\mathfrak{Gap}_{t}"
+        },
+        "38": {
+            "description": "VAT rate reaction function",
+            "latex": "h_{t}=Min\\left\\{ h_{t}^{r},h^{u}\\right\\}"
+        },
+        "39": {
+            "description": "government transfers reaction function",
+            "latex": "\\mathcal{T}_{t}=Max\\left\\{ \\mathcal{T}_{t}^{r},\\mathcal{T}^{l}\\right\\}"
+        },
+        "4": {
+            "description": "firm productivity in non-tradable sector",
+            "latex": "A_{n,t}=a_{n}\\left( \\frac{{q^{I}}_{n,t-1}}{\\bar{q^{I}}_{n}}\\right)^{\\sigma_{n}}\\left( {k^{I}}_{n,t-1}\\right) ^{\\xi_{n}}"
+        },
+        "40": {
+            "description": "fiscal rule for VAT rate",
+            "latex": "h_{t}^{r}=h_{t-1}+\\lambda _{1}({\\small h}_{t}^{\\text{target}}-h_{t-1})+\\lambda _{2}\\frac{(x_{t-1}-x^{\\text{target}})}{y_{t}},\\quad \\text{with}\\quad \\text{ }\\lambda _{1},\\lambda _{2}>0"
+        },
+        "41": {
+            "description": "fiscal rule for government transfers",
+            "latex": "\\mathcal{T}_{t}^{r}=\\mathcal{T}_{t-1}+\\lambda _{3}(\\mathcal{T}_{t}^{\\text{target}}-\\mathcal{T}_{t-1})-\\lambda _{4}(x_{t-1}-x^{\\text{target}}),\\quad \\text{with}\\quad \\text{ }\\lambda _{3},\\lambda _{4}>0"
+        },
+        "42": {
+            "description": "market-clearing condition for labor",
+            "latex": "L_{x}+L_{n}=L"
+        },
+        "43": {
+            "description": "market-clearing condition for non-tradable goods",
+            "latex": "q_{n,t}=\\rho _{n}\\left( \\frac{P_{n,t}}{P_{t}}\\right) ^{-\\epsilon}c_{t}+a_{k}\\left( i_{x,t}+i_{n,t}+AC_{x,t}+AC_{n,t}\\right) +a_{z}\\mathbb{I}_{z,t}"
+        },
+        "44": {
+            "description": "sum of budget constraints (net foreign debt equals national spending less national income)",
+            "latex": "d_{t}-d_{t-1}+d_{c,t}-d_{c,t-1}+{b^{\\ast}}_{t}-{b^{\\ast}}_{t-1} = \\frac{r_{d}-g}{1+g}d_{t-1}+\\frac{r_{dc,t-1}-g}{1+g}d_{c,t-1}+\\frac{{r^{\\ast}}_{t-1}-g}{1+g}{b^{\\ast}}_{t-1} \\\\ + \\mathcal{P}_{t}+P_{z,t}\\mathbb{I}_{z,t}+P_{k,t}\\left(i_{x,t}+i_{n,t}+AC_{x,t}+AC_{n,t}\\right) \\\\+ P_{t}c_{t}-P_{n,t}q_{n,t}-P_{x,t}q_{x,t}-\\mathcal{R}_{t}-\\mathcal{G}_{t}-\\mathcal{N}_{t}"
+        },
+        "5": {
+            "description": "supply price of private capital",
+            "latex": "P_{k,t}=P_{mm,t}+a_{k}P_{n,t}"
+        },
+        "6": {
+            "description": "supply price of public capital",
+            "latex": "P_{z,t}=P_{mm,t}+a_{z}P_{n,t}"
+        },
+        "7": {
+            "description": "marginal product of labor in non-tradable sector",
+            "latex": "P_{n,t}(1-\\alpha_{n})\\frac{q_{n,t}}{L_{n,t}}=w_{t}"
+        },
+        "8": {
+            "description": "marginal product of labor in tradable sector",
+            "latex": "P_{x,t}(1-\\alpha_{x})\\frac{q_{x,t}}{L_{x,t}}=w_{t}"
+        },
+        "9": {
+            "description": "marginal product of capital in non-tradable sector",
+            "latex": "P_{n,t}\\alpha_{n}\\frac{q_{n,t}}{k_{n,t-1}}=r_{n,t}"
+        }
+    },
+    "exovars": {
+        "Tbar": {
+            "description": "government transfers floor",
+            "initial_val": "To",
+            "units": "level"
+        },
+        "b": {
+            "description": "public domestic debt",
+            "initial_val": "bo",
+            "units": "percent of GDP"
+        },
+        "d": {
+            "description": "public concessional debt",
+            "initial_val": "d_o",
+            "units": "percent of GDP"
+        },
+        "dc": {
+            "description": "public commercial debt",
+            "initial_val": "dco",
+            "units": "percent of GDP"
+        },
+        "grants": {
+            "description": "grant revenue",
+            "initial_val": "grantso",
+            "units": "percent of GDP"
+        },
+        "hbar": {
+            "description": "VAT ceiling",
+            "initial_val": "ho",
+            "units": "rate"
+        },
+        "iz": {
+            "description": "public investment",
+            "initial_val": "i_z_ini",
+            "units": "percent of GDP"
+        },
+        "oilr": {
+            "description": "natural resource revenue",
+            "initial_val": "oilro",
+            "units": "percent of GDP"
+        },
+        "pm": {
+            "description": "price of imported goods",
+            "initial_val": 1.0,
+            "units": "index"
+        },
+        "pmm": {
+            "description": "price of imported machines",
+            "initial_val": 1.0,
+            "units": "index"
+        },
+        "px": {
+            "description": "price of exported goods",
+            "initial_val": 1.0,
+            "units": "index"
+        },
+        "remit": {
+            "description": "remittances",
+            "initial_val": "remito",
+            "units": "percent of GDP"
+        }
+    },
+    "description": "Debt Investment Growth Model based on Buffie et al. (2012)",
+    "name": "Debt Investment Growth Model 2",
+    "short_name":"dig",
+    "pdf": "https://www.imf.org/external/pubs/ft/wp/2012/wp12144.pdf",
+    "params_deep": {
+        "VA_n": {
+            "default_val": 0.494,
+            "description": "value added in non-traded sector",
+            "eqn_list": "[]",
+            "latex": "---",
+            "notes": "This is used to pin down the distribution of imports, tradables, and non-tradables in the economy. (not in the paper)"
+        },
+        "a_ratio": {
+            "default_val": 1.5,
+            "description": "ratio of labor supply of non-savers to labor supply of savers",
+            "eqn_list": "[13,25]",
+            "latex": "a",
+            "notes": "We set this ratio to 1.5, so 60% percent of the consumers are non-savers. This is broadly in line with survey findings in LICs."
+        },
+        "alpha_k": {
+            "default_val": 0.5,
+            "description": "cost share of non-traded inputs in the production of private capital",
+            "eqn_list": "[4]",
+            "latex": "\\alpha_{k}",
+            "notes": "Data on the ratio of imported machinery and equipment to aggregate investment indicate that the cost share parameters are around 0.5 in SSA. One-half is also the guesstimate used by the IMF (2007a) in its analysis of scaling up public investment in Nigeria."
+        },
+        "alpha_n": {
+            "default_val": 0.55,
+            "description": "capital\u2019s share in value added in the non-traded sector",
+            "eqn_list": "[1,6,8]",
+            "latex": "\\alpha_{n}",
+            "notes": "Data on factor shares may be found in social accounting matrices assembled by the Global Trade Analysis Project (GTAP) and the International Food Policy Research Institute (IFPRI). The GTAP5 database for SSA suggests a capital share of 55 - 60% in the non-tradables sector and 35 - 40% in the tradables sector. The data in Thurlow et al. (2004) and Perrault et al. (2010) suggest similar numbers. Accordingly, we set the parameter to 0.55 in the non-traded sector and 0.40 in the traded sector."
+        },
+        "alpha_x": {
+            "default_val": 0.4,
+            "description": "capital\u2019s share in value added in the traded sector",
+            "eqn_list": "[0,7,9]",
+            "latex": "\\alpha_{x}",
+            "notes": "Data on factor shares may be found in social accounting matrices assembled by the Global Trade Analysis Project (GTAP) and the International Food Policy Research Institute (IFPRI). The GTAP5 database for SSA suggests a capital share of 55 - 60% in the non-tradables sector and 35 - 40% in the tradables sector. The data in Thurlow et al. (2004) and Perrault et al. (2010) suggest similar numbers. Accordingly, we set the parameter to 0.55 in the non-traded sector and 0.40 in the traded sector."
+        },
+        "alpha_z": {
+            "default_val": 0.5,
+            "description": "cost share of non-traded inputs in the production of public capital",
+            "eqn_list": "[5]",
+            "latex": "\\alpha_{z}",
+            "notes": "Data on the ratio of imported machinery and equipment to aggregate investment indicate that the cost share parameters are around 0.5 in SSA. One-half is also the guesstimate used by the IMF (2007a) in its analysis of scaling up public investment in Nigeria."
+        },
+        "delta_n": {
+            "default_val": 0.05,
+            "description": "depreciation rate of non-traded capital inputs",
+            "eqn_list": "[15,16,21,22]",
+            "latex": "\\delta_{n}",
+            "notes": "There is little hard data on depreciation rates in LICs. Our choice of 5% is in line with estimates for developed countries."
+        },
+        "delta_x": {
+            "default_val": 0.05,
+            "description": "depreciation rate of traded capital inputs",
+            "eqn_list": "[14,16,20,22]",
+            "latex": "\\delta_{x}",
+            "notes": "There is little hard data on depreciation rates in LICs. Our choice of 5% is in line with estimates for developed countries."
+        },
+        "delta_z": {
+            "default_val": 0.05,
+            "description": "depreciation rate of public capital inputs",
+            "eqn_list": "[26,28,32]",
+            "latex": "\\delta_{z}",
+            "notes": "There is little hard data on depreciation rates in LICs. Our choice of 5% is in line with estimates for developed countries."
+        },
+        "epsilon": {
+            "default_val": 0.5,
+            "description": "intratemporal elasticity of substitution across goods",
+            "eqn_list": "[10,11,12,42]",
+            "latex": "\\epsilon",
+            "notes": "We fix the elasticity of substitution in comsumption at 0.50 as estimates of compensated elasticities of demand tend to be small at high levels of aggregation, especially when food claims a large share of total consumption."
+        },
+        "eta": {
+            "default_val": 1.0,
+            "description": "portfolio adjustment costs parameter",
+            "eqn_list": "[17]",
+            "latex": "\\eta",
+            "notes": "The portfolio adjustment cost parameter controls the degree of openness of the capital account. We set it equal to 1 in the base case to capture the fact that the private sector has limited access to international capital markets. We assume that the public risk premium is constant and set equal to zero."
+        },
+        "etag": {
+            "default_val": 0.0,
+            "description": "public debt risk premium",
+            "eqn_list": "[30]",
+            "latex": "\\eta_{g}",
+            "notes": "The portfolio adjustment cost parameter controls the degree of openness of the capital account. We set it equal to 1 in the base case to capture the fact that the private sector has limited access to international capital markets. We assume that the public risk premium is constant and set equal to zero."
+        },
+        "fo": {
+            "default_val": 0.5,
+            "description": "fraction of recurrent costs to user fees for infrastructure",
+            "eqn_list": "[13,29,33]",
+            "latex": "f",
+            "notes": "The user fee for infrastructure services is a fixed multiple/fraction of recurrent costs. Fuel taxes, which are earmarked for road maintenance and construction, electricity tariffs, and user charges for water and sanitation are low but not trivial in LICs. According to Brice\u00f1o-Garmendia et al. (2008), on average, user fees recoup 50% of recurrent costs in SSA. Again, however, there is considerable variation -- Zambia\u2019s average electricity tariff was three cents per kWH in 2008. We decided therefore to let this share vary from 0.20 to unity, setting it to 0.5 in the base case."
+        },
+        "g": {
+            "default_val": 0.015,
+            "description": "trend per capita growth rate",
+            "eqn_list": "[13,14,15,16,22,26,28,29,32,33,43]",
+            "latex": "g",
+            "notes": "The trend growth rate of 1.5% equals the 1990-2008 per capita growth rate for SSA reported in African Development Indicators."
+        },
+        "imp2gdp": {
+            "default_val": 30.5,
+            "description": "imports-to-GDP ratio",
+            "eqn_list": "[]",
+            "latex": "---",
+            "notes": "This is used to pin down the distribution of imports, tradables, and non-tradables in the economy. (not in the paper)"
+        },
+        "lambda": {
+            "default_val": 0.0,
+            "description": "division of fiscal adjustment",
+            "eqn_list": "[36,37,40,41]",
+            "latex": "\\lambda",
+            "notes": ""
+        },
+        "lambda1": {
+            "default_val": 0.25,
+            "description": "speed of reaction of tax adjustment",
+            "eqn_list": "[40]",
+            "latex": "\\lambda_1",
+            "notes": ""
+        },
+        "lambda2": {
+            "default_val": 0.02,
+            "description": "speed of reaction of debt adjustment",
+            "eqn_list": "[40]",
+            "latex": "\\lambda_2",
+            "notes": ""
+        },
+        "lambda3": {
+            "default_val": 0.25,
+            "description": "speed of reaction of transfer adjustment",
+            "eqn_list": "[41]",
+            "latex": "\\lambda_3",
+            "notes": ""
+        },
+        "lambda4": {
+            "default_val": 0.02,
+            "description": "speed of reaction of debt adjustment",
+            "eqn_list": "[41]",
+            "latex": "\\lambda_4",
+            "notes": ""
+        },
+        "nxpsi": {
+            "default_val": 1.0,
+            "description": "sectoral output elasticity ratio",
+            "eqn_list": "[0,1]",
+            "latex": "\\psi_{nx}",
+            "notes": "The ratio of sectoral output elasticities is set independently. This ratio and other values assigned elsewhere in calibrating the model -- most notably, the return on infrastructure -- pin down sectoral output elasticity in each sector. We assume that the ratio of elasticities is equal to 1 in all runs."
+        },
+        "omega": {
+            "default_val": 2.0,
+            "description": "elasticity of investment with respect to Tobin's q",
+            "eqn_list": "[]",
+            "latex": "\\Omega",
+            "notes": "This parameters is the elasticity of investment with respect to Tobin\u2019s q. There are no reliable estimates of this elasticity for LICs. The assigned value, 2, is at the high end of estimates for developed countries. The results do not change substantively when it equals 1 or 10."
+        },
+        "phi": {
+            "default_val": 0.0,
+            "description": "absorptive capacity constraint parameter",
+            "eqn_list": "[32]",
+            "latex": "\\phi",
+            "notes": "The base case assumes that investment is somewhat effcient (parameters set to 0.6) and that scaling up does not strain absorptive capacity (capacity constrant set to zero). Motivated by the findings in Hulten (1996), Pritchett (2000), and Foster and Brice\u00f1o-Garmendia (2010), we also investigate scenarios in which the scaling up is associated with extreme ineffciency (parameter set to 0.2) and a tight absorptive capacity constraint (parameter set to 5)."
+        },
+        "rstar": {
+            "default_val": 0.04,
+            "description": "risk-free foreign real interest rate",
+            "eqn_list": "[30]",
+            "latex": "r^{f}",
+            "notes": "We fix the risk-free foreign real interest rate at 4%, the approximate average of the historical real returns on stocks and 3-10 year T-bills in the United States."
+        },
+        "s": {
+            "default_val": 0.6,
+            "description": "efficiency of public investment",
+            "eqn_list": "[27,28]",
+            "latex": "s",
+            "notes": "The base case assumes that investment is somewhat effcient (parameters set to 0.6) and that scaling up does not strain absorptive capacity (capacity constrant set to zero). Motivated by the findings in Hulten (1996), Pritchett (2000), and Foster and Brice\u00f1o-Garmendia (2010), we also investigate scenarios in which the scaling up is associated with extreme ineffciency (parameter set to 0.2) and a tight absorptive capacity constraint (parameter set to 5)."
+        },
+        "s_s": {
+            "default_val": 0.6,
+            "description": "steady state efficiency of public investment",
+            "eqn_list": "[27,28]",
+            "latex": "\\bar{s}",
+            "notes": "The base case assumes that investment is somewhat effcient (parameters set to 0.6) and that scaling up does not strain absorptive capacity (capacity constrant set to zero). Motivated by the findings in Hulten (1996), Pritchett (2000), and Foster and Brice\u00f1o-Garmendia (2010), we also investigate scenarios in which the scaling up is associated with extreme ineffciency (parameter set to 0.2) and a tight absorptive capacity constraint (parameter set to 5)."
+        },
+        "sigma_n": {
+            "default_val": 0.0,
+            "description": "sectoral output learning externalities (non-traded)",
+            "eqn_list": "[3]",
+            "latex": "\\sigma_{n}",
+            "notes": "The base case does not incorporate learning externalities. In alternative runs that allow for learning effects, the output learning externalities are set to 0.08 so that the social return to capital in the traded sector is about 30% higher than the private return."
+        },
+        "sigma_x": {
+            "default_val": 0.0,
+            "description": "sectoral output learning externalities (traded)",
+            "eqn_list": "[2]",
+            "latex": "\\sigma_{x}",
+            "notes": "The base case does not incorporate learning externalities. In alternative runs that allow for learning effects, the output learning externalities are set to 0.08 so that the social return to capital in the traded sector is about 30% higher than the private return."
+        },
+        "tau": {
+            "default_val": 0.34,
+            "description": "intertemporal elasticity of substitution",
+            "eqn_list": "[18]",
+            "latex": "\\tau",
+            "notes": "According to Agenor and Montiel (1999), most estimates of this parameter for LDCs lie between 0.10 and 0.50. The value in the base case, 0.34, equals the average estimate for LICs in Ogaki et al. (1996)."
+        },
+        "xi_n": {
+            "default_val": 0.0,
+            "description": "capital learning externalities (traded sector)",
+            "eqn_list": "[3]",
+            "latex": "\\xi_{n}",
+            "notes": "The base case does not incorporate learning externalities. In alternative runs that allow for learning effects, the output learning externalities are set to 0.08 so that the social return to capital in the traded sector is about 30% higher than the private return."
+        },
+        "xi_x": {
+            "default_val": 0.0,
+            "description": "capital learning externalities (non-traded sector)",
+            "eqn_list": "[2]",
+            "latex": "\\xi_{x}",
+            "notes": "The base case does not incorporate learning externalities. In alternative runs that allow for learning effects, the output learning externalities are set to 0.08 so that the social return to capital in the traded sector is about 30% higher than the private return."
+        },
+        "itermax": {
+            "default_val": 10.0,
+            "description": "Determines the maximum number of iterations used in the non-linear solver.",
+            "eqn_list": "[]",
+            "latex": "\\text{itermax}",
+            "notes": "The maxit option is shared with the  steady command. So a change in maxit in a simul command will also be considered in the following steady commands. [NB: for advanced users only]"
+        }
+    },
+    "params_init": {
+        "R_zo": {
+            "default_val": 0.3,
+            "description": "initial return on infrastructure",
+            "eqn_list": "[0,1]",
+            "latex": "R_o",
+            "notes": "Estimates of the return on infrastructure are all over the map but the weight of the evidence in both micro and macro studies points to a high average return. The median rate of return on World Bank projects circa 2001 was 20% in SSA and 15-29% for various sub-categories of infrastructure investment. Foster and Brice\u00f1o-Garmendia (2010) estimate returns for electricity water and sanitation irrigation and roads range from 17% to 24%. Similarly the macro-based estimates in Dalgaard and Hansen (2005) cluster between 15% and 30% for a wide array of different estimators. Hulten et al. (2006) Escribano et al. (2008) Calder\u00f3n et al. (2009) and Calder\u00f3n and Serv\u00e9n (2010) supply additional evidence of high returns. All of this adds up to a presumption that high returns are the norm. We consider a high-return scenario as the base case by setting the return on infrastructure to 0.25 at the initial steady state."
+        },
+        "ho": {
+            "default_val": 0.15,
+            "description": "initial consumption vat",
+            "eqn_list": "[33,34,35]",
+            "latex": "h_o",
+            "notes": "The consumption VAT in the model proxies for the average indirect tax rate. Our rate is 15% at the initial steady state. This is comparable to the average VAT of LICs which using 2005-06 data by the International Bureau of Fiscal Documentation is estimated to be close to 15.8%."
+        },
+        "izy": {
+            "default_val": 0.06,
+            "description": "initial infrastructure investment-to-gdp ratio",
+            "eqn_list": "[28,31]",
+            "latex": "\\bar{\\imath}_{z}",
+            "notes": "We set the initial infrastructure investment to be equal to 6% of GDP. This initial figure includes the net investment associated with trend growth and the outlays on operations and maintenance (O+M) which average about 3.4% of GDP for LICs in SSA. This figure is close to the average for LICs in SSA which in 2008 corresponded to 6.09% as suggested by Brice\u00f1o-Garmendia et al. (2008)"
+        },
+        "oilro": {
+            "default_val": 0.0,
+            "description": "initial natural resource revenue-to-gdp ratio",
+            "eqn_list": "[29,33,43]",
+            "latex": "\\mathcal{N}_o",
+            "notes": "For the base case remittances and grants are assumed to be 5% and 4% of GDP at their initial equilibrium respectively. These are in line with averages for LICs in the last decade. For the baseline calibration we assume that the economy is not endowed with natural resources."
+        },
+        "r_dco": {
+            "default_val": 0.06,
+            "description": "initial real interest rate on public commercial loans",
+            "eqn_list": "[]",
+            "latex": "r_{dc,o}",
+            "notes": "Ghana paid 8.7% on the $750 mn. Eurobond it floated in 2007. This is slightly above Gueye and Sy\u2019s (2010) estimate of the average interest rate SSA pays (8.55%) on debt raised in external capital markets excluding Seychelles and South Africa. The IMF-WB\u2019s DSAs show an average interest rate of 2.3% on concessional loans taken out by LICs in 2009-2010. Assuming 2.5% inflation in world prices of traded goods the corresponding (initial) real rates in dollars are about 6% for commercial debt and 0% for concessional debt. The latter is assumed to be constant through the analysis."
+        },
+        "ro": {
+            "default_val": 0.1,
+            "description": "initial real interest rate on domestic loans",
+            "eqn_list": "[]",
+            "latex": "r_{o}",
+            "notes": "Real interest rate on domestic debt should match country-specific data."
+        },
+        "share_b": {
+            "default_val": 0.2,
+            "description": "initial public domestic debt-to-gdp ratio",
+            "eqn_list": "[]",
+            "latex": "b_o",
+            "notes": "Different datasets give different numbers for the ratio of domestic debt to GDP in LICs. We settled on 20% by averaging the figures reported in IMF (2009a) Panizza (2008) and Arnone and Presbitero (2010)."
+        },
+        "share_bstar": {
+            "default_val": 0.0,
+            "description": "initial private external debt-to-gdp ratio",
+            "eqn_list": "[17]",
+            "latex": "\\bar{b}^{\\mathfrak{s}\\ast}",
+            "notes": "We set concessional external debt equal to 50% of GDP at the initial equilibrium given that the ratio of total public debt to GDP and the share of concessional loans in total debt were about 70% and 69% respectively for LICs during 2007-2008. As little is known about the likely value of private foreign debt (or assets) in LICs we set this ratio to zero for the base case. We also assume that initially the economy has no access to external commercial loans implying that this value is zero as well."
+        },
+        "share_d": {
+            "default_val": 0.5,
+            "description": "initial public concessional debt-to-gdp ratio",
+            "eqn_list": "[30]",
+            "latex": "\\bar{d}",
+            "notes": "We set concessional external debt equal to 50% of GDP at the initial equilibrium given that the ratio of total public debt to GDP and the share of concessional loans in total debt were about 70% and 69% respectively for LICs during 2007-2008. As little is known about the likely value of private foreign debt (or assets) in LICs we set this ratio to zero for the base case. We also assume that initially the economy has no access to external commercial loans implying that this value is zero as well."
+        },
+        "share_dc": {
+            "default_val": 0.0,
+            "description": "initial public external commercial debt-to-gdp ratio",
+            "eqn_list": "[30]",
+            "latex": "\\bar{d}_{c}",
+            "notes": "We set concessional external debt equal to 50% of GDP at the initial equilibrium given that the ratio of total public debt to GDP and the share of concessional loans in total debt were about 70% and 69% respectively for LICs during 2007-2008. As little is known about the likely value of private foreign debt (or assets) in LICs we set this ratio to zero for the base case. We also assume that initially the economy has no access to external commercial loans implying that this value is zero as well."
+        },
+        "share_grants": {
+            "default_val": 0.05,
+            "description": "initial grants-to-gdp ratio",
+            "eqn_list": "[29,33,43]",
+            "latex": "\\mathcal{G}_o",
+            "notes": "For the base case remittances and grants are assumed to be 5% and 4% of GDP at their initial equilibrium respectively. These are in line with averages for LICs in the last decade. For the baseline calibration we assume that the economy is not endowed with natural resources."
+        },
+        "share_remit": {
+            "default_val": 0.04,
+            "description": "initial remittances-to-gdp ratio",
+            "eqn_list": "[43]",
+            "latex": "\\mathcal{R}_o",
+            "notes": "For the base case remittances and grants are assumed to be 5% and 4% of GDP at their initial equilibrium respectively. These are in line with averages for LICs in the last decade. For the baseline calibration we assume that the economy is not endowed with natural resources."
+        }
+    }
+}

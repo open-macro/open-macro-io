@@ -1,0 +1,67 @@
+<om-header></om-header>
+<div class="signin-container">
+	<md-content class="md-padding">
+		<md-card>
+			<md-toolbar class="md-accent">
+				<div class="md-toolbar-tools">
+					<h2>
+						<span>Edit your profile</span>
+					</h2>
+				</div>
+			</md-toolbar>
+
+			<md-card-content>
+				<section class="row" data-ng-controller="SettingsController">
+					<div class="col-xs-offset-2 col-xs-8 col-md-offset-5 col-md-2">
+						<form name="userForm" data-ng-submit="updateUserProfile(userForm.$valid)" class="signin form-horizontal" autocomplete="off">
+							<md-content class="md-padding" layout="column">
+
+								<div layout layout-sm="column">
+									<md-input-container flex>
+										<label for="firstName">First Name</label>
+										<input type="text" id="firstName" name="firstName" class="form-control" data-ng-model="user.firstName" placeholder="First Name">
+										</md-input-container>
+									<md-input-container flex>
+										<label for="lastName">Last Name</label>
+										<input type="text" id="lastName" name="lastName" class="form-control" data-ng-model="user.lastName" placeholder="Last Name">
+									</md-input-container>
+								</div>
+
+								<div layout layout-sm="column">
+									<md-input-container flex>
+										<label for="email">Email</label>
+										<input type="email" id="email" name="email" class="form-control" data-ng-model="user.email" placeholder="Email">
+									</md-input-container>
+									<md-input-container flex>
+										<label for="username">Username</label>
+										<input type="text" id="username" name="username" class="form-control" data-ng-model="user.username" placeholder="Username">
+									</md-input-container>
+								</div>
+
+								<div data-ng-show="success" class="submit-text-center">
+									<strong>Profile Saved Successfully</strong>
+								</div>
+								<div data-ng-show="error" class="submit-text-center">
+									<strong data-ng-bind="error"></strong>
+								</div>
+
+								<md-input-container>
+									<md-button class="md-raised md-accent" type="submit">Save Profile</md-button>
+								</md-input-container>
+							</md-content>
+						</form>
+					</div>
+				</section>
+			</md-card-content>
+		</md-card>
+	</md-content>
+</div>
+
+
+
+
+
+
+
+
+

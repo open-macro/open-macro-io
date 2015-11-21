@@ -1,0 +1,170 @@
+<md-content om-sidebar>
+	<h3>Sections</h3>
+	<md-list>
+		<md-item ng-click="goToAnchor('firms')">
+			<md-divider></md-divider>
+			<a>
+				<md-item-content md-ink-ripple class="md-2-line" layout="row" layout-align="start center">
+					<div class="md-list-item-text parameter-item" ng-class="{'md-offset': $index != 0 }">
+						<p>Firm Structure</p>
+					</div>
+				</md-item-content>
+			</a>
+			<md-divider></md-divider>
+		</md-item>
+		<md-item ng-click="goToAnchor('households')">
+			<a>
+				<md-item-content md-ink-ripple class="md-2-line" layout="row" layout-align="start center">
+					<div class="md-list-item-text parameter-item" ng-class="{'md-offset': $index != 0 }">
+						<p>Household Structure</p>
+					</div>
+				</md-item-content>
+			</a>
+			<md-divider></md-divider>
+		</md-item>
+		<md-item ng-click="goToAnchor('government')">
+			<a>
+				<md-item-content md-ink-ripple class="md-2-line" layout="row" layout-align="start center">
+					<div class="md-list-item-text parameter-item" ng-class="{'md-offset': $index != 0 }">
+						<p>Government Spending</p>
+					</div>
+				</md-item-content>
+			</a>
+			<md-divider></md-divider>
+		</md-item>
+		<md-item ng-click="goToAnchor('tfp')">
+			<a>
+				<md-item-content md-ink-ripple class="md-2-line" layout="row" layout-align="start center">
+					<div class="md-list-item-text parameter-item" ng-class="{'md-offset': $index != 0 }">
+						<p>Total Factor Productivity</p>
+					</div>
+				</md-item-content>
+			</a>
+			<md-divider></md-divider>
+		</md-item>
+	</md-list>
+</md-content>
+<md-divider class="md-padding vertical"></md-divider>
+<md-content class="md-padding" om-fill-height mathjax>
+		<h1>Real Business Cycle (RBC) Model</h1>
+		<md-divider></md-divider>
+
+		<p>We will consider a small real business cycle to gain some intuition for modeling complete markets (in this case, markets for capital and labor) and to understand how exogenous shocks can impact a dynamic model. The model will be represented with a small system of non-linear difference equations describing the path of the economy over time. This model will incorporate different types of government spending so we can begin to analyze the effects of different policy choices.</p>
+
+		<p>Let's first consider how the real business cycle model will be similar to the stochastic growth model. Both models will assume a representative household that tries to maximize its utiility subject to a constraint. Decisions are made intertemporally, with an eye towards maximizing lifetime utility (whether the lifetime is two periods or an infinite number of periods).</p>
+
+		<p>In the real business cycle model, the time horizon will be infinite; households will be "infinitely-lived." We will utilize a general equilibrium framework, which means we must carefully consider both the supply side and the demand side of the market for goods and services. This economy will be populated with households and firms, and income will be earned rather than exogenous. It is a much more realistic framework that allows us to consider some real policy-relevant issues.</p>
+
+		<h2 id="firms">Firm Structure</h2>
+
+		<p>The economy is populated by a representative firm that produces a generic output good. Production of output requires two inputs--capital and labor--both supplied by households. Production technology is given by a Cobb-Douglas function:</p>
+
+		\begin{equation} 
+		y_t = a_t z^{\xi} k_t^{\alpha} n_t^{1-\alpha}
+		\end{equation}
+
+		<p>where \(a_t\) is aggregate factor productivity (think of it as economy-wide technology), \(z_t\) is productive public capital (think roads, bridges, ports---more on this below), \(y_t\) is output, \(k_t\) is capital, \(n_t\) is labor, and \(\alpha\) is the capital's share of total output.</p>
+
+		<p>Inputs are rented on perfectly competitive markets, and firms have no price power, so they must pay whatever price the market dictates. The firm's goal is to maximize its profit, which is defined as produced output minus the cost of inputs. The firm maximization problem is static (not intertemporal) and can be expressed as:</p>
+
+		\[ \max_{k_t, n_t} \Pi_t = y_t - R_t k_t - w_t n_t \]
+
+		<p>where \(\Pi_t\) is firm profit, \(R_t\) is the rental rate of capital, and \(w_t\) is the wage paid to labor. To solve this problem, we can substitute in the production function specified above and then take the derivitave with respect to the firm's choice variables (capital and labor). We will end up solving for the optimal prices the firm should pay for each of its inputs.</p>
+
+		\[ \max_{k_t, n_t} \Pi_t = a_t z^{\xi} k_t^{\alpha} n_t^{1-\alpha} - R_t k_t - w_t n_t \]
+
+		<p>First, we'll sovle for the rental rate of capital:</p>
+		\begin{equation}
+		R_t = \frac{\alpha y_t}{k_{t-1}}
+		\end{equation}
+
+		<p>Now we'll solve for the wage:</p>
+		\begin{equation}
+		w_t = \frac{(1-\alpha) y_t}{n_t}
+		\end{equation}
+
+		<p>Note that because markets for inputs are competitive, firms pay exactly the marginal value of each input and therefore have no profit.</p>
+
+		<h2 id="households">Household Structure</h2>
+
+		<p>In this economy, households derive income from labor (firms pay them a wage) and from renting capital (rental rate paid by the firms). They must pay a lump sum tax \(\tau\) to the government each period to finance public spending. They also receive firm profits, though because of the competitive market assumption, firm profits are zero. Households can spend their income on consumption and on investment in capital. For now, we will assume that capital investment is the only way that households can save their income. The household's budget constraint is:</p>
+
+		\[ c_t + I_t + \tau_t = R_t k_t + w_t n_t + \Pi_t \]
+
+		<p>where \(c_t\) is consumption and \(I_t\) is investment in capital. Capital accumulates according to the rate of depreciation (given by \(\delta\)) and the level of investment. The accumulation equation is given by:</p>
+
+		\begin{equation}
+		k_{t+1} = I_t + (1-\delta) k_t
+		\end{equation}
+
+		<p>which simply states that tomorrow's stock of capital is equal to today's stock of capital, less depreciation, plus today's flow of investment.</p>
+
+		<p>Households are trying to maximize the present value of their lifetime stream of consumption. We will assume that utility comes only from consumption and that functional form of the utility function is logarithmic. That is:</p>
+
+		\[ u(c_t) = \ln(c_t) \]
+
+		<p>This functional form says that utility increases with consumption, though it increases at a decreasing rate. In other words, there are always positive but decreasing returns to increased consumption. The household problem is to maximize its lifetime utility subject to a budget constraint. It chooses how much to consume, how much to invest, and what the stock of capital should be, and is subject to a budget constraint. For the sake of analytical simplicity, we will assume that the household always provides a fixed quantity of labor:</p>
+
+		\begin{equation}
+		n_t = 1
+		\end{equation}
+
+		<p>In order to simplify the problem so that there is only one constraint, we will substitute in the capital accumulation equation to the budget constraint:</p>
+
+		\[ c_t + k_{t+1} - (1-\delta) k_t + \tau_t = R_t k_t + w_t n_t + \Pi_t \]
+
+		<p>This allows us to act as if there are only two choice variables, since the level of capital chosen by the household implicitly defines how much the flow of investment should change. We can solve the problem analytically by setting up a Lagrangian:</p>
+
+		\[ \max_{c_t,k_{t+1}} \mathcal{L}  = E_0 \sum_{t=0}^{\infty} \beta^t \Bigl[ \ln(c_t) + \lambda_t (R_t k_t + w_t n_t + \Pi_t - c_t - k_{t+1} + (1-\delta) k_t - \tau_t) \Bigr] \]
+
+		<p>We can solve this as we did for the firm problem, by taking the derivative with respect to the two choice variables and setting them equal to zero. First, we will take the derivative with respect to consumption:</p>
+
+		\[ \frac{\partial \mathcal{L}}{\partial c_t} = 0 \iff \beta^t \frac{1}{c_t} - \beta^t \lambda_t = 0 \]
+		\[ \frac{1}{c_t} = \lambda_t \]
+
+		<p>The Lagrange multiplier \(\lambda_t\) is the shadow value of consumption: that is, the utility that the household derives from an additional unit of consumption. Next, we can find the optimality condition for the capital stock. Note that since we are solving for \(k_{t+1}\) and the capital stock shows up in our equation at time \(t\) and time \(t+1\) we have to take the derivative at time \(t\) and time \(t+1\) as well:</p>
+
+		\[ \frac{\partial \mathcal{L}}{\partial k_{t+1}} = 0 \iff \beta^t \lambda_t + \beta^{t+1} E_t \lambda_{t+1} (R_{t+1} + (1-\delta)) = 0 \]
+		\[ \lambda_t = \beta E_t \lambda_{t+1} (R_{t+1} + (1-\delta)) \]
+
+		<p>We can combine these two optimality conditions to get the \textbf{Euler equation} that determines the household's consumption path across time:</p>
+
+		\begin{equation}
+		\frac{1}{c_t} = \beta E_t \frac{1}{c_{t+1}}(R_{t+1} + (1-\delta))
+		\end{equation}
+
+		<p>The intuition for this is the same as in the small two-period model: the household must optimally choose its consumption today and consumption tomorrow so that it recieves the same utility (discounted in the future) for consumption across time. Otherwise, the household could be better off by changing its consumption path and its behavior would be sub-optimal.</p>
+
+		<h2 id="government">Government Spending</h2>
+
+		<p>Households are taxed a lump sum amount \(\tau_t\) in each period to finance government spending. We assume that there are two types of spending: productive investment \(z_t\) and non-productive spending \(g_t\). Productive investment covers things like roads and bridges, and can be broadly understood as any resource that increases the productivity of private investment. This is why we see the public capital term as a multiplier of firm output in Equation (1). Non-productive spending is anything that does not contribute to the productivity of the private sector.</p>
+
+		<p>We assume that both types of government spending evolve with AR(1) processes:</p>
+
+		\begin{equation}
+		I_{z,t} = (1-\rho_z)\overline{I_z} + \rho_z I_{z,t-1} + \epsilon_{z,t}
+		\end{equation}
+
+		<p>and</p>
+
+		\begin{equation}
+		g_{t} = (1-\rho_g)\overline{g} + \rho_g g_{t-1} + \epsilon_{g,t}
+		\end{equation}
+
+		<h2 id="tfp">Total Factor Productivity</h2>
+
+		<p>We assumed above that the productivity of private firms is dependent on an aggregate technological process that applies to the whole economy. We will assume that this process is exogenous and that it follows an autoregressive process in the log (so that it is equal to 1 when the model is in equilibrium). Think of this as a catch-all factor for every possible causal mechanism in the economy that could change the productivity of private firms: droughts, floods, new technologies, political conflict, etc. We will model it like this:</p>
+
+		\begin{equation}
+		\ln(a_t) = \rho \ln(a_{t-1}) + \epsilon_t
+		\end{equation}
+
+		<p>The persistence of this AR(1) process is determined by the parameter \(\rho\). The exogenous shock \(\epsilon_t\) is a mean-zero shock with no auto-correlation. This shock is how our model economy will vary from its equilibrium.</p>
+
+		<p>Lastly, need to keep track of the total resource contraint in the economy. This is simply an identity stating that total consumption, investment, and government spending in any given period must be equal to total output. Since our model is of a closed economy, there are no imports or exports that you would otherwise see in a GDP identity:</p>
+
+		\begin{equation}
+		y_t = c_t + I_t + g_z + z_t
+		\end{equation}
+	</md-content>
+</md-content>

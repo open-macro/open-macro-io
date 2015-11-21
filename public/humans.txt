@@ -1,0 +1,19 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Will Clark <will.clark@chicagobooth.edu>
+    Josh Day <dayj@uchicago.edu>
+    Alex Hays <ahays@uchicago.edu>
+    Christopher Walker <cnwalker@uchicago.edu>
+
+
+# THANKS
+
+
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3
+    jQuery, Modernizr

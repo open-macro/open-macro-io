@@ -1,0 +1,512 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{tabularx}
+\usepackage{amsmath}
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\title{A Short Introduction to Macroeconomic Modeling}
+\author{Will Clark\\
+	International Monetary Fund}
+
+\date{August 15-23, 2013}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{A Simple Two-Period Model of Consumption}
+
+We will begin by looking at a very simple model to gain some intuition for modeling with representative agents and how to think about intertemporal decision making.
+
+\subsection{Setup of the model}
+
+In this framework, we will assume that the economy is populated with representative households with an exogenous endowment of income (for example, a fruit tree grows in their yard, and the household has no control over how much fruit it produces). 
+
+We will assume that households live for two periods: today and tomorrow. In the first period (today), the household can split its endowment between consumption and savings. Whatever is not consumed today must be saved, and whatever is saved today must be consumed tomorrow. The household can also dis-save in order to consume more than its endowment today, but must then pay back tomorrow what it borrowed today. Savings are done with riskless bonds, and we are going to abstract away from financial intermediaries (banks). 
+
+There will be a government that collects lump-sum taxes from households and spends its revenue in some non-productive way. That is, households derive no utility from government spending.
+
+\subsection{Analyzing the first period problem}
+
+Let's now consider the decision households must make in the first period. The household has a budget constraint:
+
+\[ c_1 + s = y_1 - t_1 \]
+
+Consumption is given by \(c\), savings given by \(s\), income given by \(y\), and taxes given by \(t\). We will use the subscript 1 for today's variables and the subscript 2 for tomorrow's variables. Note that savings is not subscripted, because the household can only save today. Tomorrow, there is no saving, because there is no third period in which the household can consume.
+
+The budget constraint says that expenditures (consumption and saving) must equal after-tax income. If \(s\) is greater than zero, the household is a saver/lender, foregoing consumption today to consume more tomrrow. If \(s\) is less than zero, the household is a borrower, consuming more today and promising to pay it back tomorrow. If \(s\) is equal to zero, then the household consumes its entire endowment today and does not substitute consumption across time.
+
+How exactly can the household save income? We are assuming that households have access to a riskless bond. By saving with a riskless bond, the household promises to give up one unit of consumption today, but will recieve \((1+r)\) units of consumption tomorrow, where \((1+r)\) is the real interest rate of the economy. There is no risk of default, so the household is guaranteed to recieve the extra consumption tomorrow by forgoing consumption today.
+
+Alternatively, a household can borrow using a riskless bond, where the extra unit of consumption today must be paid back tomorrow at a rate of \((1+r)\). Note that we are implicitly assuming that anyone who wants to lend or borrow can do it at the given interest rate of \(r\). 
+
+The real interest rate for lenders and borrowers allows us to express the trade-off between consumption today and consumption tomorrow. Taking the real interest rate as given, the household can express the relative price of future consumption in terms of current consumption, and vice-versa:
+
+\[ c_1 = (1+r) c_2 \]
+
+or 
+
+\[ c_2 = \left( \frac{1}{1+r} \right) c_1 \]
+
+\subsection{Analyzing the second period problem}
+
+The household has a very similar budget constraint in the second period. Again, it must equate after-tax income with total expenditures. The main difference is that income tomorrow can come from repaid bonds and expenditures can no longer include savings, since there is no future period to save for. The budget constraint is:
+
+\[ c_2 = y_2 - t_2 + (1+r) s \]
+
+Note that if the household was a borrower in the first period, \((1+r) s \) will be negative in the second period and will represent an expense for the household rather than extra income.
+
+\subsection{Deriving the household's lifetime budget constraint}
+
+We can now combine the household's first period budget constraint and second period budget constraint to derive a lifetime budget constraint. We begin by solving the second period budget constraint for the household's level of savings:
+
+\[ c_2 = y_2 - t_2 + (1+r) s \]
+
+\[ s = \frac{c_2 - (y_2 - t_2)}{1 + r} \]
+
+We can plug this into the first period budget constraint, and then simplify the result:
+
+\[ c_1 + \frac{c_2 - (y_2 - t_2)}{1 + r} = y_1 - t_1 \]
+
+\[ c_1 + \frac{c_2}{1+r} = (y_1 - t_1) + \frac{(y_2-t_2)}{1+r} \]
+
+This lifetime budget constraint equates the present value of lifetime income with the present value of lifetime consumption. In this context, ``present value'' means the value of all consumption expressed in terms of consumption in the first period, using the inter-temporal relative price of consumption derived above. In simpler terms, it states that over the course of the household's life span (two periods), consumption must be equal to after-tax income. The only trick is that everything is measured in terms of the value of consumption in the first period, using the interest rate to denote value across time.
+
+\subsection{A graphical analysis of the lifetime budget constraint}
+
+We can express the budget constraint graphically and visualize the trade-off between consumption today and consumption tomorrow that the household faces. Let's do this by expressing the lifetime budget constraint in terms of tomorrow's consumption as a function of today's consumption:
+
+\[ c_1 + \frac{c_2}{1+r} = (y_1 - t_1) + \frac{(y_2-t_2)}{1+r} \]
+
+becomes
+
+\[ c_2 = (1+r) (y_1 - t_1) + (y_2 - t_2) - (1+r) c_1 \]
+
+We can express lifetime income as wealth, represented by \(w\):
+
+\[ w = y_1 - t_1 + \frac{y_2 - t_2}{1+r} \]
+
+This allows us to express the budget constraint in the following form:
+
+\[ c_2 = (1_r) w - (1+r) c_1 \]
+
+We can plot this on a coordinate plane, where we place \(c_2\) on the vertical axis and \(c_1\) on the horizontal axis:
+
+\begin{figure}[H]
+    \includegraphics{figure_1.pdf}
+\end{figure}
+
+The slope of the budget constraint is \(-(1+r)\). The horizontal intercept is the point at which the household consumes all its wealth (current and future consumption) in the first period, with no consumption in the second period. The vertical intercept is the point at which the household consumes all its wealth in the second period, with no consumption in the first period. 
+
+The line connecting the points is the set of all the household's possible consumption baskets (where a basket is some combination of future and current consumption). The point \(E\) is the endowment point, where the household consumes only the current period income and does not borrow or save. Households above point \(E\) are net lenders/savers, and households below point \(E\) are net borrowers.
+
+\subsection{A graphical analysis of household utility}
+
+Let's start by making an assumption about lifetime utility: it is the sum of today's utility and tomorrow's utility, discoutned by a parameter \(\beta\) that is between 0 and 1. That is, the household has a slight preference for consuming today over consuming the same amount tomorrow. Formally, we can write:
+
+\[ U(c_1,c_2) = u(c_1) + \beta u(c_2) \]
+
+We are implicitly assuming that more consumption is always better than less consumption, and that the household prefers to smooth its level of consumption over time. We can express the household's lifetime utility (given by capital \(U\)) as a function of today's consumption only by solving the lifetime budget constraint for tomorrow's consumption and plugging this in. First, recall that:
+
+\[ w = y_1 - t_1 + \frac{y_2-t_2}{1+r} \]
+
+Now we can write:
+
+\[ U(c_1) = u(c_1) + \beta u((1+r)w-(1+r)c_1) \]
+
+The household wants to maximize lifetime utility, so we can solve for the optimal level of today's consumption by taking the first derivative of utility with respect to today's consumption and setting that value equal to zero. Intuitively, we know that the household could derive some small level of utility from consuming its lifetime wealth today, or by consuming its lifetime wealth tomorrow, but there is some happy medium in between that would deliver the highest level of utility. This is what we are trying to solve for:
+
+\[ U'(c_1) = u'(c_1) + \beta u'((1+r)w-(1+r)c_1)(-1)(1+r) = 0 \]
+\[ 0 = u'(c_1) - (1+r) \beta u'((1+r)w-(1+r)c_1) \]
+\[ 0 = u'(c_1) - (1+r) \beta u'(c2) \]
+\[ u'(c_1) = (1+r) \beta u'(c_2) \]
+
+In the first step, we take the derivative of lifetime utility with respect to consumption and set it equal to zero, utilizing the chain rule. In the second step, we simplify, and in the third step we plug the value for tomorrow's consumption back into the equation. The last step rearranges the terms and gives us the \textbf{Euler equation}, the fundamental intertemoral relationship of this model.
+
+Let's get some intution for this Euler equation. First, note that \(u'(c_1)\) is the marginal utility of consumption: that is, the extra utility the household derives from one more unit of consumption. If the household increases its savings today, its utility goes down by \(u'(c_1)\). Today's foregone consumption is earned back tomorrow, with interest, and the household derives \((1+r)u'(c_2)\) more utility. But that utility is dicounted by the factor \(\beta\) because of the household's impatience. 
+
+The Euler equation says that these two marginal utilities must be the same. In other words, in order for the household to maximize its lifetime utility, it must derive the same marginal utility from extra consumption today as it does from extra consumption tomorrow. Otherwise, it would be possible for the household to make itself better off by substituting consumption today for consumption tomorrow (or vice-versa).
+
+Now we can add an indifference curve to the grapical budget constraint. The marginal rate of substitution between \(c_1\) and \(c_2\) is derived from the Euler equation:
+
+\[ u'(c_1) = (1+r)\beta u'(c_2) \]
+\[ \frac{\beta u'(c_2)}{u'(c_1)} = \frac{1}{1+r} \]
+
+The left-hand side of this equation is the marginal rate of substitution of consumption and the right-hand side is the relative price of consumption. The slope of the indifference curve will be the negative of the marginal rate of substitution:
+
+\begin{figure}[H]
+    \includegraphics{figure_2.pdf}
+\end{figure}
+
+The slope of the budget constraint is the negative of the relative price of consumption, and the household's optimal basket of consumption is the point at which the indifference curve is tangent to the budget constraint. This point represents the highest level of utility the household can obtain given its lifetime budget constraint.
+
+\subsection{A comparative statics exercise}
+
+We can use this graphical setup of the model to analyze what would happen if the household's income stream were to change. Suppose that the household's income stream is exogenously increased (either today's income or tomorrow's income will be higher; it doesn't matter which, since the intuition is the same in either case).
+
+The household's lifetime wealth will be higher, pushing the boundaries of the budget constraint father out. Let's call the original lifetime wealth \(w\) and the new lifetime wealth \(w^{hi}\).
+
+\[ w = (y_1 - t_1) + \frac{y_2-t_2}{1+r} \]
+\[ w^{hi} = (y_1^{hi} - t_1) + \frac{y_2-t_2}{1+r} \]
+
+The new budget constraint is shifted out, and the household's optimal solution is now on a different (and better) indifference curve. Consumption today and consumption tomorrow both increase as a result of this positive wealth shock:
+
+\begin{figure}[H]
+    \includegraphics{figure_3.pdf}
+\end{figure}
+
+Note that the increase in current consumption is \textit{less} than the increase in current income. The household is choosing to spread out the higher consumption over both periods (remember that we are assuming the household prefers smooth to volatile consumption). If the positive shock to income were expected tomorrow, the result would be the same: some of the higher income would be consumed today and some would be consumed tomorrow. The household is always trying to maximize its \textit{lifetime} utility, and that is the basis for the observed consumption smoothing behavior in this model.
+
+\subsection{Next steps}
+
+This simple model is a powerful tool for building intuition but has some obvious problems. For one, it assumes perfect credit markets: whenever a household wants to lend, it can lend, and whenever a household wants to borrow, it can borrow. A bigger issue, though, is how the interest rate is set. When all households try to lend, shouldn't interest rates fall? This is not what we observe in this model, because there is no general equilibrium framework for lending and borrowing. That is, we need to consider both sides of the market for credit in order to understand the dynamics more accurately. We will do this, and incorporate more general equilibrium features, in the next section with a small real business cycle model.
+
+\section{A Small Real Business Cycle Model}
+
+We will now consider a small real business cycle to gain some intuition for modeling complete markets (in this case, markets for capital and labor) and to understand how exogenous shocks can impact a dynamic model. The model will be represented with a small system of non-linear difference equations describing the path of the economy over time.
+
+\subsection{Setupt of the model}
+
+Let's first consider how the real business cycle model will be similar to the stochastic growth model. Both models will assume a representative household that tries to maximize its utiility subject to a constraint. Decisions are made intertemporally, with an eye towards maximizing lifetime utility (whether the lifetime is two periods or an infinite number of periods). 
+
+In the real business cycle model, the time horizon will be infinite; households will be ``infinitely-lived.'' We will utilize a general equilibrium framework, which means we must carefully consider both the supply side and the demand side of the market for goods and services. This economy will be populated with households and firms, and income will be earned rather than exogenous. It is a much more realistic framework that allows us to consider some real policy-relevant issues.
+
+\subsubsection{Firms stucture}
+
+The economy is populated by a representative firm that produces a generic output good. Production of output requires two inputs--capital and labor--both supplied by households. Production technology is given by a Cobb-Douglas function:
+
+\begin{equation} 
+y_t = a_t k_t^{\alpha} n_t^{1-\alpha}
+\end{equation}
+
+where \(a_t\) is aggregate factor productivity (think of it as economy-wide technology), \(y_t\) is output, \(k_t\) is capital, \(n_t\) is labor, and \(\alpha\) is the capital's share of total output.
+
+Inputs are rented on perfectly competitive markets, and firms have no price power, so they must pay whatever price the market dictates. The firm's goal is to maximize its profit, which is defined as produced output minus the cost of inputs. The firm maximization problem is static (not intertemporal) and can be expressed as:
+
+\[ \max_{k_t, n_t} \Pi_t = y_t - R_t k_t - w_t n_t \]
+
+where \(\Pi_t\) is firm profit, \(R_t\) is the rental rate of capital, and \(w_t\) is the wage paid to labor. To solve this problem, we can substitute in the production function specified above and then take the derivitave with respect to the firm's choice variables (capital and labor). We will end up solving for the optimal prices the firm should pay for each of its inputs. 
+
+\[ \max_{k_t, n_t} \Pi_t = a_t k_t^{\alpha} n_t^{1-\alpha} - R_t k_t - w_t n_t \]
+
+First, we'll sovle for the rental rate of capital:
+\[ \frac{\partial \Pi_t}{\partial k_t} = 0 \iff \alpha a_t k_t^{\alpha-1} n_t^{1-\alpha} - R_t = 0 \]
+\[ R_t = \alpha a_t k_t^{\alpha-1} n_t^{1-\alpha} \]
+\begin{equation}
+R_t = \frac{\alpha y_t}{k_t}
+\end{equation}
+
+Now we'll solve for the wage:
+\[ \frac{\partial \Pi_t}{\partial n_t} = 0 \iff (1-\alpha) k_t^{\alpha} n_t^{-\alpha} - w_t = 0 \]
+\[ w_t = (1-\alpha) k_t^{\alpha} n_t^{-\alpha} \]
+\begin{equation}
+w_t = \frac{(1-\alpha) y_t}{n_t}
+\end{equation}
+
+Note that because markets for inputs are competitive, firms pay exactly the marginal value of each input and therefore have no profit.
+
+\subsubsection{Household structure}
+
+In this economy, households derive income from labor (firms pay them a wage) and from renting capital (rental rate paid by the firms). They also receive firm profits, though because of the competitive market assumption, firm profits are zero. Households can spend their income on consumption and on investment in capital. For now, we will assume that capital investment is the only way that households can save their income. The household's budget constraint is:
+
+\[ c_t + I_t = R_t k_t + w_t n_t + \Pi_t \]
+
+where \(c_t\) is consumption and \(I_t\) is investment in capital. Capital accumulates according to the rate of depreciation (given by \(\delta\)) and the level of investment. The accumulation equation is given by:
+
+\begin{equation}
+k_{t+1} = I_t + (1-\delta) k_t
+\end{equation}
+
+which simply states that tomorrow's stock of capital is equal to today's stock of capital, less depreciation, plus today's flow of investment.
+
+Households are trying to maximize the present value of their lifetime stream of consumption. We will assume that utility comes only from consumption and that functional form of the utility function is logarithmic. That is:
+
+\[ u(c_t) = \ln(c_t) \]
+
+This functional form says that utility increases with consumption, though it increases at a decreasing rate. In other words, there are always positive but decreasing returns to increased consumption. The household problem is to maximize its lifetime utility subject to a budget constraint. It chooses how much to consume, how much to invest, and what the stock of capital should be, and is subject to a budget constraint. For the sake of analytical simplicity, we will assume that the household always provides a fixed quantity of labor: 
+
+\begin{equation}
+n_t = 1
+\end{equation}
+
+In order to simplify the problem so that there is only one constraint, we will substitute in the capital accumulation equation to the budget constraint:
+
+\[ c_t + k_{t+1} - (1-\delta) k_t = R_t k_t + w_t n_t + \Pi_t \]
+
+This allows us to act as if there are only two choice variables, since the level of capital chosen by the household implicitly defines how much the flow of investment should change. We can solve the problem analytically by setting up a Lagrangian:
+
+\[ \max_{c_t,k_{t+1}} \mathcal{L}  = E_0 \sum_{t=0}^{\infty} \beta^t \Bigl[ \ln(c_t) + \lambda_t (R_t k_t + w_t n_t + \Pi_t - c_t - k_{t+1} + (1-\delta) k_t) \Bigr] \]
+
+We can solve this as we did for the firm problem, by taking the derivative with respect to the two choice variables and setting them equal to zero. First, we will take the derivative with respect to consumption:
+
+\[ \frac{\partial \mathcal{L}}{\partial c_t} = 0 \iff \beta^t \frac{1}{c_t} - \beta^t \lambda_t = 0 \]
+\[ \frac{1}{c_t} = \lambda_t \]
+
+The Lagrange multiplier \(\lambda_t\) is the shadow value of consumption: that is, the utility that the household derives from an additional unit of consumption. Next, we can find the optimality condition for the capital stock. Note that since we are solving for \(k_{t+1}\) and the capital stock shows up in our equation at time \(t\) and time \(t+1\) we have to take the derivative at time \(t\) and time \(t+1\) as well:
+
+\[ \frac{\partial \mathcal{L}}{\partial k_{t+1}} = 0 \iff \beta^t \lambda_t + \beta^{t+1} E_t \lambda_{t+1} (R_{t+1} + (1-\delta)) = 0 \]
+\[ \lambda_t = \beta E_t \lambda_{t+1} (R_{t+1} + (1-\delta)) \]
+
+I can combine these two optimality conditions to get the \textbf{Euler equation} that determines the household's consumption path across time:
+
+\begin{equation}
+\frac{1}{c_t} = \beta E_t \frac{1}{c_{t+1}}(R_{t+1} + (1-\delta))
+\end{equation}
+
+The intuition for this is the same as in the small two-period model: the household must optimally choose its consumption today and consumption tomorrow so that it recieves the same utility (discounted in the future) for consumption across time. Otherwise, the household could be better off by changing its consumption path and its behavior would be sub-optimal.
+
+\subsubsection{Total factor productivity}
+
+We assumed above that the productivity of private firms is dependent on an aggregate technological process that applies to the whole economy. We will assume that this process is exogenous and that it follows an autoregressive process in the log (so that it is equal to 1 when the model is in equilibrium). Think of this as a catch-all factor for every possible causal mechanism in the economy that could change the productivity of private firms: droughts, floods, new technologies, political conflict, etc. We will model it like this:
+
+\begin{equation}
+\ln(a_t) = \rho \ln(a_{t-1}) + \epsilon_t
+\end{equation}
+
+The persistence of this AR(1) process is determined by the parameter \(\rho\). The exogenous shock \(\epsilon_t\) is a mean-zero shock with no auto-correlation. This shock is how our model economy will vary from its equilibrium.
+
+Lastly, need to keep track of the total resource contraint in the economy. This is simply an identity stating that total consumption and investment in any given period must be equal to total output. Since our model is of a closed economy, there are no imports or exports that you would otherwise see in a GDP identity:
+
+\begin{equation}
+y_t = c_t + I_t
+\end{equation}
+
+\subsubsection{Equilibrium of the model}
+
+The model equilibrium is defined by the eight equations identified above and the eight endogenous variables we have defined. The eight variables are:
+
+\begin{center}
+\begin{tabular}{llll}
+	\(y_t\) & output & \(n_t\) & labor \\
+	\(c_t\) & consumption & \(R_t\) & price of capital \\
+	\(I_t\) & investment & \(w_t\) & wage \\
+	\(k_t\) & capital & \(a_t\) & total factor productivity \\
+\end{tabular}
+\end{center}
+
+and the eight equations are (1)-(8) from above:
+
+\[ k_{t+1} = I_t + (1-\delta) k_t \]
+\[ y_t = a_t k_t^{\alpha} n_t^{1-\alpha} \]
+\[ R_t = \frac{\alpha y_t}{k_t} \]
+\[ w_t = \frac{(1-\alpha) y_t}{n_t} \]
+\[ n_t = 1 \]
+\[ \frac{1}{c_t} = \beta E_t \frac{1}{c_{t+1}}(R_{t+1} + (1-\delta)) \]
+\[ \ln(a_t) = \rho \ln(a_{t-1}) + \epsilon_t \]
+\[ y_t = c_t + I_t \]
+
+\subsection{Finding the model equilibrium}
+
+Let's first think about what it means for the model to have an equilibrium. It means that there is a certain value for each variable that allows the system to remain constant over time. In other words, the endogenous variables are time invariant and the system does not move. The equilibrium point is the point to which the model will always return after being subjected to an exogenous shock, given enough time to stabilize. 
+
+In mathematical terms, the equilibrium is the point at which all variables are the same, or more formally:
+
+\[ x_t = x_{t+1} = x^* \]
+
+where \(x_t\) is a stand-in for all the endogenous variables of the model. We will use the star notation to indicate that variables are at their equilibrium value. Our goal is to solve for the steady state values of all endogenous variables in terms of the deep parameters of the model, which are constant across time.
+
+In the system of eight equations that describe the model, we can substitute the time-invariant equilibrium values and derive an analytical solution that describes the steady state. We can start with the easiest equation:
+
+\begin{equation}
+n^* = 1
+\end{equation} 
+
+We are simply assuming that labor is constant across time anyway. Next, we can solve for the steady state value of factor productivity, recalling that the natural log of one is zero and that the exogenous shock is mean-zero (i.e. it's equilibrium value is zero):
+
+\[ \ln(a^*) = \rho \ln(a^*) + \epsilon_t \]
+\begin{equation}
+a^* = 1
+\end{equation}
+
+Next, let's look at the Euler equation. Note that when I plug in equilibrium values for consumption, they cancel out on each side of the equation, and I am left with \(R*\) and some parameters, which allows me to isolate the endogenous variable:
+
+\[ \frac{1}{c^*} = \beta E_t \frac{1}{c^*}(R^* + (1-\delta)) \]
+\[ 1 = \beta E_t (R^* + (1-\delta)) \]
+\begin{equation}
+R^* = \frac{1}{\beta}-(1-\delta)
+\end{equation}
+
+Now we can use the value for the rental rate of capital and solve for the stock of capital (I am dropping labor from this expession as it is equal to 1 in equilirbium):
+
+\[ R^* = \alpha k^{*\alpha} \]
+\[ \frac{1}{\beta}-(1-\delta) = \alpha k^{*\alpha} \]
+\begin{equation}
+k^* = \left(\frac{\alpha}{\frac{1}{\beta}-(1-\delta)}\right)^{\frac{1}{1-\alpha}}
+\end{equation}
+
+We can plug this value of the capital stock into our production function and find the equilibrium level of output (again dropping labor from the expression):
+
+\[ y^* = k^{*\alpha} \]
+\begin{equation}
+y^* = \left(\frac{\alpha}{\frac{1}{\beta}-(1-\delta)}\right)^{\frac{\alpha}{1-\alpha}}
+\end{equation}
+
+The level of output can be used to solve for the equilibrium wage:
+
+\[ w^* = (1-\alpha) y^* \]
+\begin{equation}
+w^* = (1-\alpha)\left(\frac{\alpha}{\frac{1}{\beta}-(1-\delta)}\right)^{\frac{\alpha}{1-\alpha}}
+\end{equation}
+
+We can use the capital accumulation equation to solve for the level of investment in terms of the capital stock:
+
+\[ k^* = I^* + (1-\delta) k^* \]
+\[ I^* = \delta k^* \]
+\begin{equation}
+I^* = \delta \left(\frac{\alpha}{\frac{1}{\beta}-(1-\delta)}\right)^{\frac{1}{1-\alpha}}
+\end{equation}
+
+Finally, we can solve for the level of consumption by rearranging the economy-wide resource constraint:
+
+\[ y^* = c^* + I^* \]
+\[ c^* = y^* - I^* \]
+\begin{equation}
+c^* = \left(\frac{\alpha}{\frac{1}{\beta}-(1-\delta)}\right)^{\frac{\alpha}{1-\alpha}} - \delta \left(\frac{\alpha}{\frac{1}{\beta}-(1-\delta)}\right)^{\frac{1}{1-\alpha}}
+\end{equation}
+
+With equations (9)-(16), we can now find numerical values to describe the model's equilibrium for a given parameterization. This will be important when we are using the computer to simulate the model, and also when we are finding the linearized solution to the model, as we will do in the next section.
+
+\subsection{Finding a linearized solution to the model}
+
+Our model, represented by a system of non-linear difference equations, does not have a closed-form analytic solution (i.e. we cannot solve it by hand, with pencil and paper). One way to use the model, then, is to rely on a linear approximation of the model that can be solved analytically. A common technique for doing this is by log-linearizing the model around a point (the steady state, which we have been calling the equilibrium). The result will give us a system of linear difference equations, which we can use to derive a policy function that expresses the dynamics of the system.
+
+What we'll do first is collapse our system into only three equations that describe completely all the dynamic relationships we have captured above. We will do this by plugging in values and dropping those that are constant (i.e. labor). First, we plug in the price of capital to the Euler equation:
+
+\[ \frac{1}{c_t} = \beta E_t \frac{1}{c_{t+1}}(R_{t+1} + (1-\delta)) \]
+\begin{equation}
+\frac{1}{c_t} = \beta E_t \frac{1}{c_{t+1}}(\alpha a_{t+1} k_{t+1}^\alpha + (1-\delta))
+\end{equation}
+
+Next, we will combine the capital accumulation equation and the aggregate resource constraint:
+
+\[ k_{t+1} = I_t + (1-\delta) k_t \]
+\[ k_{t+1} = y_t - c_t + (1-\delta) k_t \]
+
+Then we will plug in our value for output in terms of the capital stock:
+
+\begin{equation}
+k_{t+1} = a_t k_t^\alpha - c_t + (1-\delta) k_t 
+\end{equation}
+
+The last equation will be the AR(1) process that describes the path of factor productivity:
+\begin{equation}
+\ln(a_t) = \rho \ln(a_{t-1}) + \epsilon_t
+\end{equation}
+
+Now equations (17)-(19) describe the system in three equations by keeping track of three variables (consumption, capital, and technology). The rest of the variables can be described in terms of these three, which we will do after deriving the policy function in order to simulate our entire model.
+
+\subsubsection{Log-linearizing the model}
+
+In many cases, finding the closed-form solution to a discrete time problem like this can be exceedingly difficult. One useful approximation technique is to log-linearize the model around a point, usually the steady state of the model. The end result will be a system of linear equations where variables are expressed as percentage deviations from their steady state value.
+
+Recall that Taylor's theorem tells us that we can express a function \(f(x)\) as follows:
+
+\[ f(x) = f(x^*) + \frac{f'(x^*)}{1!}(x-x^*) + \frac{f^{(2)}(x^*)}{2!}(x-x^*) + \frac{f^{(3)}(x^*)}{3!}(x-x^*) + ...\]
+
+For a sufficiently smooth function, the higher-order derivitaves will be small and the function can be well-approximated as follows:
+
+\[ f(x) = f(x^*) + f'(x^*)(x-x^*) \]
+
+We will perform this approximating technique on the logs of our three equations, so that we can simplify the system into expressions of deviations from steady state. First, we will log-linearize equation (17):
+
+\[ \frac{1}{c_t} = \beta E_t \frac{1}{c_{t+1}}(\alpha a_{t+1} k_{t+1}^\alpha + (1-\delta)) \]
+\[ -\ln(c_t) = -\ln(c_{t+1}) + \ln(\beta) + \ln(\alpha a_{t+1} k_{t+1}^\alpha + (1-\delta)) \]
+
+Now do the first-order Taylor approximation:
+
+\[ -\ln(c^*)  - \frac{c_t-c^*}{c^*} = -\ln(c^*)  - \frac{c_{t+1}-c^*}{c^*} + \ln(\beta) + \frac{\beta \alpha k^{*(\alpha-1)}(a_{t+1}-a^*)}{a^*} + \frac{\beta(\alpha-1)\alpha k^{*(\alpha-2)}(k_{t+1}-k^*)}{k^*} \]
+
+For notational simplicity, let's say that \(\tilde{x} = \frac{(x_t-x^*)}{x^*} \) to express deviation from steady state. We can simplify further:
+
+\[ -\tilde{c}_t = -\tilde{c}_{t+1} + \left(\beta \alpha k^{*(\alpha-1)}\right) \tilde{a}_{t+1} + \left(\beta(\alpha-1)\alpha k^{*(\alpha-1)}\right)\tilde{k}_{t+1} \]
+
+\begin{equation}
+\tilde{c}_{t+1} = \tilde{c}_{t} + \left(\beta \alpha k^{*(\alpha-1)}\right) \tilde{a}_{t+1} + \left(\beta(\alpha-1)\alpha k^{*(\alpha-1)}\right)\tilde{k}_{t+1}
+\end{equation}
+
+Now let's repeat the process (take logs, then linearize) for equation (18):
+
+\[ k_{t+1} = a_t k_t^\alpha - c_t + (1-\delta) k_t \]
+\[ \ln(k_{t+1}) = \ln(a_t k_t^\alpha - c_t + (1-\delta) k_t) \]
+
+In this next step, I take advantage of the fact that in steady state, \(k^* = a^* k^{*\alpha} - c^* + (1-\delta) k^*\):
+
+\[ \ln(k^*) + \frac{k_t-k^*}{k^*} = \ln(a^* k^{*\alpha} - c^* + (1-\delta) k^*) + \frac{k^{*\alpha(a_t-a^*)}}{k^*} + \frac{\alpha a^* k^{*(\alpha-1)}(k_t-k^*)}{k^*} - \frac{c_t-c^*}{k^*} + \frac{(1-\delta)(k_t-k^*)}{k^*} \]
+
+We can simplify again using our tilde notation:
+
+\[ \tilde{k}_{t+1} = (\alpha a^* k^{*(\alpha-1)})\tilde{k}_t - \left(\frac{c^*}{k^*}\right)\tilde{c}_t + (1-\delta) \tilde{k}_t + k^{*(\alpha-1)}\tilde{a}_t \]
+
+\begin{equation}
+\tilde{k}_{t+1} = \left(k^{*(\alpha-1)}\right)\tilde{a}_t - \left(\frac{c^*}{k^*}\right)\tilde{c}_t + \left(\frac{1}{\beta}\right)\tilde{k}_t
+\end{equation}
+
+Last, we repeat the process for equation (19), noting that it is already in logs:
+
+\[ \ln(a_t) = \rho \ln(a_{t-1}) + \epsilon_t \]
+\[ \ln(a^*) + \frac{a_{t+1}-a^*}{a^*} = \rho\ln(a^*) + \frac{a_{t}-a^*}{a^*} + \epsilon^* + (\epsilon_{t+1} - \epsilon^*) \]
+
+\begin{equation}
+\tilde{a}_{t+1} = \rho \tilde{a}_t + \epsilon_{t+1}
+\end{equation}
+
+Now we want to use equations (20)-(22) to express our time \(t+1\) variables only in terms of time \(t\) variables and the steady state values (which we can treat as parameters since they are time invariant). For equations (21) and (22), this is already done for us, so we just need to substitute and rearrange equation (20). We do this by plugging in values for \(k_{t+1}\) and \(a_{t+1}\) and simplifying. I will show only the final step (the in-between steps are nothing more than simple algebra):
+
+\begin{equation}
+\tilde{c}_{t+1} = \tilde{c}_t \left( 1 - \left(\frac{c^*}{k^*}\right)\beta(\alpha-1)R^* \right) + \tilde{a}_t \left( \rho \beta R^* + \beta(\alpha-1)R^* k^{*(\alpha-1)} \right) + \tilde{k}_t \left( R^*(\alpha-1) \right)
+\end{equation}
+
+Now, since our time \(t+1\) variables are exprsesed only in terms of time \(t\) variables, we can write the system as a VAR(1):
+
+\[ E_t \begin{bmatrix}
+	\tilde{c}_{t+1} \\
+	\tilde{k}_{t+1} \\
+	\tilde{a}_{t+1}
+ \end{bmatrix}  = 
+\begin{bmatrix}
+	1 - \left(\frac{c^*}{k^*}\right)\beta(\alpha-1)R^* & R^*(\alpha-1) & \rho \beta R^* + \beta(\alpha-1)R^* k^{*(\alpha-1)} \\
+	-\frac{c^*}{k^*} & \frac{1}{\beta} & k^{*(\alpha-1)} \\
+	0 & 0 & \rho
+\end{bmatrix} 
+\begin{bmatrix}
+	\tilde{c}_{t} \\
+	\tilde{k}_{t} \\
+	\tilde{a}_{t}
+ \end{bmatrix} \]
+
+The rest of the solution is best found on a computer. Basically, we will do an eigenvalue decomposition of this matrix of coefficients and then sort the eigenvalues. We will use the sorted eigenvalues to form a policy function, which is an expression for \(c_t\) in terms of \(k_t\) and \(a_t\). We can then shock \(a_t\) (remember, it is a function of its own lag and a white noise process) and watch how the entire system reacts.
+
+\subsection{The Lucan critique; or: why do this the hard way?}
+
+Take a look at the matrix of coefficients above. Notice that every element of the matrix is a function of the model steady state or of the ``deep parameters'' of the model. This is a very important point, and gets to the core of why we chose to solve our model this way.
+
+Let's think about one alternative: an econometric model estimated on past data. Implicit in such an estimated model is the assumption that past action will have some predictive power of future outcomes. The problem comes in determining how people will react to a change in economic policy. Since an econometric model is estimated on a past policy regime, there is no way to know how people's behavioral responses will change in a new policy regime.
+
+This is the core of the Lucas critique: if you want to do predictive analysis on a change in policy, you must use a model estimated on deep and policy-invariant parameters, like people's discount factor, capital depreciation, and consumers' relative risk aversion. These parameters do not depend on any given policy regime, so we can use them to estimate a model that will have some predictive power.
+
+Let's look at how these parameters will be estimated for our simple model. First, we know that \(\alpha\) is capital's share of income, so \(1-\alpha\) will be labor's share of income. We calculate this by finding:
+
+\[ \frac{\textrm{wage income}}{\textrm{all income}} \approx \frac{2}{3} \]
+
+So we set \(\alpha\approx0.33\). Next, we consider the time preference parameter \(\beta\). Note that in steady state, \(\beta=1+r^*\). We know that \(r^* = i^*-\pi^*\), so by taking long-run values of inflation and the nominal interest rate, we can solve for the real inflation rate and the time preference parameter. For the US, this comes to around 0.95.
+
+Finally, we can solve for \(\delta\) by finding the share of investment in total income. Note that: 
+
+\[ \frac{I^*}{y^*} = \frac{\delta k^*}{y^*} \]
+
+We can re-arrange to get:
+
+\[ \frac{I^*}{y^*} = \delta k^* k^{* -\alpha} = \delta k^{*(1-\alpha)} = \delta \left( \frac{\alpha}{\frac{1}{\beta}-(1-\delta)} \right) \]
+
+\[ \delta = \frac{\frac{I^*}{k^*}\left(\frac{1}{\beta}-1 \right)}{\alpha - \frac{I^*}{k^*}} \]
+
+We can estimate \(\rho\) via a growth accounting exercise. Note that all these parameters are time-invariant, so our model will be useful for estimating the effects of future policy changes. This is why we will use a DSGE model rather than a large-scale macroeconometric model for policy analysis.
+
+\end{document}

@@ -1,0 +1,67 @@
+<section data-ng-controller="AnalyzeSimulationController" data-ng-init="findOne()">
+	<omt-header></omt-header>
+	<om-tabbar></om-tabbar>
+
+	<md-content layout="row">
+		<md-content om-sidebar>
+			<md-list data-ng-show="simulation.model.short_name == 'dig'">
+			</md-list>
+			<md-input-container>
+				<label>Filter Graphs</label>
+				<input ng-model="filterQuery.name">
+			</md-input-container>
+			<md-list>
+				<md-item ng-repeat="dropvar in all_vars | filter:filterQuery"
+						 ng-click="createGraph(dropvar.name)">
+					<a>
+						<md-item-content md-ink-ripple class="md-2-line" layout="row" layout-align="start center">
+							<div class="md-list-item-text parameter-item" ng-class="{'md-offset': $index != 0 }">
+								<h4 class="md-subhead"> {{sim_descriptions[dropvar.name].latex}} </h4>
+
+								<p class="description"> {{dropvar.name}} </p>
+
+								<p class="description"> {{sim_descriptions[dropvar.name].description}} </p>
+							</div>
+						</md-item-content>
+					</a>
+					<md-divider></md-divider>
+				</md-item>
+			</md-list>
+		</md-content>
+		<md-divider class="md-padding vertical"></md-divider>
+		<md-content layout="column" class="md-padding" om-fill-height flex>
+			<md-content>
+				<div layout="row">
+					<h1 flex offset="80" class="md-title" layout-align="start start"> Results </h1>
+					<md-select layout-align="start end" placeholder="Compare With" ng-model="curSim" required>
+						<md-option ng-repeat="sim in all_sims" ng-click = "concatGraphs(sim)" value="{{ sim._id }}">{{sim.name}}</md-option>
+					</md-select>
+				</div>
+
+				<section>
+					<div layout="row" layout-align="center center" ng-repeat="row in vars">
+						<md-list flex ng-repeat="curvar in row">
+							<!-- <md-list-item> -->
+								<label>{{sim_descriptions[curvar.name].description}}</label>
+							<!-- </md-list-item> -->
+							<md-list-item>
+								<md-card id="{{'Chart_' + curvar.idnum.toString()}}" flex="50">
+									<md-card-content>
+										<c3chart bindto-id="{{'Chart_' + curvar.idnum.toString()}}"
+												 chart-data="json_data[curvar.name]"
+												 chart-columns="data_columns[curvar.name]"
+												 chart-x="datax"
+												 enable-zoom = "false"
+												 show-subchart="false">
+											<chart-size></chart-size>
+										</c3chart>
+									</md-card-content>
+								</md-card>
+							</md-list-item>
+						</md-list>
+					</div>
+				</section>
+			</md-content>
+		</md-content>
+	</md-content>
+</section>

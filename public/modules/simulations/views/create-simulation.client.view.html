@@ -1,0 +1,18 @@
+<md-dialog data-ng-controller="ListSimulationsController" data-ng-init="findModels()">
+	<md-content class="md-padding" style="min-width:500px;">
+		<h3>Build a New Simulation</h3>
+
+			<section id="select-model">
+				<md-select placeholder="Choose a Model" ng-model="simulation.model" required>
+					<md-option ng-repeat="model in models" value="{{ model._id }}">{{model.name}}</md-option>
+				</md-select>
+			</section>
+		
+			<md-input-container>
+				<label>Simulation Name</label>
+				<input ng-model="simulation.name" required>
+			</md-input-container>
+
+			<md-button class="md-primary" ng-click="create()">CREATE</md-button>
+	</md-content>
+</md-dialog>

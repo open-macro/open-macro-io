@@ -1,0 +1,59 @@
+<div data-ng-controller="HeaderController">
+	<md-toolbar class="md-toolbar-home md-default-theme" >
+		<div class="md-toolbar-tools">
+			<section>
+				<md-button href="/#!/">Open Macro</md-button>
+			</section>
+
+			<span flex></span>
+
+			<section data-ng-hide="authentication.user">
+				<md-button href="/#!/signin" data-ng-hide="isSignin">SIGN IN</md-button>
+				<md-button href="/#!/signup" data-ng-show="isSignin">SIGN UP</md-button>
+			</section>
+
+			<section data-ng-show="authentication.user">
+				<span class="header-displayname"></span>
+				<md-button ng-click="toggleRight()">
+					<md-icon class="header-icon" md-svg-icon="lib/project-material-icons/ic_person_48px.svg"></md-icon>
+				</md-button>
+			</section>
+
+		</div>
+	</md-toolbar>
+
+	<md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right">
+		<md-toolbar class="md-theme-light">
+			<h1 class="md-toolbar-tools">Profile</h1>
+		</md-toolbar>
+		<md-content class="md-padding">
+			<md-subheader class="md-no-sticky" data-ng-bind="authentication.user.displayName"></md-subheader>
+			<md-list-item>
+				<md-button ng-click="editProfile()" class="md-primary">
+					<md-icon md-svg-icon="lib/project-material-icons/ic_face_48px.svg"></md-icon>
+					Edit Profile
+				</md-button>
+			</md-list-item>
+			<md-list-item>
+				<md-button ng-click="updatePword()" class="md-primary">
+					<md-icon md-svg-icon="lib/project-material-icons/ic_lock_outline_48px.svg"></md-icon>
+					Update Password
+				</md-button>
+			</md-list-item>
+
+			<md-subheader class="md-no-sticky">Application</md-subheader>
+			<md-list-item>
+				<md-button ng-click="toggleRight()" class="md-primary">
+					<md-icon md-svg-icon="lib/project-material-icons/ic_chevron_left_48px.svg"></md-icon>
+					Return
+				</md-button>
+			</md-list-item>
+			<md-list-item>
+				<md-button ng-click="signout()" class="md-primary">
+					<md-icon md-svg-icon="lib/project-material-icons/ic_exit_to_app_48px.svg"></md-icon>
+					Sign Out
+				</md-button>
+			</md-list-item>
+		</md-content>
+	</md-sidenav>
+</div>

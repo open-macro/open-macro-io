@@ -1,0 +1,65 @@
+<om-header></om-header>
+<section layout="column" om-toolbarless-height style="overflow-y:scroll;">
+<div class="signin-container">
+	<md-content class="md-padding">
+		<md-card>
+			<md-toolbar class="md-accent">
+				<div class="md-toolbar-tools">
+					<h2>
+						<span>New User Registration</span>
+					</h2>
+				</div>
+			</md-toolbar>
+
+			<md-card-content>
+
+				<section class="row" data-ng-controller="AuthenticationController">
+					<p>All fields are required</p>
+					<div layout="row" layout-align="center center">
+						<form data-ng-submit="signup()" autocomplete="off">
+							<md-content class="md-padding" layout="column">
+								<md-input-container>
+									<label>First Name</label>
+									<input name="firstName" data-ng-model="credentials.firstName">
+								</md-input-container>
+								<md-input-container>
+									<label>Last name</label>
+									<input name="lastName" data-ng-model="credentials.lastName">
+								</md-input-container>
+								<md-input-container>
+									<label>Email</label>
+									<input name="email" type="email" data-ng-model="credentials.email">
+								</md-input-container>
+								<md-input-container>
+									<label>Username</label>
+									<input name="username" data-ng-model="credentials.username">
+								</md-input-container>
+								<md-input-container>
+									<label>Password</label>
+									<input name="password" data-ng-model="credentials.password" type="password">
+								</md-input-container>
+								<md-input-container>
+									<span>{{error}}</span>
+								</md-input-container>
+								<md-input-container>
+									<md-button class="md-raised md-accent" type="submit">Sign up</md-button>
+								</md-input-container>
+								<md-input-container>
+									<md-button href="/#!/signin">Existing user?</md-button>
+								</md-input-container>
+							</md-content>
+						</form>
+					</div>
+				</section>
+
+			</md-card-content>
+		</md-card>
+	</md-content>
+
+</div>
+</section>
+
+
+
+
+

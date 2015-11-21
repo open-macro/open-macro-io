@@ -1,0 +1,8 @@
+shocks;
+{% for shock in shocks %}
+var {{ shock.name }};
+periods {{ shock.periods }};
+values {{ shock.values }};
+{% endfor %}
+
+end;
