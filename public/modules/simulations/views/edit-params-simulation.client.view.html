@@ -17,9 +17,8 @@
                             <md-item-content md-ink-ripple class="md-2-line" layout="row" layout-align="start center">
                                 <div class="md-list-item-text parameter-item" ng-class="{'md-offset': $index != 0 }">
                                     <h4 class="md-subhead">Debt Type</h4>
+                                    <p class="description">Select the type of debt that closes the government's fiscal gap.</p>
 
-                                    <p class="description">Select the type of debt that closes the government's fiscal
-                                        gap.</p>
                                 </div>
                             </md-item-content>
                         </a>
@@ -46,12 +45,12 @@
                 <!--<md-content>-->
                 <div ng-hide="selectedParameter || editingDSF">
                     <h2> Select a Parameter to Begin Editing</h2>
-                    <section class="edit-dsf description">
+                    <div class="edit-dsf description">
                         The model is calibrated to an average low-income country. To customize the simulation, change
                         the parameters to values that reflect country-specific economic conditions. For more help, see
                         <a href="http://econ.duke.edu/~kdh9/Source%20Materials/Research/Facts%20and%20Artifacts.pdf"
                            target="_blank" style="color:#000;font-weight:500;">this instructive paper</a>.
-                    </section>
+                    </div>
                 </div>
                 <div ng-show="editingDSF" layout="row">
                     <section class="edit-dsf" flex="60">

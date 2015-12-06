@@ -309,21 +309,11 @@ md-divider.vertical {
 	font-size:70%;
 }
 
-.edit-parameter {
-	width:400px;
-}
-
-.edit-dsf {
-	width:750px;
-}
 
 a.edit-dsf {
 	color: #000000;
 }
 
-.equations {
-	width:300px;
-}
 
 .md-header {
 	z-index: 99;
