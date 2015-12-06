@@ -242,10 +242,9 @@ exports.compute = function(req, res) {
 
         for (var i in results) console.log(results[i]);
 
-        /// @TODO: handle error
         if (error) {
             console.log('Error: ', error);
-            res.status(err.status).end();
+            res.status(error.status).end();
 
         }
         else {

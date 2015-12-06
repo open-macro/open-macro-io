@@ -5,6 +5,7 @@ angular.module('simulations').controller('RunSimulationController', ['$scope', '
     function ($scope, $stateParams, $location, $anchorScroll, Authentication, SimulationState, Simulations) {
 
         $scope.authentication = Authentication;
+        $scope.simulationState = SimulationState;
 
         $scope.selectedIndex = 3;
 
@@ -62,7 +63,7 @@ angular.module('simulations').controller('RunSimulationController', ['$scope', '
                 info: ''
             });
 
-            SimulationState().runSimulation(
+            $scope.simulationState().runSimulation(
                 $stateParams.simulationId,
                 function (data, status, headers, config) {
                     // success function

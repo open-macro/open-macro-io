@@ -93,7 +93,7 @@ angular.module('simulations').controller('ShocksSimulationController', ['$scope'
 		});
 
         $scope.handlePaste = function(index, $event){
-            var pastedValue = $event.originalEvent.clipboardData.getData("text/plain");
+            var pastedValue = $event.originalEvent.clipboardData.getData('text/plain');
             var components = pastedValue.split('\t');
             if (components.length > 1){
                 $event.preventDefault();

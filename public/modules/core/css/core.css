@@ -4,9 +4,7 @@
 .undecorated-link:hover {
 	text-decoration: none;
 }
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-	display: none !important;
-}
+
 .ng-invalid.ng-dirty {
 	border-color: #FA787E;
 }
@@ -29,7 +27,7 @@ body.ng-cloak
 	box-shadow: none;
 }
 
-#select-model {
+.select-model {
 	margin-top:-20px;
 	margin-bottom:20px;
 }
@@ -53,6 +51,7 @@ body.ng-cloak
 	box-shadow: 0 2px 5px 0 rgba(0,0,0,0);
 }
 
+
 .logo-container {
 	width: 100%;
 	padding-top: 5%;
@@ -64,8 +63,10 @@ body.ng-cloak
 
 .logo-animation {
 	-webkit-animation-duration: .5s;
+    -moz-animation-duration: .5s;
 	animation-duration: .5s;
 	-webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
 	animation-fill-mode: both;
 }
 
@@ -73,11 +74,13 @@ body.ng-cloak
 	0% {
 		opacity: 0;
 		-webkit-transform: translateY(-2000px);
-	}
+        transform: translateY(-2000px);
+    }
 	100% {
 		opacity: 1;
-		-webkit-transform: translateY(0);
-	}
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
 }
 @keyframes fadeInDownBig {
 	0% {
@@ -91,6 +94,7 @@ body.ng-cloak
 }
 
 .fadeInDownBig {
+    -moz-animation-name: fadeInDownBig;
 	-webkit-animation-name: fadeInDownBig;
 	animation-name: fadeInDownBig;
 }
@@ -113,11 +117,11 @@ body.ng-cloak
 	margin-top: 3%;
 	line-height: 2;
 	font-weight: 600;
-	background: rgba(0,0,0,.125);
+	background: #26000000;
 }
 
 .reg-btn:hover {
-	background: rgba(0,0,0,.25);
+	background: #40000000;
 }
 
 a:link,a:visited.reg-btn-a {
@@ -131,11 +135,12 @@ a:hover.reg-btn-a {
 	target-new: none;
 }
 
-a:link,a:visited.edit-dsf {
+a:visited.edit-dsf {
 	color: #000;
 	text-decoration: none;
 	target-new: none;
 }
+
 a:hover.edit-dsf {
 	color: #000;
 	text-decoration: none;
@@ -190,7 +195,7 @@ p.logosubtext {
 	padding-top:20px;
 	padding-bottom: 20px;
 	background-color: #212121;
-	color: rgba(255, 255, 255, 0.54);
+	color: #80ffffff;
 	font-size: .9em;
 	text-align: center;
 }
@@ -232,7 +237,7 @@ a.pretty :hover{
 }
 
 .no_padding{
-	padding: 0px;
+	padding: 0;
 }
 
 .pretty_nav{
@@ -301,7 +306,7 @@ pre {
 md-divider.vertical {
 	border-top: 0;
 	border-left: 1px solid;
-	border-left-color: rgba(0, 0, 0, 0.12);
+	border-left-color: #26000000;
 	border-bottom:20px;
 }
 
@@ -375,4 +380,8 @@ a.edit-dsf {
 	white-space: pre;
 	overflow-y: scroll;
 	overflow-x: scroll;
+}
+
+.md-button {
+    color:white;
 }

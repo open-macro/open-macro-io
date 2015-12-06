@@ -22,10 +22,10 @@ module.exports = {
         secure: false,
         // Only set the maxAge to null if the cookie shouldn't be expired
         // at all. The cookie will expunge when the browser is closed.
-        maxAge: null
+        maxAge: null,
         // To set the cookie in a specific domain uncomment the following
         // setting:
-        // domain: 'yourdomain.com'
+        domain: 'openmacro.io'
     },
     // The session cookie name
     sessionName: 'connect.sid',
