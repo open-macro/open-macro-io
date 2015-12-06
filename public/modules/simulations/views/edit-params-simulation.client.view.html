@@ -1,93 +1,110 @@
-<section data-ng-controller="ParametersSimulationController" data-ng-init="findOne()" >
+<section data-ng-controller="ParametersSimulationController" data-ng-init="findOne()" layout="row" layout-fill>
 
-		<omt-header></omt-header>
-		<om-tabbar></om-tabbar>
+    <section layout="column" flex>
 
-		<md-content layout="row">
-			<md-content om-sidebar>
-				<md-input-container>
-					<label>Filter Parameters</label>
-					<input ng-model="filterQuery.name">
-				</md-input-container>
-				<md-list>
-					<md-item data-ng-show="simulation.model.short_name == 'dig'" ng-click="toggleDSF()">
-						<a>
-							<md-item-content md-ink-ripple class="md-2-line" layout="row" layout-align="start center">
-								<div class="md-list-item-text parameter-item" ng-class="{'md-offset': $index != 0 }">
-									<h4 class="md-subhead">Debt Type</h4>
-									<p class="description">Select the type of debt that closes the government's fiscal gap.</p>
-								</div>
-							</md-item-content>
-						</a>
-						<md-divider></md-divider>
-					</md-item>
-					<md-item ng-repeat="parameter in simulation.parameters | filter:filterQuery" ng-click="editParam(parameter)">
-						<a>
-							<md-item-content md-ink-ripple class="md-2-line" layout="row" layout-align="start center">
-								<div class="md-list-item-text parameter-item" ng-class="{'md-offset': $index != 0 }">
-									<h4 class="md-subhead"><span mathjax-bind="parameter.latex"></span> {{ parameter.value }}</h4>
-									<p class="description"> {{ parameter.name }} </p>
-									<p class="description"> {{ parameter.description }} </p>
-								</div>
-							</md-item-content>
-						</a>
-						<md-divider></md-divider>
-					</md-item>
-				</md-list>
-			</md-content>
-			<md-divider class="md-padding vertical"></md-divider>
-			<md-content class="md-padding" om-fill-height flex>
-				<!--<md-content>-->
-					<div ng-hide="selectedParameter || editingDSF">
-						<h2> Select a Parameter to Begin Editing</h2>
-						<section class="edit-dsf description">
-							The model is calibrated to an average low-income country. To customize the simulation, change
-							the parameters to values that reflect country-specific economic conditions. For more help, see
-							<a href="http://econ.duke.edu/~kdh9/Source%20Materials/Research/Facts%20and%20Artifacts.pdf"
-							   target="_blank" style="color:#000;font-weight:500;">this instructive paper</a>.
-						</section>
-					</div>
-					<div ng-show="editingDSF" layout="row">
-						<section class="edit-dsf" flex="60">
-							<section style="width:90%">
-								<h2>Dept Type</h2>
-								<p class="description">Select the debt type that will be used to close the fiscal gap (expenditures - reveues). Exogenous (concessional) must be specified on the Shocks page. Endogenous commercial or domestic will be determined by the model.</p>
-							</section>
-						</section>
-						<section class="equations">
-							<md-select placeholder="Variable Type" ng-model = "simulation.dsf">
-								<md-option value="1,0,0">Exogenous</md-option>
-								<md-option value="0,1,0">Endogenous Domestic</md-option>
-								<md-option value="0,0,1">Endogenous Commercial</md-option>
-							</md-select>
-						</section>
-					</div>
-					<div ng-show="selectedParameter" layout="row">
-						<section class="edit-parameter" flex="60">
-							<section style="width:70%">
-								<h2 mathjax-bind="selectedParameter.latex"></h2>
-								<p class="description"> {{ selectedParameter.name }} </p>
-								<p class="description"> {{selectedParameter.description}}</p>
-								<p class="description"> {{selectedParameter.notes}}</p>
-								<md-input-container>
-									<input ng-model="selectedParameter.value">
-								</md-input-container>
-								<md-button class="om-button-small" ng-click="useDefaultValue()">Use default value ({{selectedParameter.default_value}})</md-button>
-							</section>
-						</section>
-						<section class="equations" style="width:90%">
-							<h4> Equations </h4>
-							<div ng-repeat="equation in selectedParameter.equations">
-								<h6>{{ equation.description }}</h6>
-								<p mathjax-bind="equation.latex"></p>
-							</div>
-						</section>
-					</div>
+        <omt-header></omt-header>
+        <om-tabbar></om-tabbar>
 
-				<!--</md-content>-->
-			</md-content>
-		</md-content>
+        <md-content layout="row" flex>
+            <md-content class="om-sidebar">
+                <md-input-container>
+                    <label>Filter Parameters</label>
+                    <input ng-model="filterQuery.name">
+                </md-input-container>
+                <md-list>
+                    <md-item data-ng-show="simulation.model.short_name == 'dig'" ng-click="toggleDSF()">
+                        <a>
+                            <md-item-content md-ink-ripple class="md-2-line" layout="row" layout-align="start center">
+                                <div class="md-list-item-text parameter-item" ng-class="{'md-offset': $index != 0 }">
+                                    <h4 class="md-subhead">Debt Type</h4>
 
-		<!--<mfb-menu position="br" resting-icon="ic_play_arrow_48px.svg" ng-click="goToRun()">-->
-		<!--</mfb-menu>-->
+                                    <p class="description">Select the type of debt that closes the government's fiscal
+                                        gap.</p>
+                                </div>
+                            </md-item-content>
+                        </a>
+                        <md-divider></md-divider>
+                    </md-item>
+                    <md-item ng-repeat="parameter in simulation.parameters | filter:filterQuery"
+                             ng-click="editParam(parameter)">
+                        <a>
+                            <md-item-content md-ink-ripple class="md-2-line" layout="row" layout-align="start center">
+                                <div class="md-list-item-text parameter-item" ng-class="{'md-offset': $index != 0 }">
+                                    <h4 class="md-subhead"><span mathjax-bind="parameter.latex"></span> {{
+                                        parameter.value }}</h4>
+                                    <p class="description"> {{ parameter.name }} </p>
+                                    <p class="description"> {{ parameter.description }} </p>
+                                </div>
+                            </md-item-content>
+                        </a>
+                        <md-divider></md-divider>
+                    </md-item>
+                </md-list>
+            </md-content>
+            <md-divider class="md-padding vertical"></md-divider>
+            <md-content class="md-padding" flex>
+                <!--<md-content>-->
+                <div ng-hide="selectedParameter || editingDSF">
+                    <h2> Select a Parameter to Begin Editing</h2>
+                    <section class="edit-dsf description">
+                        The model is calibrated to an average low-income country. To customize the simulation, change
+                        the parameters to values that reflect country-specific economic conditions. For more help, see
+                        <a href="http://econ.duke.edu/~kdh9/Source%20Materials/Research/Facts%20and%20Artifacts.pdf"
+                           target="_blank" style="color:#000;font-weight:500;">this instructive paper</a>.
+                    </section>
+                </div>
+                <div ng-show="editingDSF" layout="row">
+                    <section class="edit-dsf" flex="60">
+                        <section style="width:90%">
+                            <h2>Dept Type</h2>
+
+                            <p class="description">Select the debt type that will be used to close the fiscal gap
+                                (expenditures - reveues). Exogenous (concessional) must be specified on the Shocks page.
+                                Endogenous commercial or domestic will be determined by the model.</p>
+                        </section>
+                    </section>
+                    <section class="equations">
+                        <md-select placeholder="Variable Type" ng-model="simulation.dsf">
+                            <md-option value="1,0,0">Exogenous</md-option>
+                            <md-option value="0,1,0">Endogenous Domestic</md-option>
+                            <md-option value="0,0,1">Endogenous Commercial</md-option>
+                        </md-select>
+                    </section>
+                </div>
+                <div ng-show="selectedParameter" layout="row">
+                    <section class="edit-parameter" flex="60">
+                        <section style="width:70%">
+                            <h2 mathjax-bind="selectedParameter.latex"></h2>
+
+                            <p class="description"> {{ selectedParameter.name }} </p>
+
+                            <p class="description"> {{selectedParameter.description}}</p>
+
+                            <p class="description"> {{selectedParameter.notes}}</p>
+                            <md-input-container>
+                                <input ng-model="selectedParameter.value">
+                            </md-input-container>
+                            <md-button class="om-button-small" ng-click="useDefaultValue()">Use default value
+                                ({{selectedParameter.default_value}})
+                            </md-button>
+                        </section>
+                    </section>
+                    <section class="equations" style="width:90%">
+                        <h4> Equations </h4>
+
+                        <div ng-repeat="equation in selectedParameter.equations">
+                            <h6>{{ equation.description }}</h6>
+
+                            <p mathjax-bind="equation.latex"></p>
+                        </div>
+                    </section>
+                </div>
+
+                <!--</md-content>-->
+            </md-content>
+        </md-content>
+    </section>
+
+    <!--<mfb-menu position="br" resting-icon="ic_play_arrow_48px.svg" ng-click="goToRun()">-->
+    <!--</mfb-menu>-->
 </section>
