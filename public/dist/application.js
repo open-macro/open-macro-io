@@ -1241,38 +1241,6 @@ angular.module('simulations').directive('landingPage', function() {
 		link: link
 	};
 
-}]).directive('omToolbarlessHeight', ['$window', function($window) {
-
-		var link =function (scope, element, attrs) {
-			/* global $: false */
-			element = $(element[0]);
-			/// 64 is the height of just the header
-			element.height($($window).height() - 64);
-			//element.addClass('om-sidebar');
-
-		};
-
-		return {
-			restrict: 'EA',
-			link: link
-		};
-
-	}]).directive('omFillHeight', ['$window', function($window) {
-
-	var link =function (scope, element, attrs) {
-		/* global $: false */
-		element = $(element[0]);
-		/// 141 is the combined height of the header and toolbar
-		element.height($($window).height() - 140);
-		//element.addClass('om-sidebar');
-
-	};
-
-	return {
-		restrict: 'EA',
-		link: link
-	};
-
 }]).filter('capitalize', function() {
 	return function(input, all) {
 		return (!!input) ? input.replace(/([^\W_]+[^\s-]*) */g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}) : '';

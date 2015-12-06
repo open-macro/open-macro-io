@@ -1,16 +1,11 @@
-<section data-ng-controller="SimulationController" data-ng-init="findOne()">
-
-	<omt-header></omt-header>
-	<om-tabbar></om-tabbar>
-
-	<md-content md-padding ng-show="simulation">
-
-		<div  ng-switch on="simulation.model.short_name">
-			<landing-page ng-switch-when="dig" model-name="dig" layout="row"></landing-page>
-			<landing-page ng-switch-when="ca" model-name="ca" layout="row"></landing-page>
-			<landing-page ng-switch-when="rbc" model-name="rbc" layout="row"></landing-page>
-
-		</div>
-
-	</md-content>
+<section data-ng-controller="SimulationController" data-ng-init="findOne()" layout="row" layout-fill>
+    <section layout="column" flex>
+        <omt-header></omt-header>
+        <om-tabbar></om-tabbar>
+        <md-content ng-switch on="simulation.model.short_name"  ng-show="simulation" layout="column" flex>
+            <landing-page ng-switch-when="dig" model-name="dig" layout="row" flex></landing-page>
+            <landing-page ng-switch-when="ca" model-name="ca" layout="row" flex></landing-page>
+            <landing-page ng-switch-when="rbc" model-name="rbc" layout="row" flex></landing-page>
+        </md-content>
+    </section>
 </section>

@@ -1,11 +1,7 @@
-<section class="subnav-container" >
-	<md-whiteframe class="md-whiteframe-z1" layout layout-align="center center">
-		<md-tabs md-selected="selectedIndex" md-no-pagination ng-show="simulation">
-			<md-tab ng-click="changeTab(simulation._id, 0)" label="Model"> </md-tab>
-			<md-tab ng-click="changeTab(simulation._id, 1)" label="Parameters"> </md-tab>
-			<md-tab ng-click="changeTab(simulation._id, 2)" label="Shocks"> </md-tab>
-			<md-tab ng-click="changeTab(simulation._id, 3)" label="Run"> </md-tab>
-			<md-tab ng-click="changeTab(simulation._id, 4)" label="Analyze"> </md-tab>
-		</md-tabs>
-	</md-whiteframe>
-</section>
+<md-tabs md-selected="selectedIndex" md-no-pagination ng-show="simulation">
+    <md-tab ng-click="changeTab(simulation._id, 0)" label="Model"></md-tab>
+    <md-tab ng-click="changeTab(simulation._id, 1)" label="Parameters"></md-tab>
+    <md-tab ng-click="changeTab(simulation._id, 2)" label="Shocks"></md-tab>
+    <md-tab ng-click="changeTab(simulation._id, 3)" label="Run"></md-tab>
+    <md-tab ng-click="changeTab(simulation._id, 4)" label="Analyze"></md-tab>
+</md-tabs>
