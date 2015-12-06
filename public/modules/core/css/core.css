@@ -349,14 +349,14 @@ a.edit-dsf {
 
 
 .console {
-	width: 100%;
+
 	background-color: #eee;
 	border: 1px solid #e1e1e8;
 	font-family: "Courier New", Courier, monospace;
 	padding: 20px;
 	white-space: pre;
 	overflow-y: scroll;
-	overflow-x: scroll;
+
 }
 
 .md-button {
