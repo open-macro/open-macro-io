@@ -14,11 +14,11 @@
                     <md-content>
                         <md-list>
                             <md-item ng-repeat="sim in group.simulations">
-                                <md-item-content layout="row">
-                                    <a href="/#!/simulations/{{sim._id}}" flex class="pretty">
-                                        <div class="md-tile-content">
-                                            <md-content> {{sim.name}}</md-content>
-                                            <p>{{sim.created | date: "MMMM d, yyyy"}}</p>
+                                <md-item-content layout="row" layout-align="center center">
+                                    <a href="/#!/simulations/{{sim._id}}" class="pretty" flex>
+                                        <div class="simulation-detail ">
+                                            <div class="simulation-name">{{sim.name}}</div>
+                                            <div class="description">{{sim.created | date: "MMMM d, yyyy"}}</div>
                                         </div>
                                     </a>
                                     <md-menu md-position-mode="target-right target">
@@ -29,14 +29,12 @@
                                         </md-button>
                                         <md-menu-content width="4">
                                             <md-menu-item>
-                                                <md-button ng-click="remove(sim)">
-                                                    <div layout="row">
-                                                        <p flex>Delete</p>
-                                                        <md-icon md-menu-align-target
-                                                                 md-svg-icon="lib/project-material-icons/ic_delete_48px.svg"
-                                                                 style="margin: auto 3px auto 0;"></md-icon>
-                                                    </div>
-                                                </md-button>
+                                                <a ng-click="remove(sim)" layout="row">
+                                                    <span flex>Delete</span>
+                                                    <md-icon md-menu-align-target
+                                                             md-svg-icon="lib/project-material-icons/ic_delete_48px.svg"
+                                                             style="margin: auto 3px auto 0;"></md-icon>
+                                                </a>
                                             </md-menu-item>
                                         </md-menu-content>
                                     </md-menu>
@@ -48,9 +46,12 @@
                 </md-content>
             </md-content>
         </md-content>
-        <mfb-menu position="br" active-icon="ic_add_48px.svg"
-                  resting-icon="ic_add_48px.svg" label="Add a Simulation" ng-click="newSimulation()">
-        </mfb-menu>
+        <!--<mfb-menu position="br" active-icon="ic_add_48px.svg"-->
+                  <!--resting-icon="ic_add_48px.svg" label="Add a Simulation" >-->
+        <!--</mfb-menu>-->
+        <md-button class="md-fab md-fab-bottom-right md-primary" aria-label="Add a Simulation" ng-click="newSimulation()">
+            <md-icon style="fill:white;" md-svg-src="lib/project-material-icons/ic_add_48px.svg"></md-icon>
+        </md-button>
     </section>
 </section>
 

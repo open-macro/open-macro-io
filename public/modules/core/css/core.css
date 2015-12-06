@@ -382,3 +382,11 @@ a.edit-dsf {
 .md-toolbar-tools a, md-toolbar:not(.md-menu-toolbar) md-icon {
     color:white !important;
 }
+
+.simulation-detail {
+    padding-left:20px;
+}
+
+.simulation-name {
+    padding-bottom:10px;
+}
