@@ -1,8 +1,8 @@
 'use strict';
 
 // M controller
-angular.module('simulations').controller('AnalyzeSimulationController', ['$scope', '$http', '$mdDialog', '$stateParams', '$location', '$anchorScroll', 'Authentication', 'Simulations',
-	'AnalyzeState',
+angular.module('simulations').controller('AnalyzeSimulationController',
+    ['$scope', '$http', '$mdDialog', '$stateParams', '$location', '$anchorScroll', 'Authentication', 'Simulations', 'AnalyzeState',
 	function($scope, $http, $mdDialog, $stateParams, $location, $anchorScroll, Authentication, Simulations, AnalyzeState) {
 
 		$scope.authentication = Authentication;
