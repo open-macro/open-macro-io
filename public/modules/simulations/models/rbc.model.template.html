@@ -1,5 +1,5 @@
-<md-content om-sidebar>
-	<h3>Sections</h3>
+<md-content class="om-sidebar">
+<h3>Sections</h3>
 	<md-list>
 		<md-item ng-click="goToAnchor('firms')">
 			<md-divider></md-divider>
@@ -45,8 +45,9 @@
 	</md-list>
 </md-content>
 <md-divider class="md-padding vertical"></md-divider>
-<md-content class="md-padding" om-fill-height mathjax>
-		<h1>Real Business Cycle (RBC) Model</h1>
+<md-content class="md-padding" mathjax flex>
+    
+		<h2>Real Business Cycle (RBC) Model</h2>
 		<md-divider></md-divider>
 
 		<p>We will consider a small real business cycle to gain some intuition for modeling complete markets (in this case, markets for capital and labor) and to understand how exogenous shocks can impact a dynamic model. The model will be represented with a small system of non-linear difference equations describing the path of the economy over time. This model will incorporate different types of government spending so we can begin to analyze the effects of different policy choices.</p>
@@ -55,7 +56,7 @@
 
 		<p>In the real business cycle model, the time horizon will be infinite; households will be "infinitely-lived." We will utilize a general equilibrium framework, which means we must carefully consider both the supply side and the demand side of the market for goods and services. This economy will be populated with households and firms, and income will be earned rather than exogenous. It is a much more realistic framework that allows us to consider some real policy-relevant issues.</p>
 
-		<h2 id="firms">Firm Structure</h2>
+		<h1 id="firms">Firm Structure</h1>
 
 		<p>The economy is populated by a representative firm that produces a generic output good. Production of output requires two inputs--capital and labor--both supplied by households. Production technology is given by a Cobb-Douglas function:</p>
 
@@ -85,7 +86,7 @@
 
 		<p>Note that because markets for inputs are competitive, firms pay exactly the marginal value of each input and therefore have no profit.</p>
 
-		<h2 id="households">Household Structure</h2>
+		<h1 id="households">Household Structure</h1>
 
 		<p>In this economy, households derive income from labor (firms pay them a wage) and from renting capital (rental rate paid by the firms). They must pay a lump sum tax \(\tau\) to the government each period to finance public spending. They also receive firm profits, though because of the competitive market assumption, firm profits are zero. Households can spend their income on consumption and on investment in capital. For now, we will assume that capital investment is the only way that households can save their income. The household's budget constraint is:</p>
 
@@ -135,7 +136,7 @@
 
 		<p>The intuition for this is the same as in the small two-period model: the household must optimally choose its consumption today and consumption tomorrow so that it recieves the same utility (discounted in the future) for consumption across time. Otherwise, the household could be better off by changing its consumption path and its behavior would be sub-optimal.</p>
 
-		<h2 id="government">Government Spending</h2>
+		<h1 id="government">Government Spending</h1>
 
 		<p>Households are taxed a lump sum amount \(\tau_t\) in each period to finance government spending. We assume that there are two types of spending: productive investment \(z_t\) and non-productive spending \(g_t\). Productive investment covers things like roads and bridges, and can be broadly understood as any resource that increases the productivity of private investment. This is why we see the public capital term as a multiplier of firm output in Equation (1). Non-productive spending is anything that does not contribute to the productivity of the private sector.</p>
 
@@ -151,7 +152,7 @@
 		g_{t} = (1-\rho_g)\overline{g} + \rho_g g_{t-1} + \epsilon_{g,t}
 		\end{equation}
 
-		<h2 id="tfp">Total Factor Productivity</h2>
+		<h1 id="tfp">Total Factor Productivity</h1>
 
 		<p>We assumed above that the productivity of private firms is dependent on an aggregate technological process that applies to the whole economy. We will assume that this process is exogenous and that it follows an autoregressive process in the log (so that it is equal to 1 when the model is in equilibrium). Think of this as a catch-all factor for every possible causal mechanism in the economy that could change the productivity of private firms: droughts, floods, new technologies, political conflict, etc. We will model it like this:</p>
 

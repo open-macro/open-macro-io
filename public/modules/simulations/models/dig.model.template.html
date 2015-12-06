@@ -1,5 +1,5 @@
-<md-content om-sidebar>
-	<h3>Sections</h3>
+<md-content class="om-sidebar">
+<h3>Sections</h3>
 	<md-list>
 		<md-item ng-click="goToAnchor('firms')">
 			<md-divider></md-divider>
@@ -45,16 +45,16 @@
 	</md-list>
 </md-content>
 <md-divider class="md-padding vertical"></md-divider>
-<md-content class="md-padding" om-fill-height mathjax>
-		<h1>Debt-Investment-Growth (DIG) Model</h1>
-		<p>Excerpted from <a href="https://www.imf.org/external/pubs/ft/wp/2012/wp12144.pdf" target="_blank">Public Investment, Growth, and Debt Sustainability: Putting Together the Pieces</a> by Buffie et al. (2012)</p>
+<md-content class="md-padding" mathjax flex>
+		<h2>Debt-Investment-Growth (DIG) Model</h2>
+		<p>Excerpted from <a style="color:black;" href="https://www.imf.org/external/pubs/ft/wp/2012/wp12144.pdf" target="_blank">Public Investment, Growth, and Debt Sustainability: Putting Together the Pieces</a> by Buffie et al. (2012)</p>
 		<md-divider></md-divider>
 
 		<p>Our framework is the standard two-sector model of a small open economy embellished with multiple types of public sector debt and multiple tax and spending variables. The country produces a traded good \(q_{x}\) and a non-traded good \(q_{n}\) from private capital \(k\), labor \(L\), and government-supplied infrastructure \(z\). Besides these domestically produced goods, agents can import a traded good for consumption \(c_{m}\) and machines \(\mathfrak{m}_{mm}\) to produce factories (private capital) and infrastructure (public capital). All quantity variables except labor are detrended by \((1+g)^{t}\), where \(g\) is the exogenous long-run growth rate of real GDP.<sup><a href="#fn1" id="ref1">1</a></sup> A composite good produced abroad is the numeraire, with the associated consumer price index (CPI) denoted by \(P_{t}^{\ast },\) which is assumed to be equal to one for simplicity. Since the time horizon for the DSA is about 20 years, the model abstracts from money and all nominal rigidities.<sup><a href="#fn2" id="ref2">2</a></sup></p>
 
 		<p>We lay out the model in stages, starting with the specification of technology.</p>
 
-		<h2 id="firms">Firms</h2>
+		<h1 id="firms">Firms</h1>
 
 		<h3>Technology</h3>
 
@@ -105,7 +105,7 @@
 
 		<p>where \(w\) is the wage and \(r_{j}\) is the rental earned by capital in sector \(j\). Labor is intersectorally mobile, so the same wage appears in both equations above. Capital is sector-specific, but \(r_{x}\) differs from \(r_{n}\) only on the transition path. After adjustment is complete and \(k_{x}\) and \(k_{n}\) have settled at their equilibrium levels, the rentals are equal.</p>
 
-		<h2 id="consumers">Consumers</h2>
+		<h1 id="consumers">Consumers</h1>
 
 		<p>There are two types of private agents, savers and non-savers, with the former and the latter distinguished by the superscripts \(\mathfrak{s}\) and \(\mathfrak{h,}\) respectively. Labor supply of savers is fixed at \(L^{\mathfrak{s}}\) while that of non-savers is \(L^{\mathfrak{h}}=aL^{\mathfrak{s}}\) with \(a>0\). The two types of agents consume the domestic traded good \(c_{x,t}^{i}\), the foreign traded good \(c_{m,t}^{i}\), and the domestic non-traded good \(c_{n,t}^{i}\) for \(i=\mathfrak{s},\mathfrak{h}\). These goods are combined into a CES basket</p>
 
@@ -168,7 +168,7 @@
 		<p>We aggregate across both types of households, so \(x_{t}=x_{t}^{\mathfrak{s}}+x_{t}^{\mathfrak{h}}\) for \(x_{t}=c_{t}\), \(c_{l,t}\), \(L_{t}\), \(b_{t}^{\ast}\), \(b_{t}\), \(i_{j,t}\), \(k_{j,t}\), \(AC_{j,t}\), \(\mathcal{P}_{t}\), \(\Phi_{t}\), and the subindices \(l=x,n,m\) and \(j=x,n\). Bear in mind that \(b_{t}^{\mathfrak{h}\ast}=b_{t}^{\mathfrak{h}}=i_{j,t}^{\mathfrak{h}}=k_{j,t}^{\mathfrak{h}}=AC_{j,t}^{\mathfrak{h}}=\mathcal{P}_{t}^{\mathfrak{h}}=\Phi
 			_{t}^{\mathfrak{h}}=0\) for \(j=x,n\).</p>
 
-		<h2 id="government">The Government</h2>
+		<h1 id="government">The Government</h1>
 
 		<h3>Infrastructure, Public Investment and Efficiency</h3>
 
@@ -248,7 +248,7 @@
 
 		<p>Given the targets, the reaction functions defined in (27<!--\ref{hmin}-->)-(30<!--\ref{T_reaction}-->) together with the budget constraint (24<!--\ref{exgap}-->) embody the core policy dilemma. Fiscal adjustment is painful, especially when administered suddenly in large doses. The government would prefer therefore to phase-in tax increases and expenditure cuts slowly (\(\lambda _{1}>0\) and \(\lambda _{3}>0\)). Since fiscal adjustment is gradual, the debt instrument that varies endogenously to satisfy the government budget constraint may rise above its target level in the time it takes \(h_{t}\) and \(\mathcal{T}_{t}\) to reach \({\small h}_{t}^{\text{target}}\) and \(\mathcal{T}_{t}^{\text{target}}\). When this happens, the transition path includes a phase in which \(\mathcal{T}_{t}<\mathcal{T}_{t}^{\text{target}}\) and/or \(h_{t}>{\small h}_{t}^{\text{target}}\) to generate the fiscal surpluses needed to pay down the debt. In addition, and despite the fact that the rules respond to debt (i.e., \(\lambda_{2}>0\) and \(\lambda_{4}>0\)), if the government moves too slowly (i.e., \(\lambda _{1}\) and \(\lambda_{3}\) are too low), or if the bounds \(h^{u}\) and \(\mathcal{T}^{r}\) constrain adjustment too much, interest payments will rise faster than revenue net of transfers, causing the debt to explosively. Large debt-financed increases in public investment are undeniably risky &mdash; the economy converges to a stationary equilibrium only if policy makers win the race against time.</p>
 
-		<h2 id="market-debt">Market-Clearing Conditions and External Debt Accumulation</h2>
+		<h1 id="market-debt">Market-Clearing Conditions and External Debt Accumulation</h1>
 
 		<p>Flexible wages and prices ensure that demand continuously equals supply in the labor market</p>
 
