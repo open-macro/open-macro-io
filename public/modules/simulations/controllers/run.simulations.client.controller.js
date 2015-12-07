@@ -56,6 +56,19 @@ angular.module('simulations').controller('RunSimulationController', ['$scope', '
 
 
         $scope.runSimulation = function () {
+
+            var threshold = new Date(new Date().getTime() - (5 * 60 * 1000));
+            for (var i=0; i < $scope.simulation.log.length; i++){
+                var log = $scope.simulation.log[i];
+                if (log.status === 'Running'){
+                    /// if there is a running simulation elsewhere return
+                    if (log.date > threshold) return;
+                    /// otherwise we can just update the state to error because
+                    /// some unknown error occurred.
+                    log.status = 'Error';
+                }
+            }
+
             console.log('pushing new log!');
             $scope.simulation.log.push({
                 date: Date.now(),
@@ -67,10 +80,11 @@ angular.module('simulations').controller('RunSimulationController', ['$scope', '
                 $stateParams.simulationId,
                 function (data, status, headers, config) {
                     // success function
+                    console.log(data);
                 },
                 function (data, status, headers, config) {
                     // error function
-                    /// TODO: handle error
+                    console.log(data);
                 },
                 function (data) {
                     $scope.output += data;
