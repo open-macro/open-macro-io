@@ -12,15 +12,17 @@
 	border-color: #78FA89;
 }
 
+.md-whiteframe-1dp {
+    margin-bottom:3px;
+}
+
+
 .drop-box {
 	background-color: #93edf2;
 	height:200px;
 	width:100%;
 }
 
-.no-shadow {
-	box-shadow: none;
-}
 
 .select-model {
 	margin-top:-20px;
@@ -297,6 +299,8 @@ md-divider.vertical {
 	border-bottom:20px;
 }
 
+
+
 .description {
 	font-size:13px;
 	color:grey;
@@ -378,4 +382,8 @@ a.edit-dsf {
 
 .simulation-name {
     padding-bottom:10px;
+}
+
+.md-grid-list.flex.ng-isolate-scope {
+    padding-bottom:0;
 }

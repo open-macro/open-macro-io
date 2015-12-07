@@ -5,7 +5,7 @@
 angular.module('simulations').directive('landingPage', function() {
 	return {
 		templateUrl: function(elem, attr) {
-			return '/modules/simulations/models/'+attr.modelName+'.model.template.html';
+			return '/modules/simulations/models/' + attr.modelName + '.model.template.html';
 		}
 	};
 }).directive('omtHeader', function() {
@@ -59,6 +59,7 @@ angular.module('simulations').directive('landingPage', function() {
 	};
 }).filter('capitalize', function() {
 	return function(input, all) {
-		return (!!input) ? input.replace(/([^\W_]+[^\s-]*) */g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}) : '';
+		return (!!input) ? input.replace(/([^\W_]+[^\s-]*) */g,
+            function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}) : '';
 	};
 });

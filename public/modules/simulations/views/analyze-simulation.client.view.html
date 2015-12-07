@@ -1,4 +1,4 @@
-<section data-ng-controller="AnalyzeSimulationController" data-ng-init="findOne()" layout="row" layout-fill>
+<section data-ng-controller="AnalyzeSimulationController" data-ng-init="findSimulation()" layout="row" layout-fill>
 
     <section layout="column" flex>
 
@@ -7,23 +7,18 @@
 
         <md-content layout="row" flex>
             <md-content class="om-sidebar">
-                <md-list data-ng-show="simulation.model.short_name == 'dig'">
-                </md-list>
                 <md-input-container>
                     <label>Filter Graphs</label>
-                    <input ng-model="filterQuery.name">
+                    <input ng-model="query.name">
                 </md-input-container>
                 <md-list>
-                    <md-item ng-repeat="dropvar in all_vars | filter:filterQuery"
-                             ng-click="createGraph(dropvar.name)">
+                    <md-item ng-repeat="(key, graph) in graphs | filter:query" ng-click="addGraph(graph)">
                         <a>
                             <md-item-content md-ink-ripple class="md-2-line" layout="row" layout-align="start center">
                                 <div class="md-list-item-text parameter-item" ng-class="{'md-offset': $index != 0 }">
-                                    <h4 class="md-subhead"> {{sim_descriptions[dropvar.name].latex}} </h4>
+                                    <h4 class="md-subhead">{{ graph.name }}</h4>
 
-                                    <p class="description"> {{dropvar.name}} </p>
-
-                                    <p class="description"> {{sim_descriptions[dropvar.name].description}} </p>
+                                    <p class="description"> {{ graph.description }} </p>
                                 </div>
                             </md-item-content>
                         </a>
@@ -31,43 +26,48 @@
                     </md-item>
                 </md-list>
             </md-content>
-            <md-divider class="md-padding vertical"></md-divider>
+            <md-divider class="vertical"></md-divider>
             <md-content layout="column" class="md-padding" flex>
-                <md-content>
-                    <div layout="row">
-                        <h1 class="md-title"> Results </h1>
-                        <div flex></div>
-                        <md-select layout-align="start end" placeholder="Compare With" ng-model="curSim" required>
-                            <md-option ng-repeat="sim in all_sims" ng-click="concatGraphs(sim)" value="{{ sim._id }}">
-                                {{sim.name}}
-                            </md-option>
-                        </md-select>
-                    </div>
+                <div layout="row">
+                    <h1 class="md-title">Results</h1>
 
-                    <section>
-                        <div layout="row" layout-align="center center" ng-repeat="row in vars">
-                            <md-list flex ng-repeat="curvar in row">
-                                <!-- <md-list-item> -->
-                                <label>{{sim_descriptions[curvar.name].description}}</label>
-                                <!-- </md-list-item> -->
-                                <md-list-item>
-                                    <md-card id="{{'Chart_' + curvar.idnum.toString()}}">
-                                        <md-card-content>
-                                            <c3chart bindto-id="{{'Chart_' + curvar.idnum.toString()}}"
-                                                     chart-data="json_data[curvar.name]"
-                                                     chart-columns="data_columns[curvar.name]"
-                                                     chart-x="datax"
-                                                     enable-zoom="false"
-                                                     show-subchart="false">
-                                                <chart-size></chart-size>
-                                            </c3chart>
-                                        </md-card-content>
-                                    </md-card>
-                                </md-list-item>
-                            </md-list>
-                        </div>
-                    </section>
+                    <div flex></div>
+                    <md-select placeholder="Compare with" ng-model="comparableSimulation">
+                        <md-option ng-repeat="simulation in comparableSimulations"
+                                   ng-click="compareSimulation(simulation)" value="{{ simulation._id }}">
+                            {{simulation.name}}
+                        </md-option>
+                    </md-select>
+                </div>
+                <md-content layout="row" layout-wrap="true" flex>
+                    <md-card flex="45" ng-repeat="graph in visibleGraphs">
+                        <md-card-content>
+                            <div>{{ graph.description }}</div>
+                            <div id="{{'graph_' + graph.name }}"></div>
+                            <!--<c3chart bindto-id="{{'graph_' + graph.name }}"-->
+                            <!--chart-data="graph.data"-->
+                            <!--chart-columns="graph.name"-->
+                            <!--chart-x="datax"-->
+
+                            <!--<chart-size></chart-size>-->
+                            <!--</c3chart>-->
+                            <c3chart bindto-id="{{'graph_' + graph.name }}"
+                                     enable-zoom="false"
+                                     show-subchart="false">
+                                <chart-column ng-repeat="(key, column) in graph.data"
+                                              column-id="{{ column.id }}"
+                                              column-values="{{ column.values }}"
+                                              column-color="{{ column.color }}"
+                                              column-type="spline"></chart-column>
+                            </c3chart>
+                        </md-card-content>
+                    </md-card>
                 </md-content>
+                <!--<md-grid-list class="offset-grid" md-cols="2" md-row-height="1:1" md-gutter="8px" flex>-->
+                <!--<md-grid-tile ng-repeat="graph in graphs" md-colspan="1" md-rowspan="1">-->
+                <!---->
+                <!--</md-grid-tile>-->
+                <!--</md-grid-list>-->
             </md-content>
         </md-content>
     </section>

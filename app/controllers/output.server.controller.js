@@ -35,21 +35,16 @@ exports.exportJSONPlotVars = function(req, res) {
 			{'cwd':'utils'});
 
 	plot.stdout.on('data', function (data) {
-
 		console.log('stdout: ' + data);
-
 	});
 
 	plot.stderr.on('data', function (data) {
-
 		console.log('stderr: ' + data);
-
 	});
 
 	plot.on('close', function (code) {
 
 		console.log('child process exited with code ' + code);
-
 
 		var fileName = 'plot_vars.json';
 		res.sendFile(fileName, options,  function (err) {
@@ -67,9 +62,8 @@ exports.exportJSONPlotVars = function(req, res) {
 exports.exportPlotVars = function(req, res) {
 
 	var simulationId = req.simulation.id;
-	console.log('creating outputs for:' + req.simulation.id);
-	var simulation_path = 'run/simulations/' + req.simulation.id.toString();
-
+	console.log('creating outputs for:' + simulationId);
+	var simulation_path = 'run/simulations/' + simulationId.toString();
 
 	var spawn = cp.spawn,
 		plot = spawn(
@@ -78,15 +72,11 @@ exports.exportPlotVars = function(req, res) {
 			{'cwd':'utils'});
 
 	plot.stdout.on('data', function (data) {
-
 		console.log('stdout: ' + data);
-
 	});
 
 	plot.stderr.on('data', function (data) {
-
 		console.log('stderr: ' + data);
-
 	});
 
 	plot.on('close', function (code) {
@@ -101,7 +91,6 @@ exports.exportPlotVars = function(req, res) {
 				'x-sent': true
 			}
 		};
-
 
 		var fileName = 'plot_vars.csv';
 		res.attachment(fileName);

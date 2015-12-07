@@ -34,15 +34,4 @@ angular.module('simulations').factory('Simulations', ['$resource',
 			};
 		};
 	}
-]).factory('AnalyzeState', ['$http',
-	function($http) {
-		return {
-			/* active_vars:[AnalyzeState.active_vars],
-			per_row : [AnalyzeState.per_row],
-			json_data : [AnalyzeState.json_data],
-			data_columns : [AnalyzeState.data_columns],
-			all_vars : [AnalyzeState.all_vars],
-			sim_descriptions : [AnalyzeState.sim_descriptions] */
-		};
-	}
 ]);
