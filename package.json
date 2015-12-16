@@ -18,9 +18,11 @@
     }
   ],
   "scripts": {
+    "postinstall": "bower install -F",
     "start": "grunt",
     "test": "grunt test"
   },
+
   "engines": {
     "node": ">=0.10.28",
     "npm": ">=1.4.28"

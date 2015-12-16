@@ -36,7 +36,7 @@ module.exports = {
                 'public/lib/c3/c3.min.js',
                 'public/lib/d3/d3.min.js',
                 'public/lib/c3-angular/c3js-directive.js',
-                'public/lib/socket.io-client/socket.io.js',
+                'public/lib/socket.i/o-client/socket.io.js',
                 'public/lib/angular-socket-io/socket.min.js',
                 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
                 'public/lib/angular-mathjax/angular-mathjax.js'
