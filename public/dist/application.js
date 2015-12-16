@@ -3,9 +3,9 @@
 // Init the application configuration module for AngularJS application
 var ApplicationConfiguration = (function() {
 	// Init module configuration options
-	var applicationModuleName = 'mean';
-	var applicationModuleVendorDependencies =
-		['ngResource', 'ngAnimate', 'ui.router', 'ngMaterial','angularFileUpload', 'ng-mfb', 'gridshore.c3js.chart','btford.socket-io'];
+	var applicationModuleName = 'open-macro';
+	var applicationModuleVendorDependencies = ['ngResource', 'ngAnimate', 'ui.router',
+        'ngMaterial','angularFileUpload', 'ng-mfb', 'gridshore.c3js.chart','btford.socket-io'];
 
 	// Add a new vertical module
 	var registerModule = function(moduleName, dependencies) {
@@ -341,8 +341,8 @@ angular.module('core').factory('Socket', ['socketFactory',
 	function(socketFactory) {
 		return socketFactory({
 			prefix: '',
-			//ioSocket: io.connect('http://localhost:3000')
-			ioSocket: io.connect('/')
+			ioSocket: io.connect('http://localhost:3000')
+			//ioSocket: io.connect('/')
 		});
 	}
 ]);
@@ -473,10 +473,7 @@ angular.module('models').factory('Models', ['$resource',
 'use strict';
 
 // Configuring the Models module
-angular.module('simulations').run([function() {
-
-	}
-]);
+angular.module('simulations').run([function() {}]);
 
 'use strict';
 
@@ -519,222 +516,149 @@ angular.module('simulations').config(['$stateProvider',
 'use strict';
 
 // M controller
-angular.module('simulations').controller('AnalyzeSimulationController', ['$scope', '$http', '$mdDialog', '$stateParams', '$location', '$anchorScroll', 'Authentication', 'Simulations',
-	'AnalyzeState',
-	function($scope, $http, $mdDialog, $stateParams, $location, $anchorScroll, Authentication, Simulations, AnalyzeState) {
+angular.module('simulations').controller('AnalyzeSimulationController',
+    ['$scope', '$http', '$mdDialog', '$stateParams', '$location', '$anchorScroll', '$mdToast', 'Authentication', 'Simulations',
+        function ($scope, $http, $mdDialog, $stateParams, $location, $anchorScroll, $mdToast, Authentication, Simulations) {
 
-		$scope.authentication = Authentication;
+            $scope.authentication = Authentication;
 
-		$scope.selectedIndex = 4;
+            /// set selected tab index... this should be refactored and less inside out
+            $scope.selectedIndex = 4;
 
-		if ($stateParams.simulationId === undefined) { $location.path('/simulations'); }
+            $scope.graphs = undefined;
+            $scope.visibleGraphKeys = [];
+            $scope.visibleGraphs = [];
+            $scope.visibleSimulations = [];
 
-		$scope.per_row = 3;
+            var descriptions = {};
+            var defaultGraphCount = 6;
 
-		$scope.findOne = function () {
-			$scope.simulation = Simulations.get({
-				simulationId: $stateParams.simulationId
-			}, function () {
-				$scope.genRender(6, $scope.per_row);
+            var successCallback = function() {
 
-				var i;
-				$scope.grouped_sims = Simulations.query({}, function(){
-					for(i = 0; i < $scope.grouped_sims.length; i++){
-						if($scope.simulation.model.name === $scope.grouped_sims[i].model){
-							$scope.all_sims = $scope.grouped_sims[i].simulations;
-						}
-					}
-				});
+                /// setup breadcrumbs for the loaded simulation
+                $scope.breadcrumbs = [
+                    { title: 'Simulations', link: '/#!/' },
+                    { title: $scope.simulation.name, link: '/#!/simulations/' + $scope.simulation._id }
+                ];
 
-				$scope.curSim = $scope.simulation._id;
+                /// load other simulations created with the same model to facilitate the compare function
+                $scope.comparableSimulations = Simulations.query({'model': $scope.simulation.model._id });
 
-				AnalyzeState.per_row = 3;
-				AnalyzeState.active_vars = $scope.active_vars;
-				AnalyzeState.json_data = $scope.json_data;
-				AnalyzeState.data_columns = $scope.data_columns;
-				AnalyzeState.all_vars = $scope.all_vars;
-				AnalyzeState.sim_descriptions = $scope.sim_descriptions;
+                $scope.visibleGraphKeys = $scope.simulation.visibleGraphKeys;
 
-				$scope.breadcrumbs = [
-					{
-						title:'Simulations',
-						link: '/#!/'
-					},
-					{
-						title:$scope.simulation.name,
-						link: '/#!/simulations/' + $scope.simulation._id
-					}];
-			});
-		};
+                /// build key value pairs for access to descriptions of each variable
+                angular.forEach($scope.simulation.model.endovars, function(endovar){
+                    descriptions[endovar.name] = endovar.description;
+                });
 
-		/* Creates a new graph object */
-		$scope.invalidSim = function(ev) {
-			$mdDialog.show({
-				templateUrl: '/modules/simulations/views/invalid-graph.client.view.html',
-				targetEvent: ev
-			});
-		};
+                $http.get('/output/json/' + $scope.simulation._id)
+                    .success(function(output){processOutput(output, $scope.simulation);})
+                    .error(failureCallback);
 
-		/* Global variable that holds the name of the next variable to be created */
-		$scope.active_var = '';
+            };
 
-		/* Global list that holds all active variable names */
-		$scope.active_vars = [];
+            var processOutput = function(output, simulation){
 
-		/* Tells the system to listen for another graph type */
-		$scope.createGraph = function(curvar){
-			$scope.active_vars.push(curvar);
-			$scope.genVars($scope.per_row);
-			$mdDialog.cancel();
-		};
+                var color =  (simulation._id === $scope.simulation._id) ? 'orange' : 'blue';
 
+                /// load initial simulation
+                if ($scope.graphs === undefined){
+                    $scope.graphs = {};
+                    angular.forEach(output, function(value, key){
+                        var data = {};
+                        data[simulation.name] = {'id':simulation.name, 'values':value, 'color':color};
+                        $scope.graphs[key] = {'name':key, 'data':data, 'description':descriptions[key]};
+                    });
+                } else {
+                    ///// adding a simulation to compare values
+                    for (var key in $scope.graphs){
+                        if ($scope.graphs.hasOwnProperty(key)){
+                            var value = output[key];
+                            $scope.graphs[key].data[simulation.name] = {'id':simulation.name, 'values':value, 'color':color};
+                        }
+                    }
+                }
 
-		$scope.getColumn = function(input_str, color, id_num){
-			return 	{'id':input_str,
-				'type':'line','color': color};
-		};
+                updateVisibleGraphs();
 
-		$scope.vars = [];
-		$scope.all_vars = [];
-		$scope.json_data = [];
-		$scope.data_columns = [];
-		$scope.sim_descriptions = {};
+            };
 
-		$scope.renderGraphs = function(total_num, row_num){
-			$http.get('/output/json/' + $stateParams.simulationId.toString()).success(function(raw_data) {
-				console.log($scope.curSim);
-				if($scope.simulation._id !== $scope.curSim){
-					$scope.legend_on = true;
-				}else{
-					$scope.legend_on = false;
-				}
+            var updateVisibleGraphs = function() {
 
-				console.log($scope.legend_on);
+                if ($scope.visibleGraphKeys.length === 0){
+                    var count = 0;
+                    for (var key in $scope.graphs){
+                        if ($scope.graphs.hasOwnProperty(key) && count < defaultGraphCount){
+                            $scope.visibleGraphKeys.push($scope.graphs[key].name);
+                            count++;
+                        }
+                    }
+                }
 
-				var cur_row = [];
-				var cur_obj = {};
-				var graph_list = [];
+                $scope.visibleGraphs = [];
+                for (var j=0; j < $scope.visibleGraphKeys.length; j++){
+                    $scope.visibleGraphs.push($scope.graphs[$scope.visibleGraphKeys[j]]);
+                }
 
-				var i = 0;
-				for(var curvar in raw_data) {
+            };
 
-					cur_obj = {
-						'name': curvar,
-						'idnum': i
-					};
+            var persistVisibleGraphs = function() {
+                var simulation = $scope.simulation;
 
-					if($scope.active_vars.length < total_num || curvar in $scope.active_vars){
-						if (i !== 0) {
-							if (i % row_num === 0) {
-								$scope.vars.push(cur_row);
-								cur_row = [];
-							}
-						}
+                var obj = {
+                    '_id': $scope.simulation._id,
+                    'visibleGraphKeys': $scope.visibleGraphKeys
+                };
 
-						if($scope.active_vars.length < total_num ){
-							$scope.active_vars.push(curvar);
-						}
-
-						cur_row.push(cur_obj);
-					}
-					i++;
-					$scope.all_vars.push(cur_obj);
-
-					var raw_len = raw_data[curvar].length;
-
-					for (var p = 0; p < raw_len; p++) {
-						graph_list.push({
-							'x': p
-						});
-						graph_list[p][$scope.simulation.name] = raw_data[curvar][p];
-					}
-
-					$scope.json_data[curvar] =  graph_list;
-					$scope.data_columns[curvar] = [$scope.getColumn($scope.simulation.name, 'brown', 1)];
-					graph_list = [];
-				}
-
-				$scope.vars.push(cur_row);
-			}).error(function(data, status, headers, config){
-				$scope.invalidSim();
-			});
-		};
+                Simulations.update(
+                    obj,
+                    function () {},
+                    function (errorResponse) {
+                        console.log(errorResponse.data.message);
+                        $scope.toast('Unable to save simulation.');
+                    });
+            };
 
 
-		$scope.concatGraphs = function(simulation){
-			if($scope.simulation._id === simulation._id){
-				$scope.renderGraphs($scope.active_vars.length, $scope.per_row);
-			}else{
-				$http.get('/output/json/' + simulation._id.toString()).success(function(raw_data) {
-					var raw_len = 0;
-					var temp = [];
+            var failureCallback = function() {
+                $scope.toast('Simulation has not been run successfully.');
+            };
 
-					for(var curvar in raw_data) {
-						temp = [];
-						raw_len = raw_data[curvar].length;
-						for(var p = 0; p < raw_len; p++) {
-							temp.push({
-								'x': p
-							});
-							temp[p][$scope.simulation.name] = $scope.json_data[curvar][p][$scope.simulation.name];
-							temp[p][simulation.name] = raw_data[curvar][p];
-						}
+            $scope.findSimulation = function() {
+                $scope.simulation = Simulations.get(
+                    {simulationId: $stateParams.simulationId},
+                    successCallback,
+                    failureCallback
+                );
+            };
 
-						$scope.json_data[curvar] = temp;
-						$scope.data_columns[curvar] = [{'id': $scope.simulation.name,
-							'type':'line', 'show-legend': true, 'color': 'brown'}, $scope.getColumn(simulation.name, 'green', 2)];
-					}
-				}).error(function(data, status, headers, config){
-					$scope.invalidSim();
-				});
-		}
-	};
+            $scope.addGraph = function(variable) {
+                if ($scope.visibleGraphKeys.indexOf(variable.name) === -1){
+                    $scope.visibleGraphKeys.unshift(variable.name);
+                    updateVisibleGraphs();
+                    persistVisibleGraphs();
+                } else {
+                    $scope.toast('Graph has already been added.');
+                }
+            };
 
-		$scope.genVars = function(row_num){
-			$scope.vars = [];
-			var cur_row = [];
-			var cur_obj = {};
+            $scope.compareSimulation = function(simulation) {
+                /// hack to force graphs to update
+                $scope.visibleGraphs = [];
+                $http.get('/output/json/' + simulation._id)
+                    .success(function(output){processOutput(output, simulation);})
+                    .error(failureCallback);
+            };
 
-			for(var i = 0; i < $scope.active_vars.length; i++){
-				console.log($scope.active_vars[i]);
-				cur_obj = {
-					'name': $scope.active_vars[i],
-					'idnum': i
-				};
+            $scope.toast = function(message){
+                $mdToast.show( $mdToast.simple()
+                    .content(message)
+                    .position('top right')
+                    .hideDelay(3000)
+                );
+            };
 
-				if (i !== 0) {
-					if (i % row_num === 0) {
-						$scope.vars.push(cur_row);
-						cur_row = [];
-					}
-				}
-
-				cur_row.unshift(cur_obj);
-			}
-
-			$scope.vars.unshift(cur_row);
-		};
-
-		$scope.genRender = function(total_num, row_num){
-			if($scope.sim_descriptions !== {}){
-				var param = {};
-				for(var i in $scope.simulation.model.endovars){
-					param = $scope.simulation.model.endovars[i];
-					$scope.sim_descriptions[param.name] = {
-						'latex' : param.latex,
-						'description' : param.description
-					};
-				}
-			}
-
-			if($scope.vars.length === 0)
-			{
-				$scope.renderGraphs(total_num, row_num);
-			}else{
-				$scope.genVars($scope.per_row);
-			}
-		};
-}]);
+        }]);
 
 
 
@@ -779,107 +703,108 @@ angular.module('simulations').controller('SimulationController', ['$scope', '$st
 
 // M controller
 angular.module('simulations').controller('ListSimulationsController', ['$scope', '$http', '$mdDialog', '$stateParams', '$location', 'Authentication', 'Simulations', '$anchorScroll', 'Models',
-	function($scope, $http, $mdDialog, $stateParams, $location, Authentication, Simulations, $anchorScroll, Models) {
+    function ($scope, $http, $mdDialog, $stateParams, $location, Authentication, Simulations, $anchorScroll, Models) {
 
-		$scope.authentication = Authentication;
+        $scope.authentication = Authentication;
 
-		$scope.selectedIndex = 0;
+        $scope.selectedIndex = 0;
 
-		$scope.goToAnchor = function (anch) {
+        $scope.goToAnchor = function (anch) {
 
-			$location.hash(anch);
-			$anchorScroll();
+            $location.hash(anch);
+            $anchorScroll();
 
-		};
+        };
 
-		$scope.breadcrumbs = [
-			{
-				title:'Simulations',
-				link: '/#!/'
-			}];
+        $scope.breadcrumbs = [
+            {
+                title: 'Simulations',
+                link: '/#!/'
+            }];
 
-		// Create new Simulation
-		$scope.create = function () {
-			// Create new Simulation object
+        // Create new Simulation
+        $scope.create = function () {
+            // Create new Simulation object
 
-			var simulation = new Simulations({
-				name:  this.simulation.name,
-				model: this.simulation.model
-			});
+            var simulation = new Simulations({
+                name: this.simulation.name,
+                model: this.simulation.model
+            });
 
-			// Redirect after save
-			simulation.$save(function (response) {
+            // Redirect after save
+            simulation.$save(function (response) {
 
-				$location.path('simulations/' + response._id);
+                $location.path('simulations/' + response._id);
 
-			}, function (errorResponse) {
-				console.log(errorResponse.data.message);
-				$scope.error = errorResponse.data.message;
-			});
+            }, function (errorResponse) {
+                console.log(errorResponse.data.message);
+                $scope.error = errorResponse.data.message;
+            });
 
-			$mdDialog.cancel();
+            $mdDialog.cancel();
 
-		};
+        };
 
-		// Remove existing Simulation
-		$scope.remove = function (simulation) {
-			$http.delete('/simulations/' + simulation._id).
-				success(function (data, status, headers, config) {
-					// this callback will be called asynchronously
-					// when the response is available
-					for (var group in $scope.groupedSimulations) {
-						for (var sim in $scope.groupedSimulations[group].simulations) {
-							if (simulation === $scope.groupedSimulations[group].simulations[sim]) {
-								$scope.groupedSimulations[group].simulations.splice(sim, 1);
-								if ($scope.groupedSimulations[group].simulations.length === 0) {
-									$scope.groupedSimulations.splice(group, 1);
-								}
-							}
-						}
-					}
-				}).
-				error(function (data, status, headers, config) {
-					console.log(status);
-					// called asynchronously if an error occurs
-					// or server returns response with an error status.
-				});
-		};
+        // Remove existing Simulation
+        $scope.remove = function (simulation) {
+            // this callback will be called asynchronously
+            // when the response is available
+            for (var group in $scope.groupedSimulations) {
+                for (var sim in $scope.groupedSimulations[group].simulations) {
+                    if (simulation === $scope.groupedSimulations[group].simulations[sim]) {
+                        $scope.groupedSimulations[group].simulations.splice(sim, 1);
+                        if ($scope.groupedSimulations[group].simulations.length === 0) {
+                            $scope.groupedSimulations.splice(group, 1);
+                        }
+                    }
+                }
+            }
+            $http.delete('/simulations/' + simulation._id).
+            success(function (data, status, headers, config) {
+            }).
+            error(function (data, status, headers, config) {
+                console.log(status);
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+            });
+        };
 
-		// Update existing Simulation
-		$scope.update = function () {
-			var simulation = $scope.simulation;
+        // Update existing Simulation
+        $scope.update = function () {
+            var simulation = $scope.simulation;
 
-			var obj = {
-				'_id':        simulation._id,
-				'parameters': simulation.parameters,
-				'shocks':     simulation.shocks
-			};
+            var obj = {
+                '_id': simulation._id,
+                'parameters': simulation.parameters,
+                'shocks': simulation.shocks
+            };
 
-			Simulations.update(obj,
-				function () {}, function (errorResponse) {
-					console.log(errorResponse.data.message);
-					$scope.error = errorResponse.data.message;
-				});
-		};
-
-
-		// Find a list of Simulations
-		$scope.find = function () {
-			$scope.groupedSimulations = Simulations.query();
-		};
+            Simulations.update(obj,
+                function () {
+                }, function (errorResponse) {
+                    console.log(errorResponse.data.message);
+                    $scope.error = errorResponse.data.message;
+                });
+        };
 
 
-		$scope.findModels = function () {
-			$scope.models = Models.query();
-		};
+        // Find a list of Simulations
+        $scope.find = function () {
+            $scope.groupedSimulations = Simulations.query();
+        };
 
-		$scope.newSimulation = function (ev) {
-				$mdDialog.show({
-					templateUrl: '/modules/simulations/views/create-simulation.client.view.html',
-					targetEvent: ev
-				});
-		};
-	}
+
+        $scope.findModels = function () {
+            $scope.models = Models.query();
+        };
+
+        $scope.newSimulation = function (ev) {
+            $mdDialog.show({
+                templateUrl: '/modules/simulations/views/create-simulation.client.view.html',
+                targetEvent: ev
+            });
+        };
+    }
 ]);
 
 'use strict';
@@ -962,96 +887,115 @@ angular.module('simulations').controller('ParametersSimulationController', ['$sc
 
 // M controller
 angular.module('simulations').controller('RunSimulationController', ['$scope', '$stateParams', '$location', '$anchorScroll', 'Authentication', 'SimulationState', 'Simulations',
-	function($scope, $stateParams, $location, $anchorScroll, Authentication, SimulationState, Simulations) {
+    function ($scope, $stateParams, $location, $anchorScroll, Authentication, SimulationState, Simulations) {
 
-		$scope.authentication = Authentication;
+        $scope.authentication = Authentication;
+        $scope.simulationState = SimulationState;
 
-		$scope.selectedIndex = 3;
+        $scope.selectedIndex = 3;
 
-		if ($stateParams.simulationId === undefined) { $location.path('/simulations'); }
+        if ($stateParams.simulationId === undefined) {
+            $location.path('/simulations');
+        }
 
-		$scope.output = '';
-		$scope.canExport = false;
+        $scope.output = '';
+        $scope.canExport = false;
 
-		// Update existing Simulation
-		$scope.update = function () {
-			var simulation = $scope.simulation;
+        // Update existing Simulation
+        $scope.update = function () {
+            var simulation = $scope.simulation;
 
-			var obj = {
-				'_id':        simulation._id,
-				'log': simulation.log
-			};
+            var obj = {
+                '_id': simulation._id,
+                'log': simulation.log
+            };
 
-			console.log('@ obj ', obj);
-			console.log('@ sim log ', simulation.log);
+            console.log('@ obj ', obj);
+            console.log('@ sim log ', simulation.log);
 
-			Simulations.update(
-				obj,
-				function () {},
-				function (errorResponse) {
-					console.log(errorResponse.data.message);
-					$scope.error = errorResponse.data.message;
-				});
-		};
+            Simulations.update(
+                obj,
+                function () {
+                },
+                function (errorResponse) {
+                    console.log(errorResponse.data.message);
+                    $scope.error = errorResponse.data.message;
+                });
+        };
 
-		$scope.findOne = function () {
-			$scope.simulation = Simulations.get({
-				simulationId: $stateParams.simulationId
-			}, function() {
-				$scope.breadcrumbs = [
-					{
-						title:'Simulations',
-						link: '/#!/'
-					},
-					{
-						title:$scope.simulation.name,
-						link: '/#!/simulations/' + $scope.simulation._id
-					}];
-			});
-		};
+        $scope.findOne = function () {
+            $scope.simulation = Simulations.get({
+                simulationId: $stateParams.simulationId
+            }, function () {
+                $scope.breadcrumbs = [
+                    {
+                        title: 'Simulations',
+                        link: '/#!/'
+                    },
+                    {
+                        title: $scope.simulation.name,
+                        link: '/#!/simulations/' + $scope.simulation._id
+                    }];
+            });
+        };
 
 
-		$scope.runSimulation = function() {
-			console.log('pushing new log!');
-			$scope.simulation.log.push({
-				date: Date.now(),
-				status: 'Running',
-				info: ''
-			});
+        $scope.runSimulation = function () {
 
-			SimulationState().runSimulation(
-				$stateParams.simulationId,
-				function(data, status, headers, config){
-					// success function
-				},
-				function(data, status, headers, config){
-					// error function
-					/// TODO: handle error
-				},
-				function (data) {
-					$scope.output += data;
-					var old = $location.hash();
-					$location.hash('bottom');
-					$anchorScroll();
-					$location.hash(old);
-				},
-				function () {
-					// completion
-					$scope.canExport = true;
-					var old = $location.hash();
-					$location.hash('bottom');
-					$anchorScroll();
-					$location.hash(old);
-				},
-				function(text) {
-					// info function
-					//$scope.simulation.log[$scope.simulation.log.length - 1].info += text;
-					$scope.simulation.log[$scope.simulation.log.length - 1].status = text;
-					console.log('updating status in sim\'s log');
-					$scope.update();
-				});
-		};
-}]);
+            var threshold = new Date(new Date().getTime() - (5 * 60 * 1000));
+            for (var i=0; i < $scope.simulation.log.length; i++){
+                var log = $scope.simulation.log[i];
+                if (log.status === 'Running'){
+                    /// if there is a running simulation elsewhere return
+                    if (log.date > threshold) return;
+                    /// otherwise we can just update the state to error because
+                    /// some unknown error occurred.
+                    log.status = 'Error';
+                }
+            }
+
+            console.log('pushing new log!');
+            $scope.simulation.log.push({
+                date: Date.now(),
+                status: 'Running',
+                info: ''
+            });
+
+            $scope.simulationState().runSimulation(
+                $stateParams.simulationId,
+                function (data, status, headers, config) {
+                    // success function
+                    console.log(data);
+                },
+                function (data, status, headers, config) {
+                    // error function
+                    console.log(data);
+                },
+                function (data) {
+                    $scope.output += data;
+                    var old = $location.hash();
+                    $location.hash('bottom');
+                    $anchorScroll();
+                    $location.hash(old);
+                },
+                function () {
+                    // completion
+                    $scope.canExport = true;
+                    var old = $location.hash();
+                    $location.hash('bottom');
+                    $anchorScroll();
+                    $location.hash(old);
+                },
+                function (text) {
+                    // info function
+                    //$scope.simulation.log[$scope.simulation.log.length - 1].info += text;
+                    $scope.simulation.log[$scope.simulation.log.length - 1].status = text;
+                    console.log('updating status in sim\'s log');
+                    $scope.update();
+                });
+        };
+    }
+]);
 
 
 
@@ -1149,6 +1093,22 @@ angular.module('simulations').controller('ShocksSimulationController', ['$scope'
 			$scope.update();
 		});
 
+        $scope.handlePaste = function(index, $event){
+            var pastedValue = $event.originalEvent.clipboardData.getData('text/plain');
+            var components = pastedValue.split('\t');
+            if (components.length > 1){
+                $event.preventDefault();
+                for (var i=index, j=0;
+                     i < $scope.selectedShock.periods.length && j < components.length;
+                     i++, j++){
+                    var val = parseFloat(components[j]);
+                    if (!isNaN(val)){
+                        $scope.selectedShock.periods[i] = val;
+                    }
+                }
+            }
+        };
+
 	}
 ]).filter('hasShockName', function () {
 	return function (items, name) {
@@ -1173,7 +1133,7 @@ angular.module('simulations').controller('ShocksSimulationController', ['$scope'
 angular.module('simulations').directive('landingPage', function() {
 	return {
 		templateUrl: function(elem, attr) {
-			return '/modules/simulations/models/'+attr.modelName+'.model.template.html';
+			return '/modules/simulations/models/' + attr.modelName + '.model.template.html';
 		}
 	};
 }).directive('omtHeader', function() {
@@ -1225,25 +1185,10 @@ angular.module('simulations').directive('landingPage', function() {
 			MathJax.Hub.Queue(['Typeset',MathJax.Hub]);
 		}
 	};
-}).directive('omSidebar', ['$window', function($window) {
-
-	var link =function (scope, element, attrs) {
-		/* global $: false */
-		element = $(element[0]);
-		/// 141 is the combined height of the header and toolbar
-		element.height($($window).height() - 112);
-		element.addClass('om-sidebar');
-
-	};
-
-	return {
-		restrict: 'EA',
-		link: link
-	};
-
-}]).filter('capitalize', function() {
+}).filter('capitalize', function() {
 	return function(input, all) {
-		return (!!input) ? input.replace(/([^\W_]+[^\s-]*) */g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}) : '';
+		return (!!input) ? input.replace(/([^\W_]+[^\s-]*) */g,
+            function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}) : '';
 	};
 });
 
@@ -1281,17 +1226,6 @@ angular.module('simulations').factory('Simulations', ['$resource',
 						success(success).error(error);
 				}
 			};
-		};
-	}
-]).factory('AnalyzeState', ['$http',
-	function($http) {
-		return {
-			/* active_vars:[AnalyzeState.active_vars],
-			per_row : [AnalyzeState.per_row],
-			json_data : [AnalyzeState.json_data],
-			data_columns : [AnalyzeState.data_columns],
-			all_vars : [AnalyzeState.all_vars],
-			sim_descriptions : [AnalyzeState.sim_descriptions] */
 		};
 	}
 ]);
