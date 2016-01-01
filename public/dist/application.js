@@ -341,8 +341,8 @@ angular.module('core').factory('Socket', ['socketFactory',
 	function(socketFactory) {
 		return socketFactory({
 			prefix: '',
-			ioSocket: io.connect('http://localhost:3000')
-			//ioSocket: io.connect('/')
+			//ioSocket: io.connect('http://localhost:3000')
+			ioSocket: io.connect('/')
 		});
 	}
 ]);
@@ -1209,8 +1209,13 @@ angular.module('simulations').factory('Simulations', ['$resource',
 			return {
 				runSimulation: function (simulationId, success, error, updates, completion, info) {
 
+                    /// remove all previous listeners to prevent the output from being printed
+                    /// multiple times.
+                    Socket.removeAllListeners();
+
 					Socket.on('compute.' + simulationId, function (data) {
 						/// on:close:0 is our termination messages
+                        console.log(data);
 						if (data === 'on:close:0') {
 							completion();
 							info('Success');
