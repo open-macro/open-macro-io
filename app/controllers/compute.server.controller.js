@@ -169,12 +169,10 @@ exports.compute = function(req, res) {
     var socketio = req.app.get('socketio');
     var simulation = req.simulation;
 
-    var simulation_path = 'run/simulations/' + simulation.id.toString();
+    var simulation_path = 'run/simulations/' + simulation.id;
     console.log('Begin to compute simulation: ' + simulation.id);
 
     writeVariables(simulation.model, simulation, function(error, results) {
-
-        for (var i in results) console.log(results[i]);
 
         if (error) {
             console.log('Error: ', error);
@@ -189,7 +187,7 @@ exports.compute = function(req, res) {
                 var dynarePath = process.env.DYNARE_PATH || '';
                 octave = cp.spawn(
                     'octave',
-                    ['-p', dynarePath.toString(), '-q', 'run_model.m'],
+                    ['-p', dynarePath, '-q', 'run_model.m'],
                     {'cwd': simulation_path});
             } else {
                 octave = cp.spawn(
