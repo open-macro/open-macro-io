@@ -1215,7 +1215,7 @@ angular.module('simulations').factory('Simulations', ['$resource',
 
 					Socket.on('compute.' + simulationId, function (data) {
 						/// on:close:0 is our termination messages
-                        console.log(data);
+
 						if (data === 'on:close:0') {
 							completion();
 							info('Success');
