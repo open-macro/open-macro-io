@@ -161,6 +161,9 @@ module.exports = function(db) {
             cert: certificate
         }, app);
 
+        app.set('socketio', socketio.listen(httpsServer));
+        app.set('server', httpsServer);
+
         // Return HTTPS server instance
         return httpsServer;
     }
