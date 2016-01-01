@@ -36,6 +36,8 @@ function writeShocks(shocks) {
     /// each object in return object array will have name, periods, and values string values
     var return_obj = { shocks: [] };
 
+    console.log(shocks);
+
     /// bail if shocks is undefined, which should yield an octave error
     if (shocks === undefined) return return_obj;
 
@@ -45,8 +47,9 @@ function writeShocks(shocks) {
         var shock = shocks[i];
         /// for each shock, create 6 return_obj entries needed for {{simulation.short_name}}_shocks.mod
         var pos = [], neg = [], periods = [];
-        for (var j=0; i < shock.periods.length; i++){
+        for (var j=0; j < shock.periods.length; j++){
             var value = shock.periods[j];
+            value = _.isFinite(value) ? value : 0;
             periods.push(j+1);
             pos.push(value < 0 ? 0 : value);
             neg.push(value < 0 ? Math.abs(value) : 0);
@@ -59,8 +62,8 @@ function writeShocks(shocks) {
             var start = 0, end = 0, range_value = 0;
             if (k < shock.ranges.length){
                 var range = shock.ranges[k];
-                start = range.start;
-                end = range.end;
+                start = _.isFinite(range.start) ? range.start : 0;
+                end = _.isFinite(range.end) ? range.end : 0;
                 range_value = range.value;
             }
 
@@ -73,6 +76,8 @@ function writeShocks(shocks) {
             return_obj.shocks.push({ name: 'e_' + shock.name + r_variable_id + '_neg', periods:r_periods, values:r_neg });
         }
     }
+
+    console.log(return_obj);
 
     return return_obj;
 }
