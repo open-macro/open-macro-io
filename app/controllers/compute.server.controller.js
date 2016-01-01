@@ -12,138 +12,72 @@ var swig = require('swig');
 
 // translate from the db model for shocks into the string
 // representations needed for the swig template
-function shocksToStrings(shocks) {
+function writeShocks(shocks) {
 
-    if (shocks === undefined) {
-        console.log('shocks is undefined cannot toString');
-    }
+    /// A shock has a name property that is used as a component of its variable name
+    /// "name": "a",
+    ///
+    /// Shock ranges are specified as an array. For the time being there will not be more
+    /// than two ranges specified. These shock ranges will be written as variables 1 and 2
+    ///
+    /// "ranges": [
+    ///   {
+    ///       "start": 0,
+    ///       "end": 0,
+    ///       "value": 0,
+    ///   }
+    /// ],
+    ///
+    /// Variable e_{{shock.name}}0 is represented by an array of valu
+    /// "periods": [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+    ///
 
-    var return_obj = {
-        shocks: []
-    };
+    /// return value used by swig template
+    /// each object in return object array will have name, periods, and values string values
+    var return_obj = { shocks: [] };
+
+    console.log(shocks);
+
+    /// bail if shocks is undefined, which should yield an octave error
+    if (shocks === undefined) return return_obj;
 
     // iterate over shocks from simulation
     for (var i = 0; i < shocks.length; i++) {
+
         var shock = shocks[i];
-        // for each shock, create 6 'shocks' needed for shocks.mod
-        // (shock_0, _1, _2, and _neg equivalents) and push each of
-        // them onto the return object. This object will be passed
-        // into swig.renderFile to be used with the swig template
-        // for shocks.
-        var name0 = 'e_' + shock.name + '0',
-            name1 = 'e_' + shock.name + '1',
-            name2 = 'e_' + shock.name + '2',
-            name0neg = 'e_' + shock.name + '0_neg',
-            name1neg = 'e_' + shock.name + '1_neg',
-            name2neg = 'e_' + shock.name + '2_neg';
-
-        var periods0 = '', periods0neg = '';
-        var values0 = '', values0neg = '';
-        var periods1 = '', periods1neg = '';
-        var values1 = '', values1neg = '';
-        var periods2 = '', periods2neg = '';
-        var values2 = '', values2neg = '';
-
-        for (var j = 0; j < shock.periods.length; j++) {
-            periods0 += (j+1).toString() + ' ';
-            periods0neg += (j+1).toString() + ' ';
-
-            if (shock.periods[j] < 0) {
-                values0 += '0 ';
-                values0neg += Math.abs(shock.periods[j]).toString() + ' ';
-            } else {
-                values0 += shock.periods[j].toString() + ' ';
-                values0neg += '0 ';
-            }
+        /// for each shock, create 6 return_obj entries needed for {{simulation.short_name}}_shocks.mod
+        var pos = [], neg = [], periods = [];
+        for (var j=0; j < shock.periods.length; j++){
+            var value = shock.periods[j];
+            value = _.isFinite(value) ? value : 0;
+            periods.push(j+1);
+            pos.push(value < 0 ? 0 : value);
+            neg.push(value < 0 ? Math.abs(value) : 0);
         }
+        periods = periods.join(' ');
+        return_obj.shocks.push({ name: 'e_' + shock.name + '0', periods:periods, values:pos.join(' ') });
+        return_obj.shocks.push({ name: 'e_' + shock.name + '0_neg', periods:periods, values:neg.join(' ') });
 
-        for (var jj = shock.periods.length; jj < 30; jj++) {
-            var endSpace;
-            if (jj === 29) {
-                endSpace = '';
-            } else {
-                endSpace = ' ';
+        for (var k=0; k < 2; k++){
+            var start = 0, end = 0, range_value = 0;
+            if (k < shock.ranges.length){
+                var range = shock.ranges[k];
+                start = _.isFinite(range.start) ? range.start : 0;
+                end = _.isFinite(range.end) ? range.end : 0;
+                range_value = range.value;
             }
-            periods0 += (jj + 1).toString() + endSpace;
-            periods0neg += (jj + 1).toString() + endSpace;
-            values0 += '0' + endSpace;
-            values0neg += '0' + endSpace;
+
+            var r_variable_id = k + 1,
+                r_periods = start + ':' + end,
+                r_pos = range_value < 0 ? 0 : range_value,
+                r_neg = range_value < 0 ? Math.abs(range_value) : 0;
+
+            return_obj.shocks.push({ name: 'e_' + shock.name + r_variable_id, periods:r_periods, values:r_pos });
+            return_obj.shocks.push({ name: 'e_' + shock.name + r_variable_id + '_neg', periods:r_periods, values:r_neg });
         }
-
-        if (shock.ranges.length > 0) {
-            if (shock.ranges[0].value < 0) {
-                periods1 += '0:0';
-                values1 += '0';
-                periods1neg += shock.ranges[0].start.toString() + ':' + shock.ranges[0].end.toString();
-                values1neg += Math.abs(shock.ranges[0].value).toString();
-            } else {
-                periods1 += shock.ranges[0].start.toString() + ':' + shock.ranges[0].end.toString();
-                values1 += Math.abs(shock.ranges[0].value).toString();
-                periods1neg += '0:0';
-                values1neg += '0';
-            }
-        } else {
-            periods1 += '0:0';
-            values1 += '0';
-            periods1neg += '0:0';
-            values1neg += '0';
-        }
-
-        if (shock.ranges.length > 1) {
-            if (shock.ranges[1].value < 0) {
-                periods2 += '0:0';
-                values2 += '0';
-                periods2neg += shock.ranges[1].start.toString() + ':' + shock.ranges[1].end.toString();
-                values2neg += Math.abs(shock.ranges[1].value).toString();
-            } else {
-                periods2 += shock.ranges[1].start.toString() + ':' + shock.ranges[1].end.toString();
-                values2 += Math.abs(shock.ranges[1].value).toString();
-                periods2neg += '0:0';
-                values2neg += '0';
-            }
-        } else {
-            periods2 += '0:0';
-            values2 += '0';
-            periods2neg += '0:0';
-            values2neg += '0';
-        }
-
-        return_obj.shocks.push({
-            name: name0,
-            periods: periods0,
-            values: values0
-        });
-
-        return_obj.shocks.push({
-            name: name1,
-            periods: periods1,
-            values: values1
-        });
-
-        return_obj.shocks.push({
-            name: name2,
-            periods: periods2,
-            values: values2
-        });
-
-        return_obj.shocks.push({
-            name: name0neg,
-            periods: periods0neg,
-            values: values0neg
-        });
-
-        return_obj.shocks.push({
-            name: name1neg,
-            periods: periods1neg,
-            values: values1neg
-        });
-
-        return_obj.shocks.push({
-            name: name2neg,
-            periods: periods2neg,
-            values: values2neg
-        });
     }
+
+    console.log(return_obj);
 
     return return_obj;
 }
@@ -175,7 +109,7 @@ var writeVariableFile = function(template_path, destination, obj, callback){
 var writeVariables = function (model, simulation, cb) {
 
     var model_definition_path = 'run/definitions/' + model.short_name;
-    var simulation_path = 'run/simulations/' + simulation.id.toString();
+    var simulation_path = 'run/simulations/' + simulation.id;
     var set_params_template_path = 'run/templates/set_params.m.html';
     var shocks_template_path = 'run/templates/shocks.mod.html';
     var set_macro_vars_template_path = 'run/templates/set_macro_vars.mod.html';
@@ -214,7 +148,7 @@ var writeVariables = function (model, simulation, cb) {
         },
         function (callback) {
             /// write shocks.mod file
-            var shocks = shocksToStrings(simulation.shocks);
+            var shocks = writeShocks(simulation.shocks);
             writeVariableFile(shocks_template_path, shocks_path, shocks, callback);
         },
         function (callback) {
@@ -235,17 +169,14 @@ exports.compute = function(req, res) {
     var socketio = req.app.get('socketio');
     var simulation = req.simulation;
 
-    var simulation_path = 'run/simulations/' + simulation.id.toString();
+    var simulation_path = 'run/simulations/' + simulation.id;
     console.log('Begin to compute simulation: ' + simulation.id);
 
     writeVariables(simulation.model, simulation, function(error, results) {
 
-        for (var i in results) console.log(results[i]);
-
         if (error) {
             console.log('Error: ', error);
             res.status(error.status).end();
-
         }
         else {
             // Production environment on Ubuntu does not require the
@@ -256,7 +187,7 @@ exports.compute = function(req, res) {
                 var dynarePath = process.env.DYNARE_PATH || '';
                 octave = cp.spawn(
                     'octave',
-                    ['-p', dynarePath.toString(), '-q', 'run_model.m'],
+                    ['-p', dynarePath, '-q', 'run_model.m'],
                     {'cwd': simulation_path});
             } else {
                 octave = cp.spawn(
