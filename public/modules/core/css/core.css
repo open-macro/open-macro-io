@@ -387,3 +387,8 @@ a.edit-dsf {
 .md-grid-list.flex.ng-isolate-scope {
     padding-bottom:0;
 }
+
+*:focus {
+    outline: none;
+    border: 0;
+}
