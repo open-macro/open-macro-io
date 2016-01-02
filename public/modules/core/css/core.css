@@ -392,3 +392,9 @@ a.edit-dsf {
     outline: none;
     border: 0;
 }
+
+.big-equation {
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+}
