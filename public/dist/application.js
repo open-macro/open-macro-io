@@ -1002,8 +1002,9 @@ angular.module('simulations').controller('RunSimulationController', ['$scope', '
 'use strict';
 
 // M controller
-angular.module('simulations').controller('ShocksSimulationController', ['$scope', '$http', '$mdDialog', '$stateParams', '$location', 'Authentication', 'Simulations', 'Models', 'Socket', '$anchorScroll',
-	function($scope, $http, $mdDialog, $stateParams, $location, Authentication, Simulations, Models, Socket, $anchorScroll) {
+angular.module('simulations').controller('ShocksSimulationController',
+    ['$scope', '$http', '$mdDialog', '$stateParams', '$location', '$mdToast', 'Authentication', 'Simulations', 'Models', 'Socket', '$anchorScroll',
+	function($scope, $http, $mdDialog, $stateParams, $location, $mdToast, Authentication, Simulations, Models, Socket, $anchorScroll) {
 		$scope.authentication = Authentication;
 
 		$scope.selectedIndex = 2;
@@ -1076,11 +1077,15 @@ angular.module('simulations').controller('ShocksSimulationController', ['$scope'
 		};
 
 		$scope.addRange = function (shock) {
-			shock.ranges.push({
-				start: 0,
-				end:   0,
-				value: 0
-			});
+            if (shock.ranges.length > 1){
+                $scope.toast('Number of shock ranges is limited to 2.');
+            } else {
+                shock.ranges.push({
+                    start: 0,
+                    end:   0,
+                    value: 0
+                });
+            }
 		};
 
 		$scope.goToRun = function() {
@@ -1107,6 +1112,14 @@ angular.module('simulations').controller('ShocksSimulationController', ['$scope'
                     }
                 }
             }
+        };
+
+        $scope.toast = function(message){
+            $mdToast.show( $mdToast.simple()
+                .content(message)
+                .position('top right')
+                .hideDelay(3000)
+            );
         };
 
 	}
@@ -1209,8 +1222,13 @@ angular.module('simulations').factory('Simulations', ['$resource',
 			return {
 				runSimulation: function (simulationId, success, error, updates, completion, info) {
 
+                    /// remove all previous listeners to prevent the output from being printed
+                    /// multiple times.
+                    Socket.removeAllListeners();
+
 					Socket.on('compute.' + simulationId, function (data) {
 						/// on:close:0 is our termination messages
+
 						if (data === 'on:close:0') {
 							completion();
 							info('Success');
