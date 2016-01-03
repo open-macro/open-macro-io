@@ -61,36 +61,36 @@
 <p>In each sector \(j\), the representative firm use Cobb-Douglas technologies to convert labor \(L_{j,t}\), private capital \(k_{j,t-1}\), and effectively productive infrastructure \(z_{t-1}^{e}\), which is a public good, into output:<sup><a href="#fn3" id="ref3">3</a></sup></p>
 
 <!-- \begin{equation} q_{x,t}=A_{x,t}\left(z_{t-1}^{e}\right)^{\psi_{x}}\left(k_{x,t-1}\right)^{\alpha_{x}}\left(L_{x,t}\right)^{1-\alpha_{x}} \label{qx} \end{equation} -->
-<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn000.svg">
+<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn0.svg">
 
 <p>and</p>
 
 <!-- \begin{equation} q_{n,t}=A_{n,t}\left(z_{t-1}^{e}\right)^{\psi_{n}}\left(k_{n,t-1}\right)^{\alpha_{n}}\left(L_{n,t}\right)^{1-\alpha_{n}} \label{qn} \end{equation} -->
-<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn001.svg">
+<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn1.svg">
 
 <p>The firm productivities are expressed as:</p>
 
 <!-- \begin{equation*}
 A_{x,t}=a_{x}\left(\frac{q_{x,t-1}^{I}}{\bar{q}_{x}^{I}}\right)^{\sigma_{x}}\left(k_{x,t-1}^{I}\right)^{\xi_{x}}
 \end{equation*} -->
-<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn002.svg">
+<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn2.svg">
 
 <p>and<p>
 
 <!-- \begin{equation*} A_{n,t}=a_{n}\left(\frac{q_{n,t-1}^{I}}{\bar{q}_{n}^{I}}\right)^{\sigma_{n}}\left(k_{n,t-1}^{I}\right)^{\xi_{n}} \end{equation*} -->
-<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn003.svg">
+<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn3.svg">
 
 <p>and feature sector-specific externalities of two types, with variables with the superindex \(I\) denoting sectoral quantities: a "static" externality associated with private capital accumulation &mdash; \(\left( k_{j,t-1}^{I}\right) ^{\xi _{j}}\) for \(j=x,n\) &mdash; as in Arrow (1962); and a "learning-by-doing" externality that depends on the deviations of the lagged sector output from the (initial) steady state &mdash; \(\left( \frac{q_{j,t-1}^{I}}{\bar{q}_{j}^{I}}\right) ^{\sigma j}\) for \(j=x,n\). When the latter externality is greater in the traded sector than that in the non-traded sector, then it can capture the notion of Dutch-disease as in Berg et al. (2010b), where a decline in the traded sector imposes an economic cost through a sectoral loss in total-factor productivity (TFP).</p>
 
 <p>Factories and infrastructure are built by combining one imported machine with \(a_{j}\) (\(j=k,z\)) units of a non-traded input (e.g., construction). The supply prices of private capital and infrastructure are thus</p>
 
 <!-- \begin{equation} P_{k,t}=P_{mm,t}+a_{k}P_{n,t} \label{Pk} \end{equation} -->
-<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn004.svg">
+<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn4.svg">
 
 <p>and</p>
 
 <!-- \begin{equation} P_{z,t}=P_{mm,t}+a_{z}P_{n,t} \label{Pz} \end{equation} -->
-<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn005.svg">
+<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn5.svg">
 
 <p>where \(P_{n}\) is the (relative) price of the non-traded good and \(P_{mm}\) is the (relative) price of imported machinery.</p>
 
@@ -99,18 +99,18 @@ A_{x,t}=a_{x}\left(\frac{q_{x,t-1}^{I}}{\bar{q}_{x}^{I}}\right)^{\sigma_{x}}\lef
 <p>Competitive profit-maximizing firms equate the marginal value product of each input to its factor price. This yields the input demand equations</p>
 
 <!-- \begin{equation} P_{n,t}(1-\alpha _{n})\frac{q_{n,t}}{L_{n,t}}=w_{t} \label{Ln_DD} \end{equation} -->
-<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn006.svg">
+<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn6.svg">
 
 <!-- \begin{equation} P_{x,t}(1-\alpha _{x})\frac{q_{x,t}}{L_{x,t}}=w_{t} \label{Lx_DD} \end{equation} -->
-<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn007.svg">
+<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn7.svg">
 
 <!-- \begin{equation} P_{n,t}\alpha _{n}\frac{q_{n,t}}{k_{n,t-1}}=r_{n,t} \label{Kn_DD} \end{equation} -->
-<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn008.svg">
+<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn8.svg">
 
 <p>and</p>
 
 <!-- \begin{equation} P_{x,t}\alpha _{x}\frac{q_{x,t}}{k_{x,t-1}}=r_{x,t} \label{Kx_DD} \end{equation} -->
-<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn009.svg">
+<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn9.svg">
 
 <p>where \(w\) is the wage and \(r_{j}\) is the rental earned by capital in sector \(j\). Labor is intersectorally mobile, so the same wage appears in both equations above. Capital is sector-specific, but \(r_{x}\) differs from \(r_{n}\) only on the transition path. After adjustment is complete and \(k_{x}\) and \(k_{n}\) have settled at their equilibrium levels, the rentals are equal.</p>
 
@@ -119,19 +119,19 @@ A_{x,t}=a_{x}\left(\frac{q_{x,t-1}^{I}}{\bar{q}_{x}^{I}}\right)^{\sigma_{x}}\lef
 <p>There are two types of private agents, savers and non-savers, with the former and the latter distinguished by the superscripts \(\mathfrak{s}\) and \(\mathfrak{h,}\) respectively. Labor supply of savers is fixed at \(L^{\mathfrak{s}}\) while that of non-savers is \(L^{\mathfrak{h}}=aL^{\mathfrak{s}}\) with \(a>0\). The two types of agents consume the domestic traded good \(c_{x,t}^{i}\), the foreign traded good \(c_{m,t}^{i}\), and the domestic non-traded good \(c_{n,t}^{i}\) for \(i=\mathfrak{s},\mathfrak{h}\). These goods are combined into a CES basket</p>
 
 <!-- \begin{equation} c_{t}^{i}=\left[\rho_{x}^{\frac{1}{\epsilon}}\left(c_{x,t}^{i}\right)^{\frac{\epsilon-1}{\epsilon}}+\rho_{m}^{\frac{1}{\epsilon}}\left(c_{m,t}^{i}\right)^{\frac{\epsilon-1}{\epsilon}}+(\rho_{n})^{\frac{1}{\epsilon}}\left(c_{n,t}^{i}\right)^{\frac{\epsilon-1}{\epsilon}}\right]^{^{\frac{\epsilon}{\epsilon-1}}} \label{c_basket} \end{equation} -->
-<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn010.svg">
+<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn10.svg">
 
-<p>for \(i=\mathfrak{s}, \mathfrak{h}\) where \(\rho _{x}\), \(\rho _{m}\), and \(\rho _{n}\) are CES distribution parameters and \(\epsilon\) is the intratemporal elasticity of substitution. In addition, \(\rho _{n}=1-\rho _{x}-\rho _{m}\).</p>
+<p>for \(i=\mathfrak{s}, \mathfrak{h}\) where \(\rho_{x}\), \(\rho_{m}\), and \(\rho_{n}\) are CES distribution parameters and \(\epsilon\) is the intratemporal elasticity of substitution. In addition, \(\rho_{n}=1-\rho_{x}-\rho_{m}\).</p>
 
 <p>The (relative) CPI associated with the basket is</p>
 
 <!-- \(P_{t}=\left[\rho_{x}P_{x,t}^{1-\epsilon}+\rho_{m}P_{m,t}^{1-\epsilon }+\rho_{n}P_{n,t}^{1-\epsilon}\right]^{^{\frac{1}{1-\epsilon}}}\) -->
-<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn011.svg">
+<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn11.svg">
 
 <p>while the demand functions for each good can be expressed as<p>
 
 <!-- \begin{equation*} c_{j,t}^{i}=\rho_{j}\left(\frac{P_{j,t}}{P_{t}}\right)^{-\epsilon}c_{t}^{i} \end{equation*} -->
-<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn012.svg">
+<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn12.svg">
 
 <p>Savers can invest \(i_{x}\) and \(i_{n}\) amounts in private capital that depreciates at the rate \(\delta\), pay user fees charged for infrastructure services according to \(\mu z^{e}\), can buy domestic bonds \(b\) &mdash; which cannot be bought in any market by foreigners &mdash; and pay a real interest rate \(r\), and can contract foreign debt \(b^{\ast }\) that charges an exogenous real interest rate \(r^{\ast }\). They solve the intertemporal problem</p>
 
@@ -141,69 +141,69 @@ A_{x,t}=a_{x}\left(\frac{q_{x,t-1}^{I}}{\bar{q}_{x}^{I}}\right)^{\sigma_{x}}\lef
 <p>subject to</p>
 
 <!-- \begin{equation} P_{t}b_{t}^{\mathfrak{s}}-b_{t}^{\mathfrak{s}\ast } = r_{x,t}k_{x,t-1}^{\mathfrak{s}}+r_{n,t-1}k_{n,t-1}^{\mathfrak{s}}+w_{t}L_{t}^{\mathfrak{s}}+\frac{\mathcal{R}_{t}}{1+a}+\frac{\mathcal{T}_{t}}{1+a}-\frac{1+r_{t-1}^{\ast}}{1+g}b_{t-1}^{\mathfrak{s}\ast}+\frac{1+r_{t-1}}{1+g}P_{t}b_{t-1}^{\mathfrak{s}}-P_{k,t}\left(i_{x,t}^{\mathfrak{s}}+i_{n,t}^{\mathfrak{s}}+AC_{x,t}^{\mathfrak{s}}+AC_{n,t}^{\mathfrak{s}}\right)-P_{t}c_{t}^{\mathfrak{s}}(1+h_{t})-\mu z_{t-1}^{e}-\mathcal{P}_{t}^{\mathfrak{s}}-\Phi _{t}^{\mathfrak{s}} \label{BCs} \end{equation} -->
-<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn013.svg">
+<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn13.svg">
 
 <!-- \begin{equation} (1+g)k_{x,t}^{\mathfrak{s}}=i_{x,t}^{\mathfrak{s}}+(1-\delta)k_{x,t-1}^{\mathfrak{s}} \label{kx_accum} \end{equation} -->
-<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn014.svg">
+<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn14.svg">
 
 <p>and</p>
 
 <!-- \begin{equation} (1+g)k_{n,t}^{\mathfrak{s}}=i_{n,t}^{\mathfrak{s}}+(1-\delta)k_{n,t-1}^{\mathfrak{s}} \label{kn_accum} \end{equation} -->
-<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn015.svg">
+<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn15.svg">
 
 <p>where \(\beta=1/[(1+\varrho)(1+g)^{(1-\tau)/\tau}]\) is the discount factor; \(\varrho\) is the pure time preference rate; \(\tau\) is the intertemporal elasticity of substitution; \(\delta\) is the depreciation rate; \(\mathcal{R}\) are remittances; \(\mathcal{T}\) are (net) transfers; \(h\) denotes the consumption value added tax (VAT); and \(\Phi^{\mathfrak{s}}\) are profits from domestic firms. Remittances and transfers are proportional to the agent's share in aggregate employment. Observe that in the budget constraint, the trend growth rate appears in several places, reflecting the fact that some variables are dated at \(t\) and others at \(t-1\) and that \(P_{t}\) multiplies \(b_{t}^{\mathfrak{s}}\) and \(b_{t-1}^{\mathfrak{s}}\) because domestic bonds are indexed to the price level.<sup><a href="#fn4" id="ref4">4</a></sup> Also note that there are adjustment costs incurred in changing the capital stock</p>
 
 <!-- \(AC_{j,t}^{\mathfrak{s}}\equiv\frac{v}{2}\left(\frac{i_{j,t}^{\mathfrak{s}}}{k_{j,t-1}^{\mathfrak{s}}}-\delta-g\right)^{2}k_{j,t-1}^{\mathfrak{s}}\), for \(j=x,n\) and with \(v>0\) -->
-<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn016.svg">
+<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn16.svg">
 
 <p>and portfolio adjustment costs associated with foreign liabilities</p>
 
 <!-- \(\mathcal{P}_{t}^{\mathfrak{s}}\equiv \frac{\eta}{2}(b_{t}^{\mathfrak{s}\ast}-\bar{b}^{\mathfrak{s}\ast})^{2}\) -->
-<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn017.svg">
+<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn17.svg">
 
 <p>where \(\bar{b}^{\ast}\) is the (initial) steady-state value of the private foreign liabilities.<sup><a href="#fn5" id="ref5">5</a></sup></p>
 
 <p>The choice variables in the optimization problem are \(c_{t}^{\mathfrak{s}}\), \(b_{t}^{\mathfrak{s}}\), \(b_{t}^{\mathfrak{s}\ast}\), \(i_{j,t}^{\mathfrak{s}}\), and \(k_{j,t}^{\mathfrak{s}}\) for \(j=x,n\). Routine manipulations of the first-order conditions deliver</p>
 
 <!-- \begin{equation} c_{t}^{\mathfrak{s}}=c_{t+1}^{\mathfrak{s}}\left(\beta\frac{1+r_{t}}{1+g}\frac{1+h_{t}}{1+h_{t+1}}\right)^{-\tau} \label{Euler Equation} \end{equation} -->
-<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn018.svg">
+<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn18.svg">
 
 <!-- \begin{equation} (1+r_{t})\frac{P_{t+1}}{P_{t}}=\frac{1+r_{t}^{\ast}}{\left[1-\eta(b_{t}^{\mathfrak{s}\ast}-\bar{b}^{\mathfrak{s}\ast})\right]} \label{UIP} \end{equation} -->
-<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn019.svg">
+<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn19.svg">
 
 <!-- \begin{equation} \frac{r_{x,t+1}}{P_{k,t+1}}+1-\delta+v\Upsilon_{x,t+1}^{\mathfrak{s}}\left(\frac{i_{x,t+1}^{\mathfrak{s}}}{k_{x,t}^{\mathfrak{s}}}+1-\delta\right)-\frac{v}{2}\left(\Upsilon_{x,t+1}^{\mathfrak{s}}\right)^{2}=(1+r_{t})\frac{P_{t+1}}{P_{t}}\frac{P_{k,t}}{P_{k,t+1}}\left(1+v\Upsilon_{x,t}^{\mathfrak{s}}\right) \label{ix_foc} \end{equation} -->
-<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn020.svg">
+<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn20.svg">
 
 <p>and</p>
 
 <!-- \begin{equation} \frac{r_{n,t+1}}{P_{k,t+1}}+1-\delta+v\Upsilon_{n,t+1}^{\mathfrak{s}}\left(\frac{i_{n,t+1}^{\mathfrak{s}}}{k_{n,t}^{\mathfrak{s}}}+1-\delta\right)-\frac{v}{2}\left(\Upsilon_{n,t+1}^{\mathfrak{s}}\right)^{2}=(1+r_{t})\frac{P_{t+1}}{P_{t}}\frac{P_{k,t}}{P_{k,t+1}}\left(1+v\Upsilon_{n,t}^{\mathfrak{s}}\right) \label{in_foc} \end{equation} -->
-<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn021.svg">
+<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn21.svg">
 
 <p>where</p>
 
 <!-- \(\Upsilon_{j,t}^{\mathfrak{s}}=\left(\frac{i_{j,t}^{\mathfrak{s}}}{k_{j,t-1}^{\mathfrak{s}}}-\delta-g\right)\) for \(j=x,n\).  -->
-<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn022.svg">
+<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn22.svg">
 
 Each of these equations admits a straightforward intuitive interpretation. The first is a slightly irregular Euler equation in which the slope of the consumption path depends on the real interest rate adjusted for trend growth and on changes in the VAT. The other three equations are arbitrage conditions. The second equalizes the real interest rate on domestic bonds to the real interest rate on foreign private debt, adjusted by portfolio costs. Similarly, the third and fourth require the return on capital in each sector, net of marginal adjustment costs, to equal the real interest rate.</p>
 
 <p>In our modelling decisions, we balance realism and flexibility in introducing portfolio adjustment costs to capture different degrees of integration of the private sector into world capital markets. The UIP equation implicitly defines a private demand for foreign debt, which can be explicitly expressed as</p>
 
 <!-- \begin{equation*} \eta(b_{t}^{\mathfrak{s}\ast}-\bar{b}^{\mathfrak{s}\ast})=1-\frac{1+r_{t}^{\ast}}{(1+r_{t})\frac{P_{t+1}}{P_{t}}}\end{equation*} -->
-<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn023.svg">
+<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn23.svg">
 
 <p>In this equation, the value of \(\eta\) controls the degree of capital mobility. For some emerging market economies, a low \(\eta\) may be appropriate reflecting an open capital account. Elastic capital flows then keep the domestic rate close to the foreign rate. In LICs, where \(\eta\) is comparatively big, the capital account is fairly closed, and the private sector has limited capacity to borrow from abroad.<sup><a href="#fn6" id="ref6">6</a></sup></p>
 
 <p>In addition, we assume that on its foreign debt the private sector pays a constant premium \(\mathfrak{u}\) over the interest rate that the government pays on external commercial debt \(r_{dc}\), so</p>
 
 <!-- \begin{equation*} r_{t}^{\ast }=r_{dc,t}+\mathfrak{u} \end{equation*} -->
-<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn024.svg">
+<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn24.svg">
 
 <p>This specification together with the UIP allows us to match the low capital and investment ratios observed in LICs. The reason is that at the steady state the domestic interest rate \(r\) and the foreign rate \(r^{\ast}\) are equal, meaning that \(\bar{r}=\bar{r}_{dc}+\mathfrak{u}\). Thus even if \(\bar{r}_{dc}\) is low, by picking an appropriate \(\mathfrak{u}\), we can obtain a somewhat high domestic real interest rate \(\bar{r}\) and, consequently, a high return on private capital. But because of decreasing returns, this high return implies realistically that the ratios of the capital stock and investment to GDP must be low at the initial steady-state equilibrium.</p>
 
 <p>Non-savers have the same utility function as that of savers and consume all of their income from wages, remittances, and transfers each period. The non-saver's budget constraint then reads</p>
 
 <!-- \begin{equation} (1+h_{t})P_{t}c_{t}^{\mathfrak{h}}=w_{t}L^{\mathfrak{h}}+\frac{a}{1+a}(\mathcal{R}_{t}+\mathcal{T}_{t}) \label{hm_BC} \end{equation} -->
-<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn025.svg">
+<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn25.svg">
 
 <p>In specifying this part of the model we have aimed for realism combined with flexibility and generality. The realism of hand-to-mouth consumers (non-savers) is indisputable given that in LICs a substantial portion of households fall into this category.<sup><a href="#fn7" id="ref7">7</a></sup> From the modeling perspective their inclusion allows us to break Ricardian equivalence.</p>
 
@@ -219,19 +219,19 @@ Each of these equations admits a straightforward intuitive interpretation. The f
 <p>We thus allow for inefficiencies in public capital creation. Public investment \(i_{z}\) produces additional infrastructure \(z\) according to:</p>
 
 <!-- \begin{equation} (1+g)z_{t}=(1-\delta )z_{t-1}+i_{z,t} \label{z_accum} \end{equation} -->
-<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn026.svg">
+<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn26.svg">
 
 <p>but some of the newly built infrastructure may not be economically valuable productive infrastructure, since <em>effectively productive</em> capital \(z_{t}^{e}\), which is actually used in technologies (1<!--\ref{qx}-->) and (2<!--\ref{qn}-->), evolves according to:</p>
 
 <!-- \begin{equation} z_{t}^{e}=\bar{s}\bar{z}+s(z_{t}-\bar{z}) \label{z_efficiency} \end{equation} -->
-<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn027.svg">
+<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn27.svg">
 
 <p>with \(\bar{s} \in [0,1]\) and \(s \in [0,1]\) where \(\bar{s}\) and \(s\) are parameters of efficiency at and off steady state, and \(\bar{z}\) is public capital at the (initial) steady state.</p>
 
 <p>Note that by combining equations (18<!--\ref{z_accum}-->) and (19<!--\ref{z_efficiency}-->), we obtain</p>
 
 <!-- \begin{equation} (1+g)z_{t}^{e}=(1-\delta)z_{t-1}^{e}+s(i_{z,t}-\bar{\imath}_{z})+\bar{s}\bar{\imath}_{z} \label{I_efficiency} \end{equation} -->
-<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn028.svg">
+<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn28.svg">
 
 <p>where \(\bar{\imath}_{z}=(\delta+g)\bar{z}\) is the public investment at the (initial) steady state. This is the same specification for public investment inefficiencies as that of Berg et al. (2010b), and it is similar to the one in Agenor (2010). Since \(s\in \lbrack 0,1]\), this specification makes clear that <em>one</em> dollar of additional public investment \((i_{z,t}-\bar{\imath}_{z})\) does not translate into <em>one</em> dollar of effectively productive capital \((z_{t}^{e})\). For the baseline simulations, we assume \(\bar{s}=0.6\) and \(s=0.6\). These values are slightly higher that the estimates of Arestoff and Hurlin (2006) for some emerging economies. In principle, the public investment management quality index of Dabla-Norris et al. (2011) could help calibrate this parameter.</p>
 
@@ -240,70 +240,70 @@ Each of these equations admits a straightforward intuitive interpretation. The f
 <p>The government spends on transfers, debt service, and infrastructure investment. It collects revenue from the consumption VAT and from user fees for infrastructure services, which are expressed as a fixed multiple \(f\) of recurrent costs, that is \(\mu =f\delta P_{zo}\). When revenues fall short of expenditures, the resulting deficit is financed through domestic borrowing \(\Delta b_{t}=b_{t}-b_{t-1}\), external concessional borrowing \(\Delta d_{t}=d_{t}-d_{t-1}\), or external commercial borrowing \(\Delta d_{c,t}=d_{c,t}-d_{c,t-1}\) viz.:</p>
 
 <!-- \begin{equation} P_{t}\Delta b_{t}+\Delta d_{c,t}+\Delta d_{t} = \frac{r_{t-1}-g}{1+g} P_{t}b_{t-1}+\frac{r_{d,t-1}-g}{1+g}d_{t-1}+\frac{r_{dc,t-1}-g}{1+g}d_{c,t-1} + P_{z,t}\mathbb{I}_{z,t}+\mathcal{T}_{t}-h_{t}P_{t}c_{t}-\mathcal{G}_{t}-\mathcal{N}_{t}-\mu z_{t-1}^{e} \label{Gov_BC} \end{equation} -->
-<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn029.svg">
+<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn29.svg">
 
 <p>where \(d\), \(dc\), \(\mathcal{G}\), and \(\mathcal{N}\) denote concessional debt, external commercial debt, grants, and natural resource revenues (if any);<sup><a href="#fn9" id="ref9">9</a></sup> and \(r_{d}\) and \(r_{dc}\) are the real interest rates (in dollars) on concessional and commercial loans. The interest rate on concessional loans is assumed to be constant \(r_{d,t}=r_{d}\), while the interest rate on external commercial debt incorporates a risk premium that depends on the deviations of the external public debt to GDP ratio \(\left(\frac{d_{t}+d_{c,t}}{y_{t}}\right)\) from its (initial) steady-state value \(\left(\frac{\bar{d}+\bar{d}_{c}}{\bar{y}}\right)\). That is,</p>
 
 <!-- \begin{equation} r_{dc,t}=r^{f}+\upsilon _{g}e^{\eta _{g}\left( \frac{d_{t}+d_{c,t}}{y_{t}}-\frac{\bar{d}+\bar{d}_{c}}{\bar{y}}\right)}, \label{rdc} \end{equation} -->
-<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn030.svg">
+<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn30.svg">
 
 <p>where \(r^{f}\) is a risk-free world interest rate and \(y_{t}=P_{x,t}q_{x,t}+P_{n,t}q_{n,t}\) is GDP. Van der Ploeg and Venables (2011) provide positive estimates for \(\eta _{g}\). But note by setting \(\upsilon _{g}>0\) and \(\eta_{g}=0\), our specification embeds the case of an exogenous risk premium that does depend on public debt.</p>
 
 <p>The term \(P_{z,t}\mathbb{I}_{z,t}\) in the budget constraint (21<!--\ref{Gov_BC}-->) corresponds to public investment outlays including costs overruns associated with absorptive capacity constraints. It is defined as</p>
 
 <!-- \begin{equation*} \mathbb{I}_{z,t}=\mathcal{H}_{t}(i_{z,t}-\bar{\imath}_{z})+\bar{\imath}_{z} \end{equation*} -->
-<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn031.svg">
+<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn31.svg">
 
 <p>Because skilled administrators are in scarce supply in LICs, ambitious public investment programs are often plagued by poor planning, weak oversight, and myriad coordination problems, all of which contribute to large cost overruns during the implementation phase.<sup><a href="#fn10" id="ref10">10</a></sup> To capture this, we multiply new investment \((i_{z,t}-\bar{\imath}_{z})\) by</p>
 
 <!-- \(\mathcal{H}_{t}=\left(1+\frac{i_{z,t}}{z_{t-1}}-\delta-g\right)^{\phi}\) -->
-<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn032.svg">
+<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn32.svg">
 
 <p>where \(\phi \geq 0\) determines the severity of the the absorptive capacity &mdash; or "bottleneck" &mdash; constraint in the public sector. The constraint affects only implementation costs for new projects: in a steady state, \(\left(1+\frac{\bar{\imath}_{z}}{\bar{z}}-\delta-g\right)^{\phi}=1\) as \(\bar{\imath}_{z}=(\delta +g)\bar{z}\).</p>
 
 <p>Policy makers accept all concessional loans proffered by official creditors. The borrowing and amortization schedule for these loans is fixed exogenously. Given the paths for public investment and concessional borrowing, the fiscal gap <em>before</em> policy adjustment (\(\mathfrak{Gap}_{t}\)) can be defined as:</p>
 
 <!-- \begin{equation} \mathfrak{Gap}_{t}=\frac{1+r_{d}}{1+g}d_{t-1}-d_{t}+\frac{r_{dc,t-1}-g}{1+g} dc_{t-1}+\frac{r_{t-1}-g}{1+g}P_{t}b_{t-1}+P_{z,t}\mathbb{I}_{t}+\mathcal{T}_{o}-h_{o}P_{t}c_{t}-\mathcal{G}_{t}-\mathcal{N}_{t}-\mu z_{t-1}^{e} \label{gapdef} \end{equation} -->
-<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn033.svg">
+<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn33.svg">
 
 <p>That is, \(\mathfrak{Gap}_{t}\) corresponds to expenditures (including interest rate payments on debt) less revenues and concessional borrowing, when transfers and taxes are kept at their <em>initial</em> levels \(\mathcal{T}_{o}\) and \(h_{o}\), respectively. Using this definition, we can rewrite the budget constraint (21<!--\ref{Gov_BC}-->), in any given year, as:</p>
 
 <!-- \begin{equation} \mathfrak{Gap}_{t}=P_{t}\Delta b_{t}+\Delta d_{c,t}+(h_{t}-h_{o})P_{t}c_{t}-(\mathcal{T}_{t}-\mathcal{T}_{o}) \label{exgap} \end{equation} -->
-<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn034.svg">
+<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn34.svg">
 
 <p>In the short/medium run, this gap \(\mathfrak{Gap}_{t}\) in (24<!--\ref{exgap}-->) can be covered by domestic and/or external commercial borrowing \(P_{t}\Delta b_{t}+\Delta d_{c,t}\), tax adjustments \((h_{t}-h_{o})P_{t}c_{t}\), and/or transfers adjustments \(-(\mathcal{T}_{t}-\mathcal{T}_{o})\). For the sake of comparing different borrowing schemes, in the experiments below, we will focus on cases where part of this gap can be filled with either external commercial loans <em>or</em> domestic loans, but not with both at the same time.</p>
 
 <p>Debt sustainability requires, however, that the VAT and transfers eventually adjust to cover the entire gap (i.e., \(P_{t}\Delta b_{t}+\Delta d_{c,t}=0\)). We let policy makers divide the burden of adjustment (net windfall when \(\mathfrak{Gap}_{t} \leq 0\)) between transfers cuts and tax increases. The adjustments, defined below according to some reaction functions, have as part of their targets the following debt-stabilizing values for transfers and the VAT
 
 <!-- \begin{equation} {\small h}_{t}^{\text{target}}{\small =h}_{o}+(1-\lambda )\frac{\mathfrak{Gap}_{t}}{P_{t}c_{t}}  \label{h_target} \end{equation} -->
-<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn035.svg">
+<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn35.svg">
 
 <p>and</p>
 
 <!-- \begin{equation} \mathcal{T}_{t}^{\text{target}}=\mathcal{T}_{o}-\lambda \mathfrak{Gap}_{t} \label{T_target} \end{equation} -->
-<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn036.svg">
+<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn36.svg">
 
 <p>where \(\lambda\) is a policy parameter that splits the fiscal adjustment between taxes and transfers and therefore satisfies \(0\leq \lambda \leq 1\). For the extreme case of \(\lambda=0\) (respectively \(\lambda=1\)) all the adjustment falls on taxes (respectively transfers).</p>
 
 <p>Taxes and transfers are defined according to the following reaction functions:</p>
 
 <!-- \begin{equation} h_{t}=min\left\{h_{t}^{r},h^{u}\right\} \label{hmin} \end{equation} -->
-<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn037.svg">
+<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn37.svg">
 
 <p>and</p>
 
 <!-- \begin{equation} \mathcal{T}_{t}=max\left\{\mathcal{T}_{t}^{r},\mathcal{T}^{l}\right\} \label{Tmax} \end{equation} -->
-<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn038.svg">
+<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn38.svg">
 
 <p>where \(h^{u}\) is a ceiling on taxes, \(\mathcal{T}^{l}\) is a floor for transfers, and \(h_{t}^{r}\) and \(\mathcal{T}_{t}^{r}\) are determined by the fiscal rules</p>
 
 <!-- \begin{equation} h_{t}^{r}=h_{t-1}+\lambda _{1}({\small h}_{t}^{\text{target}}-h_{t-1})+\lambda_{2}\frac{(x_{t-1}-x^{\text{target}})}{y_{t}} \label{h_reaction} \end{equation} -->
-<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn039.svg">
+<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn39.svg">
 
 <p>with \(\lambda_{1},\lambda_{2}>0\) and</p>
 
 <!-- \begin{equation} \mathcal{T}_{t}^{r}=\mathcal{T}_{t-1}+\lambda_{3}(\mathcal{T}_{t}^{\text{target}}-\mathcal{T}_{t-1})-\lambda_{4}(x_{t-1}-x^{\text{target}}) \label{T_reaction} \end{equation} -->
-<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn040.svg">
+<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn40.svg">
 
 <p>with \(\lambda_{3},\lambda_{4}>0\) and with \(y=P_{n}q_{n}+P_{x}q_{x}\) and \(x=b\) or \(d_{c}\), depending on whether the rules respond to domestic debt or commercial debt. The target for debt \(x^{\text{target}}\) is given exogenously. The ceiling \(h^{u}\) on taxes and the floor \(\mathcal{T}^{l}\) on transfers can also have discrete jumps over time, as we show below.<sup><a href="#fn11" id="ref11">11</a></sup> This allows us to model staggered tax and transfers structures.</p>
 
@@ -314,21 +314,21 @@ Each of these equations admits a straightforward intuitive interpretation. The f
 <p>Flexible wages and prices ensure that demand continuously equals supply in the labor market</p>
 
 <!-- \begin{equation} L_{x}+L_{n}=L \label{L_mkt} \end{equation} -->
-<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn041.svg">
+<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn41.svg">
 
 <p>where the labor supply \(L=L^{\mathfrak{s}}+L^{\mathfrak{h}}\) is fixed.</p>
 
 <p>In the non-tradables market, after aggregating across types of consumers, we obtain</p>
 
 <!-- \begin{equation} q_{n,t}=\rho_{n}\left(\frac{P_{n,t}}{P_{t}}\right)^{-\epsilon}c_{t}+a_{k}\left(i_{x,t}+i_{n,t}+AC_{x,t}+AC_{n,t}\right)+a_{z}\mathbb{I}_{z,t} \label{NT_mkt} \end{equation} -->
-<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn042.svg">
+<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn42.svg">
 
 <p>The first term of the right-hand side of (32<!--\ref{NT_mkt}-->) is the demand for non-traded consumer goods, while the second and third terms link public and private investment to orders for new capital goods.</p>
 
 <p>Finally, aggregating across consumers and adding the public and private sector budget constraints produce the accounting identity that growth in the country's net foreign debt equals the difference between national spending and national income</p>
 
 <!-- \begin{equation} d_{t}-d_{t-1}+d_{c,t}-d_{c,t-1}+b_{t}^{\ast }-b_{t-1}^{\ast } = \frac{r_{d}-g}{1+g}d_{t-1}+\frac{r_{dc,t-1}-g}{1+g}d_{c,t-1}+\frac{r_{t-1}^{\ast}-g}{1+g}b_{t-1}^{\ast } + \mathcal{P}_{t}+P_{z,t}\mathbb{I}_{z,t}+P_{k,t}\left(i_{x,t}+i_{n,t}+AC_{x,t}+AC_{n,t}\right) + P_{t}c_{t}-P_{n,t}q_{n,t}-P_{x,t}q_{x,t}-\mathcal{R}_{t}-\mathcal{G}_{t}-\mathcal{N}_{t} \label{CA_Eq} \end{equation} -->
-<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn043.svg">
+<img class="big-equation" src="modules/simulations/models/dig_eqns/eqn43.svg">
 
 <p>Equation \eqref{CA_Eq} includes extra terms that reflect the impact of trend growth on real interest costs and the contributions of remittances, grants, and natural resource related foreign transfers to gross income. The textbook identity emerges when \(g=\mathcal{R}_{t}=\mathcal{G}_{t}=\mathcal{N}_{t}=0\).</p>
 

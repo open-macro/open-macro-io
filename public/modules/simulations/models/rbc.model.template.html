@@ -63,7 +63,7 @@
 		<!--\begin{equation} 
 		y_t = a_t z^{\xi} k_t^{\alpha} n_t^{1-\alpha}
 		\end{equation}-->
-		<img class="big-equation" src="modules/simulations/models/rbc_eqns/eqn000.svg">
+		<img class="big-equation" src="modules/simulations/models/rbc_eqns/eqn0.svg">
 
 		<p>where \(a_t\) is aggregate factor productivity (think of it as economy-wide technology), \(z_t\) is productive public capital (think roads, bridges, ports---more on this below), \(y_t\) is output, \(k_t\) is capital, \(n_t\) is labor, and \(\alpha\) is the capital's share of total output.</p>
 
@@ -72,23 +72,23 @@
 		<!-- \[ \max_{k_t, n_t} \Pi_t = y_t - R_t k_t - w_t n_t \] -->
 		<img class="big-equation" src="modules/simulations/models/rbc_eqns_supplement/eqn000.svg">
 
-		<p>where \(\Pi_t\) is firm profit, \(R_t\) is the rental rate of capital, and \(w_t\) is the wage paid to labor. To solve this problem, we can substitute in the production function specified above and then take the derivitave with respect to the firm's choice variables (capital and labor). We will end up solving for the optimal prices the firm should pay for each of its inputs.</p>
+		<p>where \(\Pi_t\) is firm profit, \(R_t\) is the rental rate of capital, and \(w_t\) is the wage paid to labor. To solve this problem, we can substitute in the production function specified above and then take the derivative with respect to the firm's choice variables (capital and labor). We will end up solving for the optimal prices the firm should pay for each of its inputs.</p>
 
 		<!-- \[ \max_{k_t, n_t} \Pi_t = a_t z^{\xi} k_t^{\alpha} n_t^{1-\alpha} - R_t k_t - w_t n_t \] -->
 		<img class="big-equation" src="modules/simulations/models/rbc_eqns_supplement/eqn001.svg">
 
-		<p>First, we'll sovle for the rental rate of capital:</p>
+		<p>First, we'll solve for the rental rate of capital:</p>
 		<!-- \begin{equation}
 		R_t = \frac{\alpha y_t}{k_{t-1}}
 		\end{equation} -->
-		<img class="big-equation" src="modules/simulations/models/rbc_eqns/eqn001.svg">
+		<img class="big-equation" src="modules/simulations/models/rbc_eqns/eqn1.svg">
 
 
 		<p>Now we'll solve for the wage:</p>
 		<!-- \begin{equation}
 		w_t = \frac{(1-\alpha) y_t}{n_t}
 		\end{equation} -->
-		<img class="big-equation" src="modules/simulations/models/rbc_eqns/eqn002.svg">
+		<img class="big-equation" src="modules/simulations/models/rbc_eqns/eqn2.svg">
 
 		<p>Note that because markets for inputs are competitive, firms pay exactly the marginal value of each input and therefore have no profit.</p>
 
@@ -104,7 +104,7 @@
 		<!-- \begin{equation}
 		k_{t+1} = I_t + (1-\delta) k_t
 		\end{equation} -->
-		<img class="big-equation" src="modules/simulations/models/rbc_eqns/eqn003.svg">
+		<img class="big-equation" src="modules/simulations/models/rbc_eqns/eqn3.svg">
 
 		<p>which simply states that tomorrow's stock of capital is equal to today's stock of capital, less depreciation, plus today's flow of investment.</p>
 
@@ -144,14 +144,14 @@
 		<img class="big-equation" src="modules/simulations/models/rbc_eqns_supplement/eqn009.svg">
 		<img class="big-equation" src="modules/simulations/models/rbc_eqns_supplement/eqn010.svg">
 
-		<p>We can combine these two optimality conditions to get the \textbf{Euler equation} that determines the household's consumption path across time:</p>
+		<p>We can combine these two optimality conditions to get the <strong>Euler equation</strong> that determines the household's consumption path across time:</p>
 
 		<!-- \begin{equation}
 		\frac{1}{c_t} = \beta E_t \frac{1}{c_{t+1}}(R_{t+1} + (1-\delta))
 		\end{equation} -->
-		<img class="big-equation" src="modules/simulations/models/rbc_eqns/eqn004.svg">
+		<img class="big-equation" src="modules/simulations/models/rbc_eqns/eqn4.svg">
 
-		<p>The intuition for this is the same as in the small two-period model: the household must optimally choose its consumption today and consumption tomorrow so that it recieves the same utility (discounted in the future) for consumption across time. Otherwise, the household could be better off by changing its consumption path and its behavior would be sub-optimal.</p>
+		<p>The intuition for this is the same as in the small two-period model: the household must optimally choose its consumption today and consumption tomorrow so that it receives the same utility (discounted in the future) for consumption across time. Otherwise, the household could be better off by changing its consumption path and its behavior would be sub-optimal.</p>
 
 		<h1 id="government">Government Spending</h1>
 
@@ -162,14 +162,14 @@
 		<!-- \begin{equation}
 		I_{z,t} = (1-\rho_z)\overline{I_z} + \rho_z I_{z,t-1} + \epsilon_{z,t}
 		\end{equation} -->
-		<img class="big-equation" src="modules/simulations/models/rbc_eqns/eqn005.svg">
+		<img class="big-equation" src="modules/simulations/models/rbc_eqns/eqn5.svg">
 
 		<p>and</p>
 
 		<!-- \begin{equation}
 		g_{t} = (1-\rho_g)\overline{g} + \rho_g g_{t-1} + \epsilon_{g,t}
 		\end{equation} -->
-		<img class="big-equation" src="modules/simulations/models/rbc_eqns/eqn006.svg">
+		<img class="big-equation" src="modules/simulations/models/rbc_eqns/eqn6.svg">
 
 		<h1 id="tfp">Total Factor Productivity</h1>
 
@@ -178,7 +178,7 @@
 		<!-- \begin{equation}
 		\ln(a_t) = \rho \ln(a_{t-1}) + \epsilon_t
 		\end{equation} -->
-		<img class="big-equation" src="modules/simulations/models/rbc_eqns/eqn007.svg">
+		<img class="big-equation" src="modules/simulations/models/rbc_eqns/eqn7.svg">
 
 		<p>The persistence of this AR(1) process is determined by the parameter \(\rho\). The exogenous shock \(\epsilon_t\) is a mean-zero shock with no auto-correlation. This shock is how our model economy will vary from its equilibrium.</p>
 
@@ -187,7 +187,7 @@
 		<!-- \begin{equation}
 		y_t = c_t + I_t + g_z + z_t
 		\end{equation} -->
-		<img class="big-equation" src="modules/simulations/models/rbc_eqns/eqn008.svg">
+		<img class="big-equation" src="modules/simulations/models/rbc_eqns/eqn8.svg">
 
 	</md-content>
 </md-content>
