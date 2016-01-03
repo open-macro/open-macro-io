@@ -29,8 +29,12 @@
                         <a>
                             <md-item-content md-ink-ripple class="md-2-line" layout="row" layout-align="start center">
                                 <div class="md-list-item-text parameter-item" ng-class="{'md-offset': $index != 0 }">
-                                    <h4 class="md-subhead"><span mathjax-bind="parameter.latex"></span> {{
-                                        parameter.value }}</h4>
+                                    <h4 class="md-subhead">
+                                        <span>
+                                            <img class="param" ng-src="/modules/simulations/models/{{simulation.model.short_name}}_params/{{parameter.name}}.svg">
+                                            {{ parameter.value }}
+                                        </span>
+                                    </h4>
                                     <p class="description"> {{ parameter.name }} </p>
                                     <p class="description"> {{ parameter.description }} </p>
                                 </div>
@@ -73,7 +77,8 @@
                 <div ng-show="selectedParameter" layout="row">
                     <section class="edit-parameter" flex="60">
                         <section style="width:70%">
-                            <h2 mathjax-bind="selectedParameter.latex"></h2>
+
+                            <img class="selected-param" ng-src="/modules/simulations/models/{{simulation.model.short_name}}_params/{{selectedParameter.name}}.svg">
 
                             <p class="description"> {{ selectedParameter.name }} </p>
 
@@ -93,8 +98,7 @@
 
                         <div ng-repeat="equation in selectedParameter.equations">
                             <h6>{{ equation.description }}</h6>
-
-                            <p mathjax-bind="equation.latex"></p>
+                            <img class="equation" ng-src="/modules/simulations/models/{{simulation.model.short_name}}_eqns/eqn{{equation.name}}.svg">
                         </div>
                     </section>
                 </div>
