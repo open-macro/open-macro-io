@@ -398,3 +398,15 @@ a.edit-dsf {
     margin-left:auto;
     margin-right:auto;
 }
+
+img.selected-param {
+    height:40px;
+}
+
+img.param {
+    height:18px;
+}
+
+img.equation {
+    max-width: 100%;
+}
