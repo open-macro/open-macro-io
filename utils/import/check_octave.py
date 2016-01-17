@@ -25,19 +25,22 @@ def main():
 
 	endovars = re.search('var([^;]*);', dynare).group(1).split()
 	exovars = parse_exovars(re.search('varexo([^;]*);', dynare).group(1).split())
-	params_all = re.search('parameters([^;]*);', dynare).group(1).split()
+	params = re.search('parameters([^;]*);', dynare).group(1).split()
 
 	missing_endovars = list(set(endovars) - set(model_json['endovars'].keys()))
 	missing_exovars = list(set(exovars) - set(model_json['exovars'].keys()))
-	
+	missing_params = list(set(params) - set(model_json['params_init'].keys() + 
+		model_json['params_deep'].keys()))
+
 	# This should really be throwing an error/warning or something
 	# TODO: look up the Pythonic way to do this
 	if len(missing_endovars) > 0:
 		print 'One of the endogenous variables is missing'
 	if len(missing_exovars) > 0:
-		print 'One fo the exogenous variables is missing'
+		print 'One of the exogenous variables is missing'
+	if len(missing_params) > 0:
+		print 'One of the parameters is missing'
 
-	# TODO: look for missing parameters as well
 
 	import code
 	code.interact(local=locals())
