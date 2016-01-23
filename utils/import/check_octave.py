@@ -23,9 +23,9 @@ def check_octave(model_name, model_json):
 	missing_params = list(set(params) - set(model_json['params_init'].keys() + 
 		model_json['params_deep'].keys()))
 
-	assert len(missing_endovars) > 0, 'One of the endogenous variables is missing'
-	assert len(missing_exovars) > 0, 'One of the exogenous variables is missing'
-	assert len(missing_params) > 0, 'One of the parameters is missing'
+	assert len(missing_endovars) == 0, 'One of the endogenous variables is missing: %s' % missing_endovars
+	assert len(missing_exovars) == 0, 'One of the exogenous variables is missing: %s' % missing_exovars
+	assert len(missing_params) == 0, 'One of the parameters is missing: %s' % missing_params
 
 # def main():
 # 	parser = argparse.ArgumentParser(

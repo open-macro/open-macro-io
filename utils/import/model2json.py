@@ -32,7 +32,10 @@ def excel2json(fname):
 		else: 
 			model_definition[s.name] = get_sheet_info(s)
 
-	return json.dump(model_definition)
+	# import code
+	# code.interact(local=locals())
+
+	return model_definition
 
 # def main():
 # 	parser = argparse.ArgumentParser(

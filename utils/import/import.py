@@ -10,6 +10,9 @@
 # NECESSARY TO RUN THIS SCRIPT
 
 import os, sys, argparse, shutil
+from model2json import excel2json
+from check_octave import check_octave
+from check_svg import check_svg
 from pymongo import MongoClient
 
 MONGODB_URI_KEY = 'MONGODB_URI'
@@ -33,19 +36,19 @@ def get_model_collection():
 # * Octave scripts are present
 # * Octave scripts have the correct structure
 # * Octave scripts run with default input
-def verify_octave_script(octave_script_dir):
-  print 'Octave script directory: ' + octave_script_dir
+# def verify_octave_script(octave_script_dir):
+#   print 'Octave script directory: ' + octave_script_dir
 
 # Generate model json to be pushed to mongodb
-def xlsx_to_json(xlsx):
-  return {'short_name' : 'test'}
+# def xlsx_to_json(xlsx):
+#   return {'short_name' : 'test'}
 
 def main():
 
   # setup argparse
   parser = argparse.ArgumentParser()
-  parser.add_argument('-s', '--octave-script-dir', required=True,
-      help='Directory with octave script for model.')
+  parser.add_argument('-m', '--model-name', required=True,
+      help='Name of model (same as directory with octave script).')
   parser.add_argument('-l', '--landing-html', required=True,
       help='Landing page html for model.')
   parser.add_argument('-i', '--xlsx-in', required=True,
@@ -55,7 +58,7 @@ def main():
   # parse the xlsx to get the model json that 
   # follows the schema defined in mongodb 
   print 'Creating model.json from ' + args.xlsx_in + '.'
-  model_json = xlsx_to_json(args.xlsx_in)
+  model_json = excel2json(args.xlsx_in)
   
   # copy landing page html to landing_pages directory
   model_short_name = model_json['short_name']
@@ -64,9 +67,9 @@ def main():
   shutil.copy(args.landing_html, dst)
 
   # verify the octave script and copy into run
-  octave_script_dir = args.octave_script_dir
+  octave_script_dir = args.model_name
   print 'Verifying octave script structure.'
-  verify_octave_script(octave_script_dir)
+  check_octave(args.model_name, model_json)
   dst = '../../run/definitions/' + model_short_name
   print 'Copying ' + octave_script_dir + ' to ' + dst + '.'
   shutil.copytree(octave_script_dir, dst)
