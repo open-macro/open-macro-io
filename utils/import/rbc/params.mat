@@ -1,0 +1,46 @@
+# Created by Octave 3.8.1, Thu May 21 21:37:53 2015 CDT <will@wclark3-ubuntu>
+# name: alpha
+# type: scalar
+0.33
+
+
+# name: beta
+# type: scalar
+0.95
+
+
+# name: delta
+# type: scalar
+0.1
+
+
+# name: rho
+# type: scalar
+0.9
+
+
+# name: rho_g
+# type: scalar
+0.8
+
+
+# name: g_bar
+# type: scalar
+0.1
+
+
+# name: Iz_bar
+# type: scalar
+0.1
+
+
+# name: rho_z
+# type: scalar
+0.8
+
+
+# name: xi
+# type: scalar
+0.4
+
+
