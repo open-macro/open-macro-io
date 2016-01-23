@@ -70,3 +70,6 @@ build/
 db/
 run/simulations/*
 *octave-workspace
+
+# Python
+*.pyc
