@@ -10,13 +10,10 @@ module.exports = function(app) {
 
 	// Model Routes
 	app.route('/models')
-		.get(models.list)
-		.post(users.requiresLogin, models.create);
+		.get(models.list);
 
 	app.route('/models/:modelId')
-		.get(models.read)
-		.put(users.requiresLogin, models.update)
-		.delete(users.requiresLogin, models.delete);
+		.get(models.read);
 
 	// Finish by binding the model middleware
 	app.param('modelId', models.modelByID);
