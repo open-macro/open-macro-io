@@ -21,16 +21,9 @@ def get_sheet_info(sheet):
 
 	return json.loads(jsons)
 
-def main():
-	parser = argparse.ArgumentParser(
-		formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-	parser.add_argument(
-		'-m', '--model_name', dest='model_name',
-		help="name of model (e.g. rbc, ca, dig")
-	argcomplete.autocomplete(parser)
-	options = parser.parse_args()
+def excel2json(fname):
 	
-	wb = xlrd.open_workbook(options.model_name + '_information.xlsx')
+	wb = xlrd.open_workbook(fname)
 	sheets = wb.sheets()
 
 	for s in sheets:
@@ -39,8 +32,28 @@ def main():
 		else: 
 			model_definition[s.name] = get_sheet_info(s)
 
-	json.dump(model_definition, open(options.model_name + '_information.json','w'))
+	return json.dump(model_definition)
+
+# def main():
+# 	parser = argparse.ArgumentParser(
+# 		formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+# 	parser.add_argument(
+# 		'-m', '--model_name', dest='model_name',
+# 		help="name of model (e.g. rbc, ca, dig")
+# 	argcomplete.autocomplete(parser)
+# 	options = parser.parse_args()
+	
+# 	wb = xlrd.open_workbook(options.model_name + '_information.xlsx')
+# 	sheets = wb.sheets()
+
+# 	for s in sheets:
+# 		if s.name == 'metadata': 
+# 			model_definition = get_metadata(s)
+# 		else: 
+# 			model_definition[s.name] = get_sheet_info(s)
+
+# 	json.dump(model_definition, open(options.model_name + '_information.json','w'))
 
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()
