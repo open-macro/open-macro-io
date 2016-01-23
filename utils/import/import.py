@@ -9,10 +9,7 @@
 # A MODEL INTO OPEN MACRO. SEE THE README FILE TO SATISFY ALL CONDITIONS
 # NECESSARY TO RUN THIS SCRIPT
 
-import os, sys, argparse, shutil
-from model2json import excel2json
-from check_octave import check_octave
-from check_svg import check_svg
+import os, sys, argparse, shutil, xlrd, json, re
 from pymongo import MongoClient
 
 MONGODB_URI_KEY = 'MONGODB_URI'
@@ -32,16 +29,86 @@ def get_model_collection():
   db.authenticate(user, password)
   return db['models']
 
-# Verifies Octave script 
-# * Octave scripts are present
-# * Octave scripts have the correct structure
-# * Octave scripts run with default input
-# def verify_octave_script(octave_script_dir):
-#   print 'Octave script directory: ' + octave_script_dir
+# Convert a rigidly defined Excel file into a json object with model data
+def excel2json(fname):
+  
+  wb = xlrd.open_workbook(fname)
+  sheets = wb.sheets()
 
-# Generate model json to be pushed to mongodb
-# def xlsx_to_json(xlsx):
-#   return {'short_name' : 'test'}
+  for s in sheets:
+    if s.name == 'metadata': 
+      model_definition = get_metadata(s)
+    else: 
+      model_definition[s.name] = get_sheet_info(s)
+
+  # import code
+  # code.interact(local=locals())
+
+  return model_definition
+
+# Helper function to get metadata out of Excel model definition
+def get_metadata(sheet):
+  return dict(zip(sheet.row_values(0, 0, sheet.ncols), 
+    sheet.row_values(1, 0, sheet.ncols)))
+
+# Helper function to get non-metadata out of Excel model definition
+def get_sheet_info(sheet):
+  headers = sheet.row_values(0, 1, sheet.ncols)
+
+  jsons = ['{']
+  for r in range(1, sheet.nrows):
+    val = sheet.cell_value(r, 0)
+    if isinstance(val, float): val = "{:.0f}".format(val)
+    jsons.append('"' + val + '":')
+    data = sheet.row_values(r, 1, sheet.ncols);
+    jsons.append(json.dumps(dict(zip(headers, data))) + ',')
+  jsons = ''.join(jsons)[:-1] + '}'
+
+  return json.loads(jsons)
+
+# Verify that all parameters in the model json file have
+# corresponding SVG files
+def check_svg(model_name, model_json):
+
+  # parameters in model definition
+  params = model_json['params_init'].keys() + model_json['params_deep'].keys()
+
+  # parameter svg files
+  params_svg = os.listdir(model_name + '_params')
+  params_svg = [ps.replace('.svg', '') for ps in params_svg]
+
+  missing_params = list(set(params) - set(params_svg))
+
+  # This should really be throwing an error/warning or something
+  # TODO: look up the Pythonic way to do this
+  assert len(missing_params) > 0, 'One of the parameters is missing'
+
+# Verify that vars in octave script (endo vars, exo vars, params) 
+# match what is listed in the model json
+def check_octave(model_name, model_json):
+
+  # model name should be the same as directory where it is stored
+  with open(model_name + '/' + model_name + '_main.mod', 'r') as f:
+    dynare = f.read().replace('\n', '')
+
+  endovars = re.search('var([^;]*);', dynare).group(1).split()
+  exovars = parse_exovars(re.search('varexo([^;]*);', dynare).group(1).split())
+  params = re.search('parameters([^;]*);', dynare).group(1).split()
+
+  missing_endovars = list(set(endovars) - set(model_json['endovars'].keys()))
+  missing_exovars = list(set(exovars) - set(model_json['exovars'].keys()))
+  missing_params = list(set(params) - set(model_json['params_init'].keys() + 
+    model_json['params_deep'].keys()))
+
+  assert len(missing_endovars) == 0, 'One of the endogenous variables is missing: %s' % missing_endovars
+  assert len(missing_exovars) == 0, 'One of the exogenous variables is missing: %s' % missing_exovars
+  assert len(missing_params) == 0, 'One of the parameters is missing: %s' % missing_params
+
+# Helper function for parsing exo var names from Dynare code
+def parse_exovars(exovars):
+  exovars = [ev.replace('_neg', '') for ev in exovars]
+  exovars = [ev[:-1] for ev in exovars]
+  return exovars
 
 def main():
 
